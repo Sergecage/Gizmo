@@ -1,0 +1,71 @@
+header {
+    margin: 0;
+}
+
+.rubik-scribble-regular {
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.nav-panel {
+    padding: 1%;
+    ul{
+        display: flex;
+        justify-content: space-around;
+        font-family: "Rubik Scribble", system-ui;
+        list-style: none;
+        li{
+            a{
+                color: rgb(98, 0, 255);
+                line-height: 1.8em;
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(240, 240, 240);
+                }
+            }
+        }
+    }
+}
+
+.main{
+    padding: 2%;
+    .gizmo{
+        margin: 1rem;
+        .gizmo-img{
+            max-width: 100%;
+        }
+    }
+    .area{
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 10%;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 1;
+        .right-side, .left-side{
+            width: 50%;
+            .play-item{
+                max-width: 7rem;
+                max-height: 7rem;
+                transition: all ease;
+                cursor: pointer;
+                .item{
+                    width: 11rem;
+                    &:hover{
+                        rotate: 30deg;
+                    }
+                }
+            }
+        }
+        .right-side{
+            .play-item{
+                position: relative;
+                left: 70%;
+            }
+        }
+    }
+}
+
