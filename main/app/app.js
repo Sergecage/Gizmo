@@ -28,31 +28,31 @@ const items = [{
     name: "cookie",
     meaning: "food",
     bonus: "10",
-    img: "../img/pitures/cookie.png"
+    img: "img/pictures/cookie.png"
 },
 {
     name: "macaroni",
     meaning: "food",
     bonus: "15",
-    img: "../img/pitures/macaroni.png"
+    img: "img/pictures/macaroni.png"
 },
 {   
     name: "cupcake",
     meaning: "food",
     bonus: "20",
-    img: "../img/pitures/cupcake.png"
+    img: "img/pictures/cupcake.png"
 },
 {
     name: "button",
     meaning: "thing",
     bonus: "0",
-    img: "../img/pitures/button.png"
+    img: "img/pictures/button.png"
 },
 {
     name: "rock",
     meaning: "food",
     bonus: "0",
-    img: "../img/pitures/rock.png"
+    img: "img/pictures/rock.png"
 }];
 
 
@@ -62,11 +62,19 @@ const generateItem = (item) => {
     itemContainer.className = "play-item";
     const itemImg = document.createElement("img");
     itemImg.className = "item";
-    const randomImg =items[0].img;
+    const randomImg =items[Math.floor(Math.random() *items.length)].img;
     itemImg.src = `${randomImg}`;
-    itemImg.alt = `${items[0].name}`;
+    itemImg.alt = `${items.name}`;
     itemContainer.append(itemImg);
     leftSide.append(itemContainer);
 }
 
-generateItem();
+
+//drop item function
+const dropItem =  () => {
+    generateItem();
+    gizmo.classList.add("left");
+    itemContainer.classList.add("active");
+}
+
+dropItem();
