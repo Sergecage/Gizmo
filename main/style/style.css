@@ -20,9 +20,17 @@ header {
   font-family: "Rubik Scribble", system-ui;
   list-style: none;
 }
+.nav-panel ul li {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
 .nav-panel ul li a {
   color: rgb(98, 0, 255);
   line-height: 1.8em;
+  padding: 1rem;
+}
+.nav-panel ul li a img {
+  padding-top: 1%;
 }
 .nav-panel ul li a:hover {
   cursor: pointer;
@@ -41,6 +49,10 @@ header {
 .main .gizmo .gizmo-img.left {
   -webkit-animation: left-gizmo 5s ease-in-out;
           animation: left-gizmo 5s ease-in-out;
+}
+.main .gizmo .gizmo-img.right {
+  -webkit-animation: right-gizmo 5s ease-in-out;
+          animation: right-gizmo 5s ease-in-out;
 }
 .main .gizmo .gizmo-img:hover {
   -webkit-animation-play-state: paused;
@@ -67,7 +79,7 @@ header {
   transition: all ease;
   cursor: pointer;
 }
-.main .area .right-side .play-item:active, .main .area .left-side .play-item:active {
+.main .area .right-side .play-item.active, .main .area .left-side .play-item.active {
   -webkit-animation: fall-down 5s linear;
           animation: fall-down 5s linear;
 }
@@ -84,6 +96,23 @@ header {
 .main .area .right-side .play-item .item {
   -webkit-animation: fall-down 7s linear;
           animation: fall-down 7s linear;
+}
+.main .area .start-btn {
+  position: absolute;
+  top: 5%;
+  left: 45%;
+  background: #233;
+  color: aliceblue;
+  font-family: "Rubik Scribble", system-ui;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  padding: 1.2em;
+  cursor: pointer;
+}
+.main .area .start-btn:hover {
+  background-color: rgb(47, 155, 155);
+  border: 1px solid rgb(52, 74, 173);
 }
 
 @-webkit-keyframes left-gizmo {
@@ -105,6 +134,26 @@ header {
   to {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+  }
+}
+@-webkit-keyframes right-gizmo {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+  }
+  to {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+}
+@keyframes right-gizmo {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+  }
+  to {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
 }
 @-webkit-keyframes fall-down {

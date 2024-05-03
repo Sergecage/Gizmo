@@ -16,9 +16,14 @@ header {
         font-family: "Rubik Scribble", system-ui;
         list-style: none;
         li{
+            justify-self: center;
             a{
                 color: rgb(98, 0, 255);
                 line-height: 1.8em;
+                padding: 1rem;
+                img{
+                    padding-top: 1%;
+                }
                 &:hover{
                     cursor: pointer;
                     background-color: rgb(240, 240, 240);
@@ -36,6 +41,9 @@ header {
             max-width: 100%;
             &.left{
                 animation: left-gizmo 5s ease-in-out;
+            }
+            &.right{
+                animation: right-gizmo 5s ease-in-out;
             }
             &:hover{
                 animation-play-state: paused;
@@ -57,7 +65,7 @@ header {
                 max-height: 7rem;
                 transition: all ease;
                 cursor: pointer;
-                &:active{
+                &.active{
                     animation: fall-down 5s linear;
                 }
                 .item{
@@ -77,6 +85,23 @@ header {
                 }
             }
         }
+        .start-btn{
+            position: absolute;
+            top: 5%;
+            left: 45%;
+            background: #233;
+            color: aliceblue;
+            font-family: "Rubik Scribble", system-ui;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2rem;
+            padding: 1.2em;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(47, 155, 155);
+                border: 1px solid rgb(52, 74, 173);
+            }
+        }
     }
 }
 
@@ -86,6 +111,14 @@ header {
     }
     to {
         transform: translateX(-50%);
+    }
+}
+@keyframes right-gizmo  {
+    from {
+        transform: 0;
+    }
+    to {
+        transform: translateX(50%);
     }
 }
  @keyframes fall-down {

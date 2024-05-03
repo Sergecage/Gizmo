@@ -5,14 +5,6 @@ const rightSide = document.querySelector(".right-side");
 const gizmo = document.querySelector(".gizmo-img");
 const playArea = document.querySelector(".area");
 
-/*const head = document.createElement("ellipse");
-head.setAttribute = "0 0 200 100";
-head.style.fill = "grey";
-head.style.cx = "100";
-head.style.cy = "40";
-head.style.rx = "45";
-head.style.ry = "35";
-graphics.append(head);*/
 
 //Gizmo moves
 rightSide.addEventListener("mouseover", event => {
@@ -55,17 +47,18 @@ const items = [{
     img: "img/pictures/rock.png"
 }];
 
-
-//create item for the game
-const generateItem = (item) => {
-    const itemContainer = document.createElement("div");
+//create cookie item
+const itemContainer = document.createElement("div");
     itemContainer.className = "play-item";
     const itemImg = document.createElement("img");
     itemImg.className = "item";
-    const randomImg =items[Math.floor(Math.random() *items.length)].img;
-    itemImg.src = `${randomImg}`;
-    itemImg.alt = `${items.name}`;
+    const randomImg =items[Math.floor(Math.random() *items.length)];
+    itemImg.src = `${randomImg.img}`;
+    itemImg.alt = `${randomImg.name}`;
     itemContainer.append(itemImg);
+
+//create item for the game
+const generateItem = () => {
     leftSide.append(itemContainer);
 }
 
@@ -73,8 +66,26 @@ const generateItem = (item) => {
 //drop item function
 const dropItem =  () => {
     generateItem();
-    gizmo.classList.add("left");
+    //gizmo.classList.add("left");
     itemContainer.classList.add("active");
 }
-
-dropItem();
+//create start button
+const startBtn = document.createElement("div");
+    startBtn.className = "start-btn";
+    startBtn.innerText = "start";
+    playArea.append(startBtn);
+//start game 
+const startGame = () => {
+    dropItem();
+}
+//move Gizmo
+const moveGizmo = (button) => {
+    if (button.key.startsWith("ArrowLeft")) {
+        gizmo.classList.add("left");
+    }
+    else if (button.key.startsWith("ArrowRight")){
+        gizmo.classList.add("right");
+    }
+}
+startBtn.addEventListener("click", startGame);
+document.addEventListener("keydown", moveGizmo);
