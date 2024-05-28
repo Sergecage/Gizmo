@@ -1,5 +1,14 @@
 header {
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rubik-scribble-regular {
@@ -28,9 +37,7 @@ header {
   color: rgb(98, 0, 255);
   line-height: 1.8em;
   padding: 1rem;
-}
-.nav-panel ul li a img {
-  padding-top: 1%;
+  font-size: 3em;
 }
 .nav-panel ul li a:hover {
   cursor: pointer;
@@ -40,23 +47,38 @@ header {
 .main {
   padding: 2%;
 }
-.main .gizmo {
-  margin: 1rem;
+.main .start-btn {
+  position: absolute;
+  top: 5%;
+  left: 45%;
+  background: #233;
+  color: aliceblue;
+  font-family: "Rubik Scribble", system-ui;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  padding: 1.2em;
+  cursor: pointer;
 }
-.main .gizmo .gizmo-img {
-  max-width: 100%;
+.main .start-btn:hover {
+  background-color: rgb(47, 155, 155);
+  border: 1px solid rgb(52, 74, 173);
 }
-.main .gizmo .gizmo-img.left {
-  -webkit-animation: left-gizmo 5s ease-in-out;
-          animation: left-gizmo 5s ease-in-out;
+.main .score {
+  position: absolute;
+  padding: 0.5em 1em;
+  left: 50%;
+  top: 5%;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
+  line-height: 1.8rem;
+  font-size: 3rem;
+  border: 0.2em;
+  border-color: #233;
 }
-.main .gizmo .gizmo-img.right {
-  -webkit-animation: right-gizmo 5s ease-in-out;
-          animation: right-gizmo 5s ease-in-out;
-}
-.main .gizmo .gizmo-img:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+.main .score::before {
+  content: "score";
+  padding-right: 0.5em;
 }
 .main .area {
   display: -webkit-box;
@@ -65,7 +87,7 @@ header {
   position: absolute;
   left: 0;
   top: 10%;
-  width: 100%;
+  width: 90%;
   height: 100%;
   background: transparent;
 }
@@ -89,6 +111,9 @@ header {
 .main .area .right-side .play-item .item:hover, .main .area .left-side .play-item .item:hover {
   rotate: 30deg;
 }
+.main .area .right-side .play-item.caught, .main .area .left-side .play-item.caught {
+  display: none;
+}
 .main .area .right-side .play-item {
   position: relative;
   left: 70%;
@@ -97,82 +122,136 @@ header {
   -webkit-animation: fall-down 7s linear;
           animation: fall-down 7s linear;
 }
-.main .area .start-btn {
+.main .area .play-item {
   position: absolute;
-  top: 5%;
-  left: 45%;
-  background: #233;
-  color: aliceblue;
-  font-family: "Rubik Scribble", system-ui;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2rem;
-  padding: 1.2em;
+  max-width: 7rem;
+  max-height: 7rem;
+  -webkit-transition: all ease;
+  transition: all ease;
   cursor: pointer;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
-.main .area .start-btn:hover {
-  background-color: rgb(47, 155, 155);
-  border: 1px solid rgb(52, 74, 173);
+.main .area .play-item.active {
+  -webkit-animation: fall-down 5s linear;
+          animation: fall-down 5s linear;
+}
+.main .area .play-item .item {
+  width: 11rem;
+}
+.main .area .play-item .item:hover {
+  rotate: 30deg;
+}
+.main .area .play-item.caught {
+  display: none;
+}
+.main .area .gizmo {
+  position: absolute;
+  margin: 1rem;
+  left: 11%;
+  bottom: 0;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  width: 65%;
+}
+.main .area .gizmo .gizmo-img {
+  width: 90%;
+}
+.main .area .gizmo .gizmo-img.left {
+  -webkit-animation: left-gizmo 5s ease-in-out alternate;
+          animation: left-gizmo 5s ease-in-out alternate;
+}
+.main .area .gizmo .gizmo-img.right {
+  -webkit-animation: right-gizmo 5s ease-in-out alternate;
+          animation: right-gizmo 5s ease-in-out alternate;
 }
 
 @-webkit-keyframes left-gizmo {
-  from {
+  0% {
     -webkit-transform: 0;
             transform: 0;
   }
-  to {
+  50% {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @keyframes left-gizmo {
-  from {
+  0% {
     -webkit-transform: 0;
             transform: 0;
   }
-  to {
+  50% {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 @-webkit-keyframes right-gizmo {
-  from {
+  0% {
     -webkit-transform: 0;
             transform: 0;
   }
-  to {
+  50% {
     -webkit-transform: translateX(50%);
             transform: translateX(50%);
+  }
+  100% {
+    -webkit-transform: 0;
+            transform: 0;
   }
 }
 @keyframes right-gizmo {
-  from {
+  0% {
     -webkit-transform: 0;
             transform: 0;
   }
-  to {
+  50% {
     -webkit-transform: translateX(50%);
             transform: translateX(50%);
   }
-}
-@-webkit-keyframes fall-down {
-  from {
+  100% {
     -webkit-transform: 0;
             transform: 0;
   }
-  to {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
+}
+@-webkit-keyframes fall-down {
+  0% {
+    -webkit-transform: 0;
+            transform: 0;
+  }
+  50% {
+    -webkit-transform: translateY(350%);
+            transform: translateY(350%);
+    rotate: 5deg;
+  }
+  100% {
+    -webkit-transform: translateY(400%);
+            transform: translateY(400%);
   }
 }
 @keyframes fall-down {
-  from {
+  0% {
     -webkit-transform: 0;
             transform: 0;
   }
-  to {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
+  50% {
+    -webkit-transform: translateY(350%);
+            transform: translateY(350%);
+    rotate: 5deg;
+  }
+  100% {
+    -webkit-transform: translateY(400%);
+            transform: translateY(400%);
   }
 }

@@ -1,5 +1,8 @@
 header {
     margin: 0;
+    display: flex;
+    justify-content: flex-start ;
+    align-items: center;
 }
 
 .rubik-scribble-regular {
@@ -21,9 +24,7 @@ header {
                 color: rgb(98, 0, 255);
                 line-height: 1.8em;
                 padding: 1rem;
-                img{
-                    padding-top: 1%;
-                }
+                font-size: 3em;
                 &:hover{
                     cursor: pointer;
                     background-color: rgb(240, 240, 240);
@@ -35,27 +36,45 @@ header {
 
 .main{
     padding: 2%;
-    .gizmo{
-        margin: 1rem;
-        .gizmo-img{
-            max-width: 100%;
-            &.left{
-                animation: left-gizmo 5s ease-in-out;
-            }
-            &.right{
-                animation: right-gizmo 5s ease-in-out;
-            }
-            &:hover{
-                animation-play-state: paused;
-            }
+    .start-btn{
+        position: absolute;
+        top: 5%;
+        left: 45%;
+        background: #233;
+        color: aliceblue;
+        font-family: "Rubik Scribble", system-ui;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2rem;
+        padding: 1.2em;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(47, 155, 155);
+            border: 1px solid rgb(52, 74, 173);
         }
     }
+        .score{
+            position: absolute;
+            padding: 0.5em 1em;
+            left: 50%;
+            top: 5%;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 800;
+            line-height: 1.8rem;
+            font-size: 3rem;
+            border: 0.2em;
+            border-color: #233;
+            &::before {
+                content: "score";
+                padding-right: 0.5em;
+            }
+        }
     .area{
         display: flex;
         position: absolute;
         left: 0;
         top: 10%;
-        width: 100%;
+        width: 90%;
         height: 100%;
         background: transparent;
         .right-side, .left-side{
@@ -74,6 +93,9 @@ header {
                         rotate: 30deg;
                     }
                 }
+                &.caught{
+                    display: none;
+                }
             }
         }
         .right-side{
@@ -85,48 +107,81 @@ header {
                 }
             }
         }
-        .start-btn{
+        .play-item{
             position: absolute;
-            top: 5%;
-            left: 45%;
-            background: #233;
-            color: aliceblue;
-            font-family: "Rubik Scribble", system-ui;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 2rem;
-            padding: 1.2em;
+            max-width: 7rem;
+            max-height: 7rem;
+            transition: all ease;
             cursor: pointer;
-            &:hover{
-                background-color: rgb(47, 155, 155);
-                border: 1px solid rgb(52, 74, 173);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            &.active{
+                animation: fall-down 5s linear;
+            }
+            .item{
+                width: 11rem;
+                &:hover{
+                    rotate: 30deg;
+                }
+            }
+            &.caught{
+                display: none;
+            }
+        }
+        .gizmo{
+            position: absolute;
+            margin: 1rem;
+            left: 11%;
+            bottom: 0;
+            transition: 1s ease-in-out;
+            width: 65%;
+            //transform: translateX(-50%);
+            .gizmo-img{
+                width: 90%;
+                &.left{
+                    animation: left-gizmo 5s ease-in-out alternate;
+                }
+                &.right{
+                    animation: right-gizmo 5s ease-in-out alternate;
+                }
             }
         }
     }
 }
 
 @keyframes left-gizmo  {
-    from {
+    0% {
         transform: 0;
     }
-    to {
+    50% {
         transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0);
     }
 }
 @keyframes right-gizmo  {
-    from {
+    0% {
         transform: 0;
     }
-    to {
+    50% {
         transform: translateX(50%);
+    }
+    100% {
+        transform: 0;
     }
 }
  @keyframes fall-down {
-    from {
+    0% {
         transform: 0;
     }
-    to {
-        transform: translateY(300%);
+    50%{
+        transform: translateY(350%);
+        rotate: (5deg);
+    }
+    100%{
+        transform: translateY(400%);
     }
  }
 
