@@ -1,8 +1,15 @@
+body {
+    margin: 0;
+    background: rgb(128,130,167);
+background: radial-gradient(circle, rgba(128,130,167,1) 0%, rgba(195,208,222,1) 100%);
+    
+}
 header {
     margin: 0;
     display: flex;
     justify-content: flex-start ;
     align-items: center;
+    background: linear-gradient(90deg, rgb(123, 120, 153) 1%, rgb(164, 176, 218)25%,rgb(105, 95, 150)75% );
 }
 
 .rubik-scribble-regular {
@@ -20,14 +27,19 @@ header {
         list-style: none;
         li{
             justify-self: center;
+            border: 1em  #111;
+            border-radius: 1em;
+            background-color: #f8f8f8;
+            margin-left: 0.5em;
             a{
                 color: rgb(98, 0, 255);
                 line-height: 1.8em;
                 padding: 1rem;
                 font-size: 3em;
+                text-decoration: none;
                 &:hover{
                     cursor: pointer;
-                    background-color: rgb(240, 240, 240);
+                    background-color: rgb(147, 143, 150);
                 }
             }
         }
@@ -35,8 +47,9 @@ header {
 }
 
 .main{
-    padding: 2%;
-    .start-btn{
+    padding-left: 2%;
+    margin-top: 1em;
+    .start-btn, .disco-btn{
         position: absolute;
         top: 5%;
         left: 45%;
@@ -51,6 +64,13 @@ header {
         &:hover{
             background-color: rgb(47, 155, 155);
             border: 1px solid rgb(52, 74, 173);
+        }
+    }
+    .disco-btn{
+        left: 65%;
+        background: rgb(184, 150, 105);
+        &:hover{
+            background-color: rgb(108, 129, 129);
         }
     }
         .score{
@@ -70,6 +90,7 @@ header {
             }
         }
     .area{
+        padding-top: 0.5em;
         display: flex;
         position: absolute;
         left: 0;
@@ -148,6 +169,51 @@ header {
             }
         }
     }
+    .modal{
+        position: absolute;
+        padding: 1em;
+        background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        font-family: "Rubik Scribble", system-ui;
+        left: 20%;
+        top: 20%;
+        .close{
+            cursor: pointer;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 0.2em;
+                height: 2em;
+                background-color: #111;
+                transform: rotate(45deg);
+                left: 92%;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0.2em;
+                height: 2em;
+                background-color: #111;
+                transform: rotate(-45deg);
+                left: 92%;
+            }
+        }
+        .rules{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            h3 {
+                font-size: 4rem;
+                text-align: center;
+            }
+            p{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 2rem;
+                color: #233;
+                text-align: center;
+            }
+        }
+    }
 }
 
 @keyframes left-gizmo  {
@@ -184,4 +250,29 @@ header {
         transform: translateY(400%);
     }
  }
-
+@media (max-width: 800px) {
+    .header{
+        justify-content:left;
+    }
+    .logo{
+        img{
+            width: 8em;
+        height: 5em;
+        }
+    }
+    .nav-panel{
+        padding: 0;
+        ul{
+            li{
+                a{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .main{
+        .area{
+            
+        }
+    }
+}

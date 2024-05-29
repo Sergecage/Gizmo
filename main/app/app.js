@@ -1,10 +1,11 @@
 const content = document.querySelector(".main");
-//const graphics = document.selectElementByTagName('svg')[0];
 const leftSide = document.querySelector(".left-side");
 const rightSide = document.querySelector(".right-side");
 const gizmoImg = document.querySelector(".gizmo-img");
 const gizmo = document.querySelector(".gizmo");
 const playArea = document.querySelector(".area");
+const modalBtn = document.querySelector(".close");
+const modal = document.querySelector(".modal");
 
 let score = 0;
 
@@ -101,6 +102,8 @@ const dropItem =  () => {
         } else {
             requestAnimationFrame(dropItem);
         }
+
+    closeModal();
 }
 
 //reset item
@@ -138,16 +141,24 @@ const moveGizmo = (button) => {
     console.log("move");
 }
 
+//close modal window
+const closeModal = () => {
+    modal.style.display = "none";
+}
+
 
 startBtn.addEventListener("click", dropItem);
 document.addEventListener("keydown", moveGizmo);
+modalBtn.addEventListener("click", closeModal);
 
-/*const discoGizmo (button) => {
-    itemContainer.classList.add("active");
-    if (button.key.startsWith("ArrowLeft")) {
-        gizmo.classList.toggle("left");
-    }
-    else if (button.key.startsWith("ArrowRight")){
-        gizmo.classList.toggle("right");
-    }
-}*/
+//disco Gizmo
+const discoBtn = document.createElement("div");
+discoBtn.className = "disco-btn";
+discoBtn.innerText = "disco";
+content.append(discoBtn);
+
+const discoGizmo = () => {
+    ;   
+}
+
+discoBtn.addEventListener("click", discoGizmo);

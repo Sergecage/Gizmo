@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  background: rgb(128, 130, 167);
+  background: radial-gradient(circle, rgb(128, 130, 167) 0%, rgb(195, 208, 222) 100%);
+}
+
 header {
   margin: 0;
   display: -webkit-box;
@@ -9,6 +15,8 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, rgb(123, 120, 153)), color-stop(25%, rgb(164, 176, 218)), color-stop(75%, rgb(105, 95, 150)));
+  background: linear-gradient(90deg, rgb(123, 120, 153) 1%, rgb(164, 176, 218) 25%, rgb(105, 95, 150) 75%);
 }
 
 .rubik-scribble-regular {
@@ -32,22 +40,28 @@ header {
 .nav-panel ul li {
   -ms-grid-column-align: center;
       justify-self: center;
+  border: 1em #111;
+  border-radius: 1em;
+  background-color: #f8f8f8;
+  margin-left: 0.5em;
 }
 .nav-panel ul li a {
   color: rgb(98, 0, 255);
   line-height: 1.8em;
   padding: 1rem;
   font-size: 3em;
+  text-decoration: none;
 }
 .nav-panel ul li a:hover {
   cursor: pointer;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(147, 143, 150);
 }
 
 .main {
-  padding: 2%;
+  padding-left: 2%;
+  margin-top: 1em;
 }
-.main .start-btn {
+.main .start-btn, .main .disco-btn {
   position: absolute;
   top: 5%;
   left: 45%;
@@ -60,9 +74,16 @@ header {
   padding: 1.2em;
   cursor: pointer;
 }
-.main .start-btn:hover {
+.main .start-btn:hover, .main .disco-btn:hover {
   background-color: rgb(47, 155, 155);
   border: 1px solid rgb(52, 74, 173);
+}
+.main .disco-btn {
+  left: 65%;
+  background: rgb(184, 150, 105);
+}
+.main .disco-btn:hover {
+  background-color: rgb(108, 129, 129);
 }
 .main .score {
   position: absolute;
@@ -81,6 +102,7 @@ header {
   padding-right: 0.5em;
 }
 .main .area {
+  padding-top: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,6 +188,60 @@ header {
 .main .area .gizmo .gizmo-img.right {
   -webkit-animation: right-gizmo 5s ease-in-out alternate;
           animation: right-gizmo 5s ease-in-out alternate;
+}
+.main .modal {
+  position: absolute;
+  padding: 1em;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%);
+  font-family: "Rubik Scribble", system-ui;
+  left: 20%;
+  top: 20%;
+}
+.main .modal .close {
+  cursor: pointer;
+}
+.main .modal .close::before {
+  content: "";
+  position: absolute;
+  width: 0.2em;
+  height: 2em;
+  background-color: #111;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 92%;
+}
+.main .modal .close::after {
+  content: "";
+  position: absolute;
+  width: 0.2em;
+  height: 2em;
+  background-color: #111;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  left: 92%;
+}
+.main .modal .rules {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.main .modal .rules h3 {
+  font-size: 4rem;
+  text-align: center;
+}
+.main .modal .rules p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2rem;
+  color: #233;
+  text-align: center;
 }
 
 @-webkit-keyframes left-gizmo {
@@ -253,5 +329,22 @@ header {
   100% {
     -webkit-transform: translateY(400%);
             transform: translateY(400%);
+  }
+}
+@media (max-width: 800px) {
+  .header {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  .logo img {
+    width: 8em;
+    height: 5em;
+  }
+  .nav-panel {
+    padding: 0;
+  }
+  .nav-panel ul li a {
+    font-size: 1rem;
   }
 }
