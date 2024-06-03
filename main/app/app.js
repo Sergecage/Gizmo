@@ -9,6 +9,8 @@ const modal = document.querySelector(".modal");
 
 let score = 0;
 
+localStorage.setItem("total", score.toString());
+
 //Gizmo moves
 rightSide.addEventListener("mouseover", event => {
     gizmoImg.src = `./img/pictures/Gizmo-right.png`;
@@ -67,15 +69,15 @@ const generateItem = () => {
     itemImg.src = `${randomImg.img}`;
     itemImg.alt = `${randomImg.name}`;
     const randomMeaning = `${randomImg.meaning}`;
-    console.log(randomMeaning);
     itemContainer.append(itemImg);
     playArea.append(itemContainer);
     if (randomMeaning == "food"){
     updateScore();
-    } else {
+    } else (randomMeaning == "thing") 
         decreaseScore();
-    }
 }
+
+let currentScore = 0;
 
 //update score
 const updateScore = () => {
@@ -83,8 +85,10 @@ const updateScore = () => {
 }
 
 const decreaseScore = () => {
-    scoreItem.innerText = parseInt(score--);
+    //scoreItem.innerText = parseInt(score--);
+    scoreItem.innerText = parseInt(score += 0);
 }
+
 
 
 //drop item function
@@ -99,11 +103,14 @@ const dropItem =  () => {
             resetItem();
         } else if ( itemContainerY > playArea.offsetHeight) {
             resetItem();
+            localStorage.getItem(score.toString());
         } else {
             requestAnimationFrame(dropItem);
         }
 
     closeModal();
+    itemContainer.classList.remove("active");
+    animation.style.display = "none";
 }
 
 //reset item
@@ -113,6 +120,7 @@ const resetItem = () => {
     dropItem();
     generateItem();
 }
+
 //create start button
 const startBtn = document.createElement("div");
     startBtn.className = "start-btn";
@@ -157,8 +165,17 @@ discoBtn.className = "disco-btn";
 discoBtn.innerText = "disco";
 content.append(discoBtn);
 
+//dances Gizno
+const animation = document.createElement("div");
+    animation.className = "dance";
+    animation.style.backgroundImage = "url(./img/animation/Gizmo-animation.gif)";
+
 const discoGizmo = () => {
-    ;   
+    generateItem();
+    itemContainer.classList.add("active");   
+    closeModal();
+    playArea.append(animation);
+    //resetItem();
 }
 
 discoBtn.addEventListener("click", discoGizmo);
