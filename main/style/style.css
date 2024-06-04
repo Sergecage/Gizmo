@@ -342,7 +342,7 @@ header {
             transform: translateY(400%);
   }
 }
-@media screen and (max-width: 820px) and (orientation: landscape) {
+@media screen and (max-width: 810px) {
   .header {
     -webkit-box-pack: left;
         -ms-flex-pack: left;
@@ -377,7 +377,7 @@ header {
     font-size: 3rem;
   }
   .main .start-btn {
-    top: 2%;
+    top: 0;
     left: 53%;
     line-height: 1rem;
   }
@@ -450,10 +450,7 @@ header {
     font-size: 1.5rem;
   }
 }
-@media screen and (orientation: landscape) {
-  .body-container {
-    max-width: 100%;
-  }
+@media screen and (max-device-height: 420px) {
   .logo img {
     width: 5em;
     height: 3em;
@@ -482,21 +479,24 @@ header {
   .main .area .play-item .item {
     width: 3em;
   }
+  .main .area .dance {
+    left: 20%;
+  }
   .main .start-btn {
     top: 3.5%;
-    left: 48%;
+    left: 35%;
     line-height: 0.8rem;
     padding: 0.5em;
   }
   .main .score {
     top: 0;
-    left: 55%;
+    left: 42%;
     font-size: 2rem;
   }
   .main .disco-btn {
     line-height: 0.8rem;
     padding: 0.5em;
-    left: 75%;
+    left: 65%;
     top: 3.5%;
   }
   .main .modal {
