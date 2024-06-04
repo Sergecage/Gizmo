@@ -450,7 +450,10 @@ header {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width: 400px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
+  .body-container {
+    max-width: 100%;
+  }
   .logo img {
     width: 5em;
     height: 3em;
@@ -472,6 +475,12 @@ header {
   }
   .main .area .gizmo {
     width: 50%;
+  }
+  .main .area .play-item {
+    width: 3em;
+  }
+  .main .area .play-item .item {
+    width: 3em;
   }
   .main .start-btn {
     top: 3.5%;

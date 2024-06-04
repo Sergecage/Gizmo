@@ -390,7 +390,10 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         }
     }
 
-    @media screen and (max-width: 400px) and (orientation: landscape) {   
+    @media screen  and (orientation: landscape) {   
+        .body-container{
+            max-width: 100%;
+        }
         .logo{
             img{
                 width: 5em;
@@ -418,6 +421,12 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
                 margin-left: 1em;
                 .gizmo{
                     width: 50%;
+                }
+                .play-item{
+                    width: 3em;
+                    .item{
+                        width: 3em;
+                    }
                 }
                 }
                 .start-btn{
