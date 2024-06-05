@@ -1,3 +1,8 @@
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: rgb(128, 130, 167);
@@ -450,7 +455,7 @@ header {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-device-height: 420px) {
+@media screen and (max-device-height: 430px) and (orientation: landscape) {
   .logo img {
     width: 5em;
     height: 3em;
