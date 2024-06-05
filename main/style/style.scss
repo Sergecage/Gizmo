@@ -1,3 +1,6 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     background: rgb(128,130,167);
@@ -390,7 +393,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         }
     }
 
-    @media screen and (max-device-height: 420px) {   
+    @media screen  and (max-device-height: 430px) and (orientation: landscape) {   
         .logo{
             img{
                 width: 5em;
