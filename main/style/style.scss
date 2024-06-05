@@ -264,7 +264,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     }
  }
 
-@media screen and (max-width: 810px){
+@media screen and (max-width: 768px){
     .header{
         justify-content:left;
     }
@@ -301,6 +301,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
             }
         }
         .modal{
+            left: 5%;
             .rules{
                 h3 {
                     font-size: 3rem;
@@ -308,12 +309,13 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
             }
         }
         .start-btn{
-            top: 0;
-            left: 53%;
+            top: 2%;
+            left: 55%;
             line-height: 1rem;
+            padding: 0.8em;
         }
         .score{
-            top: 2%;
+            top: 1%;
             left: 62%;
             font-size: 2rem;
         }
@@ -321,11 +323,12 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
             top: 2%;
             left: 82%;
             line-height: 1rem;
+            padding: 0.8em;
         }
     }
 }
 
-@media screen and (max-width: 600px)  {
+@media screen and (max-width: 630px)  {
     .header{
         justify-content: unset;
         position: relative;
@@ -393,25 +396,29 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         }
     }
 
-    @media screen  and (max-device-height: 430px) and (orientation: landscape) {   
+    @media screen  and (orientation: landscape) {     
+        .header{
+            justify-content: unset;
+            position: relative;
+            left: 0.2em;
+        }
         .logo{
             img{
-                width: 5em;
-            height: 3em;
+                width: 7em;
+            height: 4em;
             }
         }
         .nav-panel{
             ul{
                 position: absolute;
-                left: 5%;
-                top: 0;
+                left: 10%;
+                top: 2%;
                 li{
                     &:first-child{
-                        display: block;
+                        display: none;
                     }
                     a{
-                        padding: 0.1em;
-                        font-size: 1rem;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -420,38 +427,36 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
             .area{
                 margin-left: 1em;
                 .gizmo{
-                    width: 50%;
+                    width: 60%;
                 }
                 .play-item{
+                    max-width: 30%;
+                max-height: 30%;
+                .item{
                     width: 3em;
-                    .item{
-                        width: 3em;
-                    }
                 }
-                .dance{
-                    left: 20%;
                 }
                 }
                 .start-btn{
-                    top: 3.5%;
-                    left: 35%;
+                    top: 2%;
+                    left: 48%;
                     line-height: 0.8rem;
                     padding: 0.5em;
         
                 }
                 .score{
-                    top: 0;
-                    left: 42%;
+                    top: -1%;
+                    left: 55%;
                     font-size: 2rem;
                 }
                 .disco-btn{
+                    top: 2%;
+                    left: 72%;
                     line-height: 0.8rem;
                     padding: 0.5em;
-                    left: 65%;
-                    top: 3.5%;
                 }
                 .modal{
-                    left: 10%;
+                    left: 30%;
                     .rules{
                         h3 {
                             font-size: 2rem;
