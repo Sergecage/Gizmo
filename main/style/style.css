@@ -347,7 +347,7 @@ header {
             transform: translateY(400%);
   }
 }
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 768px) {
   .header {
     -webkit-box-pack: left;
         -ms-flex-pack: left;
@@ -378,16 +378,20 @@ header {
   .main .area .play-item .item {
     width: 5em;
   }
+  .main .modal {
+    left: 5%;
+  }
   .main .modal .rules h3 {
     font-size: 3rem;
   }
   .main .start-btn {
-    top: 0;
-    left: 53%;
+    top: 2%;
+    left: 55%;
     line-height: 1rem;
+    padding: 0.8em;
   }
   .main .score {
-    top: 2%;
+    top: 1%;
     left: 62%;
     font-size: 2rem;
   }
@@ -395,9 +399,10 @@ header {
     top: 2%;
     left: 82%;
     line-height: 1rem;
+    padding: 0.8em;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
   .header {
     -webkit-box-pack: unset;
         -ms-flex-pack: unset;
@@ -455,57 +460,61 @@ header {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-device-height: 430px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
+  .header {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    position: relative;
+    left: 0.2em;
+  }
   .logo img {
-    width: 5em;
-    height: 3em;
+    width: 7em;
+    height: 4em;
   }
   .nav-panel ul {
     position: absolute;
-    left: 5%;
-    top: 0;
+    left: 10%;
+    top: 2%;
   }
   .nav-panel ul li:first-child {
-    display: block;
+    display: none;
   }
   .nav-panel ul li a {
-    padding: 0.1em;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .main .area {
     margin-left: 1em;
   }
   .main .area .gizmo {
-    width: 50%;
+    width: 60%;
   }
   .main .area .play-item {
-    width: 3em;
+    max-width: 30%;
+    max-height: 30%;
   }
   .main .area .play-item .item {
     width: 3em;
   }
-  .main .area .dance {
-    left: 20%;
-  }
   .main .start-btn {
-    top: 3.5%;
-    left: 35%;
+    top: 2%;
+    left: 48%;
     line-height: 0.8rem;
     padding: 0.5em;
   }
   .main .score {
-    top: 0;
-    left: 42%;
+    top: -1%;
+    left: 55%;
     font-size: 2rem;
   }
   .main .disco-btn {
+    top: 2%;
+    left: 72%;
     line-height: 0.8rem;
     padding: 0.5em;
-    left: 65%;
-    top: 3.5%;
   }
   .main .modal {
-    left: 10%;
+    left: 30%;
   }
   .main .modal .rules h3 {
     font-size: 2rem;
