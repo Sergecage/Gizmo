@@ -1,3 +1,6 @@
+const container = document.querySelector("[data-container]");
+const containerWidth = 100;
+const containerHeight = 70;
 const content = document.querySelector(".main");
 const leftSide = document.querySelector(".left-side");
 const rightSide = document.querySelector(".right-side");
@@ -10,6 +13,35 @@ const modal = document.querySelector(".modal");
 let score = 0;
 
 localStorage.setItem("total", score.toString());
+
+//resise containet
+const resiseContainer = () => {
+    container.width = window.innerWidth;
+    container.height = window.innerHeight;
+    adjustGame();
+}
+
+const adjustGame = () => {
+    const scaleFactor = Math.min(window.innerWidth / container.width,  window.innerHeight / container.height);
+}
+
+window.addEventListener("resize", resiseContainer);
+resiseContainer();
+//scale resolution
+/*const setPixels = () => {
+    let containerPixels;
+    if (window.innerWidth / window.innerHeight < containerWidth / containerHeight) {
+        containerPixels = window.innerWidth / containerWidth;
+    } else {
+        containerPixels = window.innerHeight / containerHeight;
+    }
+
+    container.style.width = `${containerWidth * containerPixels}px`;
+    container.style.heigh = `${containerHeight *containerPixels}px`;
+}
+
+setPixels();
+window.addEventListener("resize", setPixels);*/
 
 //Gizmo moves
 rightSide.addEventListener("mouseover", event => {
@@ -156,8 +188,10 @@ const closeModal = () => {
 
 
 startBtn.addEventListener("click", dropItem);
+startBtn.addEventListener("touchstart", dropItem);
 document.addEventListener("keydown", moveGizmo);
 modalBtn.addEventListener("click", closeModal);
+modalBtn.addEventListener("touchstart", closeModal);
 
 //disco Gizmo
 const discoBtn = document.createElement("div");
@@ -179,3 +213,4 @@ const discoGizmo = () => {
 }
 
 discoBtn.addEventListener("click", discoGizmo);
+discoBtn.addEventListener("touchstart", discoGizmo);
