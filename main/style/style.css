@@ -115,7 +115,7 @@ header {
   position: absolute;
   left: 0;
   top: 10%;
-  width: 90%;
+  width: 100%;
   height: 100%;
   background: transparent;
 }
@@ -179,15 +179,14 @@ header {
 }
 .main .area .gizmo {
   position: absolute;
-  margin: 1rem;
   left: 15%;
-  bottom: 0;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
-  width: 65%;
+  width: 55%;
+  bottom: 0;
 }
 .main .area .gizmo .gizmo-img {
-  width: 90%;
+  width: 70%;
 }
 .main .area .gizmo .gizmo-img.left {
   -webkit-animation: left-gizmo 5s ease-in-out alternate;
@@ -411,7 +410,7 @@ header {
         }
     }
 }
-
+/*
 @media screen and (max-width: 630px)  {
     .header{
         justify-content: unset;
@@ -479,33 +478,38 @@ header {
             }
         }
     }*/
-@media screen and (orientation: landscape) {
-  .header {
-    -webkit-box-pack: unset;
-        -ms-flex-pack: unset;
-            justify-content: unset;
-    position: relative;
-  }
-  .logo img {
+@media (orientation: landscape) and (max-width: 932px) {
+  .header .logo img {
     width: 7em;
     height: 4em;
   }
-  .nav-panel ul {
+  .header .nav-panel ul {
     position: absolute;
     left: 10%;
-    top: 2%;
+    top: 0;
   }
-  .nav-panel ul li:first-child {
+  .header .nav-panel ul li:first-child {
     display: none;
   }
-  .nav-panel ul li a {
+  .header .nav-panel ul li a {
     font-size: 1.5rem;
   }
+  .main {
+    padding: 0;
+    margin: 0;
+  }
   .main .area {
-    margin-left: 1em;
+    top: 0;
   }
   .main .area .gizmo {
-    width: 60%;
+    width: 30%;
+  }
+  .main .area .play-item {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+  }
+  .main .area .play-item .item {
+    width: 3em;
   }
   .main .start-btn {
     top: 2%;
