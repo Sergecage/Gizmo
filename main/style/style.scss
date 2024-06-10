@@ -98,7 +98,7 @@ header {
         position: absolute;
         left: 0;
         top: 10%;
-        width: 90%;
+        width: 100%;
         height: 100%;
         background: transparent;
         &.active{
@@ -156,14 +156,12 @@ header {
         }
         .gizmo{
             position: absolute;
-            margin: 1rem;
             left: 15%;
-            bottom: 0;
             transition: 1s ease-in-out;
-            width: 65%;
-            //transform: translateX(-50%);
+            width: 55%;
+            bottom: 0;
             .gizmo-img{
-                width: 90%;
+                width: 70%;
                 &.left{
                     animation: left-gizmo 5s ease-in-out alternate;
                 }
@@ -327,7 +325,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         }
     }
 }
-
+/*
 @media screen and (max-width: 630px)  {
     .header{
         justify-content: unset;
@@ -396,37 +394,44 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         }
     }*/
 
-   @media screen  and (orientation: landscape) {     
+   @media (orientation: landscape) and (max-width: 932px) {     
         .header{
-            justify-content: unset;
-            position: relative;
-        }
-        .logo{
-            img{
-                width: 7em;
-            height: 4em;
+            .logo{
+                img{
+                    width: 7em;
+                height: 4em;
+                }
             }
-        }
-        .nav-panel{
-            ul{
-                position: absolute;
-                left: 10%;
-                top: 2%;
-                li{
-                    &:first-child{
-                        display: none;
-                    }
-                    a{
-                        font-size: 1.5rem;
+            .nav-panel{
+                ul{
+                    position: absolute;
+                    left: 10%;
+                    top: 0;
+                    li{
+                        &:first-child{
+                            display: none;
+                        }
+                        a{
+                            font-size: 1.5rem;
+                        }
                     }
                 }
             }
         }
         .main{
+            padding: 0;
+            margin: 0;
             .area{
-                margin-left: 1em;
+                top: 0;
                 .gizmo{
-                    width: 60%;
+                    width: 30%;
+                }
+                .play-item{
+                    max-width: 1.5rem;
+                max-height: 1.5rem;
+                .item{
+                    width: 3em;
+                }
                 }
        }
                 

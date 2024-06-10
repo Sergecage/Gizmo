@@ -14,19 +14,7 @@ let score = 0;
 
 localStorage.setItem("total", score.toString());
 
-//resise containet
-const resiseContainer = () => {
-    container.width = window.innerWidth;
-    container.height = window.innerHeight;
-    adjustGame();
-}
 
-const adjustGame = () => {
-    const scaleFactor = Math.min(window.innerWidth / container.width,  window.innerHeight / container.height);
-}
-
-window.addEventListener("resize", resiseContainer);
-resiseContainer();
 //scale resolution
 /*const setPixels = () => {
     let containerPixels;
@@ -40,7 +28,7 @@ resiseContainer();
     container.style.heigh = `${containerHeight *containerPixels}px`;
 }
 
-setPixels();
+setPixels();10
 window.addEventListener("resize", setPixels);*/
 
 //Gizmo moves
