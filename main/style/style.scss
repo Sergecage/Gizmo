@@ -466,3 +466,72 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
                 }
             }
         }
+@media screen and (max-width:430px) {
+    .header{
+        .logo{
+            img{
+                width: 2.8em;
+                height: 1.8em;
+            }
+        }
+        .nav-panel{
+            ul{
+                padding: 0.2em;
+                margin: 0;
+                li{
+                    a{
+                        line-height: 0.8em;
+                        padding: 0.2em;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+    .main{
+        padding: 0;
+        margin: 0;
+        .area{
+            top: 28%;
+            height: 45%;
+            width: 200%;
+            transform: rotate(90deg);
+            left: -60%;
+            padding: 0;
+            .gizmo{
+                .gizmo-img{
+                    width: 70%;
+                }
+            }
+            .play-item{
+                max-width: 3em;
+                max-height: 3em;
+                .item{
+                    width: 3em;
+                }
+            }
+        }
+        .modal{
+            left: 2%;
+            top: 15%;
+            z-index: 2;
+        }
+        .start-btn{
+            transform: rotate(90deg);
+            top: 45%;
+            left: 75%;
+            line-height: 1.2rem;
+        }
+        .score{
+            transform: rotate(90deg);
+            top: 10%;
+            z-index: -1;
+            left: 55%;
+        }
+        .disco-btn{
+            top: 0.3%;
+            line-height: 1.2rem;
+            padding: 0.2em;
+        }
+    }
+}
