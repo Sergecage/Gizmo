@@ -504,6 +504,7 @@ header {
   }
   .main .area .gizmo {
     width: 30%;
+    bottom: 0.5em;
   }
   .main .area .play-item {
     max-width: 1.5rem;
