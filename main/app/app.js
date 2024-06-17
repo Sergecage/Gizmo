@@ -78,7 +78,7 @@ const itemContainer = document.createElement("div");
     const itemImg = document.createElement("img");
     itemImg.className = "item";
     
-    
+let getName = '';   
 
 let itemContainerX = Math.random() * (playArea.offsetWidth - itemContainer.offsetWidth);
 let gizmoX = playArea.offsetWidth / 2 - gizmo.offsetWidth /2;
@@ -88,13 +88,10 @@ const generateItem = () => {
     const randomImg =items[Math.floor(Math.random() *items.length)];
     itemImg.src = `${randomImg.img}`;
     itemImg.alt = `${randomImg.name}`;
-    const randomMeaning = `${randomImg.meaning}`;
+    let randomMeaning = `${randomImg.meaning}`;
+    getName =randomMeaning;
     itemContainer.append(itemImg);
     playArea.append(itemContainer);
-    if (randomMeaning == "food"){
-    updateScore();
-    } else (randomMeaning == "thing") 
-        decreaseScore();
 }
 
 let currentScore = 0;
@@ -106,7 +103,7 @@ const updateScore = () => {
 
 const decreaseScore = () => {
     //scoreItem.innerText = parseInt(score--);
-    scoreItem.innerText = parseInt(score += 0);
+    scoreItem.innerText = parseInt(score--);
 }
 
 
@@ -116,12 +113,21 @@ const dropItem =  () => {
     itemContainerY += 1;
     itemContainer.style.top = `${itemContainerY}px`;
     itemContainer.style.left = `${itemContainerX}px`
-
+    
+    console.log(getName);
     if (itemContainerY > playArea.offsetHeight - gizmo.offsetHeight / 1.6 &&
         itemContainerX + itemContainer.offsetWidth > gizmoX &&
-        itemContainerX < gizmoX + gizmo.offsetWidth) { 
+        itemContainerX < gizmoX + gizmo.offsetWidth && getName == "food") { 
+            updateScore();
             resetItem();
-        } else if ( itemContainerY > playArea.offsetHeight) {
+        } else if ( itemContainerY > playArea.offsetHeight - gizmo.offsetHeight / 1.6 &&
+            itemContainerX + itemContainer.offsetWidth > gizmoX &&
+            itemContainerX < gizmoX + gizmo.offsetWidth && getName == "thing") {
+                decreaseScore();
+                resetItem();
+                localStorage.getItem(score.toString());
+        } 
+        else if ( itemContainerY > playArea.offsetHeight) {
             resetItem();
             localStorage.getItem(score.toString());
         } else {
@@ -166,7 +172,6 @@ const moveGizmo = (button) => {
         gizmoImg.src = `./img/pictures/Gizmo-right.png`;
     }
     gizmo.style.left = `${gizmoX}px`;
-    console.log("move");
 }
 
 //close modal window
@@ -178,6 +183,7 @@ const closeModal = () => {
 startBtn.addEventListener("click", dropItem);
 startBtn.addEventListener("touchstart", dropItem);
 document.addEventListener("keydown", moveGizmo);
+document.addEventListener("touchmove", moveGizmo);
 modalBtn.addEventListener("click", closeModal);
 modalBtn.addEventListener("touchstart", closeModal);
 

@@ -155,8 +155,8 @@ header {
 }
 .main .area .play-item {
   position: absolute;
-  max-width: 7rem;
-  max-height: 7rem;
+  width: 11rem;
+  height: 11rem;
   -webkit-transition: all ease;
   transition: all ease;
   cursor: pointer;
@@ -170,7 +170,7 @@ header {
           animation: fall-down 5s linear;
 }
 .main .area .play-item .item {
-  width: 11rem;
+  width: 100%;
 }
 .main .area .play-item .item:hover {
   rotate: 30deg;
@@ -348,137 +348,116 @@ header {
             transform: translateY(400%);
   }
 }
-/*@media screen and (max-width: 768px){
-    .header{
-        justify-content:left;
-    }
-    .logo{
-        img{
-            width: 8em;
-        height: 5em;
-        }
-    }
-    .nav-panel{
-        padding: 0;
-        ul{
-            li{
-                a{
-                    font-size: 1rem;
-                }
-            }
-        }
-    }
-    .main{
-        .area{
-            height: 93.5%;
-            .gizmo{
-                margin: 0;
-                left: 15%;
-                width: 70%;
-            }
-            .play-item{
-                max-width: 3rem;
-            max-height: 3rem;
-            .item{
-                width: 5em;
-            }
-            }
-        }
-        .modal{
-            left: 5%;
-            .rules{
-                h3 {
-                    font-size: 3rem;
-                }
-            }
-        }
-        .start-btn{
-            top: 2%;
-            left: 55%;
-            line-height: 1rem;
-            padding: 0.8em;
-        }
-        .score{
-            top: 1%;
-            left: 62%;
-            font-size: 2rem;
-        }
-        .disco-btn{
-            top: 2%;
-            left: 82%;
-            line-height: 1rem;
-            padding: 0.8em;
-        }
-    }
+@media screen and (max-width: 768px) {
+  .header {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  .logo img {
+    width: 8em;
+    height: 5em;
+  }
+  .nav-panel {
+    padding: 0;
+  }
+  .nav-panel ul li a {
+    font-size: 1rem;
+  }
+  .main .area {
+    height: 93.5%;
+  }
+  .main .area .gizmo {
+    margin: 0;
+    left: 15%;
+    width: 50%;
+  }
+  .main .area .gizmo .gizmo-img {
+    width: 100%;
+  }
+  .main .area .play-item {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+  .main .area .play-item .item {
+    width: 3em;
+  }
+  .main .modal {
+    left: 5%;
+  }
+  .main .modal .rules h3 {
+    font-size: 3rem;
+  }
+  .main .start-btn {
+    top: 2%;
+    left: 55%;
+    line-height: 1rem;
+    padding: 0.8em;
+  }
+  .main .score {
+    top: 1%;
+    left: 62%;
+    font-size: 2rem;
+  }
+  .main .disco-btn {
+    top: 2%;
+    left: 82%;
+    line-height: 1rem;
+    padding: 0.8em;
+  }
 }
-/*
-@media screen and (max-width: 630px)  {
-    .header{
-        justify-content: unset;
-        position: relative;
-        left: 0.2em;
-    }
-    .logo{
-        img{
-            width: 7em;
-        height: 4em;
-        }
-    }
-    .nav-panel{
-        ul{
-            position: absolute;
-            left: 10%;
-            top: 2%;
-            li{
-                &:first-child{
-                    display: none;
-                }
-            }
-        }
-    }
-    .main{
-        .area{
-            margin-left: 1em;
-            .gizmo{
-                width: 70%;
-            }
-            .play-item{
-                max-width: 1.5rem;
-            max-height: 1.5rem;
-            .item{
-                width: 3em;
-            }
-            }
-            }
-            .start-btn{
-                top: 2%;
-                left: 48%;
-                line-height: 0.8rem;
-                padding: 0.5em;
-
-            }
-            .score{
-                top: 0;
-                left: 55%;
-                font-size: 2rem;
-            }
-            .disco-btn{
-                line-height: 0.8rem;
-                padding: 0.5em;
-            }
-            .modal{
-                left: 0;
-                .rules{
-                    h3 {
-                        font-size: 2rem;
-                    }
-                    p{
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-        }
-    }*/
+@media screen and (max-width: 630px) {
+  .header {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    position: relative;
+    left: 0.2em;
+  }
+  .logo img {
+    width: 7em;
+    height: 4em;
+  }
+  .nav-panel ul {
+    position: absolute;
+    left: 10%;
+    top: 2%;
+  }
+  .nav-panel ul li:first-child {
+    display: none;
+  }
+  .main .area .play-item {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+  .main .area .play-item .item {
+    width: 3em;
+  }
+  .main .start-btn {
+    top: 2%;
+    left: 48%;
+    line-height: 0.8rem;
+    padding: 0.5em;
+  }
+  .main .score {
+    top: 0;
+    left: 55%;
+    font-size: 2rem;
+  }
+  .main .disco-btn {
+    line-height: 0.8rem;
+    padding: 0.5em;
+  }
+  .main .modal {
+    left: 0;
+  }
+  .main .modal .rules h3 {
+    font-size: 2rem;
+  }
+  .main .modal .rules p {
+    font-size: 1.5rem;
+  }
+}
 @media (orientation: landscape) and (max-width: 932px) {
   .header .logo img {
     width: 7em;
@@ -504,11 +483,14 @@ header {
   }
   .main .area .gizmo {
     width: 30%;
-    bottom: 0.5em;
+    top: 73%;
+  }
+  .main .area .gizmo .gizmo-img {
+    width: 100%;
   }
   .main .area .play-item {
-    max-width: 1.5rem;
-    max-height: 1.5rem;
+    max-width: 3rem;
+    max-height: 3rem;
   }
   .main .area .play-item .item {
     width: 3em;
@@ -526,7 +508,7 @@ header {
   }
   .main .disco-btn {
     top: 2%;
-    left: 65%;
+    left: 68%;
     line-height: 1.8rem;
     padding: 0.5em;
   }
