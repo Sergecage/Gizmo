@@ -196,7 +196,7 @@ const closeModal = () => {
 startBtn.addEventListener("click", dropItem);
 startBtn.addEventListener("touchstart", dropItem);
 document.addEventListener("keydown", moveGizmo);
-document.addEventListener("touchmove", moveGizmo);
+document.addEventListener("touchmove", moveGizmoTouch);
 modalBtn.addEventListener("click", closeModal);
 modalBtn.addEventListener("touchstart", closeModal);
 
