@@ -479,11 +479,11 @@ header {
     margin: 0;
   }
   .main .area {
-    top: 0;
+    top: 10%;
   }
   .main .area .gizmo {
     width: 30%;
-    top: 73%;
+    top: 65vh;
   }
   .main .area .gizmo .gizmo-img {
     width: 100%;
