@@ -176,14 +176,15 @@ const moveGizmo = (button) => {
 
 const moveGizmoTouch = (button) => {
     const move = 50;
-    if (button.touch === "ArrowLeft" && gizmoX > 0) {
+    if (button.touch === gizmoX && gizmoX > 0) {
         gizmoX -= move;
         gizmoImg.src = `./img/pictures/Gizmo-left.png`;
     }
-     if (button.touch === "ArrowRight" && gizmoX < playArea.offsetWidth - gizmo.offsetWidth){
+     if (button.touch === gizmoX && gizmoX < playArea.offsetWidth - gizmo.offsetWidth){
         gizmoX += move;
         gizmoImg.src = `./img/pictures/Gizmo-right.png`;
     }
+    button.preventDefault();
     gizmo.style.left = `${gizmoX}px`;
 }
 
