@@ -174,20 +174,14 @@ const moveGizmo = (button) => {
     gizmo.style.left = `${gizmoX}px`;
 }
 
-const moveGizmoTouch = (button) => {
-    const move = 50;
+const moveGizmoTouch = (event) => {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const gameRect = playArea.getBoundingClientRect();
     const gizmoRect = gizmo.getBoundingClientRect();
-    if (gizmoImg.bottom >= gizmoRect.top && gizmoRect.left < gizmoRect.right && gizmoRect.right > gizmoRect.left) {
-        gizmoX -= move;
-        gizmoImg.src = `./img/pictures/Gizmo-left.png`;
-        return;
-    }
-     if (button.touch === gizmoX && gizmoX < playArea.offsetWidth - gizmo.offsetWidth){
-        gizmoX += move;
-        gizmoImg.src = `./img/pictures/Gizmo-right.png`;
-    }
-    button.preventDefault();
-    gizmo.style.left = `${gizmoX}px`;
+    
+    const x = touch.clientX - gameRect.left - gizmoRect.clientWidth / 2;
+    gizmo.style.transform = `translate(${x}px)`;
 }
 
 //close modal window
@@ -199,6 +193,7 @@ const closeModal = () => {
 startBtn.addEventListener("click", dropItem);
 startBtn.addEventListener("touchstart", dropItem);
 document.addEventListener("keydown", moveGizmo);
+document.addEventListener("touchstart", moveGizmoTouch);
 document.addEventListener("touchmove", moveGizmoTouch);
 modalBtn.addEventListener("click", closeModal);
 modalBtn.addEventListener("touchstart", closeModal);
