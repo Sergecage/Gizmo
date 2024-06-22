@@ -176,9 +176,11 @@ const moveGizmo = (button) => {
 
 const moveGizmoTouch = (button) => {
     const move = 50;
-    if (button.touch === gizmoX && gizmoX > 0) {
+    const gizmoRect = gizmo.getBoundingClientRect();
+    if (gizmoImg.bottom >= gizmoRect.top && gizmoRect.left < gizmoRect.right && gizmoRect.right > gizmoRect.left) {
         gizmoX -= move;
         gizmoImg.src = `./img/pictures/Gizmo-left.png`;
+        return;
     }
      if (button.touch === gizmoX && gizmoX < playArea.offsetWidth - gizmo.offsetWidth){
         gizmoX += move;
