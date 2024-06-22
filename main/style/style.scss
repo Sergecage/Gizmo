@@ -158,7 +158,7 @@ header {
         .gizmo{
             position: absolute;
             left: 15%;
-            transition: 1s ease-in-out;
+            transition: transform 1s ease-in-out;
             width: 55%;
             bottom: 0;
             .gizmo-img{
