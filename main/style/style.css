@@ -181,8 +181,10 @@ header {
 .main .area .gizmo {
   position: absolute;
   left: 15%;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
   width: 55%;
   bottom: 0;
 }
