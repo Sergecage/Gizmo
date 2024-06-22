@@ -181,7 +181,8 @@ const moveGizmoTouch = (event) => {
     const gizmoRect = gizmo.getBoundingClientRect();
     
     const x = touch.clientX - gameRect.left - gizmoRect.clientWidth / 2;
-    gizmo.style.transform = `translate(${x}px)`;
+    const y = touch.clinetY - gameRect.top - gizmoRect.clientHeight / 2;
+    gizmo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
 //close modal window
