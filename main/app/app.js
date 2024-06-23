@@ -1,6 +1,6 @@
 const container = document.querySelector("[data-container]");
 const containerWidth = 100;
-const containerHeight = 70;
+const containerHeight = 30;
 const content = document.querySelector(".main");
 const leftSide = document.querySelector(".left-side");
 const rightSide = document.querySelector(".right-side");
@@ -16,7 +16,7 @@ localStorage.setItem("total", score.toString());
 
 
 //scale resolution
-/*const setPixels = () => {
+const setPixels = () => {
     let containerPixels;
     if (window.innerWidth / window.innerHeight < containerWidth / containerHeight) {
         containerPixels = window.innerWidth / containerWidth;
@@ -28,8 +28,8 @@ localStorage.setItem("total", score.toString());
     container.style.heigh = `${containerHeight *containerPixels}px`;
 }
 
-setPixels();10
-window.addEventListener("resize", setPixels);*/
+setPixels();
+window.addEventListener("resize", setPixels);
 
 //Gizmo moves
 rightSide.addEventListener("mouseover", event => {
