@@ -176,22 +176,27 @@ const moveGizmo = (button) => {
 
 let touchX;
 let swipeDistance = 50;
+let gizmoPosition = playArea.clientWidth / 2  - gizmo.clientWidth /2;
 const moveGizmoTouch = (event) => {
     event.preventDefault();
     const touch = event.touches[0];
-    const gameRect = playArea.getBoundingClientRect();
-    const gizmoRect = gizmo.getBoundingClientRect();
+    gizmoPosition = touch.clientX - gizmo.clientWidth / 2;
+    if (gizmoPosition < 0) gizmoPosition =0;
+    if (gizmoPosition > playArea.clientWidth - gizmo.clientWidth) gizmoPosition = playArea.clientWidth - gizmo.clientWidth;
+    gizmo.style.left = `${gizmoPosition}px`
+    //const gameRect = playArea.getBoundingClientRect();
+    //const gizmoRect = gizmo.getBoundingClientRect();
     
-    const x = touch.clientX - gameRect.left - gizmoRect.clientWidth / 2;
-    const y = touch.clinetY - gameRect.top - gizmoRect.clientHeight / 2;
-    gizmo.style.transform = `translate(${x}px, ${y}px)`;
+    //const x = touch.clientX - gameRect.left - gizmoRect.clientWidth / 2;
+    //const y = touch.clinetY - gameRect.top - gizmoRect.clientHeight / 2;
+    //gizmo.style.transform = `translate(${x}px, ${y}px)`;
 }
 gizmo.addEventListener("touchstart", moveGizmoTouch);
 gizmo.addEventListener("touchmove", moveGizmoTouch);
 
 
 
-playArea.addEventListener('touchstart', e => {
+/*playArea.addEventListener('touchstart', e => {
     //console.log(e.changedTouches[0].pageX);
     touchX = e.changedTouches[0].pageX;
     console.log("start");
@@ -200,7 +205,7 @@ playArea.addEventListener('touchmove', e => {
     //console.log(e.changedTouches[0].pageX);
     if (e.changedTouches[0].pageX - touchX > 50) 
         console.log("long");
-})
+})*/
 
 //close modal window
 const closeModal = () => {
