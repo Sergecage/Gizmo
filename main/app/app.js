@@ -175,8 +175,7 @@ const moveGizmo = (button) => {
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
-gizmo.addEventListener("touchstart", moveGizmoTouch);
-gizmo.addEventListener("touchmove", moveGizmoTouch);
+    let touchX = "";
 const moveGizmoTouch = (event) => {
     event.preventDefault();
     const touch = event.touches[0];
@@ -187,14 +186,19 @@ const moveGizmoTouch = (event) => {
     const y = touch.clinetY - gameRect.top - gizmoRect.clientHeight / 2;
     gizmo.style.transform = `translate(${x}px, ${y}px)`;
 }
+gizmo.addEventListener("touchstart", moveGizmoTouch);
+gizmo.addEventListener("touchmove", moveGizmoTouch);
 })
 
 
 window.addEventListener('touchstart', e => {
-    console.log(e.changedTouches[0].pageX);
+    //console.log(e.changedTouches[0].pageX);
+    touchX = e.changedTouches[0].pageX;
 });
 window.addEventListener('touchmove', e => {
-    console.log("move");
+    //console.log(e.changedTouches[0].pageX);
+    const swipeDistance = e.changedTouches[0].pageX - touchX;
+    if (swipeDistance < touchX) this.keys.push("swipe left");
 })
 
 //close modal window
