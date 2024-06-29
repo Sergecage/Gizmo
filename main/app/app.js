@@ -1,6 +1,6 @@
 const container = document.querySelector("[data-container]");
 const containerWidth = 100;
-const containerHeight = 70;
+const containerHeight = 30;
 const content = document.querySelector(".main");
 const leftSide = document.querySelector(".left-side");
 const rightSide = document.querySelector(".right-side");
@@ -16,7 +16,7 @@ localStorage.setItem("total", score.toString());
 
 
 //scale resolution
-/*const setPixels = () => {
+const setPixels = () => {
     let containerPixels;
     if (window.innerWidth / window.innerHeight < containerWidth / containerHeight) {
         containerPixels = window.innerWidth / containerWidth;
@@ -28,8 +28,8 @@ localStorage.setItem("total", score.toString());
     container.style.heigh = `${containerHeight *containerPixels}px`;
 }
 
-setPixels();10
-window.addEventListener("resize", setPixels);*/
+setPixels();
+window.addEventListener("resize", setPixels);
 
 //Gizmo moves
 rightSide.addEventListener("mouseover", event => {
@@ -174,6 +174,8 @@ const moveGizmo = (button) => {
     gizmo.style.left = `${gizmoX}px`;
 }
 
+document.addEventListener("DOMContentLoaded", (event) => {
+    let touchX = "";
 const moveGizmoTouch = (event) => {
     event.preventDefault();
     const touch = event.touches[0];
@@ -184,6 +186,20 @@ const moveGizmoTouch = (event) => {
     const y = touch.clinetY - gameRect.top - gizmoRect.clientHeight / 2;
     gizmo.style.transform = `translate(${x}px, ${y}px)`;
 }
+gizmo.addEventListener("touchstart", moveGizmoTouch);
+gizmo.addEventListener("touchmove", moveGizmoTouch);
+})
+
+
+window.addEventListener('touchstart', e => {
+    //console.log(e.changedTouches[0].pageX);
+    touchX = e.changedTouches[0].pageX;
+});
+window.addEventListener('touchmove', e => {
+    //console.log(e.changedTouches[0].pageX);
+    const swipeDistance = e.changedTouches[0].pageX - touchX;
+    if (swipeDistance < touchX) this.keys.push("swipe left");
+})
 
 //close modal window
 const closeModal = () => {
@@ -194,8 +210,6 @@ const closeModal = () => {
 startBtn.addEventListener("click", dropItem);
 startBtn.addEventListener("touchstart", dropItem);
 document.addEventListener("keydown", moveGizmo);
-document.addEventListener("touchstart", moveGizmoTouch);
-document.addEventListener("touchmove", moveGizmoTouch);
 modalBtn.addEventListener("click", closeModal);
 modalBtn.addEventListener("touchstart", closeModal);
 
