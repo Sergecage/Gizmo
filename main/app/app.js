@@ -174,7 +174,8 @@ const moveGizmo = (button) => {
     gizmo.style.left = `${gizmoX}px`;
 }
 
-    let touchX = "";
+let touchX;
+let swipeDistance = 50;
 const moveGizmoTouch = (event) => {
     event.preventDefault();
     const touch = event.touches[0];
@@ -190,14 +191,15 @@ gizmo.addEventListener("touchmove", moveGizmoTouch);
 
 
 
-window.addEventListener('touchstart', e => {
+playArea.addEventListener('touchstart', e => {
     //console.log(e.changedTouches[0].pageX);
     touchX = e.changedTouches[0].pageX;
+    console.log("start");
 });
-window.addEventListener('touchmove', e => {
+playArea.addEventListener('touchmove', e => {
     //console.log(e.changedTouches[0].pageX);
-    const swipeDistance = e.changedTouches[0].pageX - touchX;
-    if (swipeDistance < touchX) this.keys.push("swipe left");
+    if (e.changedTouches[0].pageX - touchX > 50) 
+        console.log("long");
 })
 
 //close modal window
