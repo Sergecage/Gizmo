@@ -174,7 +174,6 @@ const moveGizmo = (button) => {
     gizmo.style.left = `${gizmoX}px`;
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
     let touchX = "";
 const moveGizmoTouch = (event) => {
     event.preventDefault();
@@ -188,7 +187,7 @@ const moveGizmoTouch = (event) => {
 }
 gizmo.addEventListener("touchstart", moveGizmoTouch);
 gizmo.addEventListener("touchmove", moveGizmoTouch);
-})
+
 
 
 window.addEventListener('touchstart', e => {
