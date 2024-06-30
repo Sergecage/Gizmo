@@ -177,8 +177,9 @@ const moveGizmo = (button) => {
 let touchX;
 let swipeDistance = 50;
 let gizmoPosition = playArea.clientWidth / 2  - gizmo.clientWidth /2;
+gizmo.style.left = `${gizmoPosition}px`
 const moveGizmoTouch = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     const touch = event.touches[0];
     gizmoPosition = touch.clientX - gizmo.clientWidth / 2;
     if (gizmoPosition < 0) gizmoPosition =0;
@@ -191,8 +192,8 @@ const moveGizmoTouch = (event) => {
     //const y = touch.clinetY - gameRect.top - gizmoRect.clientHeight / 2;
     //gizmo.style.transform = `translate(${x}px, ${y}px)`;
 }
-gizmo.addEventListener("touchstart", moveGizmoTouch);
-gizmo.addEventListener("touchmove", moveGizmoTouch);
+//gizmo.addEventListener("touchstart", moveGizmoTouch);
+playArea.addEventListener("touchmove", moveGizmoTouch);
 
 
 
