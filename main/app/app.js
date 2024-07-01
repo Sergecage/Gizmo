@@ -246,3 +246,16 @@ const discoGizmo = () => {
 
 discoBtn.addEventListener("click", discoGizmo);
 discoBtn.addEventListener("touchstart", discoGizmo);
+
+//turn on and turn off the music
+const player = document.createElement("div");
+player.className = "player";
+const audio = document.createElement("img");
+audio.src = `./img/icon/volume_up.svg`;
+player.append(audio);
+
+const startMusic = () => {
+    playArea.append(player);
+}
+
+window.addEventListener("load", startMusic);

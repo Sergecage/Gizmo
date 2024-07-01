@@ -180,6 +180,16 @@ header {
             z-index: -1;
             background-repeat: no-repeat;
         }
+        .player{
+            position: absolute;
+            right: 5%;
+            top: 10%;
+            min-width: 2em;
+            img{
+                width: 4em;
+            height: 5em;
+            }
+        }
     }
     .modal{
         position: absolute;

@@ -208,6 +208,16 @@ header {
   z-index: -1;
   background-repeat: no-repeat;
 }
+.main .area .player {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  min-width: 2em;
+}
+.main .area .player img {
+  width: 4em;
+  height: 5em;
+}
 .main .modal {
   position: absolute;
   padding: 1em;
