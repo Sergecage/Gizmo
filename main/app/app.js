@@ -114,12 +114,16 @@ const dropItem =  () => {
     itemContainer.style.top = `${itemContainerY}px`;
     itemContainer.style.left = `${itemContainerX}px`
     
-    console.log(getName);
     if (itemContainerY > playArea.offsetHeight - gizmo.offsetHeight / 1.6 &&
         itemContainerX + itemContainer.offsetWidth > gizmoX &&
         itemContainerX < gizmoX + gizmo.offsetWidth && getName == "food") { 
             updateScore();
             resetItem();
+            if (score >= 3 ){
+                itemContainerY += 1.2;
+            } else {
+                itemContainerY += 1;
+            }
         } else if ( itemContainerY > playArea.offsetHeight - gizmo.offsetHeight / 1.6 &&
             itemContainerX + itemContainer.offsetWidth > gizmoX &&
             itemContainerX < gizmoX + gizmo.offsetWidth && getName == "thing") {
@@ -134,6 +138,7 @@ const dropItem =  () => {
             requestAnimationFrame(dropItem);
         }
 
+    
     closeModal();
     itemContainer.classList.remove("active");
     animation.style.display = "none";
@@ -241,3 +246,16 @@ const discoGizmo = () => {
 
 discoBtn.addEventListener("click", discoGizmo);
 discoBtn.addEventListener("touchstart", discoGizmo);
+
+//turn on and turn off the music
+const player = document.createElement("div");
+player.className = "player";
+const audio = document.createElement("img");
+audio.src = `./img/icon/volume_up.svg`;
+player.append(audio);
+
+const startMusic = () => {
+    playArea.append(player);
+}
+
+window.addEventListener("load", startMusic);

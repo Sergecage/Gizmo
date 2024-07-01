@@ -208,6 +208,16 @@ header {
   z-index: -1;
   background-repeat: no-repeat;
 }
+.main .area .player {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  min-width: 2em;
+}
+.main .area .player img {
+  width: 4em;
+  height: 5em;
+}
 .main .modal {
   position: absolute;
   padding: 1em;
@@ -498,18 +508,18 @@ header {
   }
   .main .start-btn {
     top: 2%;
-    left: 45%;
+    left: 50%;
     line-height: 1.8rem;
     padding: 0.5em;
   }
   .main .score {
     top: 0;
-    left: 50%;
+    left: 54%;
     font-size: 2rem;
   }
   .main .disco-btn {
     top: 2%;
-    left: 68%;
+    left: 72%;
     line-height: 1.8rem;
     padding: 0.5em;
   }
