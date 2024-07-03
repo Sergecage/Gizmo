@@ -119,11 +119,11 @@ const dropItem =  () => {
         itemContainerX < gizmoX + gizmo.offsetWidth && getName == "food") { 
             updateScore();
             resetItem();
-            if (score >= 3 ){
+            /*if (score >= 3 ){
                 itemContainerY += 1.2;
             } else {
                 itemContainerY += 1;
-            }
+            }*/
         } else if ( itemContainerY > playArea.offsetHeight - gizmo.offsetHeight / 1.6 &&
             itemContainerX + itemContainer.offsetWidth > gizmoX &&
             itemContainerX < gizmoX + gizmo.offsetWidth && getName == "thing") {
