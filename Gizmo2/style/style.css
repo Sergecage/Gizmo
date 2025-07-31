@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#game {
+    background:url(../assets/img/Gizmo_back1.jpg) ;
+}
