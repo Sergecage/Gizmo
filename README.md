@@ -1,2 +1,0 @@
-# Gizmo
-Animated SVG project
