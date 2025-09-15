@@ -5,13 +5,15 @@ const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width = 1200;
 
 const playerImg = new Image();
-playerImg.src = '../assets/img/Gizmo.png';
+playerImg.src = '../assets/img/Gizmo_jump.png';
+const spriteWidth = 575;
+const spriteHeight = 523;
 let frameX = 0;
 let frameY = 0;
 
 const animate = () => {
     ctx.clearRect(0, 0,CANVAS_WIDTH, CANVAS_HEIGHT);
-    ctx.drawImage(playerImg, 0, 180, 300, 300,);
+    ctx.drawImage(playerImg, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
     requestAnimationFrame(animate);
 }
 
