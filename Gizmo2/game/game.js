@@ -12,6 +12,21 @@ let frameX = 0;
 let frameY = 0;
 let gameFrame = 0;
 const staggerFrame = 15;
+const spriteAnimations = [];
+const animationStates = [
+    {
+        name : "left_walk",
+        frames: "2"
+    },
+    {
+        name : "right_walk",
+        frames: "2"
+    },
+    {
+        name : "jump",
+        frames: "2"
+    }
+];
 
 const animate = () => {
     ctx.clearRect(0, 0,CANVAS_WIDTH, CANVAS_HEIGHT);
