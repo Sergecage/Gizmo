@@ -27,6 +27,17 @@ const animationStates = [
         frames: "2"
     }
 ];
+animationStates.forEach((state, index) => {
+    let frames = {
+        loc: [],
+    }
+    for (let j = 0; j < state.frames; s++ ){
+        let positionX = j * spriteWidth;
+        let positionY = index * spriteHeight;
+        frames.loc.push({x: positionX, y: positionY});
+    }
+    spriteAnimations[state.name] = frames;
+})
 
 const animate = () => {
     ctx.clearRect(0, 0,CANVAS_WIDTH, CANVAS_HEIGHT);
