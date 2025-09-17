@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width = 1200;
+const playerState = "left_walk"
 
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
@@ -39,9 +40,9 @@ animationStates.forEach((state, index) => {
 
 const animate = () => {
     ctx.clearRect(0, 0,CANVAS_WIDTH, CANVAS_HEIGHT);
-    let position = Math.floor(gameFrame / staggerFrame) % spriteAnimations["jump"].loc.length;
+    let position = Math.floor(gameFrame / staggerFrame) % spriteAnimations[playerState].loc.length;
     frameX = spriteWidth * position;
-    frameY = spriteAnimations["jump"].loc[position].y;
+    frameY = spriteAnimations["left_walk"].loc[position].y;
     ctx.drawImage(playerImg, frameX, frameY, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
 
     gameFrame++;
