@@ -1,9 +1,14 @@
+const playerState = "left_walk";
+const dropdown = document.getElementById("animations");
+dropdown.addEventListener("change", function(e) {
+    playerState = e.target.value;
+})
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width = 1200;
-const playerState = "left_walk"
 
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
