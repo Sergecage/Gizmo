@@ -3,9 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: rgb(194, 171, 171);
+}
 
 #game {
-    background:url(../assets/img/Gizmo_back1.jpg) ;
+    background:url(../assets/img/Gizmo_back1.jpg);
+    border: 3px solid black;
+    width:1200px;
+    height: 450px;
+    top: 25%;
+    position: absolute;
+    left: 20%;
 }
 
 .controls {
