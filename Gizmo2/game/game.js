@@ -9,6 +9,12 @@ const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
+let gameSpeed = 5;
+
+const backgroundLayer1 = new Image();
+backgroundLayer1.src = "../assets/img/Gizmo_back1.jpg"
+const backgroundLayer2 = new Image();
+backgroundLayer1.src = "../assets/img/Gizmo_back.jpg"
 
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
@@ -54,7 +60,15 @@ const animate = () => {
     requestAnimationFrame(animate);
 }
 
+let x = 0;
+const animateBack = () => {
+    ctx.drawImage(backgroundLayer1, x, 0);
+    x--;
+    requestAnimationFrame(animateBack);
+}
+
 animate();
+animateBack();
 
 const updateState = () => {
 
