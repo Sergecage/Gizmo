@@ -60,11 +60,15 @@ const animate = () => {
     requestAnimationFrame(animate);
 }
 
+let x = 0;
 const animateBack = () => {
-    ctx.drawImage
+    ctx.drawImage(backgroundLayer1, x, 0);
+    x--;
+    requestAnimationFrame(animateBack);
 }
 
 animate();
+animateBack();
 
 const updateState = () => {
 
