@@ -62,11 +62,14 @@ const animate = () => {
 }
 
 let x = 0;
+let x2 = 2400;
 const animateBack = () => {
     ctx.drawImage(backgroundLayer1, x, 0);
-    if (x < -1600) x = 0;
+    ctx.drawImage(backgroundLayer1, x2, 0);
+    if (x < -2400) x = 2400;
     else x -= gameSpeed;
-    x-= gameSpeed;
+    if (x2 < -2400) x2 = 2400;
+    else x2 -= gameSpeed;
     requestAnimationFrame(animateBack);
 }
 
