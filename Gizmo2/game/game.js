@@ -18,6 +18,7 @@ backgroundLayer1.src = "../assets/img/Gizmo_back.jpg"
 
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
+playerImg.style.zIndex = "5";
 const spriteWidth = 435;
 const spriteHeight = 523;
 let gameFrame = 0;
@@ -61,9 +62,14 @@ const animate = () => {
 }
 
 let x = 0;
+let x2 = 2400;
 const animateBack = () => {
     ctx.drawImage(backgroundLayer1, x, 0);
-    x--;
+    ctx.drawImage(backgroundLayer1, x2, 0);
+    if (x < -2400) x = 2400 + x2 - gameSpeed;
+    else x -= gameSpeed;
+    if (x2 < -2400) x2 = 2400 + x - gameSpeed;
+    else x2 -= gameSpeed;
     requestAnimationFrame(animateBack);
 }
 
