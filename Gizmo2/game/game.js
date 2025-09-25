@@ -14,7 +14,7 @@ let gameSpeed = 5;
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = "../assets/img/Gizmo_back1.jpg"
 const backgroundLayer2 = new Image();
-backgroundLayer1.src = "../assets/img/Gizmo_back.jpg"
+backgroundLayer2.src = "../assets/img/Gizmo_back.jpg"
 
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
@@ -61,15 +61,25 @@ const animate = () => {
     requestAnimationFrame(animate);
 }
 
-let x = 0;
-let x2 = 2400;
+class Layer {
+    constructor(image, speedModifier) {
+        this.image = image;
+        this.x = 0;
+        this.y = 0;
+        this.width = 24000;
+        this.height = 700;
+        this.x2 = this.width;
+        this.speedModifier = speedModifier;
+        this.speed = gameSpeed * this.speedModifier;
+    }
+    update(){
+
+    }
+    draw(){
+        
+    }
+}
 const animateBack = () => {
-    ctx.drawImage(backgroundLayer1, x, 0);
-    ctx.drawImage(backgroundLayer1, x2, 0);
-    if (x < -2400) x = 2400 + x2 - gameSpeed;
-    else x -= gameSpeed;
-    if (x2 < -2400) x2 = 2400 + x - gameSpeed;
-    else x2 -= gameSpeed;
     requestAnimationFrame(animateBack);
 }
 
