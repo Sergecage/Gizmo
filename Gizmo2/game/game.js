@@ -88,6 +88,9 @@ class Layer {
         ctx.drawImage(this.image, this.x2, this.y, this.width, this.height);
     }
 }
+
+const layer3 = new Layer(backgroundLayer1, 0.5);
+
 const animateBack = () => {
     requestAnimationFrame(animateBack);
 }
