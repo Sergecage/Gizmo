@@ -66,8 +66,8 @@ class Layer {
         this.image = image;
         this.x = 0;
         this.y = 0;
-        this.width = 24000;
-        this.height = 700;
+        this.width = 2400;
+        this.height = 450;
         this.x2 = this.width;
         this.speedModifier = speedModifier;
         this.speed = gameSpeed * this.speedModifier;
@@ -92,6 +92,8 @@ class Layer {
 const layer3 = new Layer(backgroundLayer1, 0.5);
 
 const animateBack = () => {
+    layer3.update();
+    layer3.draw();
     requestAnimationFrame(animateBack);
 }
 
