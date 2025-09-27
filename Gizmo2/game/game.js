@@ -16,6 +16,15 @@ backgroundLayer1.src = "../assets/img/Gizmo_back1.jpg"
 const backgroundLayer2 = new Image();
 backgroundLayer2.src = "../assets/img/Gizmo_back.jpg"
 
+const slider = document.getElementById("slider");
+slider.value = gameSpeed;
+const showGameSpeed = document.getElementById("showGameSpeed");
+showGameSpeed.innerText = gameSpeed;
+slider.addEventListener("change", function(e){
+    gameSpeed = e.target.value;
+    showGameSpeed.innerText = gameSpeed;
+})
+
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
 playerImg.style.zIndex = "5";
@@ -68,20 +77,16 @@ class Layer {
         this.y = 0;
         this.width = 2400;
         this.height = 450;
-        this.x2 = this.width;
         this.speedModifier = speedModifier;
         this.speed = gameSpeed * this.speedModifier;
     }
     update(){
         this.speed = gameSpeed * this.speedModifier;
         if (this.x <= -this.width) {
-            this.x = this.width + this.x2 - this.speed;
+            this.x = 0;
         }
-        if (this.x2 <= -this.width) {
-            this.x2 = this.width + this.x - this.speed;
-        }
-        this.x =  Math.floor(this.x - this.speed);
-        this.x2 = Math.floor(this.x2 - this.speed);
+        this.x = this.x - this.speed;
+        //this.x = gameFrame * this.speed % this.width;
     }
     draw(){
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -89,11 +94,17 @@ class Layer {
     }
 }
 
-const layer3 = new Layer(backgroundLayer1, 0.5);
+const layer1 = new Layer(backgroundLayer1, 0.5);
+const layer2 = new Layer(backgroundLayer2, 0.4);
+
+const gameObjects = [layer1, layer2];
 
 const animateBack = () => {
-    layer3.update();
-    layer3.draw();
+    gameObjects.forEach(x => {
+        x.update();
+        x.draw();
+    });
+    //gameFrame--;
     requestAnimationFrame(animateBack);
 }
 
