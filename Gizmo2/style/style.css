@@ -8,12 +8,10 @@ body{
 }
 
 #game {
-    border: 3px solid black;
     width:1200px;
     height: 450px;
     top: 25%;
-    position: absolute;
-    left: 20%;
+    position: relative;
 }
 
 .controls {
@@ -26,4 +24,12 @@ body{
 
 .controls, select, option {
     font-size: 25px;
+}
+
+#container {
+    position: absolute;
+    width: 1200px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
