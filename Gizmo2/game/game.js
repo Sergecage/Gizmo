@@ -85,7 +85,8 @@ class Layer {
         if (this.x <= -this.width) {
             this.x = 0;
         }
-        this.x =  Math.floor(this.x - this.speed);
+        this.x = this.x - this.speed;
+        //this.x = gameFrame * this.speed % this.width;
     }
     draw(){
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -103,6 +104,7 @@ const animateBack = () => {
         x.update();
         x.draw();
     });
+    //gameFrame--;
     requestAnimationFrame(animateBack);
 }
 
