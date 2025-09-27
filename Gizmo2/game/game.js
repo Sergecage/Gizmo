@@ -89,11 +89,16 @@ class Layer {
     }
 }
 
-const layer3 = new Layer(backgroundLayer1, 0.5);
+const layer1 = new Layer(backgroundLayer1, 0.5);
+const layer2 = new Layer(backgroundLayer2, 0.4);
+
+const gameObjects = [layer1, layer2];
 
 const animateBack = () => {
-    layer3.update();
-    layer3.draw();
+    gameObjects.forEach(x => {
+        x.update();
+        x.draw();
+    });
     requestAnimationFrame(animateBack);
 }
 
