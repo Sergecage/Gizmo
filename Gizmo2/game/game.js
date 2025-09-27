@@ -16,6 +16,15 @@ backgroundLayer1.src = "../assets/img/Gizmo_back1.jpg"
 const backgroundLayer2 = new Image();
 backgroundLayer2.src = "../assets/img/Gizmo_back.jpg"
 
+const slider = document.getElementById("slider");
+slider.value = gameSpeed;
+const showGameSpeed = document.getElementById("showGameSpeed");
+showGameSpeed.innerText = gameSpeed;
+slider.addEventListener("change", function(e){
+    gameSpeed = e.target.value;
+    showGameSpeed.innerText = gameSpeed;
+})
+
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
 playerImg.style.zIndex = "5";
