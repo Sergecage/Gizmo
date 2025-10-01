@@ -1,22 +1,38 @@
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
-
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
+const numberOfEnemies = 10;
+const enemies = [];
 
-enemy1 = {
-    x: 0,
-    y: 0,
-    width: 200,
-    height: 200,
+class Enemy {
+    constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.width = 100;
+        this.height = 100;
+        this.speed = Math.random() * 4 - 2;
+    }
+    update(){
+        this.x += this.speed;
+        this.y += this.speed;
+    }
+    draw(){
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+}
+
+for (let i = 0; i < numberOfEnemies; i++){
+    enemies.push(new Enemy());
 }
 
 const animateEnemy1 = () => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    enemy1.x++;
-    enemy1.y++;
-    ctx.fillRect(enemy1.x, enemy1.y, enemy1.width, enemy1.height);
+    enemies.forEach(enemy => {
+        enemy.draw();
+        enemy.update();
+    });
     requestAnimationFrame(animateEnemy1);
 }
 
