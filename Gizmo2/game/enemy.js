@@ -3,7 +3,7 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
-const numberOfEnemies = 100;
+const numberOfEnemies = 10;
 const enemies = [];
 
 class Enemy {
@@ -28,8 +28,10 @@ for (let i = 0; i < numberOfEnemies; i++){
 
 const animateEnemy1 = () => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    enemy1.update();
-    enemy1.draw();
+    enemies.forEach(enemy => {
+        enemy.draw();
+        enemy.update();
+    });
     requestAnimationFrame(animateEnemy1);
 }
 
