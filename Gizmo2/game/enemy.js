@@ -23,6 +23,7 @@ class Enemy {
     }
     draw(){
         ctx.strokeRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(enemyImage, this.x, this.y);
     }
 }
 
