@@ -6,6 +6,9 @@ const CANVAS_HEIGHT = canvas.width =1200;
 const numberOfEnemies = 10;
 const enemies = [];
 
+const enemyImage = new Image();
+enemyImage.src = "../assets/img/Enemy1.png"
+
 class Enemy {
     constructor(){
         this.x = Math.random() * canvas.width;
