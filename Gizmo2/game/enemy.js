@@ -19,7 +19,7 @@ class Enemy {
         this.y += this.speed;
     }
     draw(){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
     }
 }
 
