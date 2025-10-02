@@ -13,9 +13,11 @@ class Enemy {
     constructor(){
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
+        this.speed = Math.random() * 4 - 2;
+        this.spriteWidth = 860;
+        this.spriteHeight  =755;
         this.width = 100;
         this.height = 100;
-        this.speed = Math.random() * 4 - 2;
     }
     update(){
         this.x += this.speed;
@@ -23,7 +25,7 @@ class Enemy {
     }
     draw(){
         ctx.strokeRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(enemyImage, this.x, this.y, this.width, this.height);
+        ctx.drawImage(enemyImage,0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
