@@ -6,20 +6,32 @@ const CANVAS_HEIGHT = canvas.width =1200;
 const numberOfEnemies = 10;
 const enemies = [];
 
+const enemyImage = new Image();
+enemyImage.src = "../assets/img/Enemy1.png"
+let gameFrame = 0;
+
 class Enemy {
     constructor(){
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.width = 100;
-        this.height = 100;
         this.speed = Math.random() * 4 - 2;
+        this.spriteWidth = 860;
+        this.spriteHeight  =755;
+        this.width = this.spriteWidth / 8.5;
+        this.height = this.spriteHeight / 8.5;
+        this.frame = 0;
     }
     update(){
         this.x += this.speed;
         this.y += this.speed;
+        // animate sprites
+        if ( gameFrame % 2 === 0) {
+            this.frame < 4 ? this.frame = 0 : this.frame++;
+        }
     }
     draw(){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(enemyImage,0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -33,6 +45,7 @@ const animateEnemy1 = () => {
         enemy.draw();
         enemy.update();
     });
+    gameFrame++;
     requestAnimationFrame(animateEnemy1);
 }
 
