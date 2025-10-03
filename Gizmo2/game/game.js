@@ -28,6 +28,7 @@ slider.addEventListener("change", function(e){
 const playerImg = new Image();
 playerImg.src = '../assets/img/Gizmo_walk_cycle.png';
 playerImg.style.zIndex = "5";
+playerImg.classList = "gizmo";
 const spriteWidth = 435;
 const spriteHeight = 523;
 let gameFrame = 0;
