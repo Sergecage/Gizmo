@@ -6,12 +6,12 @@ const CANVAS_HEIGHT = canvas.width =1200;
 const numberOfEnemies = 10;
 const enemies = [];
 
-const enemyImage = new Image();
-enemyImage.src = "../assets/img/Enemy1.png"
 let gameFrame = 0;
 
 class Enemy {
     constructor(){
+        this.image = new Image();
+        this.image.src = "../assets/img/Enemy1.png"
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.speed = Math.random() * 4 - 2;
@@ -30,7 +30,7 @@ class Enemy {
         }
     }
     draw(){
-        ctx.drawImage(enemyImage,0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image,0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
