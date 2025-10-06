@@ -105,6 +105,13 @@ class Explosion {
         this.height = this.spriteHeight / 2;
         this.image = new Image();
         this.frame = 0;
+        this.image.src = "./assets/img/Gizmo"
+    }
+    update(){
+        this.frame++;
+    }
+    draw(){
+        ctx.drawImage()
     }
 }
 
