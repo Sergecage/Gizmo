@@ -111,7 +111,8 @@ class Explosion {
         this.frame++;
     }
     draw(){
-        ctx.drawImage(this.image, this.spriteWidth * this.frame, this.frame, this.spriteWidth, this.spriteHeight )
+        ctx.drawImage(this.image, this.spriteWidth * this.frame, this.frame, this.spriteWidth, this.spriteHeight, this.x,
+            this.y, this.width, this.height);
     }
 }
 
