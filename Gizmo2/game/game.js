@@ -100,7 +100,10 @@ class Explosion {
     constructor(x, y){
         this.x = x;
         this.y = y;
-        this.width = this.width;
+        this.spriteWidth = 200;
+        this.spriteHeight = 179;
+        this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
     }
 }
 
