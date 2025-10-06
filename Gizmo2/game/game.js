@@ -10,6 +10,7 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
 let gameSpeed = 5;
+const explosions = [];
 
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = "../assets/img/Gizmo_back1.jpg"
@@ -92,6 +93,14 @@ class Layer {
     draw(){
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.x2, this.y, this.width, this.height);
+    }
+}
+
+class Explosion {
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+        this.width = this.width;
     }
 }
 
