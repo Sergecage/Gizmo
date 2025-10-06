@@ -116,6 +116,10 @@ class Explosion {
     }
 }
 
+window.addEventListener("click", function(e){
+    ctx.fillRect(x, y, width, height)
+})
+
 const layer1 = new Layer(backgroundLayer1, 0.5);
 const layer2 = new Layer(backgroundLayer2, 0.4);
 
