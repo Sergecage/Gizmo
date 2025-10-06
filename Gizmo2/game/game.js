@@ -1,4 +1,4 @@
-const playerState = "jump";
+const playerState = "left_walk";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e) {
     playerState = e.target.value;
@@ -88,7 +88,6 @@ class Layer {
             this.x = 0;
         }
         this.x = this.x - this.speed;
-        //this.x = gameFrame * this.speed % this.width;
     }
     draw(){
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -117,7 +116,6 @@ const animateBack = () => {
         x.update();
         x.draw();
     });
-    //gameFrame--;
     requestAnimationFrame(animateBack);
 }
 
