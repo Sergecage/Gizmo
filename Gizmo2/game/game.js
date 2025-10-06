@@ -1,4 +1,4 @@
-const playerState = "left_walk";
+const playerState = "jump";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e) {
     playerState = e.target.value;
@@ -10,6 +10,7 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
 let gameSpeed = 5;
+const explosions = [];
 
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = "../assets/img/Gizmo_back1.jpg"
@@ -87,13 +88,38 @@ class Layer {
             this.x = 0;
         }
         this.x = this.x - this.speed;
-        //this.x = gameFrame * this.speed % this.width;
     }
     draw(){
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.x2, this.y, this.width, this.height);
     }
 }
+
+class Explosion {
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+        this.spriteWidth = 200;
+        this.spriteHeight = 179;
+        this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
+        this.image = new Image();
+        this.frame = 0;
+        this.image.src = "./assets/img/Gizmo"
+    }
+    update(){
+        this.frame++;
+    }
+    draw(){
+        ctx.drawImage(this.image, this.spriteWidth * this.frame, this.frame, this.spriteWidth, this.spriteHeight, this.x,
+            this.y, this.width, this.height);
+    }
+}
+
+window.addEventListener("click", function(e){
+    ctx.fillStyle = "white";
+    ctx.fillRect(e.x, e.y, 50, 50);
+})
 
 const layer1 = new Layer(backgroundLayer1, 0.5);
 const layer2 = new Layer(backgroundLayer2, 0.4);
@@ -105,7 +131,6 @@ const animateBack = () => {
         x.update();
         x.draw();
     });
-    //gameFrame--;
     requestAnimationFrame(animateBack);
 }
 
