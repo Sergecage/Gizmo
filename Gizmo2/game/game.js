@@ -1,4 +1,4 @@
-const playerState = "left_walk";
+const playerState = "jump";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e) {
     playerState = e.target.value;
@@ -103,6 +103,8 @@ class Explosion {
         this.spriteHeight = 179;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
+        this.image = new Image();
+        this.frame = 0;
     }
 }
 
