@@ -1,4 +1,4 @@
-const playerState = "left_walk";
+const playerState = "jump";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e) {
     playerState = e.target.value;
