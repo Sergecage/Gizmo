@@ -6,6 +6,7 @@ const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
 const numberOfEnemies = 5;
 const enemies = [];
+let gameFrame = 0;
 
 
 class Enemy {

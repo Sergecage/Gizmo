@@ -111,7 +111,7 @@ class Explosion {
         this.frame++;
     }
     draw(){
-        ctx.drawImage()
+        ctx.drawImage(this.image, this.spriteWidth * this.frame, this.frame, this.spriteWidth, this.spriteHeight )
     }
 }
 
