@@ -117,7 +117,8 @@ class Explosion {
 }
 
 window.addEventListener("click", function(e){
-    ctx.fillRect(x, y, width, height)
+    ctx.fillStyle = "white";
+    ctx.fillRect(e.x, e.y, 50, 50);
 })
 
 const layer1 = new Layer(backgroundLayer1, 0.5);
