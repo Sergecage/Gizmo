@@ -6,6 +6,8 @@ const explosions = [];
 
 class Explosion{
     constructor(x, y){
-
+        this.x = x;
+        this.y = y;
+        this.spriteWidth = 200;
     }
 }
