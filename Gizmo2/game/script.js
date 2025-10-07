@@ -20,10 +20,10 @@ class Explosion{
         this.frame++;
     }
     draw(){
-        ctx.drawImage(this.image, this.spriteWidth * this.frame, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
-window.addEventListener("click", function(){
-    ctx.fillRect(x, y, width, height);
+window.addEventListener("click", function(e){
+    ctx.fillRect(e.x, e.y, 50, 50);
 });
