@@ -12,6 +12,7 @@ body{
     height: 450px;
     top: 25%;
     position: relative;
+    border:  3px solid black;
 }
 
 .controls {
