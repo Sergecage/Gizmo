@@ -28,6 +28,5 @@ class Explosion{
 window.addEventListener("click", function(e){
     let positionX = e.x - canvasPosition.left - 25;
     let positionY = e.y - canvasPosition.top - 25;
-    ctx.fillStyle = "white";
-    ctx.fillRect(positionX, positionY, 50, 50);
+    explosions.push(new Explosion(positionX, positionY));
 });
