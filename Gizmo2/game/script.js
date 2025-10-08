@@ -32,6 +32,7 @@ window.addEventListener("click", function(e){
 });
 
 const animate = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < explosions.length; i++){
         explosions[i].update();
         explosions[i].draw();
