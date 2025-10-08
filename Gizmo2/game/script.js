@@ -36,4 +36,7 @@ const animate = () => {
         explosions[i].update();
         explosions[i].draw();
     }
+    requestAnimationFrame(animate);
 }
+
+animate();
