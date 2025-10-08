@@ -11,8 +11,8 @@ class Explosion{
         this.spriteHeight = 579;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
-        this.x = x;
-        this.y = y;
+        this.x = x - this.width / 2;
+        this.y = y - this.height / 2;
         this.image = new Image();
         this.image.src = "./assets/img/Gizmo_walk.png";
         this.frame = 0;
