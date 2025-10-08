@@ -27,5 +27,5 @@ class Explosion{
 
 window.addEventListener("click", function(e){
     ctx.fillStyle = "white";
-    ctx.fillRect(e.x - canvasPosition.left, e.y - canvasPosition.top, 50, 50);
+    ctx.fillRect(e.x - canvasPosition.left - 25, e.y - canvasPosition.top - 25, 50, 50);
 });
