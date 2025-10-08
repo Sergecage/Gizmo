@@ -30,3 +30,10 @@ window.addEventListener("click", function(e){
     let positionY = e.y - canvasPosition.top - 25;
     explosions.push(new Explosion(positionX, positionY));
 });
+
+const animate = () => {
+    for (let i = 0; i < explosions.length; i++){
+        explosions[i].update();
+        explosions[i].draw();
+    }
+}
