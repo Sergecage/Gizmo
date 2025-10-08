@@ -3,18 +3,20 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
 const explosions = [];
+let canvasPosition = canvas.getBoundingClientRect();
 
 class Explosion{
     constructor(x, y){
-        this.x = x;
-        this.y = y;
-        this.spriteWidth = 200;
-        this.spriteHeight = 179;
+        this.spriteWidth = 500;
+        this.spriteHeight = 579;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
+        this.x = x - this.width / 2;
+        this.y = y - this.height / 2;
         this.image = new Image();
-        this.image.src = "../assets/img/Gizmo.png";
+        this.image.src = "./assets/img/Gizmo_walk.png";
         this.frame = 0;
+        this.timer = 0;
     }
     update(){
         this.frame++;
@@ -25,5 +27,18 @@ class Explosion{
 }
 
 window.addEventListener("click", function(e){
-    ctx.fillRect(e.x, e.y, 50, 50);
+    let positionX = e.x - canvasPosition.left - 25;
+    let positionY = e.y - canvasPosition.top - 25;
+    explosions.push(new Explosion(positionX, positionY));
 });
+
+const animate = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < explosions.length; i++){
+        explosions[i].update();
+        explosions[i].draw();
+    }
+    requestAnimationFrame(animate);
+}
+
+animate();
