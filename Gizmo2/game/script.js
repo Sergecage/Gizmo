@@ -7,12 +7,12 @@ let canvasPosition = canvas.getBoundingClientRect();
 
 class Explosion{
     constructor(x, y){
-        this.x = x;
-        this.y = y;
         this.spriteWidth = 500;
         this.spriteHeight = 579;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
+        this.x = x;
+        this.y = y;
         this.image = new Image();
         this.image.src = "./assets/img/Gizmo_walk.png";
         this.frame = 0;
