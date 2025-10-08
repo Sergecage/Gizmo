@@ -9,13 +9,14 @@ class Explosion{
     constructor(x, y){
         this.x = x;
         this.y = y;
-        this.spriteWidth = 200;
-        this.spriteHeight = 179;
+        this.spriteWidth = 500;
+        this.spriteHeight = 579;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
         this.image = new Image();
-        this.image.src = "../assets/img/Gizmo.png";
+        this.image.src = "./assets/img/Gizmo_walk.png";
         this.frame = 0;
+        this.timer = 0;
     }
     update(){
         this.frame++;
