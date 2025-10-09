@@ -18,6 +18,7 @@ class Explosion{
         this.frame = 0;
         this.timer = 0;
         this.angle = Math.random() * 6.2;
+        this.sound = new Audio();
     }
     update(){
         this.frame++;
