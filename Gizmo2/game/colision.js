@@ -27,10 +27,14 @@ class Explosion{
 }
 
 window.addEventListener("click", function(e){
-    let positionX = e.x - canvasPosition.left - 25;
+ createAnimation();
+});
+
+const createAnimation = () => {
+let positionX = e.x - canvasPosition.left - 25;
     let positionY = e.y - canvasPosition.top - 25;
     explosions.push(new Explosion(positionX, positionY));
-});
+}
 
 const animate = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -39,6 +43,7 @@ const animate = () => {
         explosions[i].draw();
         if (explosions[i].frame > 5){
             explosions.splice(i, 1);
+            i--;
         }
     }
     requestAnimationFrame(animate);
