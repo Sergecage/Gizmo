@@ -17,6 +17,7 @@ class Explosion{
         this.image.src = "./assets/img/Gizmo_walk.png";
         this.frame = 0;
         this.timer = 0;
+        this.angle = Math.random() * 6.2;
     }
     update(){
         this.frame++;
