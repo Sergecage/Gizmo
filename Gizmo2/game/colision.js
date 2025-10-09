@@ -11,8 +11,8 @@ class Explosion{
         this.spriteHeight = 579;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
-        this.x = x - this.width / 2;
-        this.y = y - this.height / 2;
+        this.x = x;
+        this.y = y;
         this.image = new Image();
         this.image.src = "./assets/img/Gizmo_walk.png";
         this.frame = 0;
@@ -26,7 +26,7 @@ class Explosion{
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.angle);
-        ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, 0, 0, this.width, this.height);
+        ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, 0 - this.width / 2, 0 - this.height / 2, this.width, this.height);
         ctx.restore();
     }
 }
