@@ -22,6 +22,7 @@ class Explosion{
         this.frame++;
     }
     draw(){
+        ctx.save();
         ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
