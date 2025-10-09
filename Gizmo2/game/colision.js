@@ -23,7 +23,7 @@ class Explosion{
     }
     update(){
         if ( this.frame === 0) this.sound.play();
-        this.frame++;
+        this.timer++;
     }
     draw(){
         ctx.save();
