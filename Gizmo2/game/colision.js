@@ -27,11 +27,11 @@ class Explosion{
 }
 
 window.addEventListener("click", function(e){
- createAnimation();
+ createAnimation(e);
 });
 
-const createAnimation = () => {
-let positionX = e.x - canvasPosition.left - 25;
+const createAnimation = (e) => {
+    let positionX = e.x - canvasPosition.left - 25;
     let positionY = e.y - canvasPosition.top - 25;
     explosions.push(new Explosion(positionX, positionY));
 }
