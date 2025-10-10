@@ -23,4 +23,7 @@ class Bat{
 
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    requestAnimationFrame(animate);
 }
+
+animate();
