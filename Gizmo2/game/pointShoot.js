@@ -3,6 +3,9 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
 
+let timeToNextBat = 0;
+let batInterval = 500;
+
 let bats = [];
 class Bat{
     constructor(x, y){
@@ -21,12 +24,9 @@ class Bat{
     }
 }
 
-const bat = new Bat();
-
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    bat.update();
-    bat.draw();
+
     requestAnimationFrame(animate);
 }
 
