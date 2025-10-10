@@ -30,6 +30,10 @@ const animate = (timestamp) => {
     let deltatime = timestamp - lastTime;
     lastTime = timestamp;
     timeToNextBat += deltatime;
+    if ( timeToNextBat > batInterval) {
+        bats.push( new Bat());
+        timeToNextBat = 0;
+    }
     requestAnimationFrame(animate);
 }
 
