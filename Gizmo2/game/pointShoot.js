@@ -21,8 +21,12 @@ class Bat{
     }
 }
 
+const bat = new Bat();
+
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    bat.update();
+    bat.draw();
     requestAnimationFrame(animate);
 }
 
