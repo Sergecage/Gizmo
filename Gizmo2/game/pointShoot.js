@@ -5,6 +5,7 @@ const CANVAS_HEIGHT = canvas.width =1200;
 
 let timeToNextBat = 0;
 let batInterval = 500;
+let lastTime = 0;
 
 let bats = [];
 class Bat{
@@ -26,7 +27,8 @@ class Bat{
 
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    let deltatime = timestamp - lastTime;
+    lastTime = timestamp;
     requestAnimationFrame(animate);
 }
 
