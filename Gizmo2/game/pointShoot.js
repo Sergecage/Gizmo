@@ -20,3 +20,7 @@ class Bat{
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
+
+const animate = (timestamp) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
