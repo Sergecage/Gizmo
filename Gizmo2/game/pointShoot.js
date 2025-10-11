@@ -38,7 +38,7 @@ const animate = (timestamp) => {
     }
     [...bats].forEach(obj => obj.update());
     [...bats].forEach(obj => obj.draw());
-    bats.filter()
+    bats = bats.filter(obj => !obj.markedFordeletion);
     requestAnimationFrame(animate);
 }
 
