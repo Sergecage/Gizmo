@@ -16,12 +16,19 @@ class Bat{
         this.y = Math.random() * canvas.height - this.height;
         this.directionX = Math.random() * 5 + 3;
         this.directionY = Math.random() * 5 - 2.5; 
+        this.markedFordeletion = false;
+        this.image = new Image();
+        this.image.src = "../assets/img/Enemy1.png";
+        this.spriteWidth = 272;
+        this.spriteHeight = 197;
     }
     update(){
         this.x -= this.directionX;
+        if (this.x < 0  - this.width) this.markedFordeletion = true;
     }
     draw(){
         ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -34,7 +41,10 @@ const animate = (timestamp) => {
         bats.push( new Bat());
         timeToNextBat = 0;
     }
+    [...bats].forEach(obj => obj.update());
+    [...bats].forEach(obj => obj.draw());
+    bats = bats.filter(obj => !obj.markedFordeletion);
     requestAnimationFrame(animate);
 }
 
-animate();
+animate(0);
