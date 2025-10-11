@@ -19,6 +19,8 @@ class Bat{
         this.markedFordeletion = false;
         this.image = new Image();
         this.image.src = "../assets/img/Villain.png";
+        this.spriteWidth = 272;
+        this.spriteHeight = 197;
     }
     update(){
         this.x -= this.directionX;
