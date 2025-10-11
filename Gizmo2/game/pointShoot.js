@@ -37,4 +37,4 @@ const animate = (timestamp) => {
     requestAnimationFrame(animate);
 }
 
-animate();
+animate(0);
