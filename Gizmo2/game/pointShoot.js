@@ -34,6 +34,8 @@ const animate = (timestamp) => {
         bats.push( new Bat());
         timeToNextBat = 0;
     }
+    [...bats].forEach(obj => obj.update());
+    [...bats].forEach(obj => obj.draw());
     requestAnimationFrame(animate);
 }
 
