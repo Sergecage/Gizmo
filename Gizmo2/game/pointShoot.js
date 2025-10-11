@@ -17,6 +17,8 @@ class Bat{
         this.directionX = Math.random() * 5 + 3;
         this.directionY = Math.random() * 5 - 2.5; 
         this.markedFordeletion = false;
+        this.image = new Image();
+        this.image.src = "../assets/img/Villain.png";
     }
     update(){
         this.x -= this.directionX;
