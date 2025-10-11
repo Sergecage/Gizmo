@@ -18,7 +18,7 @@ class Bat{
         this.directionY = Math.random() * 5 - 2.5; 
         this.markedFordeletion = false;
         this.image = new Image();
-        this.image.src = "../assets/img/Villain.png";
+        this.image.src = "../assets/img/Enemy1.png";
         this.spriteWidth = 272;
         this.spriteHeight = 197;
     }
@@ -28,7 +28,7 @@ class Bat{
     }
     draw(){
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(this.image, this.x, this.y)
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
 
