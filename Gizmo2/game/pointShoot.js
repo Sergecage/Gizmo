@@ -33,7 +33,7 @@ class Bat{
     }
     draw(){
         ctx.strokeRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(this.image, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
