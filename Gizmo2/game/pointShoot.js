@@ -9,9 +9,12 @@ let lastTime = 0;
 
 let bats = [];
 class Bat{
-    constructor(x, y){
-        this.width = 100;
-        this.height = 50;
+    constructor(){
+        this.spriteWidth = 272;
+        this.spriteHeight = 197;
+        this.sizeModifier = Math.random() * 0.6 + 0.4;
+        this.width = this.spriteWidth * this.sizeModifier;
+        this.height = this.spriteHeight * this.sizeModifier;
         this.x = canvas.width;
         this.y = Math.random() * canvas.height - this.height;
         this.directionX = Math.random() * 5 + 3;
@@ -19,16 +22,18 @@ class Bat{
         this.markedFordeletion = false;
         this.image = new Image();
         this.image.src = "../assets/img/Enemy1.png";
-        this.spriteWidth = 272;
-        this.spriteHeight = 197;
+        this.frame = 0;
+        this.maxFrame = 4;
     }
     update(){
         this.x -= this.directionX;
         if (this.x < 0  - this.width) this.markedFordeletion = true;
+        if (this.frame > this.maxFrame) this.frame = 0;
+        else this.frame++;
     }
     draw(){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -41,7 +46,7 @@ const animate = (timestamp) => {
         bats.push( new Bat());
         timeToNextBat = 0;
     }
-    [...bats].forEach(obj => obj.update());
+    [...bats].forEach(obj => obj.update(deltatime));
     [...bats].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
     requestAnimationFrame(animate);
