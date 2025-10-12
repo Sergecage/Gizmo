@@ -9,7 +9,9 @@ let lastTime = 0;
 
 let bats = [];
 class Bat{
-    constructor(x, y){
+    constructor(){
+        this.spriteWidth = 272;
+        this.spriteHeight = 197;
         this.width = 100;
         this.height = 50;
         this.x = canvas.width;
@@ -19,8 +21,6 @@ class Bat{
         this.markedFordeletion = false;
         this.image = new Image();
         this.image.src = "../assets/img/Enemy1.png";
-        this.spriteWidth = 272;
-        this.spriteHeight = 197;
     }
     update(){
         this.x -= this.directionX;
