@@ -22,6 +22,8 @@ class Bat{
         this.markedFordeletion = false;
         this.image = new Image();
         this.image.src = "../assets/img/Enemy1.png";
+        this.frame = 0;
+        this.maxFrame = 4;
     }
     update(){
         this.x -= this.directionX;
