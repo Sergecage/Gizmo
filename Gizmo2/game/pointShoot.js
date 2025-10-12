@@ -12,8 +12,8 @@ class Bat{
     constructor(){
         this.spriteWidth = 272;
         this.spriteHeight = 197;
-        this.width = 100;
-        this.height = 50;
+        this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
         this.x = canvas.width;
         this.y = Math.random() * canvas.height - this.height;
         this.directionX = Math.random() * 5 + 3;
