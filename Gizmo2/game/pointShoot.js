@@ -27,7 +27,7 @@ class Bat{
         if (this.x < 0  - this.width) this.markedFordeletion = true;
     }
     draw(){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
