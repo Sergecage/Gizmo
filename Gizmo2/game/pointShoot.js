@@ -29,6 +29,7 @@ class Bat{
         this.x -= this.directionX;
         if (this.x < 0  - this.width) this.markedFordeletion = true;
         if (this.frame > this.maxFrame) this.frame = 0;
+        else this.frame++;
     }
     draw(){
         ctx.strokeRect(this.x, this.y, this.width, this.height);
