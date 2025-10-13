@@ -2,6 +2,8 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
+let score = 0;
+ctx.font = "50px Impact";
 
 let timeToNextBat = 0;
 let batInterval = 500;
@@ -24,17 +26,31 @@ class Bat{
         this.image.src = "../assets/img/Enemy1.png";
         this.frame = 0;
         this.maxFrame = 4;
+        this.timeSinceFlap = 0;
+        this.flapInterval = Math.random() * 50 + 50;
     }
-    update(){
+    update(deltatime){
+        if (this.y < 0 || this.y > canvas.height - this.height) {
+            this.directionY = this.directionY  * -1;
+        }
         this.x -= this.directionX;
+        this.y += this.directionY;
         if (this.x < 0  - this.width) this.markedFordeletion = true;
-        if (this.frame > this.maxFrame) this.frame = 0;
-        else this.frame++;
+        this.timeSinceFlap += deltatime;
+        if (this.timeSinceFlap > this.flapInterval) {
+            if (this.frame > this.maxFrame) this.frame = 0;
+            else this.frame++;
+        }
     }
     draw(){
         ctx.strokeRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
+}
+
+const drawScore = () => {
+    ctx.fillStyle = "white";
+    ctx.fillText("score: " + score, 50, 75);
 }
 
 const animate = (timestamp) => {
@@ -45,7 +61,8 @@ const animate = (timestamp) => {
     if ( timeToNextBat > batInterval) {
         bats.push( new Bat());
         timeToNextBat = 0;
-    }
+    };
+    drawScore();
     [...bats].forEach(obj => obj.update(deltatime));
     [...bats].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
