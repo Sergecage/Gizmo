@@ -47,6 +47,11 @@ class Bat{
     }
 }
 
+const drawScore = () => {
+    ctx.fillStyle = "white";
+    ctx.fillText("score: " + score, 50, 75);
+}
+
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let deltatime = timestamp - lastTime;
