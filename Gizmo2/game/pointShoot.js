@@ -28,6 +28,9 @@ class Bat{
         this.flapInterval = Math.random() * 50 + 50;
     }
     update(deltatime){
+        if (this.y < 0 || this.y > canvas.height - this.height) {
+            this.directionY = this.directionY  * -1;
+        }
         this.x -= this.directionX;
         this.y += this.directionY;
         if (this.x < 0  - this.width) this.markedFordeletion = true;
