@@ -24,6 +24,8 @@ class Bat{
         this.image.src = "../assets/img/Enemy1.png";
         this.frame = 0;
         this.maxFrame = 4;
+        this.timeSinceFlap = 0;
+        this.flapInterval = 100;
     }
     update(deltatime){
         this.x -= this.directionX;
