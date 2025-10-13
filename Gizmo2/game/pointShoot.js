@@ -25,7 +25,7 @@ class Bat{
         this.frame = 0;
         this.maxFrame = 4;
         this.timeSinceFlap = 0;
-        this.flapInterval = 100;
+        this.flapInterval = Math.random() * 50 + 50;
     }
     update(deltatime){
         this.x -= this.directionX;
