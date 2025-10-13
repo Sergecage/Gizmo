@@ -31,8 +31,10 @@ class Bat{
         this.x -= this.directionX;
         if (this.x < 0  - this.width) this.markedFordeletion = true;
         this.timeSinceFlap += deltatime;
-        if (this.frame > this.maxFrame) this.frame = 0;
-        else this.frame++;
+        if (this.timeSinceFlap > this.flapInterval) {
+            if (this.frame > this.maxFrame) this.frame = 0;
+            else this.frame++;
+        }
     }
     draw(){
         ctx.strokeRect(this.x, this.y, this.width, this.height);
