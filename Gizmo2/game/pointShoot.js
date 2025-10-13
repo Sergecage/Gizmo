@@ -60,7 +60,8 @@ const animate = (timestamp) => {
     if ( timeToNextBat > batInterval) {
         bats.push( new Bat());
         timeToNextBat = 0;
-    }
+    };
+    drawScore();
     [...bats].forEach(obj => obj.update(deltatime));
     [...bats].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
