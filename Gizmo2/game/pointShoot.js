@@ -56,7 +56,7 @@ const drawScore = () => {
 }
 
 window.addEventListener("click", function(e){
-    const detectPixelColor = ctx.getImageData();
+    const detectPixelColor = ctx.getImageData(e.x, e.y, 1, 1);
 });
 
 const animate = (timestamp) => {
