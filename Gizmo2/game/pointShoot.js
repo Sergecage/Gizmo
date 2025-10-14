@@ -55,6 +55,10 @@ const drawScore = () => {
     ctx.fillText("score: " + score, 55, 80);
 }
 
+window.addEventListener("click", function(e){
+    const detectPixelColor = ctx.getImageData();
+});
+
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let deltatime = timestamp - lastTime;
