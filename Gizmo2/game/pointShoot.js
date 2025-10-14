@@ -33,6 +33,7 @@ class Bat{
         this.timeSinceFlap = 0;
         this.flapInterval = Math.random() * 50 + 50;
         this.randomColors = [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255)];
+        this.color = "rgb(" + randomColors[0] + "," + randomColors[1] + "," + randomColors[2] + ")";
     }
     update(deltatime){
         if (this.y < 0 || this.y > canvas.height - this.height) {
@@ -48,6 +49,7 @@ class Bat{
         }
     }
     draw(){
+        ctx.fillStyle(this.color);
         ctx.strokeRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
