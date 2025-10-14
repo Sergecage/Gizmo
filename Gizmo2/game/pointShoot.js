@@ -32,7 +32,7 @@ class Bat{
         this.maxFrame = 4;
         this.timeSinceFlap = 0;
         this.flapInterval = Math.random() * 50 + 50;
-        this.randomColors = [ color1, color2, color3];
+        this.randomColors = [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255)];
     }
     update(deltatime){
         if (this.y < 0 || this.y > canvas.height - this.height) {
