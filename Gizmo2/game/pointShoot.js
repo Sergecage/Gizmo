@@ -2,6 +2,10 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
+const canvasCollison = document.getElementById("collisionCanvas");
+const ctxCollision = canvasCollison.getContext("2d");
+const COLLISION_CANVAS_WIDTH = canvas.width = 1200;
+const COLLISION_CANVAS_HEIGHT = canvas.width =1200;
 let score = 0;
 ctx.font = "50px Impact";
 
