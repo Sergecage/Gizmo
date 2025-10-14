@@ -51,6 +51,7 @@ class Bat{
 const drawScore = () => {
     ctx.fillStyle = "white";
     ctx.fillText("score: " + score, 50, 75);
+    ctx.fillText("score: " + score, 55, 80);
 }
 
 const animate = (timestamp) => {
