@@ -38,3 +38,7 @@ body{
 .enemy{
     z-index: -1;
 }
+
+#collisionCanvas{
+    background-color: blue;
+}
