@@ -59,7 +59,8 @@ class Explosion {
     constructor(x, y, size){
         this.image = new Image();
         this.image.src = "";
-
+        this.width = 200;
+        this.height = 179;
     }
 }
 
