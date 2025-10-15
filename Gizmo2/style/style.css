@@ -41,4 +41,5 @@ body{
 
 #collisionCanvas{
     background-color: rgb(165, 165, 173);
+    opacity: 0;
 }
