@@ -74,6 +74,9 @@ const animate = (timestamp) => {
     if ( timeToNextBat > batInterval) {
         bats.push( new Bat());
         timeToNextBat = 0;
+        bats.sort(function(a, b) {
+            return a.width - b.width;
+        });
     };
     drawScore();
     [...bats].forEach(obj => obj.update(deltatime));
