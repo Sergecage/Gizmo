@@ -55,6 +55,13 @@ class Bat{
     }
 }
 let explosions = [];
+class Explosion {
+    constructor(x, y, size){
+        this.image = new Image();
+        this.image.src = "";
+
+    }
+}
 
 const drawScore = () => {
     ctxCollision.fillStyle = "black";
