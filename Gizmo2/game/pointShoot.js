@@ -68,6 +68,7 @@ window.addEventListener("click", function(e){
 
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctxCollision.clearRect(0, 0, canvas.width, canvas.height);
     let deltatime = timestamp - lastTime;
     lastTime = timestamp;
     timeToNextBat += deltatime;
