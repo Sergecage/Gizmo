@@ -65,6 +65,12 @@ const drawScore = () => {
 window.addEventListener("click", function(e){
     const detectPixelColor = ctxCollision.getImageData(e.x, e.y, 1, 1);
     const pc = detectPixelColor.data;
+    bats.forEach(obj => {
+        if (obj.randomColors[0] === pc[0] && obj.randomColors[1] === pc[1] && obj.randomColors[2] === pc[2]) {
+            obj.markedFordeletion = true;
+            score++;
+        }
+    })
 });
 
 const animate = (timestamp) => {
