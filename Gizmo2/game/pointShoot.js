@@ -56,8 +56,8 @@ class Bat{
 }
 
 const drawScore = () => {
-    ctx.fillStyle = "black";
-    ctx.fillText("score: " + score, 50, 75);
+    ctxCollision.fillStyle = "black";
+    ctxCollision.fillText("score: " + score, 50, 75);
     ctx.fillStyle = "white";
     ctx.fillText("score: " + score, 55, 80);
 }
