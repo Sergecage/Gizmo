@@ -64,6 +64,7 @@ const drawScore = () => {
 
 window.addEventListener("click", function(e){
     const detectPixelColor = ctxCollision.getImageData(e.x, e.y, 1, 1);
+    const pc = detectPixelColor.data;
 });
 
 const animate = (timestamp) => {
