@@ -54,26 +54,46 @@ class Bat{
         ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
+let explosions = [];
+class Explosion {
+    constructor(x, y, size){
+        this.image = new Image();
+        this.image.src = "";
+        this.width = 200;
+        this.height = 179;
+    }
+}
 
 const drawScore = () => {
-    ctx.fillStyle = "black";
-    ctx.fillText("score: " + score, 50, 75);
+    ctxCollision.fillStyle = "black";
+    ctxCollision.fillText("score: " + score, 50, 75);
     ctx.fillStyle = "white";
     ctx.fillText("score: " + score, 55, 80);
 }
 
 window.addEventListener("click", function(e){
-    const detectPixelColor = ctx.getImageData(e.x, e.y, 1, 1);
+    const detectPixelColor = ctxCollision.getImageData(e.x, e.y, 1, 1);
+    const pc = detectPixelColor.data;
+    bats.forEach(obj => {
+        if (obj.randomColors[0] === pc[0] && obj.randomColors[1] === pc[1] && obj.randomColors[2] === pc[2]) {
+            obj.markedFordeletion = true;
+            score++;
+        }
+    })
 });
 
 const animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctxCollision.clearRect(0, 0, canvas.width, canvas.height);
     let deltatime = timestamp - lastTime;
     lastTime = timestamp;
     timeToNextBat += deltatime;
     if ( timeToNextBat > batInterval) {
         bats.push( new Bat());
         timeToNextBat = 0;
+        bats.sort(function(a, b) {
+            return a.width - b.width;
+        });
     };
     drawScore();
     [...bats].forEach(obj => obj.update(deltatime));
