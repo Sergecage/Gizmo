@@ -69,6 +69,9 @@ class Explosion {
     }
     update(deltatime){
         this.timeSinceLastFrame += deltatime;
+        if (this.timeSinceLastFrame > this.frameInterval){
+            this.frame++;
+        }
     }
 }
 
