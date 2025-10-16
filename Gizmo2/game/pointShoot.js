@@ -74,6 +74,9 @@ class Explosion {
             this.frame++;
         }
     }
+    draw(){
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0 , this.spriteWidth, this.spriteHeight);
+    }
 }
 
 const drawScore = () => {
