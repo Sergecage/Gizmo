@@ -75,7 +75,7 @@ class Explosion {
         }
     }
     draw(){
-        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0 , this.spriteWidth, this.spriteHeight);
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0 , this.spriteWidth, this.spriteHeight, this.x, this.y, this.size, this.size);
     }
 }
 
