@@ -67,6 +67,9 @@ class Explosion {
         this.timeSinceLastFrame = 0;
         this.frameInterval = 200;
     }
+    update(deltatime){
+        
+    }
 }
 
 const drawScore = () => {
