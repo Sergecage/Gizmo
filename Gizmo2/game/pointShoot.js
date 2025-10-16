@@ -64,6 +64,7 @@ class Explosion {
         this.frame = 0;
         this.sound = new Audio();
         this.sound.src = '..';
+        this.timeSinceLastFrame = 0;
     }
 }
 
