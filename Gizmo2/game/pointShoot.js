@@ -62,6 +62,8 @@ class Explosion {
         this.width = 200;
         this.height = 179;
         this.frame = 0;
+        this.sound = new Audio();
+        this.sound.src = '..';
     }
 }
 
