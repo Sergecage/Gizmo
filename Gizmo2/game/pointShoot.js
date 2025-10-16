@@ -68,7 +68,7 @@ class Explosion {
         this.frameInterval = 200;
     }
     update(deltatime){
-        
+        this.timeSinceLastFrame += deltatime;
     }
 }
 
