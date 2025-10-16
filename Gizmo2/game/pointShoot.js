@@ -61,6 +61,7 @@ class Explosion {
         this.image.src = "";
         this.width = 200;
         this.height = 179;
+        this.frame = 0;
     }
 }
 
