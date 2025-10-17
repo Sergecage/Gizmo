@@ -7,6 +7,7 @@ const ctxCollision = canvasCollison.getContext("2d");
 const COLLISION_CANVAS_WIDTH = window.innerWidth;
 const COLLISION_CANVAS_HEIGHT = window.innerHeight;
 let score = 0;
+let gameOver = false;
 ctx.font = "50px Impact";
 
 let timeToNextBat = 0;
@@ -47,6 +48,7 @@ class Bat{
             if (this.frame > this.maxFrame) this.frame = 0;
             else this.frame++;
         }
+        if (this.x < 0 - this.width ) gameOver = true;
     }
     draw(){
         ctx.fillStyle(this.color);
