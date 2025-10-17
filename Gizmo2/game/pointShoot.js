@@ -7,6 +7,7 @@ const ctxCollision = canvasCollison.getContext("2d");
 const COLLISION_CANVAS_WIDTH = window.innerWidth;
 const COLLISION_CANVAS_HEIGHT = window.innerHeight;
 let score = 0;
+let gameOver = false;
 ctx.font = "50px Impact";
 
 let timeToNextBat = 0;
@@ -47,6 +48,7 @@ class Bat{
             if (this.frame > this.maxFrame) this.frame = 0;
             else this.frame++;
         }
+        if (this.x < 0 - this.width ) gameOver = true;
     }
     draw(){
         ctx.fillStyle(this.color);
@@ -65,17 +67,20 @@ class Explosion {
         this.sound = new Audio();
         this.sound.src = '..';
         this.timeSinceLastFrame = 0;
-        this.frameInterval = 200;
+        this.frameInterval = 150;
+        this.markedFordeletion = false;
     }
     update(deltatime){
         if (this.frame === 0 ) this.sound.play();
         this.timeSinceLastFrame += deltatime;
         if (this.timeSinceLastFrame > this.frameInterval){
             this.frame++;
+            this.timeSinceLastFrame = 0;
+            if (this.frame > 5 ) this.markedFordeletion = true;
         }
     }
     draw(){
-        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0 , this.spriteWidth, this.spriteHeight, this.x, this.y, this.size, this.size);
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0 , this.spriteWidth, this.spriteHeight, this.x, this.y - this.size, this.size, this.size);
     }
 }
 
@@ -86,6 +91,14 @@ const drawScore = () => {
     ctx.fillText("score: " + score, 55, 80);
 }
 
+const drawGameOver = () => {
+    ctx.textAlign = "center";
+    ctx.fillStyle = "black";
+    ctx.fillText("Game Over, your score is" + score, canvas.width / 2, canvas.height / 2);
+    ctx.fillStyle = "white";
+    ctx.fillText("Game Over, your score is" + score, canvas.width / 2, canvas.height / 2 + 5);
+}
+
 window.addEventListener("click", function(e){
     const detectPixelColor = ctxCollision.getImageData(e.x, e.y, 1, 1);
     const pc = detectPixelColor.data;
@@ -93,6 +106,7 @@ window.addEventListener("click", function(e){
         if (obj.randomColors[0] === pc[0] && obj.randomColors[1] === pc[1] && obj.randomColors[2] === pc[2]) {
             obj.markedFordeletion = true;
             score++;
+            explosions.push(new Explosion(obj.x, obj.y, obj.width));
         }
     })
 });
@@ -111,10 +125,12 @@ const animate = (timestamp) => {
         });
     };
     drawScore();
-    [...bats].forEach(obj => obj.update(deltatime));
-    [...bats].forEach(obj => obj.draw());
+    [...bats, ...explosions].forEach(obj => obj.update(deltatime));
+    [...bats, ...explosions].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
-    requestAnimationFrame(animate);
+    explosions = explosions.filter(obj => !obj.markedFordeletion);
+    if (!gameOver) requestAnimationFrame(animate);
+    else drawGameOver();
 }
 
 animate(0);
