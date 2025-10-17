@@ -121,7 +121,7 @@ const animate = (timestamp) => {
     [...bats, ...explosions].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
     explosions = explosions.filter(obj => !obj.markedFordeletion);
-    requestAnimationFrame(animate);
+    if (!gameOver) requestAnimationFrame(animate);
 }
 
 animate(0);
