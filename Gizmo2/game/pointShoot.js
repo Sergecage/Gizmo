@@ -65,7 +65,7 @@ class Explosion {
         this.sound = new Audio();
         this.sound.src = '..';
         this.timeSinceLastFrame = 0;
-        this.frameInterval = 200;
+        this.frameInterval = 150;
         this.markedFordeletion = false;
     }
     update(deltatime){
