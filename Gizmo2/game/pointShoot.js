@@ -91,6 +91,11 @@ const drawScore = () => {
     ctx.fillText("score: " + score, 55, 80);
 }
 
+const drawGameOver = () => {
+    ctx.fillStyle = "black";
+    ctx.fillText("Game Over, your score is" + score, canvas.width / 2, canvas.height / 2);
+}
+
 window.addEventListener("click", function(e){
     const detectPixelColor = ctxCollision.getImageData(e.x, e.y, 1, 1);
     const pc = detectPixelColor.data;
