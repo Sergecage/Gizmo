@@ -66,6 +66,7 @@ class Explosion {
         this.sound.src = '..';
         this.timeSinceLastFrame = 0;
         this.frameInterval = 200;
+        this.markedFordeletion = false;
     }
     update(deltatime){
         if (this.frame === 0 ) this.sound.play();
@@ -115,6 +116,7 @@ const animate = (timestamp) => {
     [...bats, ...explosions].forEach(obj => obj.update(deltatime));
     [...bats, ...explosions].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
+    explosions = explosions.filter(obj => !obj.markedFordeletion);
     requestAnimationFrame(animate);
 }
 
