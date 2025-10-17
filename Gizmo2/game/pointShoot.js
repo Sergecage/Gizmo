@@ -112,8 +112,8 @@ const animate = (timestamp) => {
         });
     };
     drawScore();
-    [...bats].forEach(obj => obj.update(deltatime));
-    [...bats].forEach(obj => obj.draw());
+    [...bats, ...explosions].forEach(obj => obj.update(deltatime));
+    [...bats, ...explosions].forEach(obj => obj.draw());
     bats = bats.filter(obj => !obj.markedFordeletion);
     requestAnimationFrame(animate);
 }
