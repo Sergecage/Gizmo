@@ -93,7 +93,7 @@ window.addEventListener("click", function(e){
         if (obj.randomColors[0] === pc[0] && obj.randomColors[1] === pc[1] && obj.randomColors[2] === pc[2]) {
             obj.markedFordeletion = true;
             score++;
-            explosions.push(new Explosion());
+            explosions.push(new Explosion(obj.x, obj.y, obj.width));
         }
     })
 });
