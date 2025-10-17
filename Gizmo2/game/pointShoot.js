@@ -73,6 +73,7 @@ class Explosion {
         this.timeSinceLastFrame += deltatime;
         if (this.timeSinceLastFrame > this.frameInterval){
             this.frame++;
+            this.timeSinceLastFrame = 0;
             if (this.frame > 5 ) this.markedFordeletion = true;
         }
     }
