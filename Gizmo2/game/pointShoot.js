@@ -127,6 +127,7 @@ const animate = (timestamp) => {
     bats = bats.filter(obj => !obj.markedFordeletion);
     explosions = explosions.filter(obj => !obj.markedFordeletion);
     if (!gameOver) requestAnimationFrame(animate);
+    else drawGameOver();
 }
 
 animate(0);
