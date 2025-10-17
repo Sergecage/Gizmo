@@ -40,6 +40,6 @@ body{
 }
 
 #collisionCanvas{
-    background-color: rgb(165, 165, 173);
+    background-color: linear-gradient(125deg, 165, 165, 173);
     opacity: 0;
 }
