@@ -3,3 +3,18 @@ const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = canvas.width = 1200;
 const CANVAS_HEIGHT = canvas.width =1200;
+
+class Game{
+    constructor(){
+        this.enemies = [];
+    }
+    update(){
+
+    }
+    draw(){
+
+    }
+    #addNewEnemy(){
+        
+    }
+}
