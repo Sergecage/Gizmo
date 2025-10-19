@@ -22,7 +22,8 @@ class Game{
 
 class Enemy {
     constructor(){
-
+        this.x = 100;
+        this.y = 100;
     }
     update(){
 
