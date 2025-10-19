@@ -24,6 +24,8 @@ class Enemy {
     constructor(){
         this.x = 100;
         this.y = 100;
+        this.width = 100;
+        this.height = 100;
     }
     update(){
 
