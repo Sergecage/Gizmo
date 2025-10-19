@@ -1,6 +1,4 @@
 document.addEventListener("load", function(){
-    
-})
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
@@ -38,3 +36,4 @@ const animate = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     requestAnimationFrame(animate);
 }
+})
