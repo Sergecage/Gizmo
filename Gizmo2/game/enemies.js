@@ -40,5 +40,5 @@ const animate = (timeStamp) => {
     console.log(deltaTime);
     requestAnimationFrame(animate);
 };
-animate();
-})
+animate(0);
+});
