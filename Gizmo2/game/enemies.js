@@ -37,6 +37,8 @@ const animate = (timeStamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
+    console.log(deltaTime);
     requestAnimationFrame(animate);
-}
+};
+animate();
 })
