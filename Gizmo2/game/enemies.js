@@ -42,6 +42,8 @@ const animate = (timeStamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
+    game.update();
+    game.draw();
     requestAnimationFrame(animate);
 };
 animate(0);
