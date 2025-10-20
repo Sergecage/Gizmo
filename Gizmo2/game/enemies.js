@@ -28,7 +28,7 @@ class Enemy {
     constructor(game){
         this.game = game;
         this.x = this.game.width;
-        this.y = 100;
+        this.y = Math.random() * this.game.height;
         this.width = 100;
         this.height = 100;
     }
