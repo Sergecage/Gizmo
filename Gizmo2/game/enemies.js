@@ -36,7 +36,7 @@ class Enemy {
     }
 }
 
-const game = new Game();
+const game = new Game(ctx, canvas.width, canvas.height);
 let lastTime = 1;
 const animate = (timeStamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
