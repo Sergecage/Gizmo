@@ -7,23 +7,28 @@ const CANVAS_HEIGHT = canvas.width =1200;
 
 class Game{
     constructor(){
+        this.ctx = ctx;
+        this.width = width;
+        this.height - height;
         this.enemies = [];
+        this.#addNewEnemy();
     }
     update(){
-
+        this.enemies.forEach(obj => obj.update());
     }
     draw(){
-
+        this.enemies.forEach(obj => obj.draw());
     }
     #addNewEnemy(){
-        
+        this.enemy.push(new Enemy(this))
     }
 }
 
 class Enemy {
-    constructor(){
-        this.x = 100;
-        this.y = 100;
+    constructor(game){
+        this.game = game;
+        this.x = this.game.width;
+        this.y = Math.random() * this.game.height;
         this.width = 100;
         this.height = 100;
     }
@@ -35,11 +40,14 @@ class Enemy {
     }
 }
 
+const game = new Game(ctx, canvas.width, canvas.height);
 let lastTime = 1;
 const animate = (timeStamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
+    game.update();
+    game.draw();
     requestAnimationFrame(animate);
 };
 animate(0);
