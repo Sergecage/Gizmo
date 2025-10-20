@@ -25,7 +25,8 @@ class Game{
 }
 
 class Enemy {
-    constructor(){
+    constructor(game){
+        this.game = game;
         this.x = 100;
         this.y = 100;
         this.width = 100;
