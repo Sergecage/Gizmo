@@ -14,7 +14,7 @@ class Game{
         this.enemies.forEach(obj => obj.update());
     }
     draw(){
-
+        this.enemies.forEach(obj => obj.draw());
     }
     #addNewEnemy(){
         this.enemy.push(new Enemy())
