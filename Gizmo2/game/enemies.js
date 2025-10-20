@@ -8,6 +8,7 @@ const CANVAS_HEIGHT = canvas.width =1200;
 class Game{
     constructor(){
         this.enemies = [];
+        this.#addNewEnemy();
     }
     update(){
 
