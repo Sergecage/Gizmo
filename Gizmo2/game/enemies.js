@@ -16,7 +16,7 @@ class Game{
 
     }
     #addNewEnemy(){
-        
+        this.enemy.push(new Enemy())
     }
 }
 
