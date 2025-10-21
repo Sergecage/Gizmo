@@ -18,7 +18,9 @@ class Game{
         if (this.enemyTimer > this.enemyInterval){
             this.#addNewEnemy();
             this.enemyTimer = 0;
-        } 
+        } else{
+            this.enemyTimer++;
+        }
         this.enemies.forEach(obj => obj.update());
     }
     draw(){
