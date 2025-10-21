@@ -11,6 +11,7 @@ class Game{
         this.width = width;
         this.height - height;
         this.enemies = [];
+        this.enemyInterval = 400;
         this.#addNewEnemy();
     }
     update(){
