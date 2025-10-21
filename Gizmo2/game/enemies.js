@@ -38,6 +38,7 @@ class Enemy {
         this.y = Math.random() * this.game.height;
         this.width = 100;
         this.height = 100;
+        this.markedForDeletion = false;
     }
     update(){
         this.x--;
