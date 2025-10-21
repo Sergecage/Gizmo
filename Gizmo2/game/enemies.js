@@ -15,6 +15,7 @@ class Game{
         this.enemyTimer = 0;
     }
     update(deltaTime){
+        this.enemies = this.enemies.filter(obj => !obj.markedForDeletion);
         if (this.enemyTimer > this.enemyInterval){
             this.#addNewEnemy();
             this.enemyTimer = 0;
