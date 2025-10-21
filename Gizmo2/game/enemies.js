@@ -19,7 +19,7 @@ class Game{
             this.#addNewEnemy();
             this.enemyTimer = 0;
         } else{
-            this.enemyTimer++;
+            this.enemyTimer += deltaTime;
         }
         this.enemies.forEach(obj => obj.update());
     }
