@@ -24,7 +24,7 @@ class Game{
         this.enemies.forEach(obj => obj.update());
     }
     draw(){
-        this.enemies.forEach(obj => obj.draw());
+        this.enemies.forEach(obj => obj.draw(this.ctx));
     }
     #addNewEnemy(){
         this.enemy.push(new Enemy(this))
@@ -40,10 +40,10 @@ class Enemy {
         this.height = 100;
     }
     update(){
-
+        this.x--;
     }
-    draw(){
-
+    draw(ctx){
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
 
