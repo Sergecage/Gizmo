@@ -11,7 +11,7 @@ class Game{
         this.width = width;
         this.height - height;
         this.enemies = [];
-        this.enemyInterval = 400;
+        this.enemyInterval = 1000;
         this.enemyTimer = 0;
     }
     update(deltaTime){
