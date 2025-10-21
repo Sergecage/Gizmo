@@ -12,6 +12,7 @@ class Game{
         this.height - height;
         this.enemies = [];
         this.enemyInterval = 400;
+        this.enemyTimer = 0;
         this.#addNewEnemy();
     }
     update(){
