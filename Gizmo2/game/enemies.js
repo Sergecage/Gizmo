@@ -14,7 +14,7 @@ class Game{
         this.enemyInterval = 400;
         this.enemyTimer = 0;
     }
-    update(){
+    update(deltaTime){
         if (this.enemyTimer > this.enemyInterval){
             this.#addNewEnemy();
             this.enemyTimer = 0;
