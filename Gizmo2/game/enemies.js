@@ -50,6 +50,12 @@ class Enemy {
     }
 }
 
+class Bats extends Enemy{
+    constructor(){
+        
+    }
+}
+
 const game = new Game(ctx, canvas.width, canvas.height);
 let lastTime = 1;
 const animate = (timeStamp) => {
