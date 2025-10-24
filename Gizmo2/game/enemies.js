@@ -50,9 +50,9 @@ class Enemy {
     }
 }
 
-class Bats extends Enemy{
+class Bat extends Enemy{
     constructor(){
-        
+
     }
 }
 
