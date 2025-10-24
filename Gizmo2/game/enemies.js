@@ -35,10 +35,6 @@ class Game{
 class Enemy {
     constructor(game){
         this.game = game;
-        this.x = this.game.width;
-        this.y = Math.random() * this.game.height;
-        this.width = 100;
-        this.height = 100;
         this.markedForDeletion = false;
     }
     update(){
@@ -53,6 +49,10 @@ class Enemy {
 class Bat extends Enemy{
     constructor(game){
         super(game);
+        this.x = this.game.width;
+        this.y = Math.random() * this.game.height;
+        this.width = 100;
+        this.height = 100;
         this.image = bat;
     }
 }
