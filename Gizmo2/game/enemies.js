@@ -51,7 +51,8 @@ class Enemy {
 }
 
 class Bat extends Enemy{
-    constructor(){
+    constructor(game){
+        super(game);
         this.image = bat;
     }
 }
