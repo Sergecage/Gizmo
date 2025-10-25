@@ -42,7 +42,6 @@ class Enemy {
         if (this.x < 0 - this.width) this.markedForDeletion = true;
     }
     draw(ctx){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
