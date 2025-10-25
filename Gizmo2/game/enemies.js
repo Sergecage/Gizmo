@@ -56,6 +56,7 @@ class Bat extends Enemy{
         this.x = this.game.width;
         this.y = Math.random() * this.game.height;
         this.image = bat;
+        this.speed = Math.random() * 0.1 + 0.1;
     }
 }
 
