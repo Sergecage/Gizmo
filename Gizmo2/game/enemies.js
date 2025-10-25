@@ -38,7 +38,7 @@ class Enemy {
         this.markedForDeletion = false;
     }
     update(deltaTime){
-        this.x - this.speed;
+        this.x - this.speed * deltaTime;
         if (this.x < 0 - this.width) this.markedForDeletion = true;
     }
     draw(ctx){
