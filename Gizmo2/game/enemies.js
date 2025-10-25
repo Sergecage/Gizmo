@@ -37,7 +37,7 @@ class Enemy {
         this.game = game;
         this.markedForDeletion = false;
     }
-    update(){
+    update(deltaTime){
         this.x - this.speed;
         if (this.x < 0 - this.width) this.markedForDeletion = true;
     }
