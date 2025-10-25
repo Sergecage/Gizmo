@@ -38,7 +38,7 @@ class Enemy {
         this.markedForDeletion = false;
     }
     update(deltaTime){
-        this.x - this.speed * deltaTime;
+        this.x - this.vxSpeed * deltaTime;
         if (this.x < 0 - this.width) this.markedForDeletion = true;
     }
     draw(ctx){
@@ -56,7 +56,7 @@ class Bat extends Enemy{
         this.x = this.game.width;
         this.y = Math.random() * this.game.height;
         this.image = bat;
-        this.speed = Math.random() * 0.1 + 0.1;
+        this.vxSpeed = Math.random() * 0.1 + 0.1;
     }
 }
 
