@@ -22,7 +22,7 @@ class Game{
         } else{
             this.enemyTimer += deltaTime;
         }
-        this.enemies.forEach(obj => obj.update());
+        this.enemies.forEach(obj => obj.update(deltaTime));
     }
     draw(){
         this.enemies.forEach(obj => obj.draw(this.ctx));
