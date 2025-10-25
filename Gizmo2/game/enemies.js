@@ -49,6 +49,8 @@ class Enemy {
 class Bat extends Enemy{
     constructor(game){
         super(game);
+        this.spriteWidth = 229;
+        this.spriteHeight = 171;
         this.x = this.game.width;
         this.y = Math.random() * this.game.height;
         this.width = 200;
