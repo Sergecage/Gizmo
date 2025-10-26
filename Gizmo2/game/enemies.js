@@ -30,7 +30,7 @@ class Game{
     }
     #addNewEnemy(){
         const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
-        this.enemy.push(new Bat(this));
+        if ( randomEnemy == "bat") this.enemy.push(new Bat(this));
         this.enemy.sort(function(a,b){
             return a.y - b.y;
         });
