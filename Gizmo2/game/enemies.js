@@ -74,7 +74,7 @@ class Angry extends Enemy{
          this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
         this.x = this.game.width;
-        this.y = Math.random() * this.game.height;
+        this.y = this.game.height - this.height;
         this.image = angry;
         this.vxSpeed = Math.random() * 0.2 + 0.1;
     }
