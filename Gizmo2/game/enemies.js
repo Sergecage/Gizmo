@@ -72,7 +72,7 @@ class Flower extends Enemy{
         this.height = this.spriteHeight / 2;
         this.x = this.game.width;
         this.y = Math.random() * this.game.height;
-        this.image = bat;
+        this.image = angry;
         this.vxSpeed = Math.random() * 0.1 + 0.1;
     }
 }
