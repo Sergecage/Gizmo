@@ -30,7 +30,7 @@ class Game{
     #addNewEnemy(){
         this.enemy.push(new Bat(this));
         this.enemy.sort(function(a,b){
-            return b.y - a.y;
+            return a.y - b.y;
         });
     }
 }
@@ -50,6 +50,20 @@ class Enemy {
 }
 
 class Bat extends Enemy{
+    constructor(game){
+        super(game);
+        this.spriteWidth = 229;
+        this.spriteHeight = 171;
+         this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
+        this.x = this.game.width;
+        this.y = Math.random() * this.game.height;
+        this.image = bat;
+        this.vxSpeed = Math.random() * 0.1 + 0.1;
+    }
+}
+
+class Flower extends Enemy{
     constructor(game){
         super(game);
         this.spriteWidth = 229;
