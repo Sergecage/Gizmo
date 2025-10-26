@@ -30,7 +30,7 @@ class Game{
     #addNewEnemy(){
         this.enemy.push(new Bat(this));
         this.enemy.sort(function(a,b){
-            return a.y - b.y;
+            return b.y - a.y;
         });
     }
 }
