@@ -66,8 +66,8 @@ class Bat extends Enemy{
 class Flower extends Enemy{
     constructor(game){
         super(game);
-        this.spriteWidth = 229;
-        this.spriteHeight = 171;
+        this.spriteWidth = 261;
+        this.spriteHeight = 209;
          this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
         this.x = this.game.width;
