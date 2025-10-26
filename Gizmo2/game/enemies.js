@@ -13,6 +13,7 @@ class Game{
         this.enemies = [];
         this.enemyInterval = 100;
         this.enemyTimer = 0;
+        this.enemyTypes = ['bat', 'angry'];
     }
     update(deltaTime){
         this.enemies = this.enemies.filter(obj => !obj.markedForDeletion);
@@ -63,7 +64,7 @@ class Bat extends Enemy{
     }
 }
 
-class Flower extends Enemy{
+class Angry extends Enemy{
     constructor(game){
         super(game);
         this.spriteWidth = 261;
