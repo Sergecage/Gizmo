@@ -29,7 +29,7 @@ class Game{
         this.enemies.forEach(obj => obj.draw(this.ctx));
     }
     #addNewEnemy(){
-        const randomEnemy = this.enemyTypes[Math.random()]
+        const randomEnemy = this.enemyTypes[Math.random() * this.enemyTypes.length];
         this.enemy.push(new Bat(this));
         this.enemy.sort(function(a,b){
             return a.y - b.y;
