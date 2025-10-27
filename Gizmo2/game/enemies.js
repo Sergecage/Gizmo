@@ -13,6 +13,7 @@ class Game{
         this.enemies = [];
         this.enemyInterval = 100;
         this.enemyTimer = 0;
+        this.enemyTypes = ['bat', 'angry'];
     }
     update(deltaTime){
         this.enemies = this.enemies.filter(obj => !obj.markedForDeletion);
@@ -28,7 +29,12 @@ class Game{
         this.enemies.forEach(obj => obj.draw(this.ctx));
     }
     #addNewEnemy(){
-        this.enemy.push(new Bat(this))
+        const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
+        if ( randomEnemy == "bat") this.enemy.push(new Bat(this));
+        else if ( randomEnemy == "angry") this.enemy.push(new Angry(this));
+        /*this.enemy.sort(function(a,b){
+            return a.y - b.y;
+        });*/
     }
 }
 
@@ -49,16 +55,45 @@ class Enemy {
 class Bat extends Enemy{
     constructor(game){
         super(game);
-        this.spriteWidth = 229;
+        this.spriteWidth = 529;
         this.spriteHeight = 171;
          this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
         this.x = this.game.width;
-        this.y = Math.random() * this.game.height;
+        this.y = Math.random() * this.game.height * 0.6;
         this.image = bat;
         this.vxSpeed = Math.random() * 0.1 + 0.1;
+        this.angle = 0;
+    }
+    update(deltaTime){
+        super.update(deltaTime);
+        this.y += Math.sin(this.angle) * 10;
+        this.angle += 0.1;
     }
 }
+
+class Angry extends Enemy{
+    constructor(game){
+        super(game);
+        this.spriteWidth = 261;
+        this.spriteHeight = 209;
+         this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
+        this.x = this.game.width;
+        this.y = this.game.height - this.height;
+        this.image = angry;
+        this.vxSpeed = Math.random() * 0.2 + 0.1;
+    }
+    update(deltaTime){
+        super.update(deltaTime);
+    }
+    draw(){
+        ctx.save();
+        ctx.globalAlpha = 0.5;
+       super.draw(ctx) 
+       ctx.restore();
+    }
+};
 
 const game = new Game(ctx, canvas.width, canvas.height);
 let lastTime = 1;
