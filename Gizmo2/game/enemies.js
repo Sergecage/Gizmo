@@ -68,6 +68,7 @@ class Bat extends Enemy{
     update(deltaTime){
         super.update(deltaTime);
         this.y += Math.sin(this.angle);
+        this.angle++;
     }
 }
 
