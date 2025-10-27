@@ -32,9 +32,9 @@ class Game{
         const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
         if ( randomEnemy == "bat") this.enemy.push(new Bat(this));
         else if ( randomEnemy == "angry") this.enemy.push(new Angry(this));
-        this.enemy.sort(function(a,b){
+        /*this.enemy.sort(function(a,b){
             return a.y - b.y;
-        });
+        });*/
     }
 }
 
@@ -78,7 +78,10 @@ class Angry extends Enemy{
         this.image = angry;
         this.vxSpeed = Math.random() * 0.2 + 0.1;
     }
-}
+    draw(){
+
+    }
+};
 
 const game = new Game(ctx, canvas.width, canvas.height);
 let lastTime = 1;
