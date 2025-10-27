@@ -79,8 +79,10 @@ class Angry extends Enemy{
         this.vxSpeed = Math.random() * 0.2 + 0.1;
     }
     draw(){
+        ctx.save();
         ctx.globalAlpha = 0.5;
        super.draw(ctx) 
+       ctx.restore();
     }
 };
 
