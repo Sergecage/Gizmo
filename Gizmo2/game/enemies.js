@@ -63,6 +63,11 @@ class Bat extends Enemy{
         this.y = Math.random() * this.game.height * 0.6;
         this.image = bat;
         this.vxSpeed = Math.random() * 0.1 + 0.1;
+        this.angle = 0;
+    }
+    update(deltaTime){
+        super.update(deltaTime);
+        this.y += Math.sin(this.angle);
     }
 }
 
@@ -79,7 +84,7 @@ class Angry extends Enemy{
         this.vxSpeed = Math.random() * 0.2 + 0.1;
     }
     update(deltaTime){
-        super.update(deltaTime)
+        super.update(deltaTime);
     }
     draw(){
         ctx.save();
