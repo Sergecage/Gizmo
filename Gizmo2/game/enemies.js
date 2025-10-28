@@ -32,6 +32,7 @@ class Game{
         const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
         if ( randomEnemy == "bat") this.enemy.push(new Bat(this));
         else if ( randomEnemy == "angry") this.enemy.push(new Angry(this));
+         else if ( randomEnemy == "gremlin_bat") this.enemy.push(new Gremlin_Bat(this));
         /*this.enemy.sort(function(a,b){
             return a.y - b.y;
         });*/
