@@ -116,7 +116,7 @@ class Gremlin_Bat extends Enemy{
     update(deltaTime){
         super.update();
         this.y += this.vy;
-        if (this.y > 200) this.vy *= -1;
+        if (this.y > this.maxLength) this.vy *= -1;
     }
 }
 
