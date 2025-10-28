@@ -113,6 +113,7 @@ class Gremlin_Bat extends Enemy{
     }
     update(deltaTime){
         super.update();
+        this.y += this.vy;
     }
 }
 
