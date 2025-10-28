@@ -109,6 +109,7 @@ class Gremlin_Bat extends Enemy{
         this.vxSpeed = Math.random() * 0.1 + 0.1;
         this.angle = 0;
         this.curve = Math.random() * 3;
+        this.vy = 1;
     }
 }
 
