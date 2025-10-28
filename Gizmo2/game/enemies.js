@@ -111,6 +111,9 @@ class Gremlin_Bat extends Enemy{
         this.curve = Math.random() * 3;
         this.vy = 1;
     }
+    update(deltaTime){
+        super.update();
+    }
 }
 
 const game = new Game(ctx, canvas.width, canvas.height);
