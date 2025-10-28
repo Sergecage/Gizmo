@@ -104,7 +104,7 @@ class Gremlin_Bat extends Enemy{
         this.spriteHeight = 175;
          this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
-        this.x = this.game.width;
+        this.x = Math.random() * this.game.width;
         this.y = 0 * this.height;
         this.image = gremlin_ba;
         this.vxSpeed = Math.random() * 0.1 + 0.1;
