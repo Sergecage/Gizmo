@@ -64,10 +64,11 @@ class Bat extends Enemy{
         this.image = bat;
         this.vxSpeed = Math.random() * 0.1 + 0.1;
         this.angle = 0;
+        this.curve = Math.random() * 3;
     }
     update(deltaTime){
         super.update(deltaTime);
-        this.y += Math.sin(this.angle) * 10;
+        this.y += Math.sin(this.angle) * this.curve;
         this.angle += 0.1;
     }
 }
