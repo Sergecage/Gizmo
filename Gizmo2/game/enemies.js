@@ -13,7 +13,7 @@ class Game{
         this.enemies = [];
         this.enemyInterval = 500;
         this.enemyTimer = 0;
-        this.enemyTypes = ['bat', 'angry'];
+        this.enemyTypes = ['bat', 'angry', 'gremlin_bat'];
     }
     update(deltaTime){
         this.enemies = this.enemies.filter(obj => !obj.markedForDeletion);
