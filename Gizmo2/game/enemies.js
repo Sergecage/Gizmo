@@ -111,6 +111,7 @@ class Gremlin_Bat extends Enemy{
         this.angle = 0;
         this.curve = Math.random() * 3;
         this.vy = 1;
+        this.maxLength = Math.random() * 200 + 100;
     }
     update(deltaTime){
         super.update();
