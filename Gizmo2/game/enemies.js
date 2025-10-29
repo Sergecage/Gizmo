@@ -52,7 +52,8 @@ class Enemy {
         this.x - this.vxSpeed * deltaTime;
         if (this.x < 0 - this.width) this.markedForDeletion = true;
         if (this.frameTimer > this.frameInterval) {
-
+            if (this.frameX < this.maxFrame) this. frameX++;
+            else this.frameX = 0;
         } else{
             this.frameTimer += deltaTime;
         }
