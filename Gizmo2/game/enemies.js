@@ -11,9 +11,9 @@ class Game{
         this.width = width;
         this.height - height;
         this.enemies = [];
-        this.enemyInterval = 100;
+        this.enemyInterval = 500;
         this.enemyTimer = 0;
-        this.enemyTypes = ['bat', 'angry'];
+        this.enemyTypes = ['bat', 'angry', 'gremlin_bat'];
     }
     update(deltaTime){
         this.enemies = this.enemies.filter(obj => !obj.markedForDeletion);
@@ -32,6 +32,7 @@ class Game{
         const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
         if ( randomEnemy == "bat") this.enemy.push(new Bat(this));
         else if ( randomEnemy == "angry") this.enemy.push(new Angry(this));
+         else if ( randomEnemy == "gremlin_bat") this.enemy.push(new Gremlin_Bat(this));
         /*this.enemy.sort(function(a,b){
             return a.y - b.y;
         });*/
@@ -42,13 +43,24 @@ class Enemy {
     constructor(game){
         this.game = game;
         this.markedForDeletion = false;
+        this.frameX = 0;
+        this.maxFrame = 5;
+        this.frameInterval = 100;
+        this.frameTimer = 0;
     }
     update(deltaTime){
         this.x - this.vxSpeed * deltaTime;
         if (this.x < 0 - this.width) this.markedForDeletion = true;
+        if (this.frameTimer > this.frameInterval) {
+            if (this.frameX < this.maxFrame) this. frameX++;
+            else this.frameX = 0;
+            this.frameTimer = 0;
+        } else{
+            this.frameTimer += deltaTime;
+        }
     }
     draw(ctx){
-        ctx.drawImage(this.image, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.frameX * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -64,10 +76,11 @@ class Bat extends Enemy{
         this.image = bat;
         this.vxSpeed = Math.random() * 0.1 + 0.1;
         this.angle = 0;
+        this.curve = Math.random() * 3;
     }
     update(deltaTime){
         super.update(deltaTime);
-        this.y += Math.sin(this.angle) * 10;
+        this.y += Math.sin(this.angle) * this.curve;
         this.angle += 0.1;
     }
 }
@@ -94,6 +107,37 @@ class Angry extends Enemy{
        ctx.restore();
     }
 };
+
+class Gremlin_Bat extends Enemy{
+    constructor(game){
+        super(game);
+        this.spriteWidth = 310;
+        this.spriteHeight = 175;
+         this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
+        this.x = Math.random() * this.game.width;
+        this.y = 0 * this.height;
+        this.image = gremlin_ba;
+        this.vxSpeed = Math.random() * 0.1 + 0.1;
+        this.angle = 0;
+        this.curve = Math.random() * 3;
+        this.vy = Math.random() * 0.1 + 0.1;
+        this.maxLength = Math.random() * this.game.height;
+    }
+    update(deltaTime){
+        super.update(deltaTime);
+        if (this.y < 0 - this.height) this.markedForDeletion = true;
+        this.y += this.vy * deltaTime;
+        if (this.y > this.maxLength) this.vy *= -1;
+    }
+    draw(ctx){
+        ctx.beginPath();
+        ctx.moveTo(this.x + this.width / 2, 0);
+        ctx.lineTo(this.x + this.width / 2, this.y + 10);
+        ctx.stroke();
+        super.draw();
+    }
+}
 
 const game = new Game(ctx, canvas.width, canvas.height);
 let lastTime = 1;
