@@ -51,6 +51,11 @@ class Enemy {
     update(deltaTime){
         this.x - this.vxSpeed * deltaTime;
         if (this.x < 0 - this.width) this.markedForDeletion = true;
+        if (this.frameTimer > this.frameInterval) {
+
+        } else{
+            this.frameTimer += deltaTime;
+        }
     }
     draw(ctx){
         ctx.drawImage(this.image, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
