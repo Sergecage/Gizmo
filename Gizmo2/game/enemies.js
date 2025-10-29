@@ -43,7 +43,7 @@ class Enemy {
     constructor(game){
         this.game = game;
         this.markedForDeletion = false;
-        this.frameX;
+        this.frameX = 0;
         this.maxFrame = 5;
         this.frameInterval = 100;
         this.frameTimer = 0;
@@ -54,6 +54,7 @@ class Enemy {
         if (this.frameTimer > this.frameInterval) {
             if (this.frameX < this.maxFrame) this. frameX++;
             else this.frameX = 0;
+            this.frameTimer = 0;
         } else{
             this.frameTimer += deltaTime;
         }
