@@ -115,7 +115,7 @@ class Gremlin_Bat extends Enemy{
     }
     update(deltaTime){
         super.update();
-        this.y += this.vy * this.deltaTime;
+        this.y += this.vy * deltaTime;
         if (this.y > this.maxLength) this.vy *= -1;
     }
 }
