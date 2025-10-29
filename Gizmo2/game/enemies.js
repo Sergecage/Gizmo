@@ -46,6 +46,7 @@ class Enemy {
         this.frameX;
         this.maxFrame = 5;
         this.frameInterval = 100;
+        this.frameTimer = 0;
     }
     update(deltaTime){
         this.x - this.vxSpeed * deltaTime;
