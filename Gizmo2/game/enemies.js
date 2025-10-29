@@ -120,6 +120,7 @@ class Gremlin_Bat extends Enemy{
     }
     draw(ctx){
         ctx.beginPath();
+        ctx.moveTo();
         super.draw();
     }
 }
