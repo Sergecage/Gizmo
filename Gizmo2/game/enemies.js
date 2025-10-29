@@ -119,10 +119,8 @@ class Gremlin_Bat extends Enemy{
         if (this.y > this.maxLength) this.vy *= -1;
     }
     draw(ctx){
-        ctx.save();
-        ctx.globalAlpha = 0.5;
-        super.draw(ctx) 
-        ctx.restore();
+        ctx.beginPath();
+        super.draw();
     }
 }
 
