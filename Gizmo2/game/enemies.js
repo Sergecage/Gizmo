@@ -118,6 +118,12 @@ class Gremlin_Bat extends Enemy{
         this.y += this.vy * deltaTime;
         if (this.y > this.maxLength) this.vy *= -1;
     }
+    draw(ctx){
+        ctx.save();
+        ctx.globalAlpha = 0.5;
+        super.draw(ctx) 
+        ctx.restore();
+    }
 }
 
 const game = new Game(ctx, canvas.width, canvas.height);
