@@ -43,6 +43,8 @@ class Enemy {
     constructor(game){
         this.game = game;
         this.markedForDeletion = false;
+        this.frameX;
+        this.maxFrame = 5;
     }
     update(deltaTime){
         this.x - this.vxSpeed * deltaTime;
