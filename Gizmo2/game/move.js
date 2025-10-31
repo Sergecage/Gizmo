@@ -25,6 +25,10 @@ window.addEventListener("load", function() {
     };
 
     const displayStatus = () => {
-        
-    }
+
+    };
+
+    const animate = () => {
+
+    };
 });
