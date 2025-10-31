@@ -8,11 +8,11 @@ body{
 }
 
 #game {
-    width:1200px;
-    height: 450px;
-    top: 25%;
-    position: relative;
+    top: 50%;
+    left: 50%;
+    position: absolute;
     border:  3px solid black;
+    transform: translate(-50%, -50%);
 }
 
 .controls {
