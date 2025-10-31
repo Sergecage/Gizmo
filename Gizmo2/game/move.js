@@ -23,4 +23,8 @@ window.addEventListener("load", function() {
     const handleEnemies = () => {
 
     };
+
+    const displayStatus = () => {
+        
+    }
 });
