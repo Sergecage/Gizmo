@@ -13,6 +13,10 @@ window.addEventListener("load", function() {
     }
 
     class Background{
+
+    }
+
+    class Enemy {
         
     }
 });
