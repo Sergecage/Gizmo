@@ -3,4 +3,8 @@ window.addEventListener("load", function() {
     const ctx = canvas.getContext("2d");
     canvas.width = 800;
     canvas.height = 720;
+
+    class InputHandler{
+
+    }
 });
