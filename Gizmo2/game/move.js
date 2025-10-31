@@ -7,4 +7,8 @@ window.addEventListener("load", function() {
     class InputHandler{
 
     }
+
+    class Player{
+        
+    }
 });
