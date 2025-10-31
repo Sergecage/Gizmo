@@ -17,6 +17,10 @@ window.addEventListener("load", function() {
     }
 
     class Enemy {
-        
+
     }
+
+    const handleEnemies = () => {
+
+    };
 });
