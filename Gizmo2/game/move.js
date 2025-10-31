@@ -5,7 +5,9 @@ window.addEventListener("load", function() {
     canvas.height = 720;
 
     class InputHandler{
-
+        constructor(){
+            this.keys = [];
+        }
     }
 
     class Player{
