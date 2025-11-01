@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
                 }
             })
             window.addEventListener("keydup",  e => {
-                if (e.key === "ArrowDown"){
+                if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight"){
                     this.keys.splice(this.keys.indexOf(e.key), 1);
                 }
             })
