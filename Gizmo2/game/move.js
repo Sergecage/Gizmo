@@ -12,6 +12,11 @@ window.addEventListener("load", function() {
                     this.keys.push(e.key);
                 }
             })
+            window.addEventListener("keydup",  e => {
+                if (e.key === "ArrowDown" && this.keys.indexOf(e.key) === -1){
+                    this.keys.push(e.key);
+                }
+            })
         }
     }
 
