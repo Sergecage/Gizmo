@@ -7,6 +7,9 @@ window.addEventListener("load", function() {
     class InputHandler{
         constructor(){
             this.keys = [];
+            window.addEventListener("keydown",  function(){
+                
+            })
         }
     }
 
