@@ -8,7 +8,7 @@ window.addEventListener("load", function() {
         constructor(){
             this.keys = [];
             window.addEventListener("keydown",  e => {
-                if (e.key === "ArrowDown"){
+                if (e.key === "ArrowDown" && this.keys.indexOf(e.key) === -1){
                     this.keys.push(e.key);
                 }
             })
