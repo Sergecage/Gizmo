@@ -13,8 +13,8 @@ window.addEventListener("load", function() {
                 }
             })
             window.addEventListener("keydup",  e => {
-                if (e.key === "ArrowDown" && this.keys.indexOf(e.key) === -1){
-                    this.keys.push(e.key);
+                if (e.key === "ArrowDown"){
+                    this.keys.splice(this.keys.indexOf(e.key), 1);
                 }
             })
         }
