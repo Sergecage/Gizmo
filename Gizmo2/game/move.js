@@ -8,7 +8,7 @@ window.addEventListener("load", function() {
         constructor(){
             this.keys = [];
             window.addEventListener("keydown",  function(){
-                
+
             })
         }
     }
@@ -32,6 +32,8 @@ window.addEventListener("load", function() {
     const displayStatus = () => {
 
     };
+
+    const input = new InputHandler();
 
     const animate = () => {
 
