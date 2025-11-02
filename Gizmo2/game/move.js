@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
-            this.width = 460;
+            this.width = 450;
             this.height = 450;
             this.x = 0;
             this.y = this.gameHeight - this.height;
@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
         draw(context){
             context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
-            context.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
+            context.drawImage(this.image, 1 * this.width, 0 * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(){
             this.x++;
