@@ -31,6 +31,7 @@ window.addEventListener("load", function() {
             this.y = 0;
         }
         draw(context){
+            context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
         }
     }
