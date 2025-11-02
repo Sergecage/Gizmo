@@ -25,6 +25,8 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
+            this.width = 250;
+            this.height = 200;
         }
     }
 
