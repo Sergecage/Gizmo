@@ -61,6 +61,8 @@ window.addEventListener("load", function() {
     player.update();
 
     const animate = () => {
-
+        player.update();
+        requestAnimationFrame(animate);
     };
+    animate();
 });
