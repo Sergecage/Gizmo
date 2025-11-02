@@ -53,7 +53,8 @@ window.addEventListener("load", function() {
     };
 
     const input = new InputHandler();
-    const player  = new Player();
+    const player  = new Player(canvas.width, canvas.height);
+    player.draw();
 
     const animate = () => {
 
