@@ -27,6 +27,8 @@ window.addEventListener("load", function() {
             this.gameWidth = gameWidth;
             this.width = 250;
             this.height = 200;
+            this.x = 0;
+            this.y = 0;
         }
     }
 
