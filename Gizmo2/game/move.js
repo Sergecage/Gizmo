@@ -30,6 +30,9 @@ window.addEventListener("load", function() {
             this.x = 0;
             this.y = 0;
         }
+        draw(context){
+            context.fillRect(this.x, this.y, this.width, this.height);
+        }
     }
 
     class Background{
