@@ -7,11 +7,41 @@ window.addEventListener("load", function() {
     class InputHandler{
         constructor(){
             this.keys = [];
+            window.addEventListener("keydown",  e => {
+                if ((e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") 
+                    && this.keys.indexOf(e.key) === -1){
+                    this.keys.push(e.key);
+                }
+            })
+            window.addEventListener("keydup",  e => {
+                if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight"){
+                    this.keys.splice(this.keys.indexOf(e.key), 1);
+                }
+            })
         }
     }
 
     class Player{
-
+        constructor(gameWidth, gameHeight){
+            this.gameHeight = gameHeight;
+            this.gameWidth = gameWidth;
+            this.width = 450;
+            this.height = 450;
+            this.x = 0;
+            this.y = this.gameHeight - this.height;
+            this.image = document.getElementById("gizmo");
+            this.frameX = 1;
+            this.frameY = 0;
+            this.speed = 0;
+        }
+        draw(context){
+            context.fillStyle = "blue";
+            context.fillRect(this.x, this.y, this.width, this.height);
+            context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
+        }
+        update(){
+            this.x++;
+        }
     }
 
     class Background{
@@ -30,7 +60,14 @@ window.addEventListener("load", function() {
 
     };
 
-    const animate = () => {
+    const input = new InputHandler();
+    const player  = new Player(canvas.width, canvas.height);
 
+    const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        player.draw(ctx);
+        player.update();
+        requestAnimationFrame(animate);
     };
+    animate();
 });
