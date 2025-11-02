@@ -25,8 +25,8 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
-            this.width = 250;
-            this.height = 200;
+            this.width = 500;
+            this.height = 500;
             this.x = 0;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
         draw(context){
             context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
-            context.drawImage(this.image, this.x, this.y, this.width, this.height);
+            context.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(){
             this.x++;
