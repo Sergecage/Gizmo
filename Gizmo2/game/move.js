@@ -30,7 +30,7 @@ window.addEventListener("load", function() {
             this.x = 0;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
-            this.frameX = 0;
+            this.frameX = 1;
             this.frameY = 0;
         }
         draw(context){
