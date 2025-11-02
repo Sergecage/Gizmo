@@ -22,7 +22,9 @@ window.addEventListener("load", function() {
     }
 
     class Player{
+        constructor(gameWidth, gameHeight){
 
+        }
     }
 
     class Background{
