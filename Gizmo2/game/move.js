@@ -28,11 +28,14 @@ window.addEventListener("load", function() {
             this.width = 250;
             this.height = 200;
             this.x = 0;
-            this.y = 0;
+            this.y = this.gameHeight - this.height;
         }
         draw(context){
             context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
+        }
+        update(){
+            this.x++;
         }
     }
 
