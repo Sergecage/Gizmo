@@ -25,8 +25,8 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
-            this.width = 500;
-            this.height = 500;
+            this.width = 460;
+            this.height = 450;
             this.x = 0;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
