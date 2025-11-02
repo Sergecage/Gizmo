@@ -61,6 +61,7 @@ window.addEventListener("load", function() {
     player.update();
 
     const animate = () => {
+        player.draw(ctx);
         player.update();
         requestAnimationFrame(animate);
     };
