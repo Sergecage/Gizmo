@@ -29,10 +29,12 @@ window.addEventListener("load", function() {
             this.height = 200;
             this.x = 0;
             this.y = this.gameHeight - this.height;
+            this.image = document.getElementById("gizmo");
         }
         draw(context){
             context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
+            context.drawImage()
         }
         update(){
             this.x++;
