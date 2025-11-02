@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
         draw(context){
             context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
-            context.drawImage(this.image);
+            context.drawImage(this.image, 0, 0);
         }
         update(){
             this.x++;
