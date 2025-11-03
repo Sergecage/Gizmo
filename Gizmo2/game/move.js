@@ -66,7 +66,7 @@ window.addEventListener("load", function() {
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         player.draw(ctx);
-        player.update();
+        player.update(input);
         requestAnimationFrame(animate);
     };
     animate();
