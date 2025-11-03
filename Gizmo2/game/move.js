@@ -87,7 +87,7 @@ window.addEventListener("load", function() {
             context.drawImage(this.image, this.x, this.y, this.width, this.height);
         }
         update(){
-            this.x -= thhis.speed;
+            this.x -= this.speed;
         }
     }
 
@@ -109,7 +109,8 @@ window.addEventListener("load", function() {
 
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-         background.draw(ctx);
+        background.draw(ctx);
+        background.update();
         player.draw(ctx);
         player.update(input);
         requestAnimationFrame(animate);
