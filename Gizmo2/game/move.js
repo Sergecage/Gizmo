@@ -101,11 +101,13 @@ window.addEventListener("load", function() {
 
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
+    const background = new Background(canvas.width, canvas.height);
 
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         player.draw(ctx);
         player.update(input);
+        background.draw(ctx);
         requestAnimationFrame(animate);
     };
     animate();
