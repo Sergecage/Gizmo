@@ -59,6 +59,9 @@ window.addEventListener("load", function() {
 
             this.y += vy;
         }
+        onGround(){
+            return this.y >= this.gameHeight - this.height;
+        }
     }
 
     class Background{
