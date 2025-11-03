@@ -73,7 +73,10 @@ window.addEventListener("load", function() {
     }
 
     class Background{
-
+        constructor(){
+            this.gameHeight = gameHeight;
+            this.gameWidth = gameWidth;
+        }
     }
 
     class Enemy {
