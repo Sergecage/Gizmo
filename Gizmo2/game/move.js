@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
-            this.width = 450;
+            this.width = 440;
             this.height = 450;
             this.x = 0;
             this.y = this.gameHeight - this.height;
@@ -63,6 +63,7 @@ window.addEventListener("load", function() {
             } else {
                 this.vy = 0;
             }
+            if (this.y > this.gameHeight - this.height) this.y = this.gameHeight - this.height;
         }
         onGround(){
             return this.y >= this.gameHeight - this.height;
