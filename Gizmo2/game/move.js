@@ -76,6 +76,7 @@ window.addEventListener("load", function() {
         constructor(){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
+            this.image = document.getElementById("backImg");
         }
     }
 
