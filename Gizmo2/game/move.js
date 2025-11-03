@@ -60,6 +60,8 @@ window.addEventListener("load", function() {
             this.y += this.vy;
             if (!this.onGround()){
                 this.vy += this.weight;
+            } else {
+                this.vy = 0;
             }
         }
         onGround(){
