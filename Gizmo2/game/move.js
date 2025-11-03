@@ -49,6 +49,7 @@ window.addEventListener("load", function() {
             else {
                 this.speed = 0;
             }
+            if ( this.x < 0) this.x = 0;
         }
     }
 
