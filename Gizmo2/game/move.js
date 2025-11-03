@@ -82,6 +82,9 @@ window.addEventListener("load", function() {
             this.width = 2400;
             this.height = 720;
         }
+        draw(context){
+            context.drawImage(this.image, this.x, this.y);
+        }
     }
 
     class Enemy {
