@@ -58,6 +58,9 @@ window.addEventListener("load", function() {
             else if (this.x > this.gameWidth - this.width) this.x = this.gameWidth - this.width;
 
             this.y += vy;
+            if (!this.onGround()){
+                this.vy += this.weight;
+            }
         }
         onGround(){
             return this.y >= this.gameHeight - this.height;
