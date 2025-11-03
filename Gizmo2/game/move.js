@@ -1,7 +1,7 @@
 window.addEventListener("load", function() {
     const canvas = document.getElementById("game");
     const ctx = canvas.getContext("2d");
-    canvas.width = 800;
+    canvas.width = 1000;
     canvas.height = 720;
 
     class InputHandler{
@@ -81,7 +81,7 @@ window.addEventListener("load", function() {
             this.y = 0;
             this.width = 2400;
             this.height = 720;
-            this.speed = 20;
+            this.speed = 5;
         }
         draw(context){
             context.drawImage(this.image, this.x, this.y, this.width, this.height);
