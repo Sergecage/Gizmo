@@ -88,6 +88,7 @@ window.addEventListener("load", function() {
         }
         update(){
             this.x -= this.speed;
+            if (this.x < 0 - this.width) this.x = 0;
         }
     }
 
