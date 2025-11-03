@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
             this.frameY = 0;
             this.speed = 1;
             this.vy = 0;
-            this.weight = 1;
+            this.weight = 5;
         }
         draw(context){
             context.fillStyle = "blue";
@@ -46,7 +46,7 @@ window.addEventListener("load", function() {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
                 this.speed = -5;
-            } else if (input.keys.indexOf("ArrowUp") > - 1){
+            } else if (input.keys.indexOf("ArrowUp") > - 1 && this.onGround()){
                 this.vy = -10;
             }
             else {
