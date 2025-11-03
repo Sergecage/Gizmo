@@ -77,6 +77,10 @@ window.addEventListener("load", function() {
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
             this.image = document.getElementById("backImg");
+            this.x = 0;
+            this.y = 0;
+            this.width = 2400;
+            this.height = 720;
         }
     }
 
