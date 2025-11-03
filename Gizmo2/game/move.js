@@ -26,7 +26,7 @@ window.addEventListener("load", function() {
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
             this.width = 440;
-            this.height = 450;
+            this.height = 445;
             this.x = 0;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
             this.frameY = 0;
             this.speed = 1;
             this.vy = 0;
-            this.weight = 5;
+            this.weight = 1;
         }
         draw(context){
             context.fillStyle = "blue";
@@ -47,7 +47,7 @@ window.addEventListener("load", function() {
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
                 this.speed = -5;
             } else if (input.keys.indexOf("ArrowUp") > - 1 && this.onGround()){
-                this.vy = -10;
+                this.vy = -32;
             }
             else {
                 this.speed = 0;
