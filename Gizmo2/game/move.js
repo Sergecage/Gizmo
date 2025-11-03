@@ -40,7 +40,7 @@ window.addEventListener("load", function() {
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(){
-            this.x++;
+            this.x += this.speed;
         }
     }
 
