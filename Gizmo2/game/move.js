@@ -34,6 +34,7 @@ window.addEventListener("load", function() {
             this.frameY = 0;
             this.speed = 1;
             this.vy = 0;
+            this.weight = 0;
         }
         draw(context){
             context.fillStyle = "blue";
