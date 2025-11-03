@@ -41,6 +41,9 @@ window.addEventListener("load", function() {
         }
         update(input){
             this.x += this.speed;
+            if (input.keys.indexOf("ArrowRight") > -1 ) {
+                this.speed = 5;
+            }
         }
     }
 
