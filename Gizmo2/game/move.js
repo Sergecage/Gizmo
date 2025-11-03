@@ -43,6 +43,8 @@ window.addEventListener("load", function() {
             this.x += this.speed;
             if (input.keys.indexOf("ArrowRight") > -1 ) {
                 this.speed = 5;
+            } else {
+                this.speed = 0;
             }
         }
     }
