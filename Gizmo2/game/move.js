@@ -32,7 +32,7 @@ window.addEventListener("load", function() {
             this.image = document.getElementById("gizmo");
             this.frameX = 1;
             this.frameY = 0;
-            this.speed = 0;
+            this.speed = 1;
         }
         draw(context){
             context.fillStyle = "blue";
