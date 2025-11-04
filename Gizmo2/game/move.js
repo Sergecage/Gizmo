@@ -102,9 +102,10 @@ window.addEventListener("load", function() {
             this.image = document.getElementById("enemy-flower");
             this.x = 0;
             this.y = 0;
+            this.frameX = 0;
         }
         draw(context){
-            context.drawImage(this.image, 0 * this.width, 0 * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
+            context.drawImage(this.image, this.frameX * this.width, 0 * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(){
 
