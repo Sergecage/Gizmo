@@ -94,7 +94,9 @@ window.addEventListener("load", function() {
     }
 
     class Enemy {
-
+        constructor(){
+            
+        }
     }
 
     const handleEnemies = () => {
@@ -112,7 +114,7 @@ window.addEventListener("load", function() {
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         background.draw(ctx);
-        background.update();
+        //background.update();
         player.draw(ctx);
         player.update(input);
         requestAnimationFrame(animate);
