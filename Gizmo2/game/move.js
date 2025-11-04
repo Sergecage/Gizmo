@@ -101,7 +101,7 @@ window.addEventListener("load", function() {
             this.height = 119;
             this.image = document.getElementById("enemy-flower");
             this.x = 0;
-            this.y = 0;
+            this.y = this.gameHeight - this.height;
             this.frameX = 0;
         }
         draw(context){
