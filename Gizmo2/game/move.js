@@ -128,6 +128,8 @@ enemies.push(new Enemy(canvas.width, canvas.height));
     const player  = new Player(canvas.width, canvas.height);
     const background = new Background(canvas.width, canvas.height);
 
+    let lastTime = 0;
+
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         background.draw(ctx);
