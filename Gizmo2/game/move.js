@@ -105,6 +105,8 @@ window.addEventListener("load", function() {
             this.frameX = 0;
             this.maxFrame = 0;
             this.fps = 20;
+            this.frameTimer = 0;
+            this.frameInterval = 1000/this.fps;
             this.speed = 5;
         }
         draw(context){
