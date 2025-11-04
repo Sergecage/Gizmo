@@ -112,9 +112,8 @@ window.addEventListener("load", function() {
             this.x--;
         }
     }
-
+enemies.push(new Enemy(canvas.width, canvas.height));
     const handleEnemies = () => {
-        enemies.push(new Enemy(canvas.width, canvas.height));
         enemies.forEach(enemy => {
             enemy.draw(ctx);
             enemy.update();
@@ -135,6 +134,7 @@ window.addEventListener("load", function() {
         //background.update();
         player.draw(ctx);
         player.update(input);
+        handleEnemies();
         requestAnimationFrame(animate);
     };
     animate();
