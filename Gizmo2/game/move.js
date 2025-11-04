@@ -38,7 +38,6 @@ window.addEventListener("load", function() {
             this.weight = 1;
         }
         draw(context){
-            context.fillStyle = "blue";
             context.fillRect(this.x, this.y, this.width, this.height);
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
@@ -115,7 +114,7 @@ window.addEventListener("load", function() {
     }
 
     const handleEnemies = (deltaTime) => {
-        if (enemyTimer > enemyInterval){
+        if (enemyTimer > enemyInterval + randoEnemyInterval){
             enemies.push(new Enemy(canvas.width, canvas.height));
             enemyTimer = 0;
         } else{
@@ -145,7 +144,7 @@ window.addEventListener("load", function() {
         lastTime = timeStamp;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         background.draw(ctx);
-        //background.update();
+        background.update();
         player.draw(ctx);
         player.update(input);
         handleEnemies(deltaTime);
