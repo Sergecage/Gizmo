@@ -132,6 +132,7 @@ window.addEventListener("load", function() {
         player.draw(ctx);
         player.update(input);
         enemy1.draw(ctx);
+        enemy1.update();
         requestAnimationFrame(animate);
     };
     animate();
