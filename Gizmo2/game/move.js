@@ -112,8 +112,11 @@ window.addEventListener("load", function() {
             this.x--;
         }
     }
-//enemies.push(new Enemy(canvas.width, canvas.height));
+
     const handleEnemies = () => {
+        if (enemyTimer > enemyInterval){
+            enemies.push(new Enemy(canvas.width, canvas.height));
+        }
         enemies.forEach(enemy => {
             enemy.draw(ctx);
             enemy.update();
