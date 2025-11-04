@@ -106,13 +106,13 @@ window.addEventListener("load", function() {
             this.frameX = 0;
         }
         draw(context){
-            context.drawImage(this.image, this.frameX * this.width, 0 * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
+            context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(){
             this.x--;
         }
     }
-enemies.push(new Enemy(canvas.width, canvas.height));
+//enemies.push(new Enemy(canvas.width, canvas.height));
     const handleEnemies = () => {
         enemies.forEach(enemy => {
             enemy.draw(ctx);
@@ -138,7 +138,7 @@ enemies.push(new Enemy(canvas.width, canvas.height));
         //background.update();
         player.draw(ctx);
         player.update(input);
-        handleEnemies();
+        handleEnemies(deltaTime);
         requestAnimationFrame(animate);
     };
     animate(0);
