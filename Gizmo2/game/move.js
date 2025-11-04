@@ -130,8 +130,9 @@ enemies.push(new Enemy(canvas.width, canvas.height));
 
     let lastTime = 0;
 
-    const animate = () => {
+    const animate = (timeStamp) => {
         const deltaTime = timeStamp - lastTime;
+        lastTime = timeStamp;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         background.draw(ctx);
         //background.update();
@@ -140,5 +141,5 @@ enemies.push(new Enemy(canvas.width, canvas.height));
         handleEnemies();
         requestAnimationFrame(animate);
     };
-    animate();
+    animate(0);
 });
