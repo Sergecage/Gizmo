@@ -101,6 +101,9 @@ window.addEventListener("load", function() {
             this.height = 119;
             this.image = document.getElementById("enemy-flower");
         }
+        draw(context){
+            
+        }
     }
 
     const handleEnemies = () => {
