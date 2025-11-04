@@ -99,6 +99,7 @@ window.addEventListener("load", function() {
             this.gameHeight = gameHeight;
             this.width = 160;
             this.height = 119;
+            this.image = document.getElementById("enemy-flower");
         }
     }
 
