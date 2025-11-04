@@ -103,6 +103,7 @@ window.addEventListener("load", function() {
             this.x = this.gameWidth;
             this.y = this.gameHeight - this.height;
             this.frameX = 0;
+            this.maxFrame = 0;
             this.speed = 5;
         }
         draw(context){
