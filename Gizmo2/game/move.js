@@ -129,6 +129,8 @@ window.addEventListener("load", function() {
     const background = new Background(canvas.width, canvas.height);
 
     let lastTime = 0;
+    let enemyTimer = 0;
+    let enemyInterval = 1000;
 
     const animate = (timeStamp) => {
         const deltaTime = timeStamp - lastTime;
