@@ -108,7 +108,7 @@ window.addEventListener("load", function() {
         draw(context){
             context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height,  this.x, this.y, this.width, this.height);
         }
-        update(){
+        update(deltaTime){
             this.x -= this.speed;
         }
     }
@@ -122,7 +122,7 @@ window.addEventListener("load", function() {
         }
         enemies.forEach(enemy => {
             enemy.draw(ctx);
-            enemy.update();
+            enemy.update(deltaTime);
         })
     };
 
