@@ -98,22 +98,23 @@ window.addEventListener("load", function() {
         constructor(gameWidth ,gameHeight){
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 160;
-            this.height = 119;
+            this.width = 190;
+            this.height = 180;
             this.image = document.getElementById("enemy-flower");
             this.x = this.gameWidth;
             this.y = this.gameHeight - this.height;
             this.frameX = 0;
+            this.speed = 5;
         }
         draw(context){
-            context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height, this.x, this.y, this.width, this.height);
+            context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height,  this.x, this.y, this.width, this.height);
         }
         update(){
-            this.x--;
+            this.x -= this.speed;
         }
     }
 
-    const handleEnemies = () => {
+    const handleEnemies = (deltaTime) => {
         if (enemyTimer > enemyInterval){
             enemies.push(new Enemy(canvas.width, canvas.height));
             enemyTimer = 0;
