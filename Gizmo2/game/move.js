@@ -117,6 +117,8 @@ window.addEventListener("load", function() {
         if (enemyTimer > enemyInterval){
             enemies.push(new Enemy(canvas.width, canvas.height));
             enemyTimer = 0;
+        } else{
+            enemyTimer += deltaTime;
         }
         enemies.forEach(enemy => {
             enemy.draw(ctx);
