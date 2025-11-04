@@ -114,7 +114,7 @@ window.addEventListener("load", function() {
     }
 
     const handleEnemies = () => {
-
+        enemies.push(new Enemy(canvas.width, canvas.height))
     };
 
     const displayStatus = () => {
@@ -124,7 +124,6 @@ window.addEventListener("load", function() {
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
     const background = new Background(canvas.width, canvas.height);
-    const enemy1 = new Enemy(canvas.width, canvas.height);
 
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
