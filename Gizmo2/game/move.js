@@ -104,7 +104,7 @@ window.addEventListener("load", function() {
             this.y = 0;
         }
         draw(context){
-            context.drawImage(this.image, this.x, this.y);
+            context.drawImage(this.image, this.x, this.y, this.width, this.height);
         }
         update(){
 
@@ -130,6 +130,7 @@ window.addEventListener("load", function() {
         //background.update();
         player.draw(ctx);
         player.update(input);
+        enemy1.draw(ctx);
         requestAnimationFrame(animate);
     };
     animate();
