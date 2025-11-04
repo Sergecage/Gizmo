@@ -97,7 +97,8 @@ window.addEventListener("load", function() {
         constructor(gameWidth ,gameHeight){
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-
+            this.width = 160;
+            this.height = 119;
         }
     }
 
