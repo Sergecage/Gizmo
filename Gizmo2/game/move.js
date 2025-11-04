@@ -94,8 +94,8 @@ window.addEventListener("load", function() {
     }
 
     class Enemy {
-        constructor(){
-            
+        constructor(gameWidth ,gameHeight){
+
         }
     }
 
