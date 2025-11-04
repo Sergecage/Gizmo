@@ -114,7 +114,11 @@ window.addEventListener("load", function() {
     }
 
     const handleEnemies = () => {
-        enemies.push(new Enemy(canvas.width, canvas.height))
+        enemies.push(new Enemy(canvas.width, canvas.height));
+        enemies.forEach(enemy => {
+            enemy.draw(ctx);
+            enemy.update();
+        })
     };
 
     const displayStatus = () => {
