@@ -131,6 +131,7 @@ enemies.push(new Enemy(canvas.width, canvas.height));
     let lastTime = 0;
 
     const animate = () => {
+        const deltaTime = timeStamp - lastTime;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         background.draw(ctx);
         //background.update();
