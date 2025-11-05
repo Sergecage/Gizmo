@@ -121,6 +121,7 @@ window.addEventListener("load", function() {
             this.frameTimer = 0;
             this.frameInterval = 1000/this.fps;
             this.speed = 5;
+            this.markedForDeletion = false;
         }
         draw(context){
             context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
