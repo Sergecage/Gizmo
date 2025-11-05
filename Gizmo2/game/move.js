@@ -5,6 +5,7 @@ window.addEventListener("load", function() {
     canvas.height = 720;
     let enemies = [];
     let score = 0;
+    let gameOver = false;
 
     class InputHandler{
         constructor(){
@@ -57,6 +58,9 @@ window.addEventListener("load", function() {
                 const dx = enemy.x - this.x;
                 const dy = enemy.y - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < enemy.width / 2 + this.width / 2) {
+                    gameOver = true;
+                }
             })
 
             if (this.frameTimer > this.frameInterval) {
