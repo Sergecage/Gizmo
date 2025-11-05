@@ -34,6 +34,9 @@ window.addEventListener("load", function() {
             this.frameX = 1;
             this.maxFrame = 2;
             this.frameY = 0;
+            this.fps = 20;
+            this.frameTimer = 0;
+            this.frameInterval = 1000/this.fps;
             this.speed = 1;
             this.vy = 0;
             this.weight = 1;
