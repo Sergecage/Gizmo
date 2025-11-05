@@ -178,6 +178,7 @@ window.addEventListener("load", function() {
         player.draw(ctx);
         player.update(input, deltaTime);
         handleEnemies(deltaTime);
+        displayStatus(ctx);
         requestAnimationFrame(animate);
     };
     animate(0);
