@@ -32,6 +32,7 @@ window.addEventListener("load", function() {
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
             this.frameX = 1;
+            this.maxFrame = 2;
             this.frameY = 0;
             this.speed = 1;
             this.vy = 0;
@@ -42,6 +43,7 @@ window.addEventListener("load", function() {
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(input){
+            if (this.frameX >= this.maxFrame) this.frameX =0;
             if (input.keys.indexOf("ArrowRight") > -1 ) {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
