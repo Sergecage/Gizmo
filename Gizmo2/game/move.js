@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
             this.frameX = 1;
             this.maxFrame = 2;
             this.frameY = 0;
-            this.fps = 20;
+            this.fps = 2;
             this.frameTimer = 0;
             this.frameInterval = 1000/this.fps;
             this.speed = 1;
@@ -45,7 +45,7 @@ window.addEventListener("load", function() {
             context.fillRect(this.x, this.y, this.width, this.height);
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
-        update(input){
+        update(input, deltaTime){
             if (this.frameTimer > this.frameInterval) {
                 if (this.frameX >= this.maxFrame) this.frameX =0;
                 else this.frameX++;
@@ -168,7 +168,7 @@ window.addEventListener("load", function() {
         background.draw(ctx);
         background.update();
         player.draw(ctx);
-        player.update(input);
+        player.update(input, deltaTime);
         handleEnemies(deltaTime);
         requestAnimationFrame(animate);
     };
