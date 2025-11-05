@@ -49,6 +49,9 @@ window.addEventListener("load", function() {
             if (this.frameTimer > this.frameInterval) {
                 if (this.frameX >= this.maxFrame) this.frameX =0;
                 else this.frameX++;
+                this.frameTimer = 0;
+            } else {
+                this.frameTimer += deltaTime;
             }
             if (input.keys.indexOf("ArrowRight") > -1 ) {
                 this.speed = 5;
