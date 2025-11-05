@@ -125,6 +125,7 @@ window.addEventListener("load", function() {
             this.markedForDeletion = false;
         }
         draw(context){
+            context.strokeRect(this.x, this.y, this.width, this.height);
             context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
         }
         update(deltaTime){
