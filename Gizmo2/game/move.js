@@ -135,6 +135,7 @@ window.addEventListener("load", function() {
                 this.frameTimer += deltaTime;
             }
             this.x -= this.speed;
+            if (this.x < 0 - this.width) this.markedForDeletion = true;
         }
     }
 
