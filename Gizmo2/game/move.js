@@ -113,8 +113,11 @@ window.addEventListener("load", function() {
             context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
         }
         update(deltaTime){
-            if (this.frameX >= this.maxFrame) this.frameX = 0;
-            else this.frameX++;
+            if (this.frameTimer > this.frameInterval) {
+                if (this.frameX >= this.maxFrame) this.frameX = 0;
+                else this.frameX++;
+                this.frameTimer = 0;
+            }
             this.x -= this.speed;
         }
     }
