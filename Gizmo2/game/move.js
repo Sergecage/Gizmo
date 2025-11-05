@@ -133,6 +133,9 @@ window.addEventListener("load", function() {
         draw(context){
             context.strokeStyle = "white";
             context.strokeRect(this.x, this.y, this.width, this.height);
+            context.beginPath();
+            context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
+            context.stroke();
             context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
         }
         update(deltaTime){
