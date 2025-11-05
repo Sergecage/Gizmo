@@ -46,8 +46,10 @@ window.addEventListener("load", function() {
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(input){
-            if (this.frameX >= this.maxFrame) this.frameX =0;
-            else this.frameX++;
+            if (this.frameTimer > this.frameInterval) {
+                if (this.frameX >= this.maxFrame) this.frameX =0;
+                else this.frameX++;
+            }
             if (input.keys.indexOf("ArrowRight") > -1 ) {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
