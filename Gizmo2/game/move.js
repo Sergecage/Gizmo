@@ -4,6 +4,7 @@ window.addEventListener("load", function() {
     canvas.width = 1000;
     canvas.height = 720;
     let enemies = [];
+    let score = 0;
 
     class InputHandler{
         constructor(){
