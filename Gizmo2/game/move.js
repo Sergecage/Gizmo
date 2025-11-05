@@ -154,8 +154,9 @@ window.addEventListener("load", function() {
         enemies = enemies.filter(enemy => !enemy.markedForDeletion);
     };
 
-    const displayStatus = () => {
-
+    const displayStatus = (context) => {
+        context.fillStyle = "white";
+        context.font = "40px Helvetica";
     };
 
     const input = new InputHandler();
