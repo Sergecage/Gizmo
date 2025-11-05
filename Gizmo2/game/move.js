@@ -157,6 +157,7 @@ window.addEventListener("load", function() {
     const displayStatus = (context) => {
         context.fillStyle = "white";
         context.font = "40px Helvetica";
+        context.fillText("score: " + score, 20, 50);
     };
 
     const input = new InputHandler();
