@@ -150,6 +150,7 @@ window.addEventListener("load", function() {
             enemy.draw(ctx);
             enemy.update(deltaTime);
         })
+        enemies = enemies.filter(enemy => enemy.markedForDeletion);
     };
 
     const displayStatus = () => {
