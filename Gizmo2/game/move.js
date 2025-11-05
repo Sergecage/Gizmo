@@ -203,7 +203,7 @@ window.addEventListener("load", function() {
         player.update(input, deltaTime, enemies);
         handleEnemies(deltaTime);
         displayStatus(ctx);
-        requestAnimationFrame(animate);
+        if (!gameOver)  requestAnimationFrame(animate);
     };
     animate(0);
 });
