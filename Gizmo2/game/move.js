@@ -55,6 +55,7 @@ window.addEventListener("load", function() {
         update(input, deltaTime, enemies){
             enemies.forEach(enemy => {
                 const dx = enemy.x - this.x;
+                const dy = enemy.y - this.y;
             })
 
             if (this.frameTimer > this.frameInterval) {
