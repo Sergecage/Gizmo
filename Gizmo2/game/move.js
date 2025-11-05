@@ -46,6 +46,9 @@ window.addEventListener("load", function() {
             context.fillStyle = "transparent";
             context.strokeStyle = "white";
             context.strokeRect(this.x, this.y, this.width, this.height);
+            context.beginPath();
+            context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
+            context.stroke();
             context.fillRect(this.x, this.y, this.width, this.height);
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
