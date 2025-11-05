@@ -4,6 +4,8 @@ window.addEventListener("load", function() {
     canvas.width = 1000;
     canvas.height = 720;
     let enemies = [];
+    let score = 0;
+    let gameOver = false;
 
     class InputHandler{
         constructor(){
@@ -32,16 +34,42 @@ window.addEventListener("load", function() {
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
             this.frameX = 1;
+            this.maxFrame = 2;
             this.frameY = 0;
+            this.fps = 2;
+            this.frameTimer = 0;
+            this.frameInterval = 1000/this.fps;
             this.speed = 1;
             this.vy = 0;
             this.weight = 1;
         }
         draw(context){
+            context.fillStyle = "transparent";
+            context.strokeStyle = "white";
+            context.strokeRect(this.x, this.y, this.width, this.height);
+            context.beginPath();
+            context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
+            context.stroke();
             context.fillRect(this.x, this.y, this.width, this.height);
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
-        update(input){
+        update(input, deltaTime, enemies){
+            enemies.forEach(enemy => {
+                const dx = enemy.x - this.x;
+                const dy = enemy.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < enemy.width / 2 + this.width / 2) {
+                    gameOver = true;
+                }
+            })
+
+            if (this.frameTimer > this.frameInterval) {
+                if (this.frameX >= this.maxFrame) this.frameX =0;
+                else this.frameX++;
+                this.frameTimer = 0;
+            } else {
+                this.frameTimer += deltaTime;
+            }
             if (input.keys.indexOf("ArrowRight") > -1 ) {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
@@ -60,9 +88,11 @@ window.addEventListener("load", function() {
             this.y += this.vy;
             if (!this.onGround()){
                 this.vy += this.weight;
+                this.maxFrame = 2;
                 this.frameY = 1;
             } else {
                 this.vy = 0;
+                this.maxFrame = 2;
                 this.frameY = 0;
             }
             if (this.y > this.gameHeight - this.height) this.y = this.gameHeight - this.height;
@@ -108,12 +138,29 @@ window.addEventListener("load", function() {
             this.frameTimer = 0;
             this.frameInterval = 1000/this.fps;
             this.speed = 5;
+            this.markedForDeletion = false;
         }
         draw(context){
-            context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height,  this.x, this.y, this.width, this.height);
+            context.strokeStyle = "white";
+            context.strokeRect(this.x, this.y, this.width, this.height);
+            context.beginPath();
+            context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
+            context.stroke();
+            context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
         }
         update(deltaTime){
+            if (this.frameTimer > this.frameInterval) {
+                if (this.frameX >= this.maxFrame) this.frameX = 0;
+                else this.frameX++;
+                this.frameTimer = 0;
+            } else {
+                this.frameTimer += deltaTime;
+            }
             this.x -= this.speed;
+            if (this.x < 0 - this.width) {
+                this.markedForDeletion = true;
+                score++;
+            }
         }
     }
 
@@ -128,10 +175,18 @@ window.addEventListener("load", function() {
             enemy.draw(ctx);
             enemy.update(deltaTime);
         })
+        enemies = enemies.filter(enemy => !enemy.markedForDeletion);
     };
 
-    const displayStatus = () => {
-
+    const displayStatus = (context) => {
+        context.fillStyle = "white";
+        context.font = "40px Helvetica";
+        context.fillText("score: " + score, 20, 50);
+        if (gameOver) {
+            context.textAlign = "center";
+            context.fillStyle = "orange";
+            context.fillText("Game Over!", canvas.width / 2, 100);
+        }
     };
 
     const input = new InputHandler();
@@ -150,9 +205,10 @@ window.addEventListener("load", function() {
         background.draw(ctx);
         background.update();
         player.draw(ctx);
-        player.update(input);
+        player.update(input, deltaTime, enemies);
         handleEnemies(deltaTime);
-        requestAnimationFrame(animate);
+        displayStatus(ctx);
+        if (!gameOver)  requestAnimationFrame(animate);
     };
     animate(0);
 });
