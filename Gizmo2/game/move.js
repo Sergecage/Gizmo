@@ -44,6 +44,7 @@ window.addEventListener("load", function() {
         }
         update(input){
             if (this.frameX >= this.maxFrame) this.frameX =0;
+            else this.frameX++;
             if (input.keys.indexOf("ArrowRight") > -1 ) {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
