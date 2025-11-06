@@ -45,8 +45,8 @@ window.addEventListener("load", function() {
         }
         draw(context){
             context.fillStyle = "transparent";
-            context.strokeStyle = "white";
-            context.strokeRect(this.x, this.y, this.width, this.height);
+            //context.strokeStyle = "white";
+            //context.strokeRect(this.x, this.y, this.width, this.height);
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
             context.stroke();
@@ -141,8 +141,8 @@ window.addEventListener("load", function() {
             this.markedForDeletion = false;
         }
         draw(context){
-            context.strokeStyle = "white";
-            context.strokeRect(this.x, this.y, this.width, this.height);
+            //context.strokeStyle = "white";
+            //context.strokeRect(this.x, this.y, this.width, this.height);
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
             context.stroke();
@@ -186,6 +186,8 @@ window.addEventListener("load", function() {
             context.textAlign = "center";
             context.fillStyle = "orange";
             context.fillText("Game Over!", canvas.width / 2, 100);
+            context.fillStyle = "white";
+            context.fillText("Game Over!", canvas.width / 2 + 2, 100);
         }
     };
 
