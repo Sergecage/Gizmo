@@ -5,7 +5,7 @@
 }
 body{
     background-color: rgb(166, 230, 226);
-   background-image: linear-gradient(to left, rgb(54, 172, 166), rgb(65, 202, 168),rgb(54, 172, 166) );
+  background-image: linear-gradient(to left, rgb(54, 172, 166), rgb(65, 202, 168),rgb(54, 172, 166) );
 }
 
 #game {
