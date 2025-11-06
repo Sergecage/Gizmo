@@ -184,9 +184,9 @@ window.addEventListener("load", function() {
         context.fillText("score: " + score, 20, 50);
         if (gameOver) {
             context.textAlign = "center";
-            context.fillStyle = "orange";
+            context.fillStyle = "black";
             context.fillText("Game Over!", canvas.width / 2, 100);
-            context.fillStyle = "white";
+            context.fillStyle = "orange";
             context.fillText("Game Over!", canvas.width / 2 + 2, 100);
         }
     };
