@@ -20,7 +20,10 @@ window.addEventListener("load", function() {
                 if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight"){
                     this.keys.splice(this.keys.indexOf(e.key), 1);
                 }
-            })
+            });
+            window.addEventListener("touchstart", e => {
+
+            });
         }
     }
 
