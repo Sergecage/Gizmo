@@ -59,7 +59,7 @@ window.addEventListener("load", function() {
         }
         update(input, deltaTime, enemies){
             enemies.forEach(enemy => {
-                const dx = enemy.x + enemy.width / 2 - this.x;
+                const dx = (enemy.x + enemy.width / 2) - this.x;
                 const dy = enemy.y - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < enemy.width / 2 + this.width / 2) {
