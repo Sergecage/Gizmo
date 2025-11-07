@@ -211,6 +211,10 @@ window.addEventListener("load", function() {
     const restartGame = () => {
         player.restart();
         background.restart();
+        let enemies = [];
+        let score = 0;
+        let gameOver = false;
+
     }
 
     const input = new InputHandler();
