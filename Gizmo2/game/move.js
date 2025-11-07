@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
                 if ((e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") 
                     && this.keys.indexOf(e.key) === -1){
                     this.keys.push(e.key);
-                }
+                } else if (e.key === "Enter" && gameOver) restartGame();
             })
             window.addEventListener("keydup",  e => {
                 if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight"){
