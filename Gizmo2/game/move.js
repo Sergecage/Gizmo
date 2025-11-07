@@ -210,6 +210,7 @@ window.addEventListener("load", function() {
 
     const restartGame = () => {
         player.restart();
+        background.restart();
     }
 
     const input = new InputHandler();
