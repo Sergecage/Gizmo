@@ -45,7 +45,7 @@ window.addEventListener("load", function() {
         }
         draw(context){
             context.fillStyle = "transparent";
-            context.strokeStyle = "white";
+            /*context.strokeStyle = "white";
             context.strokeRect(this.x, this.y, this.width, this.height);
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
@@ -54,7 +54,7 @@ window.addEventListener("load", function() {
             context.strokeStyle = "orange";
             context.beginPath();
             context.arc(this.x, this.y, 0, this.width / 2, Math.PI * 2);
-            context.fillRect(this.x, this.y, this.width, this.height);
+            context.fillRect(this.x, this.y, this.width, this.height);*/
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(input, deltaTime, enemies){
@@ -131,8 +131,8 @@ window.addEventListener("load", function() {
         constructor(gameWidth ,gameHeight){
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 190;
-            this.height = 180;
+            this.width = 150;
+            this.height = 120;
             this.image = document.getElementById("enemy-flower");
             this.x = this.gameWidth;
             this.y = this.gameHeight - this.height;
@@ -145,7 +145,7 @@ window.addEventListener("load", function() {
             this.markedForDeletion = false;
         }
         draw(context){
-            context.strokeStyle = "white";
+            /*context.strokeStyle = "white";
             context.strokeRect(this.x, this.y, this.width, this.height);
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
@@ -153,7 +153,7 @@ window.addEventListener("load", function() {
             context.strokeStyle = "orange";
             context.beginPath();
             context.arc(this.x, this.y, 0, this.width / 2, Math.PI * 2);
-            context.stroke();
+            context.stroke();*/
             context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
         }
         update(deltaTime){
