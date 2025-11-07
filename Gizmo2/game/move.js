@@ -141,8 +141,12 @@ window.addEventListener("load", function() {
             this.markedForDeletion = false;
         }
         draw(context){
-            //context.strokeStyle = "white";
-            //context.strokeRect(this.x, this.y, this.width, this.height);
+            context.strokeStyle = "white";
+            context.strokeRect(this.x, this.y, this.width, this.height);
+            context.beginPath();
+            context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
+            context.stroke();
+            context.strokeStyle = "orange";
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
             context.stroke();
