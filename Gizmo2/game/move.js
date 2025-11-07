@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
 
     class InputHandler{
         constructor(){
+            this.touchY = "";
             this.keys = [];
             window.addEventListener("keydown",  e => {
                 if ((e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") 
