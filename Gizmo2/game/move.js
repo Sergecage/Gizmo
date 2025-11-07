@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
                 }
             });
             window.addEventListener("touchstart", e => {
-
+                this.touchY = e.changedTouches[0].pageY;
             });
             window.addEventListener("touchmove", e => {
 
