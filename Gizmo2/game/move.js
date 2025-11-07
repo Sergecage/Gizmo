@@ -44,7 +44,8 @@ window.addEventListener("load", function() {
             this.weight = 1;
         }
         restart(){
-            
+            this.x = 0;
+            this.y = this.gameHeight - this.height;
         }
         draw(context){
             context.fillStyle = "transparent";
