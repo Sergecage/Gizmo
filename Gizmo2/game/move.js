@@ -43,6 +43,9 @@ window.addEventListener("load", function() {
             this.vy = 0;
             this.weight = 1;
         }
+        restart(){
+            
+        }
         draw(context){
             context.fillStyle = "transparent";
             /*context.strokeStyle = "white";
@@ -200,7 +203,7 @@ window.addEventListener("load", function() {
     };
 
     const restartGame = () => {
-        
+
     }
 
     const input = new InputHandler();
