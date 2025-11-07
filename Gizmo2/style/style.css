@@ -5,7 +5,7 @@
 }
 body{
     background-color: rgb(166, 230, 226);
-   background-image: linear-gradient(to left, rgb(54, 172, 166), rgb(65, 202, 168),rgb(54, 172, 166) );
+  background-image: linear-gradient(to left, rgb(54, 172, 166), rgb(65, 202, 168),rgb(54, 172, 166) );
 }
 
 #game {
@@ -14,6 +14,8 @@ body{
     position: absolute;
     border:  3px solid black;
     transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .controls {

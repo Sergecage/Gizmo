@@ -9,18 +9,29 @@ window.addEventListener("load", function() {
 
     class InputHandler{
         constructor(){
+            this.touchY = "";
             this.keys = [];
+            this.touchTreshold = 30;
             window.addEventListener("keydown",  e => {
                 if ((e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") 
                     && this.keys.indexOf(e.key) === -1){
                     this.keys.push(e.key);
-                }
+                } else if (e.key === "Enter" && gameOver) restartGame();
             })
             window.addEventListener("keydup",  e => {
                 if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight"){
                     this.keys.splice(this.keys.indexOf(e.key), 1);
                 }
-            })
+            });
+            window.addEventListener("touchstart", e => {
+                this.touchY = e.changedTouches[0].pageY;
+            });
+            window.addEventListener("touchmove", e => {
+
+            });
+            window.addEventListener("touchend", e => {
+
+            });
         }
     }
 
@@ -28,9 +39,9 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
-            this.width = 440;
+            this.width = 420;
             this.height = 445;
-            this.x = 0;
+            this.x = 100;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("gizmo");
             this.frameX = 1;
@@ -43,20 +54,30 @@ window.addEventListener("load", function() {
             this.vy = 0;
             this.weight = 1;
         }
+        restart(){
+            this.x = 100;
+            this.y = this.gameHeight - this.height;
+            this.maxFrame = 2;
+            this.frameY = 0;
+        }
         draw(context){
             context.fillStyle = "transparent";
-            context.strokeStyle = "white";
+            /*context.strokeStyle = "white";
             context.strokeRect(this.x, this.y, this.width, this.height);
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
             context.stroke();
-            context.fillRect(this.x, this.y, this.width, this.height);
+            context.stroke();
+            context.strokeStyle = "orange";
+            context.beginPath();
+            context.arc(this.x, this.y, 0, this.width / 2, Math.PI * 2);
+            context.fillRect(this.x, this.y, this.width, this.height);*/
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(input, deltaTime, enemies){
             enemies.forEach(enemy => {
-                const dx = enemy.x - this.x;
-                const dy = enemy.y - this.y;
+                const dx = (enemy.x + enemy.width / 2) - ( this.x + this.width / 2);
+                const dy = (enemy.y + enemy.height / 2)  - (this.y + this.height / 2);
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < enemy.width / 2 + this.width / 2) {
                     gameOver = true;
@@ -121,14 +142,17 @@ window.addEventListener("load", function() {
             this.x -= this.speed;
             if (this.x < 0 - this.width) this.x = 0;
         }
+        restart(){
+            this.x = 0;
+        }
     }
 
     class Enemy {
         constructor(gameWidth ,gameHeight){
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 190;
-            this.height = 180;
+            this.width = 150;
+            this.height = 120;
             this.image = document.getElementById("enemy-flower");
             this.x = this.gameWidth;
             this.y = this.gameHeight - this.height;
@@ -141,11 +165,15 @@ window.addEventListener("load", function() {
             this.markedForDeletion = false;
         }
         draw(context){
-            context.strokeStyle = "white";
+            /*context.strokeStyle = "white";
             context.strokeRect(this.x, this.y, this.width, this.height);
             context.beginPath();
             context.arc(this.x + this.width / 2 , this.y + this.height /2, 0, this.width / 2, Math.PI * 2);
             context.stroke();
+            context.strokeStyle = "orange";
+            context.beginPath();
+            context.arc(this.x, this.y, 0, this.width / 2, Math.PI * 2);
+            context.stroke();*/
             context.drawImage(this.image, /*this.frameX * this.width, 0, this.width, this.height,*/  this.x, this.y, this.width, this.height);
         }
         update(deltaTime){
@@ -179,15 +207,27 @@ window.addEventListener("load", function() {
     };
 
     const displayStatus = (context) => {
+        context.textAlign = "left";
         context.fillStyle = "white";
         context.font = "40px Helvetica";
         context.fillText("score: " + score, 20, 50);
         if (gameOver) {
             context.textAlign = "center";
+            context.fillStyle = "black";
+            context.fillText("Game Over! Press ENTER to restart", canvas.width / 2, 100);
             context.fillStyle = "orange";
-            context.fillText("Game Over!", canvas.width / 2, 100);
+            context.fillText("Game Over! Press ENTER to restart", canvas.width / 2 + 2, 100);
         }
     };
+
+    const restartGame = () => {
+        player.restart();
+        background.restart();
+        enemies = [];
+        score = 0;
+        gameOver = false;
+        animate(0);
+    }
 
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
