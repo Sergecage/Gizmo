@@ -11,6 +11,7 @@ window.addEventListener("load", function() {
         constructor(){
             this.touchY = "";
             this.keys = [];
+            this.touchTreshold = 30;
             window.addEventListener("keydown",  e => {
                 if ((e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") 
                     && this.keys.indexOf(e.key) === -1){
