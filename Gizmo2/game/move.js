@@ -28,7 +28,7 @@ window.addEventListener("load", function() {
         constructor(gameWidth, gameHeight){
             this.gameHeight = gameHeight;
             this.gameWidth = gameWidth;
-            this.width = 440;
+            this.width = 420;
             this.height = 445;
             this.x = 0;
             this.y = this.gameHeight - this.height;
@@ -59,8 +59,8 @@ window.addEventListener("load", function() {
         }
         update(input, deltaTime, enemies){
             enemies.forEach(enemy => {
-                const dx = (enemy.x + enemy.width / 2) - this.x;
-                const dy = enemy.y - this.y;
+                const dx = (enemy.x + enemy.width / 2) - ( this.x + this.width / 2);
+                const dy = (enemy.y + enemy.height / 2)  - (this.y + this.height / 2);
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < enemy.width / 2 + this.width / 2) {
                     gameOver = true;
