@@ -199,6 +199,10 @@ window.addEventListener("load", function() {
         }
     };
 
+    const restartGame = () => {
+        
+    }
+
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
     const background = new Background(canvas.width, canvas.height);
