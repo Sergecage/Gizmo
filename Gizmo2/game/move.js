@@ -46,6 +46,8 @@ window.addEventListener("load", function() {
         restart(){
             this.x = 100;
             this.y = this.gameHeight - this.height;
+            this.maxFrame = 2;
+            this.frameY = 0;
         }
         draw(context){
             context.fillStyle = "transparent";
@@ -204,7 +206,7 @@ window.addEventListener("load", function() {
     };
 
     const restartGame = () => {
-
+        player.restart();
     }
 
     const input = new InputHandler();
