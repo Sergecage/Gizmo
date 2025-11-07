@@ -214,7 +214,7 @@ window.addEventListener("load", function() {
         enemies = [];
         score = 0;
         gameOver = false;
-
+        animate(0);
     }
 
     const input = new InputHandler();
