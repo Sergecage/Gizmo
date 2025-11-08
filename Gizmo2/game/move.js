@@ -27,7 +27,7 @@ window.addEventListener("load", function() {
                 this.touchY = e.changedTouches[0].pageY;
             });
             window.addEventListener("touchmove", e => {
-
+                const swipeDistance = e.changedTouches[0].pageY - this.touchY;
             });
             window.addEventListener("touchend", e => {
 
