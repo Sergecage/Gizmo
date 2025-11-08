@@ -32,7 +32,8 @@ window.addEventListener("load", function() {
                 else if (swipeDistance > this.touchTreshold && this.keys.indexOf("swipe down") === -1) this.keys.push("swipe down");
             });
             window.addEventListener("touchend", e => {
-
+                this.keys.splice(this.keys.indexOf("swipe up"), 1);
+                this.keys.splice(this.keys.indexOf("swipe down"), 1);
             });
         }
     }
