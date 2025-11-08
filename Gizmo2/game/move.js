@@ -28,7 +28,7 @@ window.addEventListener("load", function() {
             });
             window.addEventListener("touchmove", e => {
                 const swipeDistance = e.changedTouches[0].pageY - this.touchY;
-                if (swipeDistance < -this.touchTreshold) this.keys.push("swipe up");
+                if (swipeDistance < -this.touchTreshold && this.keys.indexOf("swipe up" === -1)) this.keys.push("swipe up");
             });
             window.addEventListener("touchend", e => {
 
