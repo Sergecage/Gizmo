@@ -220,9 +220,9 @@ window.addEventListener("load", function() {
         if (gameOver) {
             context.textAlign = "center";
             context.fillStyle = "black";
-            context.fillText("Game Over! Press ENTER to restart", canvas.width / 2, 100);
+            context.fillText("Game Over! Press ENTER or swipe up to restart", canvas.width / 2, 100);
             context.fillStyle = "orange";
-            context.fillText("Game Over! Press ENTER to restart", canvas.width / 2 + 2, 100);
+            context.fillText("Game Over! Press ENTER or swipe up to restart", canvas.width / 2 + 2, 100);
         }
     };
 
