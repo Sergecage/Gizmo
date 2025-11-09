@@ -237,8 +237,9 @@ window.addEventListener("load", function() {
     }
 
     const openFullScreen = () => {
-        
-    }
+
+    };
+    openFullScreen();
 
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
