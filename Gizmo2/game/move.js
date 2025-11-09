@@ -6,6 +6,7 @@ window.addEventListener("load", function() {
     let enemies = [];
     let score = 0;
     let gameOver = false;
+    const fullScreenBtn = document.getElementById("full-screen");
 
     class InputHandler{
         constructor(){
@@ -27,10 +28,16 @@ window.addEventListener("load", function() {
                 this.touchY = e.changedTouches[0].pageY;
             });
             window.addEventListener("touchmove", e => {
-
+                const swipeDistance = e.changedTouches[0].pageY - this.touchY;
+                if (swipeDistance < -this.touchTreshold && this.keys.indexOf("swipe up") === -1) this.keys.push("swipe up");
+                else if (swipeDistance > this.touchTreshold && this.keys.indexOf("swipe down") === -1) {
+                    this.keys.push("swipe down");
+                    if (gameOver) restartGame();
+                }
             });
             window.addEventListener("touchend", e => {
-
+                this.keys.splice(this.keys.indexOf("swipe up"), 1);
+                this.keys.splice(this.keys.indexOf("swipe down"), 1);
             });
         }
     }
@@ -95,7 +102,7 @@ window.addEventListener("load", function() {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
                 this.speed = -5;
-            } else if (input.keys.indexOf("ArrowUp") > - 1 && this.onGround()){
+            } else if ((input.keys.indexOf("ArrowUp") > - 1 || input.keys.indexOf("swipe up")) && this.onGround()){
                 this.vy = -32;
             }
             else {
@@ -214,9 +221,9 @@ window.addEventListener("load", function() {
         if (gameOver) {
             context.textAlign = "center";
             context.fillStyle = "black";
-            context.fillText("Game Over! Press ENTER to restart", canvas.width / 2, 100);
+            context.fillText("Game Over! Press ENTER or swipe down to restart", canvas.width / 2, 100);
             context.fillStyle = "orange";
-            context.fillText("Game Over! Press ENTER to restart", canvas.width / 2 + 2, 100);
+            context.fillText("Game Over! Press ENTER or swipe down to restart", canvas.width / 2 + 2, 100);
         }
     };
 
@@ -228,6 +235,17 @@ window.addEventListener("load", function() {
         gameOver = false;
         animate(0);
     }
+
+    const openFullScreen = () => {
+        if (! this.document.fullscreenElement) {
+            canvas.requestFullscreen().catch( err => {
+                alert(`error can't open fullscreen ${err.message}`);
+            });
+        } else {
+            this.document.exitFullscreen();
+        }
+    };
+    fullScreenBtn.addEventListener("click", openFullScreen());
 
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
