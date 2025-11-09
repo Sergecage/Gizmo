@@ -236,6 +236,10 @@ window.addEventListener("load", function() {
         animate(0);
     }
 
+    const openFullScreen = () => {
+        
+    }
+
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
     const background = new Background(canvas.width, canvas.height);
