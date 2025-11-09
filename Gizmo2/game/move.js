@@ -239,11 +239,13 @@ window.addEventListener("load", function() {
     const openFullScreen = () => {
         if (! this.document.fullscreenElement) {
             canvas.requestFullscreen().catch( err => {
-                alert("error can't open fullscreen");
+                alert(`error can't open fullscreen ${err.message}`);
             });
+        } else {
+            this.document.exitFullscreen();
         }
     };
-    openFullScreen();
+    fullScreenBtn.addEventListener("click", openFullScreen());
 
     const input = new InputHandler();
     const player  = new Player(canvas.width, canvas.height);
