@@ -50,3 +50,11 @@ body{
 img {
     display: none;
 }
+
+#full_screen {
+    position: absolute;
+    font-size: 20px;
+    padding: 10px;
+    top: 10px;
+    left: 50%;
+}
