@@ -101,7 +101,7 @@ window.addEventListener("load", function() {
                 this.speed = 5;
             } else if (input.keys.indexOf("ArrowLeft") > - 1){
                 this.speed = -5;
-            } else if (input.keys.indexOf("ArrowUp") > - 1 && this.onGround()){
+            } else if ((input.keys.indexOf("ArrowUp") > - 1 || input.keys.indexOf("swipe up")) && this.onGround()){
                 this.vy = -32;
             }
             else {
