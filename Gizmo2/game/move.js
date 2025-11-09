@@ -6,6 +6,7 @@ window.addEventListener("load", function() {
     let enemies = [];
     let score = 0;
     let gameOver = false;
+    const fullScreenBtn = document.getElementById("full-screen");
 
     class InputHandler{
         constructor(){
