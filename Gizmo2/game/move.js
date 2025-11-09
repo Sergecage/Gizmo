@@ -238,7 +238,9 @@ window.addEventListener("load", function() {
 
     const openFullScreen = () => {
         if (! this.document.fullscreenElement) {
-            canvas.requestFullscreen().catch();
+            canvas.requestFullscreen().catch( err => {
+                alert("error can't open fullscreen");
+            });
         }
     };
     openFullScreen();
