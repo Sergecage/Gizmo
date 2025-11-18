@@ -8,3 +8,7 @@
 body {
     overflow: hidden;
 }
+
+canvas {
+    background-color: rgb(196, 235, 178);
+}
