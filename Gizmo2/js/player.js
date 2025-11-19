@@ -7,5 +7,7 @@ class Player {
         this.image = document.getElementById("player");
         this.width = 250;
         this.height = 180;
+        this.x = 0;
+        this.y = 0;
     }
 }
