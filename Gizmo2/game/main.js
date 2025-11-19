@@ -3,4 +3,6 @@ window.addEventListener("load", function(){
     loading.style.display = "none";
     const canvas = this.document.getElementById("game-frame");
     const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = this.window.innerHeight;
 })
