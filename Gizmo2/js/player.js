@@ -1,5 +1,6 @@
 class Player {
-    constructor(){
-        
+    constructor(gameWidt, gameHeight){
+        this.gameWidt = gameWidt;
+        this.gameHeight= gameHeight;
     }
 }
