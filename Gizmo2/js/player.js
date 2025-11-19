@@ -10,4 +10,7 @@ class Player {
         this.x = 0;
         this.y = 0;
     }
+    draw(context){
+        context.drawImage(this.image , this.x, this.y, this.width, this.height);
+    }
 }
