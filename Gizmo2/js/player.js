@@ -4,5 +4,6 @@ class Player {
         this.gameHeight= gameHeight;
         this.states = [];
         this.currentState = this.staets[0];
+        this.image = document.getElementById("player");
     }
 }
