@@ -7,7 +7,7 @@ export default class Player {
         this.image = document.getElementById("player");
         this.width = 250;
         this.height = 180;
-        this.x = 0;
+        this.x = this.gameWidth / 2  - this.width / 2;
         this.y = 0;
         this.frameX = 0;
         this.frameY = 0;
