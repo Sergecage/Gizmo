@@ -12,4 +12,9 @@ window.addEventListener("load", function(){
     const player = new Player(canvas.width, canvas.height);
     player.draw(ctx);
     const input = new InputHandler();
-})
+
+    const animate = () => {
+        this.requestAnimationFrame(animate);
+    };
+    animate();
+});
