@@ -13,6 +13,8 @@ export default class InputHandler {
             switch(e.key){
                 case "ArrowLeft":
                     this.lastKey = "RELEASE left";
+                case "ArrowRight":
+                    this.lastKey = "RELEASE right";
             }
         });
     }
