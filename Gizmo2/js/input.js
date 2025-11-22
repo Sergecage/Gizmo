@@ -6,6 +6,12 @@ export default class InputHandler {
                 case "ArrowLeft":
                     this.lastKey = "PRESS left";
             }
-        })
+        });
+        window.addEventListener("keyup", function(e) {
+            switch(e.key){
+                case "ArrowLeft":
+                    this.lastKey = "RELEASE left";
+            }
+        });
     }
 }
