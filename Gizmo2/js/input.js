@@ -5,6 +5,8 @@ export default class InputHandler {
             switch(e.key){
                 case "ArrowLeft":
                     this.lastKey = "PRESS left";
+                case "ArrowRight":
+                    this.lastKey = "PRESS right";
             }
         });
         window.addEventListener("keyup", function(e) {
