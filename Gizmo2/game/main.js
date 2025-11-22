@@ -1,4 +1,5 @@
 import Player from "../js/player";
+import InputHandler from "../js/input";
 
 window.addEventListener("load", function(){
     const loading = document.getElementById("loading");
