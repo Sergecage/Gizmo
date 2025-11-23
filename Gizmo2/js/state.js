@@ -8,3 +8,7 @@ class State {
         this.state = state;
     }
 }
+
+class StandingLeft extends State {
+    
+}
