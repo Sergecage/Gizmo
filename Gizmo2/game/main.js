@@ -1,5 +1,6 @@
 import Player from "../js/player";
 import InputHandler from "../js/input";
+import { drawStatus } from "../js/utils";
 
 window.addEventListener("load", function(){
     const loading = document.getElementById("loading");
