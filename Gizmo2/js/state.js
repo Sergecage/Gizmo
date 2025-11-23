@@ -14,4 +14,7 @@ class StandingLeft extends State {
         super("STANDING_LEFT");
         this.player = player;
     }
+    enter(){
+        
+    }
 }
