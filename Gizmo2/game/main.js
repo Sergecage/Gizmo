@@ -15,6 +15,7 @@ window.addEventListener("load", function(){
     const input = new InputHandler();
 
     const animate = () => {
+        drawStatus();
         this.requestAnimationFrame(animate);
     };
     animate();
