@@ -17,5 +17,6 @@ export default class Player {
     }
     setState(state){
         this.currentState = this.state[state];
+        this.currentState.enter();
     }
 }
