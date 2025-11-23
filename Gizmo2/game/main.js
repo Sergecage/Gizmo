@@ -1,5 +1,6 @@
 import Player from "../js/player";
 import InputHandler from "../js/input";
+import { drawStatus } from "../js/utils";
 
 window.addEventListener("load", function(){
     const loading = document.getElementById("loading");
@@ -14,6 +15,10 @@ window.addEventListener("load", function(){
     const input = new InputHandler();
 
     const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        player.update(input.lastKey);
+        player.draw(ctx);
+        drawStatus(ctx, input);
         this.requestAnimationFrame(animate);
     };
     animate();

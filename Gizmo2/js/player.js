@@ -1,8 +1,10 @@
+import {StandingLeft, StandingRight} from './state'
+
 export default class Player {
     constructor(gameWidt, gameHeight){
         this.gameWidt = gameWidt;
         this.gameHeight= gameHeight;
-        this.states = [];
+        this.states = [new StandingLeft(), new StandingRight()];
         this.currentState = this.staets[0];
         this.image = document.getElementById("player");
         this.width = 250;
@@ -14,5 +16,12 @@ export default class Player {
     }
     draw(context){
         context.drawImage(this.image , this.width * frameX, this.height * frameY, this.width, this.height, this.x, this.y, this.width, this.height);
+    }
+    update(input){
+        this.currentState.handleInput(input);
+    }
+    setState(state){
+        this.currentState = this.state[state];
+        this.currentState.enter();
     }
 }
