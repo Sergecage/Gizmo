@@ -16,7 +16,7 @@ window.addEventListener("load", function(){
 
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        player.update(input);
+        player.update(input.lastKey);
         player.draw(ctx);
         drawStatus(ctx, input);
         this.requestAnimationFrame(animate);
