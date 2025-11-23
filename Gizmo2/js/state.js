@@ -15,7 +15,7 @@ class StandingLeft extends State {
         this.player = player;
     }
     enter(){
-
+        this.player.frameY = 1;
     }
     handleInput(input){
 
