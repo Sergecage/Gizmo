@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
     const input = new InputHandler();
 
     const animate = () => {
-        drawStatus();
+        drawStatus(ctx, input);
         this.requestAnimationFrame(animate);
     };
     animate();
