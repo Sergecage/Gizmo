@@ -15,4 +15,7 @@ export default class Player {
     draw(context){
         context.drawImage(this.image , this.width * frameX, this.height * frameY, this.width, this.height, this.x, this.y, this.width, this.height);
     }
+    setState(state){
+
+    }
 }
