@@ -10,5 +10,8 @@ class State {
 }
 
 class StandingLeft extends State {
-    
+    constructor(player){
+        super("STANDING_LEFT");
+        this.player = player;
+    }
 }
