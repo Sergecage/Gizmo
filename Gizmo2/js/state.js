@@ -17,7 +17,7 @@ class StandingLeft extends State {
     enter(){
 
     }
-    handleInput(){
+    handleInput(input){
 
     }
 }
@@ -30,7 +30,7 @@ class StandingRight extends State {
     enter(){
 
     }
-    handleInput(){
+    handleInput(input){
         
     }
 }
