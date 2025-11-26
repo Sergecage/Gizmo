@@ -44,7 +44,7 @@ class SittingLeft extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameY = 1;
+        this.player.frameY = 9;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.SITTING_RIGHT);
@@ -57,7 +57,7 @@ class SittingRight extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameY = 1;
+        this.player.frameY = 8;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.SITTING_LEFT);
