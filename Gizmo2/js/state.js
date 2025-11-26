@@ -49,3 +49,16 @@ class SittingLeft extends State {
         else if (input === "PRESS up") this.player.setState(states.STANDING_LEFT);
     }
 }
+class SittingRight extends State {
+    constructor(player){
+        super("SITTING RIGHT");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 1;
+    }
+    handleInput(input){
+        if (input === "PRESS left") this.player.setState(states.SITTING_LEFT);
+        else if (input === "PRESS up") this.player.setState(states.STANDING_RIGHT);
+    }
+}
