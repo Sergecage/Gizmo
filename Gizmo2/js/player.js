@@ -4,7 +4,7 @@ export default class Player {
     constructor(gameWidt, gameHeight){
         this.gameWidt = gameWidt;
         this.gameHeight= gameHeight;
-        this.states = [new StandingLeft(this), new StandingRight(this)];
+        this.states = [new StandingLeft(this), new StandingRight(this), new SittingLeft(this), new SittingRight(this)];
         this.currentState = this.staets[0];
         this.image = document.getElementById("player");
         this.width = 250;
