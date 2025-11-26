@@ -11,7 +11,7 @@ class State {
 
 class StandingLeft extends State {
     constructor(player){
-        super("STANDING_LEFT");
+        super("STANDING LEFT");
         this.player = player;
     }
     enter(){
@@ -24,7 +24,7 @@ class StandingLeft extends State {
 
 class StandingRight extends State {
     constructor(player){
-        super("STANDING_RIGHT");
+        super("STANDING RIGHT");
         this.player = player;
     }
     enter(){
@@ -32,5 +32,18 @@ class StandingRight extends State {
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.STANDING_LEFT);
+    }
+}
+class SittingLeft extends State {
+    constructor(player){
+        super("SITTING LEFT");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 1;
+    }
+    handleInput(input){
+        if (input === "PRESS right") this.player.setState(states.SITTING_RIGHT);
+        else if (input === "PRESS up") this.player.setState(states.STANDING_RIGHT);
     }
 }
