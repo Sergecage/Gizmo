@@ -23,6 +23,7 @@ class StandingLeft extends State {
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.RUNNING_RIGHT);
+        else if ( input === "PRESS left") this.player.setState(states.RUNNING_LEFT)
         else if (input === "PRESS down") this.player.setState(states.SITTING_LEFT);
     }
 }
