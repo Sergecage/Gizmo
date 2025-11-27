@@ -22,6 +22,7 @@ export default class Player {
     }
     update(input){
         this.currentState.handleInput(input);
+        this.x += this.speed;
     }
     setState(state){
         this.currentState = this.state[state];
