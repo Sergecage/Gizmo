@@ -4,7 +4,7 @@ export const states = {
     SITTING_LEFT: 2,
     SITTING_RIGHT: 3,
     RUNNING_LEFT: 4,
-    RUNNING_RIGHT: 5
+    RUNNING_RIGHT: 5,
 }
 
 class State {
@@ -66,5 +66,18 @@ class SittingRight extends State {
         if (input === "PRESS left") this.player.setState(states.SITTING_LEFT);
         else if (input === "PRESS up") this.player.setState(states.STANDING_RIGHT);
         else if (input === "RELEASASE down") this.player.setState(states.STANDING_RIGHT);
+    }
+}
+class RunningLeft extends State {
+    constructor(player){
+        super("RUNNING LEFT");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 7;
+    }
+    handleInput(input){
+        if (input === "PRESS left") this.player.setState(states.RUNNING_RIGHT);
+        else if (input === "RELEASASE left") this.player.setState(states.STANDING_LEFT);
     }
 }
