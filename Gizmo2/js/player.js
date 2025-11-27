@@ -1,4 +1,4 @@
-import {StandingLeft, StandingRight, SittingLeft, SittingRight} from './state'
+import {StandingLeft, StandingRight, SittingLeft, SittingRight, RunningLeft, RunningRight} from './state'
 
 export default class Player {
     constructor(gameWidt, gameHeight){
