@@ -77,8 +77,22 @@ class RunningLeft extends State {
         this.player.frameY = 7;
     }
     handleInput(input){
-        if (input === "PRESS left") this.player.setState(states.RUNNING_RIGHT);
+        if (input === "PRESS right") this.player.setState(states.RUNNING_RIGHT);
         else if (input === "RELEASASE left") this.player.setState(states.STANDING_LEFT);
         else if (input === "PRESS down") this.player.setState(states.SITTING_LEFT);
+    }
+}
+class RunningRight extends State {
+    constructor(player){
+        super("RUNNING RIGHT");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 7;
+    }
+    handleInput(input){
+        if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
+        else if (input === "RELEASASE right") this.player.setState(states.STANDING_RIGHT);
+        else if (input === "PRESS down") this.player.setState(states.SITTING_RIGHT);
     }
 }
