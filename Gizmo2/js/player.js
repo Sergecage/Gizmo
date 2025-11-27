@@ -1,11 +1,11 @@
-import {StandingLeft, StandingRight, SittingLeft, SittingRight, RunningLeft, RunningRight} from './state'
+import {StandingLeft, StandingRight, SittingLeft, SittingRight, RunningLeft, RunningRight, JumpingLeft, JumpingRight} from './state'
 
 export default class Player {
     constructor(gameWidt, gameHeight){
         this.gameWidt = gameWidt;
         this.gameHeight= gameHeight;
         this.states = [new StandingLeft(this), new StandingRight(this), new SittingLeft(this), new SittingRight(this),
-            new RunningLeft(this), new RunningRight(this)];
+            new RunningLeft(this), new RunningRight(this), new JumpingLeft(this), new JumpingRight(this)];
         this.currentState = this.staets[0];
         this.image = document.getElementById("player");
         this.width = 250;
