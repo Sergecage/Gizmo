@@ -106,3 +106,27 @@ class RunningRight extends State {
         else if (input === "PRESS down") this.player.setState(states.SITTING_RIGHT);
     }
 }
+class JumpingLeft extends State {
+    constructor(player){
+        super("JUMPING LEFT");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 3;
+    }
+    handleInput(input){
+        if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
+    }
+}
+class JumpingRight extends State {
+    constructor(player){
+        super("JUMPING RIGHT");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 3;
+    }
+    handleInput(input){
+        if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
+    }
+}
