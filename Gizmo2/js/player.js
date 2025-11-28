@@ -27,7 +27,7 @@ export default class Player {
         if (this.x <= 0 ) this.x = 0;
         else if (this.x >= this.gameWidt - this.width) this.x = this.gameWidt - this.width;
         this.y += this.vy;
-        if (this.y < this.gameHeight - this.height){
+        if (!this.onGround()){
             this.vy += this.weight;
         } else {
             this.vy = 0;
