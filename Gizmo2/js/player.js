@@ -26,7 +26,7 @@ export default class Player {
         this.x += this.speed;
         if (this.x <= 0 ) this.x = 0;
         else if (this.x >= this.gameWidt - this.width) this.x = this.gameWidt - this.width;
-        this.y ++ this.vy;
+        this.y += this.vy;
     }
     setState(state){
         this.currentState = this.state[state];
