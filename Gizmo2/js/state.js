@@ -116,7 +116,7 @@ class JumpingLeft extends State {
     enter(){
         this.player.frameY = 3;
         if (this.player.onGround()) this.player.vy -= 20;
-        this.player.speed = this.player.maxSpeed * 0.5;
+        this.player.speed = -this.player.maxSpeed * 0.5;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.JUMPING_RIGHT);
