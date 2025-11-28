@@ -25,6 +25,7 @@ class StandingLeft extends State {
     enter(){
         this.player.frameY = 1;
         this.player.speed = 0;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.RUNNING_RIGHT);
