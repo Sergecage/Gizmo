@@ -12,6 +12,7 @@ export default class Player {
         this.height = 180;
         this.x = this.gameWidth / 2  - this.width / 2;
         this.y = this.gameHeight / 2 - this.height / 2;
+        this.vy = 0;
         this.frameX = 0;
         this.frameY = 0;
         this.speed = 0;
@@ -25,6 +26,7 @@ export default class Player {
         this.x += this.speed;
         if (this.x <= 0 ) this.x = 0;
         else if (this.x >= this.gameWidt - this.width) this.x = this.gameWidt - this.width;
+        this.y ++ this.vy;
     }
     setState(state){
         this.currentState = this.state[state];
