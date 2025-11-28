@@ -115,7 +115,7 @@ class JumpingLeft extends State {
     }
     enter(){
         this.player.frameY = 3;
-        this.vy -= 20;
+        this.player.vy -= 20;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
@@ -128,7 +128,7 @@ class JumpingRight extends State {
     }
     enter(){
         this.player.frameY = 2;
-         this.vy -= 20;
+         this.player.vy -= 20;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
