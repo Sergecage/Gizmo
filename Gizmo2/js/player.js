@@ -37,4 +37,7 @@ export default class Player {
         this.currentState = this.state[state];
         this.currentState.enter();
     }
+    onGround(){
+        
+    }
 }
