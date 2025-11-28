@@ -29,6 +29,8 @@ export default class Player {
         this.y += this.vy;
         if (this.y < this.height - this.height){
             this.vy += this.weight;
+        } else {
+            this.vy = 0;
         }
     }
     setState(state){
