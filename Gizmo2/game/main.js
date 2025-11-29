@@ -24,5 +24,5 @@ window.addEventListener("load", function(){
         drawStatus(ctx, input, player);
         this.requestAnimationFrame(animate);
     };
-    animate();
+    animate(0);
 });
