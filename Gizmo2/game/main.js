@@ -20,7 +20,7 @@ window.addEventListener("load", function(){
         lastTime = deltaTime;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         player.update(input.lastKey);
-        player.draw(ctx);
+        player.draw(ctx, deltaTime);
         drawStatus(ctx, input, player);
         this.requestAnimationFrame(animate);
     };
