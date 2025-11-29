@@ -43,6 +43,7 @@ class StandingRight extends State {
     enter(){
         this.player.frameY = 1;
         this.player.speed = 0;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
@@ -59,6 +60,7 @@ class SittingLeft extends State {
     enter(){
         this.player.frameY = 9;
         this.player.speed = 0;
+        this.player.maxFrame = 4;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.SITTING_RIGHT);
@@ -74,6 +76,7 @@ class SittingRight extends State {
     enter(){
         this.player.frameY = 8;
         this.player.speed = 0;
+        this.player.maxFrame = 4;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.SITTING_LEFT);
@@ -89,6 +92,7 @@ class RunningLeft extends State {
     enter(){
         this.player.frameY = 7;
          this.player.speed = -this.player.maxSpeed;
+         this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.RUNNING_RIGHT);
@@ -104,6 +108,7 @@ class RunningRight extends State {
     enter(){
         this.player.frameY = 7;
         this.player.speed = this.player.maxSpeed;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.RUNNING_LEFT);
@@ -120,6 +125,7 @@ class JumpingLeft extends State {
         this.player.frameY = 3;
         if (this.player.onGround()) this.player.vy -= 20;
         this.player.speed = -this.player.maxSpeed * 0.5;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.JUMPING_RIGHT);
@@ -136,6 +142,7 @@ class JumpingRight extends State {
         this.player.frameY = 2;
         if (this.player.onGround()) this.player.vy -= 20;
         this.player.speed = this.player.maxSpeed * 0.5;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.JUMPING_LEFT);
@@ -150,6 +157,7 @@ class FallingLeft extends State {
     }
     enter(){
         this.player.frameY = 5;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS right") this.player.setState(states.FALLING_RIGHT);
@@ -163,6 +171,7 @@ class FallingRight extends State {
     }
     enter(){
         this.player.frameY = 4;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input === "PRESS left") this.player.setState(states.FALLING_LEFT);
