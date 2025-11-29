@@ -24,8 +24,11 @@ export default class Player {
         this.frameInterval = 1000/this.fps;
     }
     draw(context, deltaTime){
-        if (this.frameX < this.maxFrame) this.frameX++;
-        else this.frameX = 0;
+        if (this.frameTimer > this.frameInterval) {
+            if (this.frameX < this.maxFrame) this.frameX++;
+            else this.frameX = 0;
+            this.frameTimer = 0;
+        }
         context.drawImage(this.image , this.width * frameX, this.height * frameY, this.width, this.height, this.x, this.y, this.width, this.height);
     }
     update(input){
