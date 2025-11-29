@@ -28,6 +28,8 @@ export default class Player {
             if (this.frameX < this.maxFrame) this.frameX++;
             else this.frameX = 0;
             this.frameTimer = 0;
+        } else {
+            this.frameTimer += deltaTime;
         }
         context.drawImage(this.image , this.width * frameX, this.height * frameY, this.width, this.height, this.x, this.y, this.width, this.height);
     }
