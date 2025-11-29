@@ -14,7 +14,9 @@ window.addEventListener("load", function(){
     player.draw(ctx);
     const input = new InputHandler();
 
-    const animate = () => {
+    let lastTime = 0;
+    const animate = (timeStamp) => {
+        const deltaTime = timeStamp - lastTime;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         player.update(input.lastKey);
         player.draw(ctx);
