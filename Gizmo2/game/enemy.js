@@ -1,3 +1,4 @@
+
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -9,7 +10,7 @@ const enemies = [];
 let gameFrame = 0;
 
 
-class Enemy {
+export default class Enemy {
     constructor(){
         this.image = new Image();
         this.image.src = "../assets/img/Enemy1.png";

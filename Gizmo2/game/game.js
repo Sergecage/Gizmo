@@ -1,3 +1,5 @@
+import {Enemy} from './enemy.js';
+
 const playerState = "jump";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e) {
