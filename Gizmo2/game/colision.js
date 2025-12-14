@@ -5,7 +5,7 @@ const CANVAS_HEIGHT = canvas.width =1200;
 const explosions = [];
 let canvasPosition = canvas.getBoundingClientRect();
 
-class Explosion{
+export default class Explosion{
     constructor(x, y){
         this.spriteWidth = 500;
         this.spriteHeight = 579;
