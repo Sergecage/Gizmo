@@ -1,6 +1,6 @@
 import {Enemy} from './enemy.js';
 import {Explosion} from './colision.js';
-
+import {Bat} from './pointShoot.js';
 
 const playerState = "jump";
 const dropdown = document.getElementById("animations");
