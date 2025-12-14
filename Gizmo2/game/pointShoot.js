@@ -15,7 +15,7 @@ let batInterval = 500;
 let lastTime = 0;
 
 let bats = [];
-class Bat{
+export default class Bat{
     constructor(){
         this.spriteWidth = 272;
         this.spriteHeight = 197;
