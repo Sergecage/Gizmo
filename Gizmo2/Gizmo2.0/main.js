@@ -5,8 +5,9 @@ window.addEventListener('load', function(){
     canvas.height = 500;
 
     class Game{
-        constructor(){
-
+        constructor(width, height){
+            this.width = width;
+            this.height = height;
         }
     }
 });
