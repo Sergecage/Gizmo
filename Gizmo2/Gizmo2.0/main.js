@@ -10,6 +10,7 @@ window.addEventListener('load', function(){
         constructor(width, height){
             this.width = width;
             this.height = height;
+            this.player = new Player();
         }
         update(){
 
