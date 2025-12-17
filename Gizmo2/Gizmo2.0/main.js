@@ -15,7 +15,7 @@ window.addEventListener('load', function(){
         update(){
 
         }
-        draw(){
+        draw(context){
             this.player.draw();
         }
     }
