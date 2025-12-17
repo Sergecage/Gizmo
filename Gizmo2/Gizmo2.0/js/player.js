@@ -10,6 +10,6 @@ export class Player {
 
     };
     draw(context){
-        
+        context.fillRect();
     };
 };
