@@ -6,4 +6,10 @@ class Player {
         this.x = 0;
         this.y = 100;
     }
+    update(){
+
+    };
+    draw(){
+        
+    }
 };
