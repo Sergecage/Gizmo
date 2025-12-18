@@ -24,5 +24,6 @@ window.addEventListener('load', function(){
 
     const animate = () => {
         game.draw(ctx);
+        requestAnimationFrame(animate);
     }
 });
