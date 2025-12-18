@@ -3,8 +3,8 @@ import { Player } from "./js/player.js";
 window.addEventListener('load', function(){
     const canvas = document.getElementById("game-canvas-1");
     const ctx = canvas.getContext("2d");
-    canvas.width = 900;
-    canvas.height = 500;
+    canvas.width = 1200;
+    canvas.height = 700;
 
     class Game{
         constructor(width, height){

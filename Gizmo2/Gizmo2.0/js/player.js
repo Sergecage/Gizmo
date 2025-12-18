@@ -4,7 +4,7 @@ export class Player {
         this.width = 250;
         this.height = 300;
         this.x = 0;
-        this.y = 100;
+        this.y = this.game.height - this.height;
     }
     update(){
 
