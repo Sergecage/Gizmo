@@ -13,6 +13,6 @@ export class Player {
     draw(context){
         context.fillStyle = "purple";
         context.fillRect(this.x, this.y, this.width, this.height);
-        context.drawImage(this.image, this.x, this.y);
+        context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 };
