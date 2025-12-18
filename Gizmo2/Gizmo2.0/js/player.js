@@ -10,6 +10,7 @@ export class Player {
 
     }
     draw(context){
-        context.fillRect();
+        context.fillStyle = "purple";
+        context.fillRect(this.x, this.y, this.width, this.height);
     }
 };
