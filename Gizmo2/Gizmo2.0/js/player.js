@@ -8,8 +8,8 @@ export class Player {
     }
     update(){
 
-    };
+    }
     draw(context){
         context.fillRect();
-    };
+    }
 };
