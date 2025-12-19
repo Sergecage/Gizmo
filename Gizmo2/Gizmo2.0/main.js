@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
             this.player = new Player(this);
         }
         update(){
-
+            this.player.update();
         }
         draw(context){
             this.player.draw(context);
@@ -23,6 +23,7 @@ window.addEventListener('load', function(){
     const game = new Game(canvas.width, canvas.height);
 
     const animate = () => {
+        game.update();
         game.draw(ctx);
         requestAnimationFrame(animate);
     }
