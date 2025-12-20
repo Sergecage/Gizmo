@@ -7,7 +7,7 @@ export class InputHandler {
             } 
         });
         window.addEventListener("keyup", e => {
-            if (e.key === "ArrowDown") {
+            if (e.key === "ArrowDown" || e.key === "ArrowUp") {
                 this.keys.splice(this.keys.indexOf(e.key), 1);
             }
         });
