@@ -8,8 +8,8 @@ export class Player {
         this.image = gizmo;
     }
     update(input){
-        if (input.includes("ArrowRight")) x++;
-        else if (input.includes("ArrowRight")) x--;
+        if (input.includes("ArrowRight")) this.x++;
+        else if (input.includes("ArrowRight")) this.x--;
     }
     draw(context){
         context.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
