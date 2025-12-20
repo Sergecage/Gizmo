@@ -8,7 +8,7 @@ export class InputHandler {
             } 
         });
         window.addEventListener("keyup", e => {
-            if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+            if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") {
                 this.keys.splice(this.keys.indexOf(e.key), 1);
             }
         });
