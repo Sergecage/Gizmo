@@ -6,6 +6,7 @@ export class Player {
         this.x = 0;
         this.y = this.game.height - this.height;
         this.image = gizmo;
+        this.speed = 0;
     }
     update(input){
         if (input.includes("ArrowRight")) this.x++;
