@@ -6,5 +6,10 @@ export class InputHandler {
                 this.keys.push(e.key);
             } 
         });
+        window.addEventListener("keyup", e => {
+            if (e.key === "ArrowDown") {
+                this.keys.splice(this.keys.indexOf(e.key), 1);
+            }
+        });
     }
 }
