@@ -5,6 +5,7 @@ export class Player {
         this.height = 300;
         this.x = 0;
         this.y = this.game.height - this.height;
+        this. vy = 0;
         this.image = gizmo;
         this.speed = 0;
         this.maxSpeed = 10;
