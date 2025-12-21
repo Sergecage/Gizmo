@@ -18,8 +18,8 @@ export class Player {
         if (this.x < 0 ) this.x = 0;
         if (this.x > this.game.width - this.width) this.x = this.game.width - this.width ;
 
-        this.y += this.vy;
         if (input.includes("ArrowUp") && this.onGround()) this.vy -= 10;
+        this.y += this.vy;
         if (!this.onGround()) this.vy += this.weight;
         else this.vy = 0;
     }
