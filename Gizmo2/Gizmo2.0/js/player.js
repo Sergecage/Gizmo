@@ -16,6 +16,8 @@ export class Player {
         else this.speed = 0;
         if (this.x < 0 ) this.x = 0;
         if (this.x > this.game.width - this.width) this.x = this.game.width - this.width ;
+
+        this.y += this.vy;
     }
     draw(context){
         context.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
