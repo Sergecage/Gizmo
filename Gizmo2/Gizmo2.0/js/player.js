@@ -21,6 +21,7 @@ export class Player {
         this.y += this.vy;
         if (input.includes("ArrowUp") && this.onGround()) this.vy -= 10;
         if (!this.onGround()) this.vy += this.weight;
+        else this.vy = 0;
     }
     draw(context){
         context.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
