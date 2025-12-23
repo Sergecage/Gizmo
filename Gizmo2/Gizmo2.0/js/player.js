@@ -19,6 +19,7 @@ export class Player {
         this.currentState.enter();
     }
     update(input){
+        this.currentState.handleInput(input);
         this.x += this.speed;
         if (input.includes("ArrowRight")) this.speed = this.maxSpeed;
         else if (input.includes("ArrowLeft")) this.speed = - this.maxSpeed;

@@ -19,6 +19,6 @@ export class Sitting extends State {
         this.player.frameY = 0;
     }
     handleInput(input){
-
+        
     }
 }
