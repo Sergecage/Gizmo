@@ -1,3 +1,5 @@
+import { Sitting } from "./playerStates.js";
+
 export class Player {
     constructor(game){
         this.game = game;
@@ -12,6 +14,7 @@ export class Player {
         this.maxSpeed = 10;
         this.states = [];
         this.currentState =  this.states[0];
+        this.currentState.enter();
     }
     update(input){
         this.x += this.speed;
