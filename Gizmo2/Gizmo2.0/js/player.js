@@ -10,6 +10,8 @@ export class Player {
         this. vy = 0;
         this.weight = 1;
         this.image = gizmo;
+        this.frameX = 0;
+        this.frameY = 0;
         this.speed = 0;
         this.maxSpeed = 10;
         this.states = [new Sitting(this)];
