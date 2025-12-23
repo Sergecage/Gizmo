@@ -9,3 +9,9 @@ class State {
         this.state = state;
     }
 }
+
+export class Sitting extends State {
+    constructor(player){
+        
+    }
+}
