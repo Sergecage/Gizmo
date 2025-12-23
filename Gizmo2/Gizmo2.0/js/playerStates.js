@@ -5,5 +5,7 @@ const states = {
 }
 
 class State {
-    
+    constructor(state){
+        this.state = state;
+    }
 }
