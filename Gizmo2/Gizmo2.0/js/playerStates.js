@@ -3,3 +3,7 @@ const states = {
     RUNNING: 1,
     JUMPING: 2,
 }
+
+class State {
+    
+}
