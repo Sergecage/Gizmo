@@ -15,4 +15,10 @@ export class Sitting extends State {
         super("SITTING");
         this.player = player;
     }
+    enter(){
+
+    }
+    handleInput(input){
+        
+    }
 }
