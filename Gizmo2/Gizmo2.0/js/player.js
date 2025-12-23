@@ -32,7 +32,7 @@ export class Player {
         else this.vy = 0;
     }
     draw(context){
-        context.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
+        context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
     }
     onGround(){
         return this.y >= this.game.height - this.height;
