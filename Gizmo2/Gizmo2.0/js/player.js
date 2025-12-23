@@ -38,6 +38,6 @@ export class Player {
         return this.y >= this.game.height - this.height;
     }
     setState(state){
-        this.currentState = this.states[0];
+        this.currentState = this.states[state];
     }
 };
