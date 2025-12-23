@@ -12,7 +12,7 @@ export class Player {
         this.image = gizmo;
         this.speed = 0;
         this.maxSpeed = 10;
-        this.states = [];
+        this.states = [new Sitting(this)];
         this.currentState =  this.states[0];
         this.currentState.enter();
     }
