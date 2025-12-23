@@ -37,7 +37,7 @@ export class Player {
     onGround(){
         return this.y >= this.game.height - this.height;
     }
-    setState(){
-        
+    setState(state){
+        this.currentState = this.states[0];
     }
 };
