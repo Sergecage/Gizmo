@@ -39,5 +39,6 @@ export class Player {
     }
     setState(state){
         this.currentState = this.states[state];
+        this.currentState.enter();
     }
 };
