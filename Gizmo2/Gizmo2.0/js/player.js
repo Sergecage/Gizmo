@@ -11,6 +11,7 @@ export class Player {
         this.speed = 0;
         this.maxSpeed = 10;
         this.states = [];
+        this.currentState =  this.states[0];
     }
     update(input){
         this.x += this.speed;
