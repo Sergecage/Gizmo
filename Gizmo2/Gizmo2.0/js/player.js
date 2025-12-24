@@ -33,7 +33,7 @@ export class Player {
         if (!this.onGround()) this.vy += this.weight;
         else this.vy = 0;
 
-
+        if (this.frameX,eX < this.maxFrame) this.frameX++;
     }
     draw(context){
         context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
