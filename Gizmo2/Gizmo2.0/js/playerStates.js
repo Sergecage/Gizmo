@@ -50,8 +50,8 @@ export class Jumping extends State {
         this.player.frameY = 0;
     }
     handleInput(input){
-        if (input.icnludes("AroowUp")) {
-            this.player.setState(states.SITTING);
+        if (this.player.vy > this.player.weight) {
+            this.player.setState(states.RUNNING);
         }
     }
 }
