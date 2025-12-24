@@ -31,7 +31,7 @@ export class Running extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameY = 0;
+        this.player.frameY = 1;
     }
     handleInput(input){
         if (input.icnludes("AroowLeft") ||  input.icnludes("AroowRight")) {
