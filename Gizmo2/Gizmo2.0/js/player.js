@@ -28,7 +28,7 @@ export class Player {
         if (this.x < 0 ) this.x = 0;
         if (this.x > this.game.width - this.width) this.x = this.game.width - this.width ;
 
-        if (input.includes("ArrowUp") && this.onGround()) this.vy -= 30;
+        //if (input.includes("ArrowUp") && this.onGround()) this.vy -= 30;
         this.y += this.vy;
         if (!this.onGround()) this.vy += this.weight;
         else this.vy = 0;

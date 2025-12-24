@@ -19,7 +19,7 @@ export class Sitting extends State {
         this.player.frameY = 0;
     }
     handleInput(input){
-        if (input.icnludes("ArrowLeft") ||  input.icnludes("ArrowRight")) {
+        if (input.includes("ArrowLeft") ||  input.includes("ArrowRight")) {
             this.player.setState(states.RUNNING);
         }
     }
@@ -34,7 +34,7 @@ export class Running extends State {
         this.player.frameY = 1;
     }
     handleInput(input){
-        if (input.icnludes("ArrowDown")) {
+        if (input.includes("ArrowDown")) {
             this.player.setState(states.SITTING);
         } else if (input.includes("ArrowUp")) {
             this.player.setState(states.JUMPING);
