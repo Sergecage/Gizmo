@@ -49,11 +49,11 @@ export class Jumping extends State {
     }
     enter(){
         if (this.player.onGround()) this.vy -= 30;
-        this.player.frameY = 0;
+        this.player.frameY = 2;
     }
     handleInput(input){
         if (this.player.vy > this.player.weight) {
-            this.player.setState(states.RUNNING);
+            this.player.setState(states.SITTING);
         }
     }
 }
