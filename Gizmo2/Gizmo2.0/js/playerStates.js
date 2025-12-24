@@ -19,6 +19,8 @@ export class Sitting extends State {
         this.player.frameY = 0;
     }
     handleInput(input){
-        
+        if (input.icnludes("AroowLeft") ||  input.icnludes("AroowRight")) {
+            this.player.setState();
+        }
     }
 }
