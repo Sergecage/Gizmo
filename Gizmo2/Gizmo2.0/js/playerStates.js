@@ -20,7 +20,7 @@ export class Sitting extends State {
     }
     handleInput(input){
         if (input.icnludes("AroowLeft") ||  input.icnludes("AroowRight")) {
-            this.player.setState();
+            this.player.setState(states.RUNNING);
         }
     }
 }
@@ -35,7 +35,22 @@ export class Running extends State {
     }
     handleInput(input){
         if (input.icnludes("AroowDown")) {
-            this.player.setState();
+            this.player.setState(states.SITTING);
+        }
+    }
+}
+
+export class Jumping extends State {
+    constructor(player){
+        super("JUMPING");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameY = 1;
+    }
+    handleInput(input){
+        if (input.icnludes("AroowUp")) {
+            this.player.setState(states.SITTING);
         }
     }
 }
