@@ -46,7 +46,8 @@ export class Jumping extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameY = 1;
+        if (this.player.onGround()) this.vy -= 30;
+        this.player.frameY = 0;
     }
     handleInput(input){
         if (input.icnludes("AroowUp")) {
