@@ -1,4 +1,4 @@
-import { Sitting } from "./playerStates.js";
+import { Sitting, Running } from "./playerStates.js";
 
 export class Player {
     constructor(game){
