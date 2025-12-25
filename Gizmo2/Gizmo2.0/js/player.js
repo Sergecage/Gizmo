@@ -19,7 +19,7 @@ export class Player {
         this.currentState =  this.states[0];
         this.currentState.enter();
     }
-    update(input){
+    update(input, deltaTime){
         this.currentState.handleInput(input);
         
         this.x += this.speed;
