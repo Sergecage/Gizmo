@@ -15,7 +15,7 @@ export class Player {
         this.maxFrame = 5;
         this.fps = 20;
         this.frameInterval = 1000 / this.fps;
-        this. frameInterval = 0;
+        this.frameTimer = 0;
         this.speed = 0;
         this.maxSpeed = 10;
         this.states = [new Sitting(this), new Running(this), new Jumping(this)];
@@ -36,6 +36,9 @@ export class Player {
         if (!this.onGround()) this.vy += this.weight;
         else this.vy = 0;
 
+        if (this.frameTimer > this.frameInterval ) {
+            this,this.frameTimer = 0;
+        }
         if (this.frameX < this.maxFrame) this.frameX++;
         else this.frameX = 0;
     }
