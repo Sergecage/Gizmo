@@ -16,6 +16,7 @@ export class Sitting extends State {
         this.player = player;
     }
     enter(){
+        this.player.frameX = 0;
         this.player.frameY = 0;
         this.player.maxFrame = 6;
     }
@@ -32,6 +33,7 @@ export class Running extends State {
         this.player = player;
     }
     enter(){
+        this.player.frameX = 0;
         this.player.frameY = 1;
         this.player.maxFrame = 6;
     }
@@ -50,6 +52,7 @@ export class Jumping extends State {
         this.player = player;
     }
     enter(){
+        this.player.frameX = 0;
         if (this.player.onGround()) this.vy -= 30;
         this.player.frameY = 2;
         this.player.maxFrame = 6;
