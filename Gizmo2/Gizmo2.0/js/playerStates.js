@@ -17,6 +17,7 @@ export class Sitting extends State {
     }
     enter(){
         this.player.frameY = 0;
+        this.player.maxFrame = 6;
     }
     handleInput(input){
         if (input.includes("ArrowLeft") ||  input.includes("ArrowRight")) {
