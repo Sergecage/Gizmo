@@ -38,9 +38,9 @@ export class Player {
 
         if (this.frameTimer > this.frameInterval ) {
             this,this.frameTimer = 0;
+             if (this.frameX < this.maxFrame) this.frameX++;
+             else this.frameX = 0;
         }
-        if (this.frameX < this.maxFrame) this.frameX++;
-        else this.frameX = 0;
     }
     draw(context){
         context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
