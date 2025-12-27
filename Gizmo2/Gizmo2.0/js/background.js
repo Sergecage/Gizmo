@@ -10,6 +10,7 @@ class Layer {
     }
     update(){
         if (this.x < this.width) this.x = 0;
+        else this.x -= this.speed * this.speedModifier;
     }
     draw(){
 
