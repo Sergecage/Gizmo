@@ -16,3 +16,9 @@ class Layer {
         context.drawImage(this.image, this.x , this.y, this.width, this.height);
     }
 }
+
+export class Background {
+    constructor(){
+        
+    }
+}
