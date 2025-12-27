@@ -5,5 +5,7 @@ class Layer {
         this.height = height;
         this.speedModifier = speedModifier;
         this.image = image;
+        this.x = 0;
+        this.y = 0;
     }
 }
