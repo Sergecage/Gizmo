@@ -12,7 +12,7 @@ class Layer {
         if (this.x < this.width) this.x = 0;
         else this.x -= this.speed * this.speedModifier;
     }
-    draw(){
-
+    draw(context){
+        context.drawImage(this.image, this.x , this.y, this.width, this.height);
     }
 }
