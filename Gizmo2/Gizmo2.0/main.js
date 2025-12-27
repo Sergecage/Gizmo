@@ -13,6 +13,7 @@ window.addEventListener('load', function(){
             this.height = height;
             this.player = new Player(this);
             this.input = new InputHandler();
+            this.groundMargin = 50;
         }
         update(deltaTime){
             this.player.update(this.input.keys, deltaTime);
