@@ -6,7 +6,7 @@ export class Player {
         this.width = 250;
         this.height = 300;
         this.x = 0;
-        this.y = this.game.height - this.height;
+        this.y = this.game.height - this.height - this.game.groundMargin;
         this. vy = 0;
         this.weight = 1;
         this.image = gizmo;
