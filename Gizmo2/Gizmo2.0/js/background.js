@@ -26,4 +26,7 @@ export class Background {
         this.layer = new Layer(this.game, this.width, this.height, 1 , this.layerImage);
         this.backgroundLayers = [layer];
     }
+    update(){
+        
+    }
 }
