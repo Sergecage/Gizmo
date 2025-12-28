@@ -27,6 +27,8 @@ export class Background {
         this.backgroundLayers = [layer];
     }
     update(){
-        
+        this.backgroundLayers.forEach( layer => {
+            layer.update();
+        })
     }
 }
