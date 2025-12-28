@@ -31,4 +31,9 @@ export class Background {
             layer.update();
         })
     }
+    draw(context){
+        this.backgroundLayers.forEach( layer => {
+            layer.draw(context);
+        })
+    }
 }
