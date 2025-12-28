@@ -23,5 +23,6 @@ export class Background {
         this.width = 1200;
         this.height = 750;
         this.layerImage = layer1;
+        this.backgroundLayers = [];
     }
 }
