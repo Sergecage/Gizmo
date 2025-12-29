@@ -24,7 +24,7 @@ export class Background {
         this.height = 750;
         this.layerImage = layer1;
         this.layer = new Layer(this.game, this.width, this.height, 1 , this.layerImage);
-        this.backgroundLayers = [layer];
+        this.backgroundLayers = [this.layer];
     }
     update(){
         this.backgroundLayers.forEach( layer => {
