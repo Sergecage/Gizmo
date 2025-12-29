@@ -23,6 +23,7 @@ window.addEventListener('load', function(){
             this.player.update(this.input.keys, deltaTime);
         }
         draw(context){
+            this.background.draw();
             this.player.draw(context);
         }
     }
