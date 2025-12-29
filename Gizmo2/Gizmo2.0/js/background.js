@@ -9,7 +9,7 @@ class Layer {
         this.y = 0;
     }
     update(){
-        if (this.x < this.width) this.x = 0;
+        if (this.x < -this.width) this.x = 0;
         else this.x -= this.speed * this.speedModifier;
     }
     draw(context){
@@ -24,8 +24,10 @@ export class Background {
         this.width = 1200;
         this.height = 750;
         this.layerImage = layer1;
+        this.layerImage2 = layer2;
         this.layer = new Layer(this.game, this.width, this.height, 1 , this.layerImage);
-        this.backgroundLayers = [this.layer];
+        this.layer2 = new Layer(this.game, this.width, this.height, 1 , this.layerImage);
+        this.backgroundLayers = [this.layer, this.layer2];
     }
     update(){
         this.backgroundLayers.forEach( layer => {
