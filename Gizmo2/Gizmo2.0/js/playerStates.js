@@ -16,8 +16,8 @@ export class Sitting extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameX = 3;
-        this.player.frameY = 3;
+        this.player.frameX = 0;
+        this.player.frameY = 0;
         this.player.maxFrame = 6;
     }
     handleInput(input){
