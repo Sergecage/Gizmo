@@ -60,7 +60,7 @@ export class Jumping extends State {
         this.player.maxFrame = 6;
     }
     handleInput(input){
-        if (this.player.vy > this.player.weight) {
+        if (this.player.onGround()) {
             this.player.setState(states.SITTING, 0);
         }
     }
