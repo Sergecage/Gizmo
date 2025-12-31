@@ -14,6 +14,7 @@ window.addEventListener('load', function(){
             this.height = height;
             this.groundMargin = 0;
             this.speed = 1;
+            this.maxSpeed = 3;
             this.background = new Background(this);
             this.player = new Player(this);
             this.input = new InputHandler();
