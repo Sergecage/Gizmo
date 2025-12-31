@@ -37,7 +37,7 @@ export class Player {
         else this.vy = 0;
 
         if (this.frameTimer > this.frameInterval ) {
-            this,this.frameTimer = 0;
+            this.frameTimer = 0;
              if (this.frameX < this.maxFrame) this.frameX++;
              else this.frameX = 0;
         } else {
