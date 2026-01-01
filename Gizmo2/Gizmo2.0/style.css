@@ -14,6 +14,6 @@
     max-width: 100%;
 }
 
-#gizmo, #layer1, #layer2{
+#gizmo, #layer1, #layer2, #enemy_fly, #enemy_stand, #enemy_crawl{
     display: none;
 }
