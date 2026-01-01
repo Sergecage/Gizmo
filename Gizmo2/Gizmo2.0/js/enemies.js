@@ -15,13 +15,19 @@ class Enemy {
 }
 
 class FlyingEnemy extends Enemy {
-
+    constructor(){
+        super();
+    }
 }
 
 class GroundEnemy extends Enemy {
-    
+    constructor(){
+        super();
+    }
 }
 
 class CrawlingEnemy extends Enemy {
-    
+    constructor(){
+        super();
+    }
 }
