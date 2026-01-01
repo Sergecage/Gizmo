@@ -15,5 +15,13 @@ class Enemy {
 }
 
 class FlyingEnemy extends Enemy {
+
+}
+
+class GroundEnemy extends Enemy {
+    
+}
+
+class CrawlingEnemy extends Enemy {
     
 }
