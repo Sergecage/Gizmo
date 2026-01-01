@@ -6,4 +6,10 @@ class Enemy {
         this.frameInterval = 1000 / this.fps;
         this.frameTime = 0;
     }
+    update(){
+
+    }
+    draw(){
+        
+    }
 }
