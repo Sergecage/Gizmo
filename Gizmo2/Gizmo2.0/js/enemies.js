@@ -22,6 +22,8 @@ class FlyingEnemy extends Enemy {
         this.height = 90;
         this.x = 200;
         this.y = 200;
+        this.speedX = 2;
+        this.maxFrame = 5;
     }
 }
 
