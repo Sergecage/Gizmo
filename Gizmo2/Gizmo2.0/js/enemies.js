@@ -20,6 +20,8 @@ class FlyingEnemy extends Enemy {
         this.game = game;
         this.width = 100;
         this.height = 90;
+        this.x = 200;
+        this.y = 200;
     }
 }
 
