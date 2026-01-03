@@ -7,7 +7,8 @@ class Enemy {
         this.frameTime = 0;
     }
     update(){
-
+        this. x += this.speedX;
+        this.y += this.speedY;
     }
     draw(){
 
