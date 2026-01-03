@@ -11,6 +11,7 @@ class Enemy {
         this.y += this.speedY;
         if (this.frameTimer > this.frameInterval) {
             this.frameTimer = 0;
+            if (this.frameX < this.maxFrame) this.frameX++;
         }
     }
     draw(){
