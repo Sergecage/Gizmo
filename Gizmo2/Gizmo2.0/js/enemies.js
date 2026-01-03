@@ -18,7 +18,7 @@ class Enemy {
         }
     }
     draw(context){
-        context.drawImage(this.image, this.x, this.y, this.width, this.height);
+        context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -32,6 +32,7 @@ class FlyingEnemy extends Enemy {
         this.y = 200;
         this.speedX = 2;
         this.maxFrame = 5;
+        this.image = document.getElementById("enemy_fly");
     }
 }
 
