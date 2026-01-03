@@ -4,11 +4,14 @@ class Enemy {
         this.frameY = 0;
         this.fps = 20;
         this.frameInterval = 1000 / this.fps;
-        this.frameTime = 0;
+        this.frameTimer = 0;
     }
-    update(){
+    update(deltaTime){
         this. x += this.speedX;
         this.y += this.speedY;
+        if (this.frameTimer > this.frameInterval) {
+            this.frameTimer = 0;
+        }
     }
     draw(){
 
