@@ -34,6 +34,9 @@ class FlyingEnemy extends Enemy {
         this.maxFrame = 5;
         this.image = document.getElementById("enemy_fly");
     }
+    update(deltaTime){
+        super.update(deltaTime);
+    }
 }
 
 class GroundEnemy extends Enemy {
