@@ -17,8 +17,8 @@ class Enemy {
             this.frameTimer += deltaTime;
         }
     }
-    draw(){
-
+    draw(context){
+        context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
 
