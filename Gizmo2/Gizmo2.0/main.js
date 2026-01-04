@@ -21,6 +21,7 @@ window.addEventListener('load', function(){
             this.input = new InputHandler();
             this.enemies = [];
             this.enemyTimer = 0;
+            this.enemyInterval = 1000;
         }
         update(deltaTime){
             this.background.update();
