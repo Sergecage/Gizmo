@@ -1,6 +1,7 @@
 import { Player } from "./js/player.js";
 import { InputHandler } from "./js/input.js";
 import { Background } from "./js/background.js";
+import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
 
 window.addEventListener('load', function(){
     const canvas = document.getElementById("game-canvas-1");

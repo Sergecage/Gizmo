@@ -39,14 +39,14 @@ export class FlyingEnemy extends Enemy {
     }
 }
 
-class GroundEnemy extends Enemy {
+export class GroundEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
     }
 }
 
-class CrawlingEnemy extends Enemy {
+export class CrawlingEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
