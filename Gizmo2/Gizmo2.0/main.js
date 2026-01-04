@@ -29,6 +29,7 @@ window.addEventListener('load', function(){
 
             if (this.enemyTimer > this.enemyInterval){
                 this.AddEnemy();
+                this.enemyTimer = 0;
             }
         }
         draw(context){
