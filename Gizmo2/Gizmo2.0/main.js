@@ -19,6 +19,7 @@ window.addEventListener('load', function(){
             this.background = new Background(this);
             this.player = new Player(this);
             this.input = new InputHandler();
+            this.enemies = [];
         }
         update(deltaTime){
             this.background.update();
@@ -29,7 +30,7 @@ window.addEventListener('load', function(){
             this.player.draw(context);
         }
         AddEnemy(){
-            
+            this.enemies.push(new FlyingEnemy);
         }
     }
 
