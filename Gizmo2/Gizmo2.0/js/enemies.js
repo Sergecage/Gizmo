@@ -7,7 +7,7 @@ class Enemy {
         this.frameTimer = 0;
     }
     update(deltaTime){
-        this. x += this.speedX;
+        this. x -= this.speedX;
         this.y += this.speedY;
         if (this.frameTimer > this.frameInterval) {
             this.frameTimer = 0;
@@ -26,11 +26,12 @@ export class FlyingEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
-        this.width = 100;
-        this.height = 90;
-        this.x = 200;
-        this.y = 200;
+        this.width = 200;
+        this.height = 190;
+        this.x = this.game.width;
+        this.y = 50;
         this.speedX = 2;
+        this.speedY = 0;
         this.maxFrame = 5;
         this.image = document.getElementById("enemy_fly");
     }
