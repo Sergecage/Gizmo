@@ -22,7 +22,7 @@ class Enemy {
     }
 }
 
-class FlyingEnemy extends Enemy {
+export class FlyingEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
