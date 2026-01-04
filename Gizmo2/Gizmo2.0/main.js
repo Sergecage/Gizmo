@@ -28,6 +28,9 @@ window.addEventListener('load', function(){
             this.background.draw(context);
             this.player.draw(context);
         }
+        AddEnemy(){
+            
+        }
     }
 
     const game = new Game(canvas.width, canvas.height);
