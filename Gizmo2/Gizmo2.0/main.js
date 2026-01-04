@@ -26,6 +26,10 @@ window.addEventListener('load', function(){
         update(deltaTime){
             this.background.update();
             this.player.update(this.input.keys, deltaTime);
+
+            if (this.enemyTimer > this.enemyInterval){
+                this.AddEnemy();
+            }
         }
         draw(context){
             this.background.draw(context);
