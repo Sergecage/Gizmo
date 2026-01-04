@@ -40,6 +40,9 @@ window.addEventListener('load', function(){
         draw(context){
             this.background.draw(context);
             this.player.draw(context);
+            this.enemies.forEach(enemy => {
+                enemy.draw(context);
+            } )
         }
         AddEnemy(){
             this.enemies.push(new FlyingEnemy(this));
