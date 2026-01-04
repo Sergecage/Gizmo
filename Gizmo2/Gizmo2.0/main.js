@@ -33,6 +33,9 @@ window.addEventListener('load', function(){
             } else {
                 this.enemyTimer += deltaTime;
             }
+            this.enemies.forEach(enemy => {
+                enemy.update(deltaTime);
+            } )
         }
         draw(context){
             this.background.draw(context);
