@@ -16,9 +16,10 @@ class Enemy {
         } else{
             this.frameTimer += deltaTime;
         }
+        if (this.x + this.width < 0) this.markedForDeletion = true;
     }
     draw(context){
-        context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height, this.x, this.y, this.width, this.height);
+        context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -26,11 +27,11 @@ export class FlyingEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
-        this.width = 200;
-        this.height = 190;
+        this.width = 50;
+        this.height = 50;
         this.x = this.game.width;
-        this.y = Math.random() * this.game.height;
-        this.speedX = 2;
+        this.y = Math.random() * (this.game.height - this.height);
+        this.speedX = 5;
         this.speedY = 0;
         this.maxFrame = 5;
         this.image = document.getElementById("enemy_fly");
