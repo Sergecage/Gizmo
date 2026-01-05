@@ -35,7 +35,7 @@ window.addEventListener('load', function(){
             }
             this.enemies.forEach(enemy => {
                 enemy.update(deltaTime);
-                //if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1);
+                if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1);
             } )
         }
         draw(context){
@@ -54,6 +54,7 @@ window.addEventListener('load', function(){
     const game = new Game(canvas.width, canvas.height);
     console.log(game);
     let lastTime = 0;
+    console.log(this.x, this.y);
 
     const animate = (timeStamp) => {
         const deltaTime = timeStamp - lastTime;
