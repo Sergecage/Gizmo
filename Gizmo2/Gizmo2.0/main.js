@@ -46,6 +46,7 @@ window.addEventListener('load', function(){
         }
         AddEnemy(){
             this.enemies.push(new FlyingEnemy(this));
+            console.log(this.enemies);
         }
     }
 
