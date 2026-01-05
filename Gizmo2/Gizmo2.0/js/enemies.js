@@ -30,7 +30,7 @@ export class FlyingEnemy extends Enemy {
         this.game = game;
         this.width = 250;
         this.height = 250;
-        this.x = this.game.width;
+        this.x = this.game.width + Math.random() * this.game.width * 0.5;
         this.y = Math.random() * (this.game.height - this.height);
         this.speedX = 5;
         this.speedY = 0;
