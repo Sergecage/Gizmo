@@ -28,8 +28,8 @@ export class FlyingEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
-        this.width = 50;
-        this.height = 50;
+        this.width = 250;
+        this.height = 250;
         this.x = this.game.width;
         this.y = Math.random() * (this.game.height - this.height);
         this.speedX = 5;
