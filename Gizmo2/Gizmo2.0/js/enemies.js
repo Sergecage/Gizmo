@@ -42,6 +42,7 @@ export class FlyingEnemy extends Enemy {
     update(deltaTime){
         super.update(deltaTime);
         this.angle += this.va;
+        this.y += Math.sin(this.angle);
     }
 }
 
