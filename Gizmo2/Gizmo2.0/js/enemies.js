@@ -57,6 +57,7 @@ export class GroundEnemy extends Enemy {
         this.image = document.getElementById("enemy_stand");
         this.speedX = 0;
         this.speedY = 0;
+        this.maxFrame = 0;
     }
 }
 
