@@ -52,6 +52,8 @@ export class GroundEnemy extends Enemy {
         this.game = game;
         this.width = 150;
         this.height = 150;
+        this.x = this.game.width;
+        this.y = this.game.height - this.height - this.game.groundMargin;
     }
 }
 
