@@ -65,5 +65,7 @@ export class CrawlingEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
+        this.width = 150;
+        this.height = 150;
     }
 }
