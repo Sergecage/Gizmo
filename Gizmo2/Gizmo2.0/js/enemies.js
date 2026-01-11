@@ -70,5 +70,7 @@ export class CrawlingEnemy extends Enemy {
         this.x = this.game.width;
         this.y = Math.random() * this.game.height * 0.5;
         this.image = document.getElementById("enemy_crawl");
+        this.speedX = 0;
+        this.speedY = Math.random() > 0.5 ? 1 : -1;
     }
 }
