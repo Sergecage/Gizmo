@@ -67,5 +67,7 @@ export class CrawlingEnemy extends Enemy {
         this.game = game;
         this.width = 150;
         this.height = 150;
+        this.x = this.game.width;
+        this.y = Math.random() * this.game.height * 0.5;
     }
 }
