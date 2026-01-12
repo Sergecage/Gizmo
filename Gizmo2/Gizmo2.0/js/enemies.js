@@ -74,4 +74,7 @@ export class CrawlingEnemy extends Enemy {
         this.speedY = Math.random() > 0.5 ? 1 : -1;
         this.maxFrame = 4;
     }
+    update(deltaTime){
+        super.update(deltaTime);
+    }
 }
