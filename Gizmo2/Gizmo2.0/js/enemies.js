@@ -77,4 +77,7 @@ export class CrawlingEnemy extends Enemy {
     update(deltaTime){
         super.update(deltaTime);
     }
+    draw(context){
+        super.draw(context)
+    }
 }
