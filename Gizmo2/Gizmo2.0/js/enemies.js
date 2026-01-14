@@ -1,5 +1,5 @@
 class Enemy {
-    constructor(){
+    constructor(game){
         this.frameX = 0;
         this.frameY = 0;
         this.fps = 20;
@@ -32,7 +32,7 @@ export class FlyingEnemy extends Enemy {
         this.height = 250;
         this.x = this.game.width ;
         this.y = Math.random() * (this.game.height - this.height);
-        this.speedX = 5;
+        this.speedX = 1;
         this.speedY = 0;
         this.maxFrame = 4;
         this.image = document.getElementById("enemy_fly");
