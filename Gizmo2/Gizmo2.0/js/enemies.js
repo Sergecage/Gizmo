@@ -80,6 +80,8 @@ export class CrawlingEnemy extends Enemy {
         if (this.y < -this.height) this.markedForDeletion = true;
     }
     draw(context){
-        super.draw(context)
+        super.draw(context);
+        context.beginPath();
+        context.moveTo();
     }
 }
