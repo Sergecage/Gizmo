@@ -83,7 +83,7 @@ export class CrawlingEnemy extends Enemy {
         super.draw(context);
         context.beginPath();
         context.moveTo(this.x, 0);
-        context.lineTo(this.x, this.y);
+        context.lineTo(this.x + this.width / 2, this.y);
         context.stroke();
     }
 }
