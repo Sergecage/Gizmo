@@ -35,9 +35,9 @@ export class Running extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameX = 1;
+        this.player.frameX = 0;
         this.player.frameY = 2;
-        this.player.maxFrame = 2;
+        this.player.maxFrame = 3;
         this.animate = true;
     }
     handleInput(input){
