@@ -7,6 +7,7 @@ const states = {
 class State {
     constructor(state){
         this.state = state;
+        this.animate = true;
     }
 }
 
@@ -18,10 +19,11 @@ export class Sitting extends State {
     enter(){
         this.player.frameX = 1;
         this.player.frameY = 1;
-        this.player.maxFrame = 4;
+        this.player.maxFrame = 3;
+        this.animate = false;
     }
     handleInput(input){
-        if (input.includes("ArrowLeft") ||  !input.includes("ArrowRight")) {
+        if ( input.includes("ArrowRight")) {
             this.player.setState(states.RUNNING, 1);
         }
     }
@@ -35,10 +37,11 @@ export class Running extends State {
     enter(){
         this.player.frameX = 1;
         this.player.frameY = 2;
-        this.player.maxFrame = 4;
+        this.player.maxFrame = 2;
+        this.animate = true;
     }
     handleInput(input){
-        if (input.includes("ArrowDown")) {
+        if (input.includes("ArrowLeft")) {
             this.player.setState(states.SITTING, 1);
         } else if (input.includes("ArrowUp")) {
             this.player.setState(states.JUMPING, 1);
@@ -57,7 +60,7 @@ export class Jumping extends State {
             this.player.vy -= 30;
         }
         this.player.frameY = 0;
-        this.player.maxFrame = 4;
+        this.player.maxFrame = 3;
     }
     handleInput(input){
         if (this.player.onGround()) {

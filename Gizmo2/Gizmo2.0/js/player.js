@@ -36,12 +36,14 @@ export class Player {
         if (!this.onGround()) this.vy += this.weight;
         else this.vy = 0;
 
-        if (this.frameTimer > this.frameInterval ) {
+        if (this.currentState.animate) {
+            if (this.frameTimer > this.frameInterval ) {
             this.frameTimer = 0;
              if (this.frameX < this.maxFrame) this.frameX++;
              else this.frameX = 0;
         } else {
             this.frameTimer += deltaTime;
+        }
         }
     }
     draw(context){
@@ -51,6 +53,7 @@ export class Player {
         return this.y >= this.game.height - this.height - this.game.groundMargin;
     }
     setState(state, speed){
+        if (this.currentState === this.states[state]) return;
         this.currentState = this.states[state];
         this.game.speed = this.game.maxSpeed * speed;
         this.currentState.enter();
