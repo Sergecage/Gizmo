@@ -17,12 +17,12 @@ export class Sitting extends State {
     }
     enter(){
         this.player.frameX = 1;
-        this.player.frameY = 0;
-        this.player.maxFrame = 6;
+        this.player.frameY = 1;
+        this.player.maxFrame = 4;
     }
     handleInput(input){
         if (input.includes("ArrowLeft") ||  !input.includes("ArrowRight")) {
-            this.player.setState(states.RUNNING, 2);
+            this.player.setState(states.RUNNING, 1);
         }
     }
 }
