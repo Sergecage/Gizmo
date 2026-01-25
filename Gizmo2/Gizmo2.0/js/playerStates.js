@@ -35,7 +35,7 @@ export class Running extends State {
     enter(){
         this.player.frameX = 1;
         this.player.frameY = 2;
-        this.player.maxFrame = 6;
+        this.player.maxFrame = 4;
     }
     handleInput(input){
         if (input.includes("ArrowDown")) {
@@ -56,7 +56,7 @@ export class Jumping extends State {
         if (this.player.onGround()) {
             this.player.vy -= 30;
         }
-        this.player.frameY = 2;
+        this.player.frameY = 0;
         this.player.maxFrame = 4;
     }
     handleInput(input){
