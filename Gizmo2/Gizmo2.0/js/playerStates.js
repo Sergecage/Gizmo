@@ -37,7 +37,7 @@ export class Running extends State {
     enter(){
         this.player.frameX = 0;
         this.player.frameY = 2;
-        this.player.maxFrame = 3;
+        this.player.maxFrame = 0;
         this.animate = true;
     }
     handleInput(input){
@@ -60,7 +60,7 @@ export class Jumping extends State {
             this.player.vy -= 30;
         }
         this.player.frameY = 0;
-        this.player.maxFrame = 3;
+        this.player.maxFrame = 1;
     }
     handleInput(input){
         if (this.player.onGround()) {
