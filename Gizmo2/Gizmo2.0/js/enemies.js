@@ -31,7 +31,7 @@ export class FlyingEnemy extends Enemy {
         this.width = 250;
         this.height = 250;
         this.x = this.game.width ;
-        this.y = Math.random() * (this.game.height - this.height);
+        this.y = Math.random() * (this.game.height * 0.5);
         this.speedX = 1;
         this.speedY = 0;
         this.maxFrame = 4;
@@ -44,18 +44,23 @@ export class FlyingEnemy extends Enemy {
         this.angle += this.va;
         this.y += Math.sin(this.angle);
     }
+    draw(context){
+    context.strokeStyle = "red";
+    context.strokeRect(this.x, this.y, this.width, this.height);
+    super.draw(context);
+}
 }
 
 export class GroundEnemy extends Enemy {
     constructor(game){
-        super();
+        super(game);
         this.game = game;
         this.width = 150;
         this.height = 150;
         this.x = this.game.width;
         this.y = this.game.height - this.height - this.game.groundMargin;
         this.image = document.getElementById("enemy_stand");
-        this.speedX = 0;
+        this.speedX = 1;
         this.speedY = 0;
         this.maxFrame = 0;
     }
