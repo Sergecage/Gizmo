@@ -28,21 +28,25 @@ export class FlyingEnemy extends Enemy {
     constructor(game){
         super(game);
         this.game = game;
-        this.width = 300;
-        this.height = 300;
+        this.width = 310;
+        this.height = 150;
         this.x = this.game.width ;
         this.y = Math.random() * (this.game.height * 0.5);
         this.speedX = 1;
         this.speedY = 0;
-        this.maxFrame = 4;
+        this.maxFrame = 5;
+        this.frameX = 0;
+        this.frameY = 0;
         this.image = document.getElementById("enemy_fly");
         this.angle = 0;
         this.va = Math.random() * 0.1 + 0.1;
     }
     update(deltaTime){
         super.update(deltaTime);
+        this.x -= this.speedX + this.game.speed;
         this.angle += this.va;
         this.y += Math.sin(this.angle);
+        if (this.x + this.width < 0) this.markedForDeletion = true;
     }
     draw(context){
     context.drawImage(
