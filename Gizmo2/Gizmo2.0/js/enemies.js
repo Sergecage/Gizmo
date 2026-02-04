@@ -28,8 +28,8 @@ export class FlyingEnemy extends Enemy {
     constructor(game){
         super(game);
         this.game = game;
-        this.width = 250;
-        this.height = 250;
+        this.width = 300;
+        this.height = 300;
         this.x = this.game.width ;
         this.y = Math.random() * (this.game.height * 0.5);
         this.speedX = 1;
@@ -45,9 +45,13 @@ export class FlyingEnemy extends Enemy {
         this.y += Math.sin(this.angle);
     }
     draw(context){
-    context.strokeStyle = "red";
-    context.strokeRect(this.x, this.y, this.width, this.height);
-    super.draw(context);
+    context.drawImage(
+        this.image,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+    );
 }
 }
 
@@ -64,6 +68,16 @@ export class GroundEnemy extends Enemy {
         this.speedY = 0;
         this.maxFrame = 0;
     }
+     draw(context){
+    context.drawImage(
+        this.image,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+    );
+   
+}
 }
 
 export class CrawlingEnemy extends Enemy {

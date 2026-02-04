@@ -60,7 +60,7 @@ export class Jumping extends State {
             this.player.vy -= 30;
         }
         this.player.frameY = 0;
-        this.player.maxFrame = 1;
+        this.player.maxFrame = 0;
     }
     handleInput(input){
         if (this.player.onGround()) {
