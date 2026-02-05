@@ -34,7 +34,7 @@ export class FlyingEnemy extends Enemy {
         this.y = Math.random() * (this.game.height * 0.5);
         this.speedX = 1;
         this.speedY = 0;
-        this.maxFrame = 5;
+        this.maxFrame = 0;
         this.frameX = 0;
         this.frameY = 0;
         this.image = document.getElementById("enemy_fly");
@@ -48,15 +48,6 @@ export class FlyingEnemy extends Enemy {
         this.y += Math.sin(this.angle);
         if (this.x + this.width < 0) this.markedForDeletion = true;
     }
-    draw(context){
-    context.drawImage(
-        this.image,
-        this.x,
-        this.y,
-        this.width,
-        this.height
-    );
-}
 }
 
 export class GroundEnemy extends Enemy {
