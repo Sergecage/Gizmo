@@ -20,6 +20,7 @@ class Enemy {
         if (this.x + this.width < 0) this.markedForDeletion = true;
     }
     draw(context){
+        if (this.game.debug) context.strokeRect(this.x, this.y, this.width, this.height);
         context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
     }
 }
@@ -50,6 +51,7 @@ export class FlyingEnemy extends Enemy {
         if (this.x + this.width < 0) this.markedForDeletion = true;
     }
     draw(context){
+        if (this.game.debug) context.strokeRect(this.x, this.y, this.width, this.height);
     context.drawImage(
         this.image,
         this.frameX * this.spriteWidth,
@@ -78,6 +80,7 @@ export class GroundEnemy extends Enemy {
         this.maxFrame = 0;
     }
      draw(context){
+        if (this.game.debug) context.strokeRect(this.x, this.y, this.width, this.height);
     context.drawImage(
         this.image,
         this.x,
