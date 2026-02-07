@@ -42,10 +42,6 @@ export class FlyingEnemy extends Enemy {
         this.frameY = 0;
         this.angle = 0;
         this.va = Math.random() * 0.1 + 0.1;
-        console.log(
-  this.image.naturalWidth,
-  this.image.naturalHeight
-);
     }
     update(deltaTime){
         super.update(deltaTime);

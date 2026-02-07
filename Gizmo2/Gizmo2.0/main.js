@@ -49,14 +49,11 @@ window.addEventListener('load', function(){
             if (this.speed > 0 && Math.random() < 0.5 ) this.enemies.push(new GroundEnemy(this));
             else if (this.speed > 0) this.enemies.push(new CrawlingEnemy(this));
             this.enemies.push(new FlyingEnemy(this));
-            console.log(this.enemies);
         }
     }
 
     const game = new Game(canvas.width, canvas.height);
-    console.log(game);
     let lastTime = 0;
-    console.log(this.x, this.y);
 
     const animate = (timeStamp) => {
         const deltaTime = timeStamp - lastTime;
