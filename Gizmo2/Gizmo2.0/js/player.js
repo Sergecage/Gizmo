@@ -59,4 +59,7 @@ export class Player {
         this.game.speed = this.game.maxSpeed * speed;
         this.currentState.enter();
     }
+    checkCollisions(){
+        
+    }
 };
