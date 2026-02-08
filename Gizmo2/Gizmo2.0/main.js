@@ -2,6 +2,7 @@ import { Player } from "./js/player.js";
 import { InputHandler } from "./js/input.js";
 import { Background } from "./js/background.js";
 import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
+import { UI } from "./js/UI.js";
 
 window.addEventListener('load', function(){
     const canvas = document.getElementById("game-canvas-1");
@@ -18,10 +19,14 @@ window.addEventListener('load', function(){
             this.maxSpeed = 3;
             this.background = new Background(this);
             this.player = new Player(this);
-            this.input = new InputHandler();
+            this.input = new InputHandler(this);
+            this.UI = new UI(this);
             this.enemies = [];
             this.enemyTimer = 0;
-            this.enemyInterval = 1000;
+            this.enemyInterval = 3000;
+            this.debug = true;
+            this.score = 0;
+            this.fontColor = "orange";
         }
         update(deltaTime){
             this.background.update();
@@ -43,20 +48,18 @@ window.addEventListener('load', function(){
             this.player.draw(context);
             this.enemies.forEach(enemy => {
                 enemy.draw(context);
-            } )
+            });
+            this.UI.draw(context);
         }
         AddEnemy(){
             if (this.speed > 0 && Math.random() < 0.5 ) this.enemies.push(new GroundEnemy(this));
             else if (this.speed > 0) this.enemies.push(new CrawlingEnemy(this));
             this.enemies.push(new FlyingEnemy(this));
-            console.log(this.enemies);
         }
     }
 
     const game = new Game(canvas.width, canvas.height);
-    console.log(game);
     let lastTime = 0;
-    console.log(this.x, this.y);
 
     const animate = (timeStamp) => {
         const deltaTime = timeStamp - lastTime;
