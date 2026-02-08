@@ -24,6 +24,7 @@ window.addEventListener('load', function(){
             this.enemyInterval = 3000;
             this.debug = true;
             this.score = 0;
+            this.fontColor = "orange";
         }
         update(deltaTime){
             this.background.update();
