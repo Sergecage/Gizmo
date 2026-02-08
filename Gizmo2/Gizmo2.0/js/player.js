@@ -23,6 +23,7 @@ export class Player {
         this.currentState.enter();
     }
     update(input, deltaTime){
+        checkCollisions();
         this.currentState.handleInput(input);
         
         this.x += this.speed;
