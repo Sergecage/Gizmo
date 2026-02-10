@@ -33,7 +33,7 @@ export class Sitting extends State {
 
 export class Running extends State {
     constructor(game){
-        super("RUNNING");
+        super("RUNNING", game);
     }
     enter(){
         this.game.player.frameX = 0;
@@ -52,7 +52,7 @@ export class Running extends State {
 
 export class Jumping extends State {
     constructor(game){
-        super("JUMPING");
+        super("JUMPING", game);
     }
     enter(){
         this.game.player.frameX = 0;
