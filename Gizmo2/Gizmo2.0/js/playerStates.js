@@ -15,59 +15,56 @@ class State {
 }
 
 export class Sitting extends State {
-    constructor(player){
-        super("SITTING");
-        this.player = player;
+    constructor(game){
+        super("SITTING", game);
     }
     enter(){
-        this.player.frameX = 1;
-        this.player.frameY = 1;
-        this.player.maxFrame = 3;
+        this.game.player.frameX = 1;
+        this.game.player.frameY = 1;
+        this.game.player.maxFrame = 3;
         this.animate = false;
     }
     handleInput(input){
         if ( input.includes("ArrowRight")) {
-            this.player.setState(states.RUNNING, 1);
+            this.game.player.setState(states.RUNNING, 1);
         }
     }
 }
 
 export class Running extends State {
-    constructor(player){
+    constructor(game){
         super("RUNNING");
-        this.player = player;
     }
     enter(){
-        this.player.frameX = 0;
-        this.player.frameY = 2;
-        this.player.maxFrame = 0;
+        this.game.player.frameX = 0;
+        this.game.player.frameY = 2;
+        this.game.player.maxFrame = 0;
         this.animate = true;
     }
     handleInput(input){
         if (input.includes("ArrowLeft")) {
-            this.player.setState(states.SITTING, 1);
+            this.game.player.setState(states.SITTING, 1);
         } else if (input.includes("ArrowUp")) {
-            this.player.setState(states.JUMPING, 1);
+            this.game.player.setState(states.JUMPING, 1);
         }
     }
 }
 
 export class Jumping extends State {
-    constructor(player){
+    constructor(game){
         super("JUMPING");
-        this.player = player;
     }
     enter(){
-        this.player.frameX = 0;
-        if (this.player.onGround()) {
-            this.player.vy -= 30;
+        this.game.player.frameX = 0;
+        if (this.game.player.onGround()) {
+            this.game.player.vy -= 30;
         }
-        this.player.frameY = 0;
-        this.player.maxFrame = 0;
+        this.game.player.frameY = 0;
+        this.game.player.maxFrame = 0;
     }
     handleInput(input){
-        if (this.player.onGround()) {
-            this.player.setState(states.SITTING, 0);
+        if (this.game.player.onGround()) {
+            this.game.player.setState(states.SITTING, 0);
         }
     }
 }
