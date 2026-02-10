@@ -7,8 +7,9 @@ const states = {
 }
 
 class State {
-    constructor(state){
+    constructor(state, game){
         this.state = state;
+        this.game = game;
         this.animate = true;
     }
 }
