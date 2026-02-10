@@ -22,6 +22,7 @@ window.addEventListener('load', function(){
             this.input = new InputHandler(this);
             this.UI = new UI(this);
             this.enemies = [];
+            this.particles = [];
             this.enemyTimer = 0;
             this.enemyInterval = 3000;
             this.debug = true;
