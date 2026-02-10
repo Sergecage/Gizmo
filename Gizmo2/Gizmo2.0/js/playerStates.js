@@ -1,3 +1,5 @@
+import { Dust } from "./particles.js";
+
 const states = {
     SITTING: 0,
     RUNNING: 1,
