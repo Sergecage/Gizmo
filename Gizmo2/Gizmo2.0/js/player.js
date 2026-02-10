@@ -1,3 +1,4 @@
+import { Dust } from "./particles.js";
 import { Sitting, Running, Jumping } from "./playerStates.js";
 
 export class Player {
