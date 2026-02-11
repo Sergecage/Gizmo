@@ -42,7 +42,7 @@ export class Running extends State {
         this.animate = true;
     }
     handleInput(input){
-        this.game.particles.push(new Dust(this.game, this.game.player.x, this.game.player.y));
+        this.game.particles.push(new Dust(this.game, this.game.player.x + this.game.player.width * 0.5, this.game.player.y + this.game.player.height));
         if (input.includes("ArrowLeft")) {
             this.game.player.setState(states.SITTING, 1);
         } else if (input.includes("ArrowUp")) {
