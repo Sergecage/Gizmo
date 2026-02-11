@@ -42,6 +42,7 @@ export class Running extends State {
         this.animate = true;
     }
     handleInput(input){
+        this.game.particles.push();
         if (input.includes("ArrowLeft")) {
             this.game.player.setState(states.SITTING, 1);
         } else if (input.includes("ArrowUp")) {
