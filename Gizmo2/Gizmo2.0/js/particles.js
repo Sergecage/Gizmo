@@ -19,7 +19,7 @@ export class Dust extends Particle {
         this.y = y;
         this.speedX = Math.random();
         this.speedY = Math.random();
-        this.color = "Periwinkle";
+        this.color = "Purple";
     };
     draw(context){
         context.beginPath();
