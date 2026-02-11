@@ -45,8 +45,9 @@ window.addEventListener('load', function(){
                 enemy.update(deltaTime);
                 if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1);
             });
-            this.particles.forEach((particle) => {
+            this.particles.forEach((particle, index) => {
                 particle.update();
+                if (particle.markedForDeletion) this.particles.splice(index, 1);
             })
         }
         draw(context){
