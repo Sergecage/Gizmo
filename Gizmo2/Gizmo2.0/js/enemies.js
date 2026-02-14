@@ -70,8 +70,8 @@ export class GroundEnemy extends Enemy {
     constructor(game){
         super(game);
         this.game = game;
-        this.width = 150;
-        this.height = 150;
+        this.width = 130;
+        this.height = 130;
         this.x = this.game.width;
         this.y = this.game.height - this.height - this.game.groundMargin;
         this.image = document.getElementById("enemy_stand");
