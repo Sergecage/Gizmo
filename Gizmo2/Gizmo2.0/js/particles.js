@@ -33,13 +33,13 @@ export class Dust extends Particle {
 export class Splash extends Particle {
     constructor(game, x, y){
         super(game);
-        this.size = Math.random() * 100 + 100;
+        this.size = Math.random() * 20 + 20;
         this.x = x;
         this.y = y;
         this.speedX = Math.random() * 6 - 3;
         this.speedY = Math.random() * 2 + 2;
         this.gravity = 0;
-        this.color = "rgba(205, 254, 194)";
+        this.color = "rgba(205, 254, 194, 1)";
     };
     draw(context){
         context.beginPath();
