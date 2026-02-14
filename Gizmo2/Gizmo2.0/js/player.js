@@ -3,8 +3,10 @@ import { Sitting, Running, Jumping } from "./playerStates.js";
 export class Player {
     constructor(game){
         this.game = game;
-        this.width = 250;
-        this.height = 300;
+        this.spriteWidth = 250;
+        this.spriteHeight = 290;
+        this.width = 180;
+        this.height = 200;
         this.x = 0;
         this.y = this.game.height - this.height - this.game.groundMargin;
         this. vy = 0;
@@ -35,6 +37,8 @@ export class Player {
         if (!this.onGround()) this.vy += this.weight;
         else this.vy = 0;
 
+        if (this.y > this.game.height - this.height - this.game.groundMargin) this.y = this.game.height - this.height - this.game.groundMargin;
+
         if (this.currentState.animate) {
             if (this.frameTimer > this.frameInterval ) {
             this.frameTimer = 0;
@@ -47,7 +51,7 @@ export class Player {
     }
     draw(context){
         if (this.game.debug) context.strokeRect(this.x, this.y, this.width, this.height);
-        context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
+        context.drawImage(this.image, this.frameX * this.spriteWidth, this.frameY * this.spriteHeight, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
     }
     onGround(){
         return this.y >= this.game.height - this.height - this.game.groundMargin;
