@@ -32,8 +32,8 @@ export class FlyingEnemy extends Enemy {
         this.image = document.getElementById("enemy_fly");
         this.spriteWidth = this.image.naturalWidth / 5;
         this.spriteHeight = this.image.naturalHeight;
-        this.width = this.spriteWidth *0.2;
-        this.height = this.spriteHeight * 0.2;
+        this.width = this.spriteWidth *0.1;
+        this.height = this.spriteHeight * 0.1;
         this.x = this.game.width ;
         this.y = Math.random() * (this.game.height * 0.5);
         this.speedX = 1;
