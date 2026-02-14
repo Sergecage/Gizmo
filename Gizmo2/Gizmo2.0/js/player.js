@@ -4,7 +4,7 @@ export class Player {
     constructor(game){
         this.game = game;
         this.width = 250;
-        this.height = 300;
+        this.height = 290;
         this.x = 0;
         this.y = this.game.height - this.height - this.game.groundMargin;
         this. vy = 0;
