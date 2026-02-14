@@ -1,4 +1,4 @@
-import { Dust } from "./particles.js";
+import { Dust, Splash } from "./particles.js";
 
 const states = {
     SITTING: 0,
