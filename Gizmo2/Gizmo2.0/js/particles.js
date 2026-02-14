@@ -6,6 +6,7 @@ class Particle {
     update(){
         this.x -= this.speedX + this.game.speed;
         this.y -= this.speedY;
+        this.speedY += this.gravity || 0;
         this.size *= 0.95;
         if (this.size < 0.5) this.markedForDeletion = true;
     }
@@ -39,5 +40,11 @@ export class Splash extends Particle {
         this.speedY = Math.random() * 2 + 2;
         this.gravity = 0;
         this.color = "rgba(205, 254, 194)";
+    };
+    draw(context){
+        context.beginPath();
+        context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        context.fillStyle = this.color;
+        context.fill();
     }
 }
