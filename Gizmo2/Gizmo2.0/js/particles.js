@@ -38,5 +38,6 @@ export class Splash extends Particle {
         this.speedX = Math.random() * 6 - 3;
         this.speedY = Math.random() * 2 + 2;
         this.gravity = 0;
+        this.color = "rgba(205, 254, 194)";
     }
 }
