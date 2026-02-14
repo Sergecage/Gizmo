@@ -69,7 +69,7 @@ export class Jumping extends State {
     }
     handleInput(input){
         if (this.game.player.onGround()) {
-            this.game.player.setState(states.SITTING, 0);
+            this.game.player.setState(states.RUNNING, 0);
         }
     }
 }
