@@ -36,5 +36,7 @@ export class Splash extends Particle {
         this.x = x;
         this.y = y;
         this.speedX = Math.random() * 6 - 3;
+        this.speedY = Math.random() * 2 + 2;
+        this.gravity = 0;
     }
 }
