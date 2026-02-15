@@ -70,7 +70,7 @@ export class Player {
                     this.game.score++;
                 }
             } else {
-                this.setState();
+                this.setState(1, 0);
             }
         });
     }
