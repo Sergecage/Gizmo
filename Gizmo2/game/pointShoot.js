@@ -1,0 +1,136 @@
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const CANVAS_WIDTH = window.innerWidth;
+const CANVAS_HEIGHT = window.innerHeight;
+const canvasCollison = document.getElementById("collisionCanvas");
+const ctxCollision = canvasCollison.getContext("2d");
+const COLLISION_CANVAS_WIDTH = window.innerWidth;
+const COLLISION_CANVAS_HEIGHT = window.innerHeight;
+let score = 0;
+let gameOver = false;
+ctx.font = "50px Impact";
+
+let timeToNextBat = 0;
+let batInterval = 500;
+let lastTime = 0;
+
+let bats = [];
+export default class Bat{
+    constructor(){
+        this.spriteWidth = 272;
+        this.spriteHeight = 197;
+        this.sizeModifier = Math.random() * 0.6 + 0.4;
+        this.width = this.spriteWidth * this.sizeModifier;
+        this.height = this.spriteHeight * this.sizeModifier;
+        this.x = canvas.width;
+        this.y = Math.random() * canvas.height - this.height;
+        this.directionX = Math.random() * 5 + 3;
+        this.directionY = Math.random() * 5 - 2.5; 
+        this.markedFordeletion = false;
+        this.image = new Image();
+        this.image.src = "../assets/img/Enemy1.png";
+        this.frame = 0;
+        this.maxFrame = 4;
+        this.timeSinceFlap = 0;
+        this.flapInterval = Math.random() * 50 + 50;
+        this.randomColors = [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255)];
+        this.color = "rgb(" + randomColors[0] + "," + randomColors[1] + "," + randomColors[2] + ")";
+    }
+    update(deltatime){
+        if (this.y < 0 || this.y > canvas.height - this.height) {
+            this.directionY = this.directionY  * -1;
+        }
+        this.x -= this.directionX;
+        this.y += this.directionY;
+        if (this.x < 0  - this.width) this.markedFordeletion = true;
+        this.timeSinceFlap += deltatime;
+        if (this.timeSinceFlap > this.flapInterval) {
+            if (this.frame > this.maxFrame) this.frame = 0;
+            else this.frame++;
+        }
+        if (this.x < 0 - this.width ) gameOver = true;
+    }
+    draw(){
+        ctx.fillStyle(this.color);
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+    }
+}
+let explosions = [];
+class Explosion {
+    constructor(x, y, size){
+        this.image = new Image();
+        this.image.src = "";
+        this.width = 200;
+        this.height = 179;
+        this.frame = 0;
+        this.sound = new Audio();
+        this.sound.src = '..';
+        this.timeSinceLastFrame = 0;
+        this.frameInterval = 150;
+        this.markedFordeletion = false;
+    }
+    update(deltatime){
+        if (this.frame === 0 ) this.sound.play();
+        this.timeSinceLastFrame += deltatime;
+        if (this.timeSinceLastFrame > this.frameInterval){
+            this.frame++;
+            this.timeSinceLastFrame = 0;
+            if (this.frame > 5 ) this.markedFordeletion = true;
+        }
+    }
+    draw(){
+        ctx.drawImage(this.image, this.frame * this.spriteWidth, 0 , this.spriteWidth, this.spriteHeight, this.x, this.y - this.size, this.size, this.size);
+    }
+}
+
+const drawScore = () => {
+    ctxCollision.fillStyle = "black";
+    ctxCollision.fillText("score: " + score, 50, 75);
+    ctx.fillStyle = "white";
+    ctx.fillText("score: " + score, 55, 80);
+}
+
+const drawGameOver = () => {
+    ctx.textAlign = "center";
+    ctx.fillStyle = "black";
+    ctx.fillText("Game Over, your score is" + score, canvas.width / 2, canvas.height / 2);
+    ctx.fillStyle = "white";
+    ctx.fillText("Game Over, your score is" + score, canvas.width / 2, canvas.height / 2 + 5);
+}
+
+window.addEventListener("click", function(e){
+    const detectPixelColor = ctxCollision.getImageData(e.x, e.y, 1, 1);
+    const pc = detectPixelColor.data;
+    bats.forEach(obj => {
+        if (obj.randomColors[0] === pc[0] && obj.randomColors[1] === pc[1] && obj.randomColors[2] === pc[2]) {
+            obj.markedFordeletion = true;
+            score++;
+            explosions.push(new Explosion(obj.x, obj.y, obj.width));
+        }
+    })
+});
+
+const animate = (timestamp) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctxCollision.clearRect(0, 0, canvas.width, canvas.height);
+    let deltatime = timestamp - lastTime;
+    lastTime = timestamp;
+    timeToNextBat += deltatime;
+    if ( timeToNextBat > batInterval) {
+        bats.push( new Bat());
+        timeToNextBat = 0;
+        bats.sort(function(a, b) {
+            return a.width - b.width;
+        });
+    };
+    drawScore();
+    [...bats, ...explosions].forEach(obj => obj.update(deltatime));
+    [...bats, ...explosions].forEach(obj => obj.draw());
+    bats = bats.filter(obj => !obj.markedFordeletion);
+    explosions = explosions.filter(obj => !obj.markedFordeletion);
+    if (!gameOver) requestAnimationFrame(animate);
+    else drawGameOver();
+}
+
+animate(0);
