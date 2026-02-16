@@ -77,7 +77,7 @@ window.addEventListener('load', function(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         game.update(deltaTime);
         game.draw(ctx);
-        if (!gameOver) requestAnimationFrame(animate);
+        if (!game.gameOver) requestAnimationFrame(animate);
     }
     requestAnimationFrame(animate);
 });
