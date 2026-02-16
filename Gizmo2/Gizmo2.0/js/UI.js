@@ -5,6 +5,11 @@ export class UI {
         this.fontFamily = "Helvetica";
     }
     draw(context){
+        context.save();
+        context.shadowOffsetX = 2;
+        context.shadowOffsetY = 2;
+        context.shadowColor = "grey";
+        context.shadowBlur = 0;
         context.font = this.fontSize + "px " + this.fontFamily;
         context.textAlign = "left";
         context.fillStyle = this.game.fontColor;
@@ -16,5 +21,6 @@ export class UI {
             context.font  = this.fontSize * 2 + "px " +this.fontFamily;
             context.fillText("It's midgnight no more cookies!", this.game.width * 0.5, this.game.height * 0.5);
         }
+        context.restore();
     }
 }
