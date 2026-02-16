@@ -34,6 +34,7 @@ window.addEventListener('load', function(){
             this.player.currentState.enter();
         }
         update(deltaTime){
+            this.time += deltaTime;
             this.background.update();
             this.player.update(this.input.keys, deltaTime);
 
