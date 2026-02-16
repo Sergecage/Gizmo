@@ -5,9 +5,22 @@ export class UI {
         this.fontFamily = "Helvetica";
     }
     draw(context){
+        context.save();
+        context.shadowOffsetX = 2;
+        context.shadowOffsetY = 2;
+        context.shadowColor = "grey";
+        context.shadowBlur = 0;
         context.font = this.fontSize + "px " + this.fontFamily;
         context.textAlign = "left";
         context.fillStyle = this.game.fontColor;
         context.fillText("Score: " + this.game.score, 30 , 50);
+        context.font  = this.fontSize * 0.8 + " px " +this.fontFamily;
+        context.fillText("Time: " + (this.game.time * 0.001).toFixed(1), 20, 80);
+        if (this.game.gameOver){
+            context.textAlign = "center";
+            context.font  = this.fontSize * 2 + "px " +this.fontFamily;
+            context.fillText("It's midgnight no more cookies!", this.game.width * 0.5, this.game.height * 0.5);
+        }
+        context.restore();
     }
 }
