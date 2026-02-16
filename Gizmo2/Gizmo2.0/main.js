@@ -28,6 +28,7 @@ window.addEventListener('load', function(){
             this.debug = false;
             this.score = 0;
             this.fontColor = "orange";
+            this.time = 0;
             this.player.currentState =  this.player.states[0];
             this.player.currentState.enter();
         }
