@@ -14,6 +14,7 @@ export class UI {
         if (this.game.gameOver){
             context.textAlign = "center";
             context.font  = this.fontSize * 2 + "px " +this.fontFamily;
+            context.fillText("It's midgnight no more cookies!", this.game.width * 0.5, this.game.height * 0.5);
         }
     }
 }
