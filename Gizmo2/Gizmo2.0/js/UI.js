@@ -11,5 +11,9 @@ export class UI {
         context.fillText("Score: " + this.game.score, 30 , 50);
         context.font  = this.fontSize * 0.8 + " px" +this.fontFamily;
         context.fillText("Time: " + this.game.time, 20, 80);
+        if (this.game.gameOver){
+            context.textAlign = "left";
+            context.font  = this.fontSize * 2 + " px" +this.fontFamily;
+        }
     }
 }
