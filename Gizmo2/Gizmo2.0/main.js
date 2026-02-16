@@ -25,7 +25,7 @@ window.addEventListener('load', function(){
             this.particles = [];
             this.enemyTimer = 0;
             this.enemyInterval = 3000;
-            this.debug = true;
+            this.debug = false;
             this.score = 0;
             this.fontColor = "orange";
             this.player.currentState =  this.player.states[0];
