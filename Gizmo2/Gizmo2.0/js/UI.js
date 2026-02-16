@@ -9,5 +9,7 @@ export class UI {
         context.textAlign = "left";
         context.fillStyle = this.game.fontColor;
         context.fillText("Score: " + this.game.score, 30 , 50);
+        context.font  = this.fontSize * 0.8 + " px" +this.fontFamily;
+        context.fillText("Time: " + this.game.time, 20, 80);
     }
 }
