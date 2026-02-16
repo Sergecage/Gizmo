@@ -30,6 +30,7 @@ window.addEventListener('load', function(){
             this.fontColor = "orange";
             this.time = 0;
             this.maxTime = 10000;
+            this.gameOver = false;
             this.player.currentState =  this.player.states[0];
             this.player.currentState.enter();
         }
