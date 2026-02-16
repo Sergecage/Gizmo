@@ -12,7 +12,7 @@ export class UI {
         context.font  = this.fontSize * 0.8 + " px" +this.fontFamily;
         context.fillText("Time: " + this.game.time, 20, 80);
         if (this.game.gameOver){
-            context.textAlign = "left";
+            context.textAlign = "center";
             context.font  = this.fontSize * 2 + " px" +this.fontFamily;
         }
     }
