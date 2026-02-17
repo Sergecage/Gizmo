@@ -3,6 +3,7 @@ export class UI {
         this.game = game;
         this.fontSize = 30;
         this.fontFamily = "Helvetica";
+        this.livesImage = document.getElementById("lives");
     }
     draw(context){
         context.save();
