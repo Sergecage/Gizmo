@@ -68,12 +68,12 @@ export class Player {
                 enemy.markedForDeletion = true;
                 if (this.currentState === this.states[2]){
                     this.game.score++;
-                }
-            } else {
+                } else {
                 this.setState(1, 0);
                 this.game.lives--;
                 if (this.game.lives <= 0) this.game.gameOver = true;
             }
+        }
         });
     }
 };
