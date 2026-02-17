@@ -71,6 +71,7 @@ export class Player {
                 }
             } else {
                 this.setState(1, 0);
+                this.game.lives--;
             }
         });
     }
