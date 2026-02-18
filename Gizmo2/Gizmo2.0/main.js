@@ -49,7 +49,6 @@ window.addEventListener('load', function(){
             }
             this.enemies.forEach(enemy => {
                 enemy.update(deltaTime);
-                if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1);
             });
             this.particles.forEach((particle, index) => {
                 particle.update();
@@ -58,7 +57,8 @@ window.addEventListener('load', function(){
                 collision.update();
                 if (collision.markedForDeletion) this.collisions.splice(index, 1);
             })
-            this.particles = this.particles.filter(particle => !partticle.markedForDeletion);
+            this.particles = this.particles.filter(particle => !particle.markedForDeletion);
+            this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion);
         }
         draw(context){
             this.background.draw(context);
