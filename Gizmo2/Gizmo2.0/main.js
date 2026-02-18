@@ -55,6 +55,10 @@ window.addEventListener('load', function(){
                 particle.update();
                 if (particle.markedForDeletion) this.particles.splice(index, 1);
             })
+            this.collisions.forEach((collision, index) => {
+                collision.update();
+                if (collision.markedForDeletion) this.collisions.splice(index, 1);
+            })
         }
         draw(context){
             this.background.draw(context);
