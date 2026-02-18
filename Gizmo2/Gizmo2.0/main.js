@@ -51,9 +51,9 @@ window.addEventListener('load', function(){
                 enemy.update(deltaTime);
                 if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1);
             });
+            this.particles.forEach((particle, index) => {
                 particle.update();
-                if (particle.markedForDeletion) this.particles.splice(index, 1);
-
+            })
             this.collisions.forEach((collision, index) => {
                 collision.update();
                 if (collision.markedForDeletion) this.collisions.splice(index, 1);
