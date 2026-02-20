@@ -1,7 +1,7 @@
 import { Dust, Splash } from "./particles.js";
 
 const states = {
-    SITTING: 0,
+    RUNNING_LEFT: 0,
     RUNNING: 1,
     JUMPING: 2,
 }
@@ -14,7 +14,7 @@ class State {
     }
 }
 
-export class Sitting extends State {
+export class RunningLeft extends State {
     constructor(game){
         super("SITTING", game);
     }
