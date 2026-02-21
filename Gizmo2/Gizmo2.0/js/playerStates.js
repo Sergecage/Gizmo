@@ -2,7 +2,7 @@ import { Dust, Splash } from "./particles.js";
 
 const states = {
     RUNNING_LEFT: 0,
-    RUNNING: 1,
+    RUNNING_RIGHT: 1,
     JUMPING: 2,
 }
 
@@ -16,7 +16,7 @@ class State {
 
 export class RunningLeft extends State {
     constructor(game){
-        super("SITTING", game);
+        super("RUNNING_LEFT", game);
     }
     enter(){
         this.game.player.frameX = 1;
@@ -33,7 +33,7 @@ export class RunningLeft extends State {
 
 export class Running extends State {
     constructor(game){
-        super("RUNNING", game);
+        super("RUNNING_RIGHT", game);
     }
     enter(){
         this.game.player.frameX = 0;
@@ -69,7 +69,7 @@ export class Jumping extends State {
     }
     handleInput(input){
         if (this.game.player.onGround()) {
-            this.game.player.setState(states.RUNNING, 0);
+            this.game.player.setState(states.RUNNING_RIGHT, 0);
         }
     }
 }
