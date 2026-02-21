@@ -31,7 +31,7 @@ export class RunningLeft extends State {
     }
 }
 
-export class Running extends State {
+export class RunningRight extends State {
     constructor(game){
         super("RUNNING_RIGHT", game);
     }
