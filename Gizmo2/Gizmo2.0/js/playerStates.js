@@ -26,7 +26,7 @@ export class RunningLeft extends State {
     }
     handleInput(input){
         if ( input.includes("ArrowRight")) {
-            this.game.player.setState(states.RUNNING, 1);
+            this.game.player.setState(states.RUNNING_RIGHT, 1);
         }
     }
 }
