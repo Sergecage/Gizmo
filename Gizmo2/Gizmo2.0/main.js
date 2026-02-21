@@ -23,13 +23,15 @@ window.addEventListener('load', function(){
             this.UI = new UI(this);
             this.enemies = [];
             this.particles = [];
+            this.collisions = [];
             this.enemyTimer = 0;
             this.enemyInterval = 3000;
             this.debug = false;
             this.score = 0;
+            this.winScore = 10;
             this.fontColor = "orange";
             this.time = 0;
-            this.maxTime = 10000;
+            this.maxTime = 100000;
             this.gameOver = false;
             this.lives = 3;
             this.player.currentState =  this.player.states[0];
@@ -49,12 +51,17 @@ window.addEventListener('load', function(){
             }
             this.enemies.forEach(enemy => {
                 enemy.update(deltaTime);
-                if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1);
             });
             this.particles.forEach((particle, index) => {
                 particle.update();
-                if (particle.markedForDeletion) this.particles.splice(index, 1);
             })
+            this.collisions.forEach((collision, index) => {
+                collision.update();
+                if (collision.markedForDeletion) this.collisions.splice(index, 1);
+            })
+            this.particles = this.particles.filter(particle => !particle.markedForDeletion);
+            this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion);
+            this.collisions = this.collisions.filter(collision => !collision.markedForDeletion);
         }
         draw(context){
             this.background.draw(context);
