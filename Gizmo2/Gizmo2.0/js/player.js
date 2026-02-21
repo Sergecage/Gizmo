@@ -67,14 +67,11 @@ export class Player {
         this.game.enemies.forEach(enemy => {
             if (enemy.x < this.x + this.width && enemy.x + enemy.width > this.x &&  enemy.y < this.y + this.height && enemy.y + enemy.height > this.y){
                 enemy.markedForDeletion = true;
-                if (this.currentState === this.states[2]){
                     this.game.lives--;
-                } else {
                 this.setState(1, 0);
-                this.game.score++;
+                //this.game.score++;
                 if (this.game.lives <= 0) this.game.gameOver = true;
             }
-        }
         });
     }
 };
