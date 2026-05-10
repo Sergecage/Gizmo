@@ -3,6 +3,7 @@ export class Music{
         this.game = game;
         this.width = 100;
         this.height = 100;
+        this.x = 0;
     }
     update(){
 
