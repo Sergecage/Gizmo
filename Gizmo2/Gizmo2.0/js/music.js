@@ -5,4 +5,7 @@ export class Music{
     update(){
 
     }
+    draw(){
+        
+    }
 }
