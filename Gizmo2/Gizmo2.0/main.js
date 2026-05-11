@@ -22,6 +22,7 @@ window.addEventListener('load', function(){
             this.player = new Player(this);
             this.input = new InputHandler(this);
             this.UI = new UI(this);
+            this.music = new Music(this);
             this.enemies = [];
             this.particles = [];
             this.collisions = [];
