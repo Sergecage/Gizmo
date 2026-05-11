@@ -64,6 +64,7 @@ window.addEventListener('load', function(){
             this.particles = this.particles.filter(particle => !particle.markedForDeletion);
             this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion);
             this.collisions = this.collisions.filter(collision => !collision.markedForDeletion);
+            this.music.update();
         }
         draw(context){
             this.background.draw(context);
