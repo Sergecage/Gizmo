@@ -7,6 +7,7 @@ export class Music{
         this.y = 20;
         this.musicIcon = document.getElementById("music");
         this.closeIcon = document.getElementById("close");
+        this.isMuted = false;
     }
     update(){
 
