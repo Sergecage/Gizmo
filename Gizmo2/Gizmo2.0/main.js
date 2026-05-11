@@ -76,6 +76,7 @@ window.addEventListener('load', function(){
                 particle.draw(context);
             });
             this.UI.draw(context);
+            this.music.draw(context);
         }
         AddEnemy(){
             if (this.speed > 0 && Math.random() < 0.5 ) this.enemies.push(new GroundEnemy(this));

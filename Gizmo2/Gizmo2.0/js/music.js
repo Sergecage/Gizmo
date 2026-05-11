@@ -9,7 +9,7 @@ export class Music{
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
         this.music = music;
-        this.music.play();
+        //this.music.play();
     }
     update(){
 
