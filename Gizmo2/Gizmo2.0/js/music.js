@@ -4,6 +4,7 @@ export class Music{
         this.width = 100;
         this.height = 100;
         this.x = this.game.width - 80;
+        this.y = 20;
     }
     update(){
 
