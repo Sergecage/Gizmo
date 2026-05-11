@@ -14,7 +14,7 @@ export class Music{
     update(){
 
     }
-    draw(){
-
+    draw(context){
+        context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
     }
 }
