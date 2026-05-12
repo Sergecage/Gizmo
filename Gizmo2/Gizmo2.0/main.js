@@ -3,6 +3,7 @@ import { InputHandler } from "./js/input.js";
 import { Background } from "./js/background.js";
 import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
 import { UI } from "./js/UI.js";
+import { Music } from "./js/music.js";
 
 window.addEventListener('load', function(){
     const canvas = document.getElementById("game-canvas-1");
@@ -21,6 +22,7 @@ window.addEventListener('load', function(){
             this.player = new Player(this);
             this.input = new InputHandler(this);
             this.UI = new UI(this);
+            this.music = new Music(this);
             this.enemies = [];
             this.particles = [];
             this.collisions = [];
@@ -62,6 +64,7 @@ window.addEventListener('load', function(){
             this.particles = this.particles.filter(particle => !particle.markedForDeletion);
             this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion);
             this.collisions = this.collisions.filter(collision => !collision.markedForDeletion);
+            this.music.update();
         }
         draw(context){
             this.background.draw(context);
@@ -73,6 +76,7 @@ window.addEventListener('load', function(){
                 particle.draw(context);
             });
             this.UI.draw(context);
+            this.music.draw(context);
         }
         AddEnemy(){
             if (this.speed > 0 && Math.random() < 0.5 ) this.enemies.push(new GroundEnemy(this));

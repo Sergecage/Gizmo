@@ -17,3 +17,7 @@
 #gizmo, #layer1, #layer2, #enemy_fly, #enemy_stand, #enemy_crawl, #lives{
     display: none;
 }
+
+#close,#music{
+    display: none;
+}
