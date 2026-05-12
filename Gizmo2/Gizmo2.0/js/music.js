@@ -28,7 +28,7 @@ export class Music{
     handleClick(event){
         this.mouseX = event.offsetX;
         this.mouseY = event.offsetY;
-        if (){
+        if (this.mouseX > this.x && this.mouseX < this.x + this.width && this.mouseY > this.y && this.mouseY < this.y + this.height){
 
         }
         this.isMuted = !this.isMuted;
