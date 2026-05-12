@@ -32,5 +32,10 @@ export class Music{
 
         }
         this.isMuted = !this.isMuted;
+        if (this.isMuted){
+            this.music.pause();
+        } else {
+            this.music.play();
+        }
     }
 }
