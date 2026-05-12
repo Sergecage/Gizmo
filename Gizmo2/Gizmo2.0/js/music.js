@@ -27,6 +27,7 @@ export class Music{
     }
     handleClick(event){
         this.mouseX = event.offsetX;
+        this.mouseY = event.offsetY;
         if (){
 
         }
