@@ -26,6 +26,7 @@ export class Music{
         }
     }
     handleClick(event){
+        this.mouseX = event.offsetX;
         if (){
 
         }
