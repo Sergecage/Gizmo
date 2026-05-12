@@ -21,5 +21,8 @@ export class Music{
     }
     draw(context){
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
+        if (this.isMuted) {
+            context.drawImage(this.closeIcon, this.x, this.y, this.width, this.height);
+        }
     }
 }
