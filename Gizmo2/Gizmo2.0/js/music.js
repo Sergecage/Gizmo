@@ -11,6 +11,10 @@ export class Music{
         this.isMuted = false;
         this.music.volume = 0.3;
         this.music.play();
+
+        window.addEventListener("click", (e) => {
+            this.handleClick(e);
+        })
     }
     update(){
 
