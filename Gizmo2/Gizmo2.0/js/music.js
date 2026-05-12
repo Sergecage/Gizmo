@@ -25,7 +25,10 @@ export class Music{
             context.drawImage(this.closeIcon, this.x, this.y, this.width, this.height);
         }
     }
-    handleClick(){
-        
+    handleClick(event){
+        if (){
+
+        }
+        this.isMuted = !this.isMuted;
     }
 }
