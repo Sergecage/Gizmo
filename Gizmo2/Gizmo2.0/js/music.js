@@ -5,11 +5,12 @@ export class Music{
         this.height = 100;
         this.x = this.game.width - 80;
         this.y = 20;
+        this.music = document.getElementById("backMusic");
         this.musicIcon = document.getElementById("music");
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
         this.music = music;
-        //this.music.play();
+        this.music.play();
     }
     update(){
 
