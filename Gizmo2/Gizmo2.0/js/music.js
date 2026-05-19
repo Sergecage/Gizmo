@@ -3,14 +3,18 @@ export class Music{
         this.game = game;
         this.width = 100;
         this.height = 100;
-        this.x = this.game.width - 80;
+        this.x = this.game.width - this.width - 20;
         this.y = 20;
         this.music = document.getElementById("backMusic");
         this.musicIcon = document.getElementById("music");
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
         this.music.volume = 0.3;
-        this.music.play();
+        window.addEventListener("click", () => {
+            if (!this.isMuted){
+                this.music.play();
+            }
+        }, { once: true });
 
         window.addEventListener("click", (e) => {
             this.handleClick(e);
@@ -29,13 +33,12 @@ export class Music{
         this.mouseX = event.offsetX;
         this.mouseY = event.offsetY;
         if (this.mouseX > this.x && this.mouseX < this.x + this.width && this.mouseY > this.y && this.mouseY < this.y + this.height){
-
-        }
-        this.isMuted = !this.isMuted;
-        if (this.isMuted){
-            this.music.pause();
-        } else {
-            this.music.play();
+            this.isMuted = !this.isMuted;
+            if (this.isMuted){
+                this.music.pause();
+            } else {
+                this.music.play();
+            }
         }
     }
 }
