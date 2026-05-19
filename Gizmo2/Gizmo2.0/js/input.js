@@ -25,6 +25,11 @@ export class InputHandler {
                     this.keys.push("ArrowRight");
             }
         }
+        if (touchY  < window.innerHeight / 2) {
+                if (!this.keys.includes("ArrowUp")) {
+                    this.keys.push("ArrowUp");
+                }
+            } 
         });
     }
 }
