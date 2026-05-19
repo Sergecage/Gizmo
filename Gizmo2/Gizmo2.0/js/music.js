@@ -10,7 +10,9 @@ export class Music{
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
         this.music.volume = 0.3;
-        this.music.play();
+        window.addEventListener("click", () => {
+            this.music.play();
+        }, { once: true });
 
         window.addEventListener("click", (e) => {
             this.handleClick(e);
