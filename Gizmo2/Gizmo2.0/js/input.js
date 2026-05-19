@@ -20,7 +20,11 @@ export class InputHandler {
                 if (!this.keys.includes("ArrowLeft")) {
                     this.keys.push("ArrowLeft");
                 }
+            } else {
+                if (!this.keys.includes("ArrowRight")) {
+                    this.keys.push("ArrowRight");
             }
+        }
         });
     }
 }
