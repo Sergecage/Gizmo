@@ -3,7 +3,7 @@ export class Music{
         this.game = game;
         this.width = 100;
         this.height = 100;
-        this.x = this.game.width - 80;
+        this.x = this.game.width - this.width - 20;
         this.y = 20;
         this.music = document.getElementById("backMusic");
         this.musicIcon = document.getElementById("music");
