@@ -11,7 +11,9 @@ export class Music{
         this.isMuted = false;
         this.music.volume = 0.3;
         window.addEventListener("click", () => {
-            this.music.play();
+            if (!this.isMuted){
+                this.music.play();
+            }
         }, { once: true });
 
         window.addEventListener("click", (e) => {
