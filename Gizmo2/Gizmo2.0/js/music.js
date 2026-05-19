@@ -33,13 +33,12 @@ export class Music{
         this.mouseX = event.offsetX;
         this.mouseY = event.offsetY;
         if (this.mouseX > this.x && this.mouseX < this.x + this.width && this.mouseY > this.y && this.mouseY < this.y + this.height){
-
-        }
-        this.isMuted = !this.isMuted;
-        if (this.isMuted){
-            this.music.pause();
-        } else {
-            this.music.play();
+            this.isMuted = !this.isMuted;
+            if (this.isMuted){
+                this.music.pause();
+            } else {
+                this.music.play();
+            }
         }
     }
 }
