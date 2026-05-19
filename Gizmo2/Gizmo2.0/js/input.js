@@ -13,5 +13,10 @@ export class InputHandler {
                 this.keys.splice(this.keys.indexOf(e.key), 1);
             }
         });
+        window.addEventListener("touchstart", e => {
+            if (e.key === "" || e.key === "" || e.key === "" || e.key === "") {
+                this.keys.splice(this.keys.indexOf(e.key), 1);
+            }
+        });
     }
 }
