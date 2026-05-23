@@ -31,6 +31,9 @@ export class InputHandler {
                 }
             } 
         });
+        window.addEventListener("toucmove", () => {
+            
+        })
         window.addEventListener("touchend", () => {
             this.keys = [];
         })
