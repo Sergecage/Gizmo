@@ -42,7 +42,7 @@ export class FlyingEnemy extends Enemy {
         this.frameX = 0;
         this.frameY = 0;
         this.angle = 0;
-        this.va = Math.random() * 0.1 + 0.1;
+        this.va = Math.random() * 0.1 + 0.5;
     }
     update(deltaTime){
         super.update(deltaTime);

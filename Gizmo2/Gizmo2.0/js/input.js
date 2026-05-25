@@ -14,25 +14,32 @@ export class InputHandler {
             }
         });
         window.addEventListener("touchstart", e => {
-            const touchX = e.touches[0].clientX;
-            const touchY = e.touches[0].clientY;
-            if (touchX  < window.innerWidth / 2) {
-                if (!this.keys.includes("ArrowLeft")) {
-                    this.keys.push("ArrowLeft");
-                }
-            } else {
-                if (!this.keys.includes("ArrowRight")) {
-                    this.keys.push("ArrowRight");
-            }
-        }
-        if (touchY  < window.innerHeight / 2) {
-                if (!this.keys.includes("ArrowUp")) {
-                    this.keys.push("ArrowUp");
-                }
-            } 
-        });
+            if (e.targetTouches.length > 1){
+                e.preventDefault()
+            };
+            this.handleTouch(e);
+            
+        }, {passive : false} );
+        window.addEventListener("touchmove", e => {
+            e.preventDefault()
+            this.handleTouch(e);
+        }, {passive : false})
         window.addEventListener("touchend", () => {
             this.keys = [];
         })
+    }
+    handleTouch(e){
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        this.keys = [];
+        if (touchX < window.innerWidth / 2){
+            this.key.oush("ArrowLeft");
+        }
+        else {
+            this.key.push("ArrowRight");
+        }
+        if (touchY < window.innerHeight / 2){
+            this.key.oush("ArrowUp");
+        }
     }
 }
