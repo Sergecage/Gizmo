@@ -17,8 +17,7 @@ export class InputHandler {
             if (e.targetTouches.length > 1){
                 e.preventDefault()
             };
-
-            
+            this.handleTouch(e);
             const touchX = e.touches[0].clientX;
             const touchY = e.touches[0].clientY;
             if (touchX  < window.innerWidth / 2) {
@@ -45,6 +44,6 @@ export class InputHandler {
         })
     }
     handleTouch(e){
-        
+
     }
 }
