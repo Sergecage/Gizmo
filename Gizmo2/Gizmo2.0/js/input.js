@@ -35,5 +35,11 @@ export class InputHandler {
         if (touchX < window.innerHeight / 2){
             this.key.oush("ArrowLeft");
         }
+        else {
+            this.key.push("ArrowRight");
+        }
+        if (touchX < window.innerHeight / 2){
+            this.key.oush("ArrowLeft");
+        }
     }
 }
