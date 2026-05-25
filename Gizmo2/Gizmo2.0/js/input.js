@@ -14,6 +14,7 @@ export class InputHandler {
             }
         });
         window.addEventListener("touchstart", e => {
+            e.preventDefault();
             const touchX = e.touches[0].clientX;
             const touchY = e.touches[0].clientY;
             if (touchX  < window.innerWidth / 2) {
