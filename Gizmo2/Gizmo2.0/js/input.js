@@ -34,7 +34,7 @@ export class InputHandler {
                 }
             } 
         });
-        window.addEventListener("touchmove", () => {
+        window.addEventListener("touchmove", e => {
             const touchX = e.touches[0].clientX;
             const touchY = e.touches[0].clientY;
         })
