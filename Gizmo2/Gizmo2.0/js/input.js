@@ -31,7 +31,7 @@ export class InputHandler {
     handleTouch(e){
         const touchX = e.touches[0].clientX;
         const touchY = e.touches[0].clientY;
-
+        this.keys = [];
         if (touchX < window.innerWidth / 2){
             this.key.oush("ArrowLeft");
         }
