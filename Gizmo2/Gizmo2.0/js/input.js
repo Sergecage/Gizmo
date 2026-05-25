@@ -19,20 +19,6 @@ export class InputHandler {
             };
             this.handleTouch(e);
             
-            if (touchX  < window.innerWidth / 2) {
-                if (!this.keys.includes("ArrowLeft")) {
-                    this.keys.push("ArrowLeft");
-                }
-            } else {
-                if (!this.keys.includes("ArrowRight")) {
-                    this.keys.push("ArrowRight");
-            }
-        }
-        if (touchY  < window.innerHeight / 2) {
-                if (!this.keys.includes("ArrowUp")) {
-                    this.keys.push("ArrowUp");
-                }
-            } 
         });
         window.addEventListener("touchmove", e => {
             const touchX = e.touches[0].clientX;
@@ -45,5 +31,9 @@ export class InputHandler {
     handleTouch(e){
         const touchX = e.touches[0].clientX;
         const touchY = e.touches[0].clientY;
+
+        if (touchX < window.innerHeight / 2){
+            this.key.oush("ArrowLeft");
+        }
     }
 }
