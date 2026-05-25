@@ -21,9 +21,9 @@ export class InputHandler {
             
         }, {passive : false} );
         window.addEventListener("touchmove", e => {
-            const touchX = e.touches[0].clientX;
-            const touchY = e.touches[0].clientY;
-        })
+            e.preventDefault()
+            this.handleTouch(e);
+        }, {passive : false})
         window.addEventListener("touchend", () => {
             this.keys = [];
         })
