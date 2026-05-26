@@ -12,6 +12,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
+    touch-action: none;
 }
 
 #gizmo, #layer1, #layer2, #enemy_fly, #enemy_stand, #enemy_crawl, #lives{
