@@ -8,6 +8,7 @@ export class Cookie {
         this.x = Math.random() * (this.width * 0.8);
         this.y = Math.random() * (this.width * 0.8);
         this.image = document.getElementById("cookie");
+        this.markedForDeletion = false;
     }
     update(){
 
