@@ -1,5 +1,5 @@
 export class Cookie {
-    constructor(){
-        
+    constructor(game){
+        this.game = game;
     }
 }
