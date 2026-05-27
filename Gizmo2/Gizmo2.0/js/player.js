@@ -72,5 +72,11 @@ export class Player {
                 if (this.game.lives <= 0) this.game.gameOver = true;
             }
         });
+        this.game.cookies.forEach(cookie => {
+            if (cookie.x < this.x + this.width && cookie.x + cookie.width > this.x && cookie.y < this.y + this.height && cookie.y + cookie.height > this.y){
+                cookie.markedForDeletion = true;
+                this.game.score++;
+            }
+        })
     }
 };
