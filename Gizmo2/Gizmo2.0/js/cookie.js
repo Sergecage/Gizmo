@@ -9,4 +9,10 @@ export class Cookie {
         this.y = Math.random() * (this.width * 0.8);
         this.image = document.getElementById("cookie");
     }
+    update(){
+
+    }
+    draw(){
+        
+    }
 }
