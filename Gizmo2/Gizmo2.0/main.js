@@ -26,6 +26,7 @@ window.addEventListener('load', function(){
             this.music = new Music(this);
             this.enemies = [];
             this.particles = [];
+            this.cookies = [];
             this.collisions = [];
             this.enemyTimer = 0;
             this.enemyInterval = 3000;
