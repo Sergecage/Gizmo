@@ -7,5 +7,6 @@ export class Cookie {
         this.height = 190;
         this.x = Math.random() * (this.width * 0.8);
         this.y = Math.random() * (this.width * 0.8);
+        this.image = document.getElementById("cookie");
     }
 }
