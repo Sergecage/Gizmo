@@ -69,7 +69,6 @@ export class Player {
                 enemy.markedForDeletion = true;
                     this.game.lives--;
                 this.setState(1, 0);
-                //this.game.score++;
                 if (this.game.lives <= 0) this.game.gameOver = true;
             }
         });
