@@ -12,7 +12,7 @@ export class Cookie {
     update(){
 
     }
-    draw(){
-        
+    draw(context){
+
     }
 }
