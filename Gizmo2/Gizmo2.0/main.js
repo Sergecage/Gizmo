@@ -4,6 +4,7 @@ import { Background } from "./js/background.js";
 import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
 import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
+import { Cookie } from "./js/cookie.js";
 
 window.addEventListener('load', function(){
     const canvas = document.getElementById("game-canvas-1");
@@ -25,6 +26,7 @@ window.addEventListener('load', function(){
             this.music = new Music(this);
             this.enemies = [];
             this.particles = [];
+            this.cookies = [];
             this.collisions = [];
             this.enemyTimer = 0;
             this.enemyInterval = 3000;
@@ -38,6 +40,8 @@ window.addEventListener('load', function(){
             this.lives = 3;
             this.player.currentState =  this.player.states[0];
             this.player.currentState.enter();
+            this.cookieTimer = 0;
+            this.cookieInterval = 5000;
         }
         update(deltaTime){
             this.time += deltaTime;
@@ -51,6 +55,13 @@ window.addEventListener('load', function(){
             } else {
                 this.enemyTimer += deltaTime;
             }
+            if (this.cookieTimer > this.cookieInterval){
+                this.cookies.push(new Cookie(this));
+                this.cookieTimer = 0;
+            } else {
+                this.cookieTimer += deltaTime;
+            }
+
             this.enemies.forEach(enemy => {
                 enemy.update(deltaTime);
             });
@@ -65,9 +76,13 @@ window.addEventListener('load', function(){
             this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion);
             this.collisions = this.collisions.filter(collision => !collision.markedForDeletion);
             this.music.update();
+            this.cookies = this.cookies.filter(cookie => !cookie.markedForDeletion);
         }
         draw(context){
             this.background.draw(context);
+            this.cookies.forEach(cookie => {
+                cookie.draw(context);
+            });
             this.player.draw(context);
             this.enemies.forEach(enemy => {
                 enemy.draw(context);
