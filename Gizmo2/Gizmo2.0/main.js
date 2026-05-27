@@ -76,6 +76,7 @@ window.addEventListener('load', function(){
             this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion);
             this.collisions = this.collisions.filter(collision => !collision.markedForDeletion);
             this.music.update();
+            this.cookies = this.cookies.filter(cookie => !cookie.markedForDeletion);
         }
         draw(context){
             this.background.draw(context);
