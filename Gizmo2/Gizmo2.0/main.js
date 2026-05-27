@@ -55,6 +55,13 @@ window.addEventListener('load', function(){
             } else {
                 this.enemyTimer += deltaTime;
             }
+            if (this.cookieTimer > this.cookieInterval){
+                this.cookies.push(new Cookie(this));
+                this.cookieTimer = 0;
+            } else {
+                this.cookieTimer += deltaTime;
+            }
+
             this.enemies.forEach(enemy => {
                 enemy.update(deltaTime);
             });
