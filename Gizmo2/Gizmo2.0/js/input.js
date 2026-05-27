@@ -14,7 +14,7 @@ export class InputHandler {
             }
         });
         window.addEventListener("touchstart", e => {
-            if (e.targetTouches.length > 1){
+            if (e.touches.length > 1){
                 e.preventDefault()
             };
             this.handleTouch(e);
