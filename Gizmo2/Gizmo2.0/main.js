@@ -40,6 +40,8 @@ window.addEventListener('load', function(){
             this.lives = 3;
             this.player.currentState =  this.player.states[0];
             this.player.currentState.enter();
+            this.cookieTimer = 0;
+            this.cookieInterval = 5000;
         }
         update(deltaTime){
             this.time += deltaTime;
