@@ -6,7 +6,7 @@ export class Cookie {
         this.width = 80;
         this.height = 80;
         this.x = Math.random() * (this.game.width - this.width);
-        this.y = Math.random() * (this.game.height * - this.height - this.game.groundMargin);
+        this.y = Math.random() * (this.game.height - this.height - this.game.groundMargin);
         this.image = document.getElementById("cookie");
         this.markedForDeletion = false;
     }

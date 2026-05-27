@@ -80,6 +80,9 @@ window.addEventListener('load', function(){
         }
         draw(context){
             this.background.draw(context);
+            this.cookies.forEach(cookie => {
+                cookie.draw(context);
+            });
             this.player.draw(context);
             this.enemies.forEach(enemy => {
                 enemy.draw(context);
@@ -89,9 +92,6 @@ window.addEventListener('load', function(){
             });
             this.UI.draw(context);
             this.music.draw(context);
-            this.cookies.forEach(cookie => {
-                cookie.draw(context);
-            });
         }
         AddEnemy(){
             if (this.speed > 0 && Math.random() < 0.5 ) this.enemies.push(new GroundEnemy(this));
