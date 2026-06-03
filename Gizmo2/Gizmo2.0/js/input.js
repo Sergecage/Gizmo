@@ -33,13 +33,13 @@ export class InputHandler {
         const touchY = e.touches[0].clientY;
         this.keys = [];
         if (touchX < window.innerWidth / 2){
-            this.key.push("ArrowLeft");
+            this.keys.push("ArrowLeft");
         }
         else {
-            this.key.push("ArrowRight");
+            this.keys.push("ArrowRight");
         }
         if (touchY < window.innerHeight / 2){
-            this.key.push("ArrowUp");
+            this.keys.push("ArrowUp");
         }
     }
 }
