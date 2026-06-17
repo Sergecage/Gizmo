@@ -1,8 +1,8 @@
 export class Cookie {
   constructor(game) {
     this.game = game;
-    this.spriteWidth = 150;
-    this.spriteHeight = 190;
+    this.spriteWidth = 250;
+    this.spriteHeight = 290;
     this.width = 80;
     this.height = 80;
     this.x = Math.random() * (this.game.width - this.width);
@@ -18,7 +18,7 @@ export class Cookie {
       0,
       0,
       this.spriteWidth,
-      this.spriyeHeight,
+      this.spriteHeight,
       this.x,
       this.y,
       this.width,
