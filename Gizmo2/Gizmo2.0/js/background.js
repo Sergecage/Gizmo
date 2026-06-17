@@ -45,6 +45,8 @@ export class Background {
       1,
       this.layerImage2,
     );
+    this.layer.x = 0;
+    this.layer2.x = this.width;
     this.backgroundLayers = [this.layer, this.layer2];
   }
   update() {
