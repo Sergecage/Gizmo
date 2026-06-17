@@ -24,6 +24,8 @@ export class Cookie {
       } else {
         this.frameX = 0;
       }
+    } else {
+      this.frameTimer += deltaTime;
     }
   }
   draw(context) {
