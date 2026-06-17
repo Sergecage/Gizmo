@@ -12,6 +12,8 @@ export class Cookie {
     this.frameX = 0;
     this.maxFrame = 4;
     this.fps = 10;
+    this.frameInterval = 1000 / this.fps;
+    this.frameTimer = 0;
     this.markedForDeletion = false;
   }
   update() {}
