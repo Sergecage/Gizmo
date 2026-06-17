@@ -11,6 +11,7 @@ export class Cookie {
     this.image = document.getElementById("cookie");
     this.frameX = 0;
     this.maxFrame = 4;
+    this.fps = 10;
     this.markedForDeletion = false;
   }
   update() {}
