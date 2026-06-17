@@ -21,6 +21,8 @@ export class Cookie {
       this.frameTimer = 0;
       if (this.frameX < this.maxFrame) {
         this.frameX++;
+      } else {
+        this.frameX = 0;
       }
     }
   }
