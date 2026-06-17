@@ -16,7 +16,11 @@ export class Cookie {
     this.frameTimer = 0;
     this.markedForDeletion = false;
   }
-  update() {}
+  update(deltaTime) {
+    if (this.frameTimer > this.frameInterval) {
+      this.frameTimer = 0;
+    }
+  }
   draw(context) {
     context.drawImage(
       this.image,
