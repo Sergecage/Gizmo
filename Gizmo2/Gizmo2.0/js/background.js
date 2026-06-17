@@ -63,7 +63,7 @@ export class Background {
     );
     this.layer.x = 0;
     this.layer2.x = this.width;
-    this.backgroundLayers = [this.layer, this.layer2];
+    this.backgroundLayers = [this.layer, this.layer2, this.layer3, this.layer4];
   }
   update() {
     this.backgroundLayers.forEach((layer) => {
