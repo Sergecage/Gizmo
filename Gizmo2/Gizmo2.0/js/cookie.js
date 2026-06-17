@@ -19,6 +19,9 @@ export class Cookie {
   update(deltaTime) {
     if (this.frameTimer > this.frameInterval) {
       this.frameTimer = 0;
+      if (this.frameX < this.maxFrame) {
+        this.frameX++;
+      }
     }
   }
   draw(context) {
