@@ -40,5 +40,8 @@ export class Cookie {
       this.width,
       this.height,
     );
+    if (this.game.debug) {
+      context.strokeRect(this.x, this.y, this.width, this.height);
+    }
   }
 }
