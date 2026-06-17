@@ -65,15 +65,15 @@ window.addEventListener("load", function () {
       this.enemies.forEach((enemy) => {
         enemy.update(deltaTime);
       });
+      this.cookies.forEach((cookie) => {
+        cookie.update(deltaTime);
+      });
       this.particles.forEach((particle, index) => {
         particle.update();
       });
       this.collisions.forEach((collision, index) => {
         collision.update();
         if (collision.markedForDeletion) this.collisions.splice(index, 1);
-      });
-      this.cookies.forEach((cookie) => {
-        cookie.update(deltaTime);
       });
       this.particles = this.particles.filter(
         (particle) => !particle.markedForDeletion,

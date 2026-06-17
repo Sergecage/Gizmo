@@ -1,14 +1,14 @@
 export class Cookie {
   constructor(game) {
     this.game = game;
-    this.spriteWidth = 250;
-    this.spriteHeight = 290;
-    this.width = 180;
-    this.height = 180;
+    this.image = document.getElementById("cookie");
+    this.spriteWidth = this.image.naturalWidth / 5;
+    this.spriteHeight = 190;
+    this.width = 80;
+    this.height = 80;
     this.x = Math.random() * (this.game.width - this.width);
     this.y =
       Math.random() * (this.game.height - this.height - this.game.groundMargin);
-    this.image = document.getElementById("cookie");
     this.frameX = 0;
     this.maxFrame = 4;
     this.fps = 10;
