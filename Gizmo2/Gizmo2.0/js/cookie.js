@@ -3,9 +3,9 @@ export class Cookie {
     this.game = game;
     this.image = document.getElementById("cookie");
     this.spriteWidth = this.image.naturalWidth / 5;
-    this.spriteHeight = 190;
+    this.spriteHeight = this.image.naturalHeight;
     this.width = 80;
-    this.height = 80;
+    this.height = 180;
     this.x = Math.random() * (this.game.width - this.width);
     this.y =
       Math.random() * (this.game.height - this.height - this.game.groundMargin);
