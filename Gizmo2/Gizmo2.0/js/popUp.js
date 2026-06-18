@@ -1,4 +1,5 @@
 const canvas = document.getElementById("game-canvas-1");
 
 const popup = document.createElement("div");
-canvas.classList = "popup";
+popup.classList = "popup";
+canvas.append(popup);
