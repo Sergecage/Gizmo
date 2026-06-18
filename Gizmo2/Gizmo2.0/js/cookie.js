@@ -31,7 +31,7 @@ export class Cookie {
   draw(context) {
     context.drawImage(
       this.image,
-      this.frameX + this.spriteWidth,
+      this.frameX * this.spriteWidth,
       0,
       this.spriteWidth,
       this.spriteHeight,
