@@ -32,3 +32,8 @@
 #cookie {
   display: none;
 }
+
+.popup {
+  background-color: rgb(218, 160, 85);
+  border: 3px black;
+}
