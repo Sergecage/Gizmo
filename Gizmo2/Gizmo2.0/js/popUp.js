@@ -7,3 +7,4 @@ canvas.append(popup);
 const welcomeText = document.createElement("h2");
 welcomeText.innerText = "Welcome to Gizmo Cookies 2";
 welcomeText.classList = "welcome-text";
+popup.append(welcomeText);
