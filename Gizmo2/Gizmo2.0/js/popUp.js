@@ -16,3 +16,7 @@ popup.append(welcomeText, text);
 const levelOne = document.createElement("button");
 levelOne.innerText = "Level 1";
 levelOne.classList = "btn-1";
+
+const levelTwo = document.createElement("button");
+levelTwo.innerText = "Level 2";
+levelTwo.classList = "btn-2";
