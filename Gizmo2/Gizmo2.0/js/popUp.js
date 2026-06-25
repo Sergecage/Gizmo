@@ -1,8 +1,8 @@
-const canvas = document.getElementById("game-canvas-1");
+const gameContainer = document.getElementById("game-container");
 
 const popup = document.createElement("div");
 popup.classList = "popup";
-canvas.append(popup);
+gameContainer.append(popup);
 
 const welcomeText = document.createElement("h2");
 welcomeText.innerText = "Welcome to Gizmo Cookies 2";
