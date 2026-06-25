@@ -13,6 +13,8 @@ text.innerText = "Choose your level or play original hardcore one";
 text.classList = "text";
 popup.append(welcomeText, text);
 
+const buttonContainer = document.createElement("div");
+buttonContainer.classList = "btn-container";
 const levelOne = document.createElement("button");
 levelOne.innerText = "Level 1";
 levelOne.classList = "btn-1";
