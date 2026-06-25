@@ -11,10 +11,11 @@ welcomeText.classList = "welcome-text";
 const text = document.createElement("p");
 text.innerText = "Choose your level or play original hardcore one";
 text.classList = "text";
-popup.append(welcomeText, text);
 
 const buttonContainer = document.createElement("div");
 buttonContainer.classList = "btn-container";
+popup.append(welcomeText, text, buttonContainer);
+
 const levelOne = document.createElement("button");
 levelOne.innerText = "Level 1";
 levelOne.classList = "btn-1";
