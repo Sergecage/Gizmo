@@ -27,3 +27,4 @@ levelTwo.classList = "btn-2";
 const levelThree = document.createElement("button");
 levelThree.innerText = "Level 3";
 levelThree.classList = "btn-3";
+buttonContainer.append(levelOne, levelTwo, levelThree);
