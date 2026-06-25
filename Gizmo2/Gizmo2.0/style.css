@@ -43,3 +43,9 @@
   color: aliceblue;
   text-transform: uppercase;
 }
+
+button {
+  border: solid 1px white;
+  color: cadetblue;
+  font-size: medium;
+}
