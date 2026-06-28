@@ -34,5 +34,7 @@ export function showPop(startGame) {
     const button = e.target.closest("button");
 
     if (!button) return;
+
+    popup.remove();
   });
 }
