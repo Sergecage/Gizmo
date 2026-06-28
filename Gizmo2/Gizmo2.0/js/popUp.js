@@ -32,5 +32,7 @@ export function showPop(startGame) {
 
   popup.addEventListener("click", (e) => {
     const button = e.target.closest("button");
+
+    if (!button) return;
   });
 }
