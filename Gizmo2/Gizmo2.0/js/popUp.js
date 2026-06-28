@@ -29,4 +29,8 @@ export function showPop(startGame) {
   levelThree.innerText = "Level 3";
   levelThree.classList = "btn-3";
   buttonContainer.append(levelOne, levelTwo, levelThree);
+
+  popup.addEventListener("click", (e) => {
+    const button = e.target.closest("button");
+  });
 }
