@@ -34,6 +34,7 @@ export function showPop(startGame) {
     const button = e.target.closest("button");
 
     if (!button) return;
+    const level = Number(button.dataset.level);
 
     popup.remove();
   });
