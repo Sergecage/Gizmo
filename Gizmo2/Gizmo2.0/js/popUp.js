@@ -37,5 +37,7 @@ export function showPop(startGame) {
     const level = Number(button.dataset.level);
 
     popup.remove();
+
+    startGame(level);
   });
 }
