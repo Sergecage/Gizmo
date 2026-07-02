@@ -120,5 +120,8 @@ window.addEventListener("load", function () {
     game.draw(ctx);
     if (!game.gameOver) requestAnimationFrame(animate);
   };
-  requestAnimationFrame(animate);
+  function startGame() {
+    requestAnimationFrame(animate);
+  }
+  showPop(startGame);
 });

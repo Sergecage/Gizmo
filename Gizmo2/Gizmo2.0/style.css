@@ -5,9 +5,6 @@
   background-color: rgb(102, 174, 207);
 }
 
-#game-container {
-}
-
 #game-canvas-1 {
   border: 5px solid black;
   position: absolute;
