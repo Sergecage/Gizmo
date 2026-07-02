@@ -74,6 +74,14 @@
   border-radius: 2px;
 }
 
+.popup-close::before {
+  transform: rotate(45deg);
+}
+
+.popup-close::after {
+  transform: rotate(-45deg);
+}
+
 button {
   border: solid 1px white;
   color: cadetblue;
