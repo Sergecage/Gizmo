@@ -13,7 +13,8 @@ export function showPop(startGame) {
   welcomeText.className = "welcome-text";
 
   const text = document.createElement("p");
-  text.innerText = "Choose your level or play original hardcore one";
+  text.innerText =
+    "Choose your level or play original hardcore one, collect cookies, avoid monsters and survive as long as possible!";
   text.className = "text";
 
   const buttonContainer = document.createElement("div");
