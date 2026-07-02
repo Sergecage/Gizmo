@@ -5,6 +5,9 @@ export function showPop(startGame) {
   popup.classList = "popup";
   gameContainer.append(popup);
 
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "popup-close";
+
   const welcomeText = document.createElement("h2");
   welcomeText.innerText = "Welcome to Gizmo Cookies 2";
   welcomeText.classList = "welcome-text";
