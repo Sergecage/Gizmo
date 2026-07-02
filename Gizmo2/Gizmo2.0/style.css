@@ -82,6 +82,11 @@
   transform: rotate(-45deg);
 }
 
+.popup-close:hover::before,
+.popup-close:hover::after {
+  background: gold;
+}
+
 button {
   border: solid 1px white;
   color: cadetblue;
