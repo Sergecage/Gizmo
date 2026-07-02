@@ -9,11 +9,11 @@ export function showPop(startGame) {
   closeBtn.className = "popup-close";
 
   const welcomeText = document.createElement("h2");
-  welcomeText.innerText = "Welcome to Gizmo Cookies 2";
+  welcomeText.textContent = "Welcome to Gizmo Cookies 2";
   welcomeText.className = "welcome-text";
 
   const text = document.createElement("p");
-  text.innerText =
+  text.textContent =
     "Choose your level or play original hardcore one, collect cookies, avoid monsters and survive as long as possible!";
   text.className = "text";
 
@@ -22,15 +22,15 @@ export function showPop(startGame) {
   popup.append(welcomeText, text, buttonContainer);
 
   const levelOne = document.createElement("button");
-  levelOne.innerText = "Level 1";
+  levelOne.textContent = "Level 1";
   levelOne.className = "btn-1";
 
   const levelTwo = document.createElement("button");
-  levelTwo.innerText = "Level 2";
+  levelTwo.textContent = "Level 2";
   levelTwo.className = "btn-2";
 
   const levelThree = document.createElement("button");
-  levelThree.innerText = "Level 3";
+  levelThree.textContent = "Level 3";
   levelThree.className = "btn-3";
   buttonContainer.append(levelOne, levelTwo, levelThree);
 
