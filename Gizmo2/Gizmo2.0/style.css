@@ -42,9 +42,15 @@
 .welcome-text {
   color: rgb(53, 45, 8);
   text-transform: uppercase;
+  background-color: transparent;
+}
+
+.text {
+  background-color: transparent;
 }
 
 .btn-container {
+  background-color: transparent;
   display: flex;
   gap: 5em;
 }
@@ -85,8 +91,9 @@
 }
 
 button {
-  border: solid 1px white;
-  color: cadetblue;
+  border: solid 3px rgb(45, 76, 175);
+  color: rgb(83, 159, 161);
+  background-color: aliceblue;
   font-size: medium;
   cursor: pointer;
 }
