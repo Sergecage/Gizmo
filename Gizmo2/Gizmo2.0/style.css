@@ -51,6 +51,9 @@
   display: flex;
 }
 
+.popup-close {
+}
+
 button {
   border: solid 1px white;
   color: cadetblue;

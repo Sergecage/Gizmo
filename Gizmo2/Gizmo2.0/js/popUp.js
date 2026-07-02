@@ -7,6 +7,7 @@ export function showPop(startGame) {
 
   const closeBtn = document.createElement("button");
   closeBtn.className = "popup-close";
+  closeBtn.setAttribute("aria-label", "Close");
 
   const welcomeText = document.createElement("h2");
   welcomeText.textContent = "Welcome to Gizmo Cookies 2";
