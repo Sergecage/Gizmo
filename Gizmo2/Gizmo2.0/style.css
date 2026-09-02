@@ -97,3 +97,7 @@ button {
   font-size: medium;
   cursor: pointer;
 }
+
+.play-btn {
+  background-color: rgb(89, 146, 211);
+}
