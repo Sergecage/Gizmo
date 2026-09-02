@@ -36,7 +36,7 @@ export function showPop(startGame) {
   const levelThree = document.createElement("button");
   levelThree.textContent = "Level 3";
   levelThree.className = "btn-3";
-  buttonContainer.append(levelOne, levelTwo, levelThree);
+  buttonContainer.append(playButton, levelOne, levelTwo, levelThree);
 
   popup.addEventListener("click", (e) => {
     const button = e.target.closest("button");
