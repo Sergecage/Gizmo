@@ -1,19 +1,103 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: rgb(102, 174, 207);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(102, 174, 207);
 }
 
 #game-canvas-1 {
-    border: 5px solid black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
+  border: 5px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  touch-action: none;
 }
 
-#gizmo, #layer1, #layer2{
-    display: none;
+#gizmo,
+#layer1,
+#layer2,
+#enemy_fly,
+#enemy_stand,
+#enemy_crawl,
+#lives,
+#layer3,
+#layer4 {
+  display: none;
+}
+
+#close,
+#music,
+#cookie {
+  display: none;
+}
+
+.popup {
+  background-color: rgb(218, 160, 85);
+  border: 3px black;
+  border-style: double;
+}
+
+.welcome-text {
+  color: rgb(53, 45, 8);
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.text {
+  background-color: transparent;
+}
+
+.btn-container {
+  background-color: transparent;
+  display: flex;
+  gap: 5em;
+}
+
+.popup-close {
+  position: absolute;
+  top: 0.1rem;
+  right: 2rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-close::before,
+.popup-close::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 22px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.popup-close::before {
+  transform: rotate(45deg);
+}
+
+.popup-close::after {
+  transform: rotate(-45deg);
+}
+
+.popup-close:hover::before,
+.popup-close:hover::after {
+  background: gold;
+}
+
+button {
+  border: solid 3px rgb(45, 76, 175);
+  color: rgb(83, 159, 161);
+  background-color: aliceblue;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.play-btn {
+  background-color: rgb(89, 146, 211);
 }
