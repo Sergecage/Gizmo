@@ -22,6 +22,9 @@ export function showPop(startGame) {
   buttonContainer.className = "btn-container";
   popup.append(welcomeText, text, buttonContainer, closeBtn);
 
+  const playButton = document.createElement("button");
+  playButton.className = "play-btn";
+
   const levelOne = document.createElement("button");
   levelOne.textContent = "Level 1";
   levelOne.className = "btn-1";
