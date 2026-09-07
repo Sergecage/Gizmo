@@ -25,6 +25,9 @@ export function showPop(startGame) {
   const playButton = document.createElement("button");
   playButton.className = "play-btn";
 
+  const levelContainer = document.createElement("div");
+  levelContainer.className = "level-container";
+
   const levelOne = document.createElement("button");
   levelOne.textContent = "Level 1";
   levelOne.className = "btn-1";
@@ -36,7 +39,8 @@ export function showPop(startGame) {
   const levelThree = document.createElement("button");
   levelThree.textContent = "Level 3";
   levelThree.className = "btn-3";
-  buttonContainer.append(playButton, levelOne, levelTwo, levelThree);
+  levelContainer.append(levelOne, levelTwo, levelThree);
+  buttonContainer.append(playButton, levelContainer);
 
   playButton.addEventListener("click", () => {
     popup.remove();
