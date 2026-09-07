@@ -110,4 +110,6 @@ button {
   font-size: 32px;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 8px 0 #0d47a1;
+  transition: all 0.1s ease;
 }
