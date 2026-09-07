@@ -58,6 +58,8 @@
   background-color: transparent;
   display: flex;
   gap: 5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .popup-close {
@@ -117,4 +119,8 @@ button {
   cursor: pointer;
   box-shadow: 0 8px 0 #0d47a1;
   transition: all 0.1s ease;
+}
+
+.level-container {
+  display: flex;
 }
