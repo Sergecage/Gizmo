@@ -24,6 +24,7 @@ export function showPop(startGame) {
 
   const playButton = document.createElement("button");
   playButton.className = "play-btn";
+  playButton.textContent = "Play";
 
   const levelContainer = document.createElement("div");
   levelContainer.className = "level-container";
