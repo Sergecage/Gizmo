@@ -121,6 +121,8 @@ window.addEventListener("load", function () {
     if (!game.gameOver) requestAnimationFrame(animate);
   };
   function startGame() {
+    game.music.music.play().catch(() => {});
+    lastTime = performance.now();
     requestAnimationFrame(animate);
   }
   showPop(startGame);
