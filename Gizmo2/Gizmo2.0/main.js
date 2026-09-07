@@ -125,5 +125,6 @@ window.addEventListener("load", function () {
     lastTime = performance.now();
     requestAnimationFrame(animate);
   }
+  game.draw(ctx);
   showPop(startGame);
 });
