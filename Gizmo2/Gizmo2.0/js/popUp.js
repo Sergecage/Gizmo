@@ -38,6 +38,12 @@ export function showPop(startGame) {
   levelThree.className = "btn-3";
   buttonContainer.append(playButton, levelOne, levelTwo, levelThree);
 
+  playButton.addEventListener("click", () => {
+    popup.remove();
+
+    startGame();
+  });
+
   popup.addEventListener("click", (e) => {
     const button = e.target.closest("button");
 
