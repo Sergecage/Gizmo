@@ -99,5 +99,10 @@ button {
 }
 
 .play-btn {
+  display: block;
+  margin: 30px auto 10px;
   background-color: rgb(89, 146, 211);
+  width: 2em;
+  height: 0.8em;
+  color: #1976d2;
 }

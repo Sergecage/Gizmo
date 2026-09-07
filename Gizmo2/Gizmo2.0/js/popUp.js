@@ -52,6 +52,6 @@ export function showPop(startGame) {
 
     popup.remove();
 
-    startGame(level);
+    //startGame(level);
   });
 }
