@@ -5,6 +5,7 @@ import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
 import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
+import { showPop } from "./js/popUp.js";
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("game-canvas-1");
@@ -119,5 +120,11 @@ window.addEventListener("load", function () {
     game.draw(ctx);
     if (!game.gameOver) requestAnimationFrame(animate);
   };
-  requestAnimationFrame(animate);
+  function startGame() {
+    game.music.music.play().catch(() => {});
+    lastTime = performance.now();
+    requestAnimationFrame(animate);
+  }
+  game.draw(ctx);
+  showPop(startGame);
 });
