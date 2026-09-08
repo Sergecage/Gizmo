@@ -128,3 +128,4 @@ window.addEventListener("load", function () {
   game.draw(ctx);
   showPop(startGame);
 });
+export default Game();
