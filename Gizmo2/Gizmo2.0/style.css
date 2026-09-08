@@ -78,7 +78,8 @@
 .popup-close::after {
   content: "";
   position: absolute;
-  left: 5px;
+  left: 97%;
+  top: 25%;
   width: 22px;
   height: 3px;
   background: white;
