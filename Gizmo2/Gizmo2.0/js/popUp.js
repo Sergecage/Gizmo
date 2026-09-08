@@ -50,6 +50,7 @@ export function showPop(startGame) {
   });
 
   closeBtn.addEventListener("click", (e) => {
+    popup.remove();
     startGame("hardcore");
   });
 
