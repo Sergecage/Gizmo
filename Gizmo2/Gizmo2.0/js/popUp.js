@@ -2,7 +2,7 @@ export function showPop(startGame) {
   const gameContainer = document.getElementById("game-container");
 
   const popup = document.createElement("div");
-  popup.classList = "popup";
+  popup.classLName = "popup";
   gameContainer.append(popup);
 
   const closeBtn = document.createElement("button");
