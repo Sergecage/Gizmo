@@ -151,3 +151,8 @@ button {
   transform: translateY(-2px);
   box-shadow: 0 2px 0 #0d47a1;
 }
+@media screen and (max-width: 400px) {
+  .popup {
+    margin: 35% 15%;
+  }
+}
