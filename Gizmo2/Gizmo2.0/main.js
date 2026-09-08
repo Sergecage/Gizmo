@@ -122,8 +122,10 @@ window.addEventListener("load", function () {
     if (!game.gameOver) requestAnimationFrame(animate);
   };
   function startGame() {
-    game.music.music.play().catch(() => {});
+    if (gameStarted) return;
+    gameStarted = true;
     lastTime = performance.now();
+    game.music.music.play().catch(() => {});
     requestAnimationFrame(animate);
   }
   game.draw(ctx);
