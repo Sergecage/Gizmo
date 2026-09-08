@@ -2,7 +2,7 @@ export function showPop(startGame) {
   const gameContainer = document.getElementById("game-container");
 
   const popup = document.createElement("div");
-  popup.classLName = "popup";
+  popup.className = "popup";
   gameContainer.append(popup);
 
   const closeBtn = document.createElement("button");
@@ -46,22 +46,15 @@ export function showPop(startGame) {
   playButton.addEventListener("click", () => {
     popup.remove();
 
-    startGame();
+    startGame("hardcore");
   });
 
-  popup.addEventListener("click", (e) => {
-    const button = e.target.closest("button");
-
-    if (!button) return;
-    const level = Number(button.dataset.level);
-
-    popup.remove();
-
-    startGame(level);
+  closeBtn.addEventListener("click", (e) => {
+    startGame("hardcore");
   });
 
   levelOne.addEventListener("click", () => {
     popup.remove();
-    startGame(levelOne);
+    startGame("level-1");
   });
 }
