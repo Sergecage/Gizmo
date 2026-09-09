@@ -1,17 +1,41 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <script type="module" src="main.js" async></script>
-        <title>Gizmo cookies 2.0</title>
-    </head>
-    <body>
-        <canvas id="game-canvas-1"></canvas>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="game/assets/icons/GizmoStand.ico" />
+    <script type="module" src="main.js"></script>
+    <script type="module" src="js/popUp.js"></script>
+    <title>Gizmo cookies 2.0</title>
+  </head>
+  <body>
+    <div id="game-container">
+      <canvas id="game-canvas-1"></canvas>
 
-        <img id="gizmo" src="game/assets/img/GizmoStand1Sprite.png" alt="Gizmo">
-        <img id="layer1" src="game/assets/img/Layer1.png" alt="Background-1">
-        <img id="layer2" src="game/assets/img/Layer1.png" alt="Background-1">
-    </body>
-    </html>
+      <img id="gizmo" src="game/assets/img/GizmoStand3.png" alt="Gizmo" />
+      <img id="layer1" src="game/assets/img/Layer1.png" alt="Background-1" />
+      <img id="layer2" src="game/assets/img/Layer2.png" alt="Background-2" />
+      <img id="layer3" src="game/assets/img/Layer3.png" alt="Background-3" />
+      <img id="layer4" src="game/assets/img/Layer4.png" alt="Background-4" />
+      <img id="cookie" src="game/assets/img/Cookie1.png" alt="cookie" />
+      <img id="enemy_fly" src="game/assets/img/Bat.png" alt="bat" />
+      <img id="enemy_stand" src="game/assets/img/Flower.png" alt="flower" />
+      <img id="enemy_crawl" src="game/assets/img/spider.png" alt="spider" />
+      <img id="lives" src="game/assets/img/Heart.png" alt="heart" />
+      <audio id="backMusic" loop>
+        <source src="game/assets/music/Gizmo Cookies1.mp3" type="audio/mp3" />
+      </audio>
+      <img
+        id="music"
+        src="game/assets/icons/music_note_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+        alt="music-icon"
+      />
+      <img
+        id="close"
+        src="game/assets/icons/close_24dp_1F1F1F_FILL1_wght400_GRAD0_opsz24.svg"
+        alt="close-icon"
+      />
+    </div>
+  </body>
+</html>
