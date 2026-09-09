@@ -1,4 +1,4 @@
-class LevelOne {
+export class LevelOne {
   constructor(game, width, height, speedModifier, image) {
     this.game = game;
     this.width = width;
