@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
       this.player = new Player(this);
       this.input = new InputHandler(this);
       this.UI = new UI(this);
-      this.music = new Music(this);
+      this.music = new Music(this, level.music);
       this.enemies = [];
       this.particles = [];
       this.cookies = [];
