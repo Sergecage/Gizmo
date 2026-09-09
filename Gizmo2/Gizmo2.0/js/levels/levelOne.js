@@ -8,4 +8,5 @@ export const LevelOne = {
     layer4: "../../game/assets/img/Level1d.png",
     layer5: "../../game/assets/img/Level1e.png",
   },
+  enemyInterval: 5000,
 };
