@@ -6,6 +6,7 @@ import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
+import { levelOne } from "./js/levels/levelOne.js";
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("game-canvas-1");
