@@ -118,7 +118,7 @@ window.addEventListener("load", function () {
     }
   }
 
-  const game = new Game(canvas.width, canvas.height);
+  const game = new Game(canvas.width, canvas.height, selectedLevel);
   let lastTime = 0;
   let gameStarted = false;
 
