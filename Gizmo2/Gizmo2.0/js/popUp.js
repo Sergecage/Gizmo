@@ -56,6 +56,16 @@ export function showPop(startGame) {
 
   levelOne.addEventListener("click", () => {
     popup.remove();
-    startGame("level-1");
+    startGame(1);
+  });
+
+  levelTwo.addEventListener("click", () => {
+    popup.remove();
+    startGame(2);
+  });
+
+  levelThree.addEventListener("click", () => {
+    popup.remove();
+    startGame(3);
   });
 }
