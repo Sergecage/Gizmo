@@ -6,7 +6,7 @@ import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
-import { LevelOne, levelOne } from "./js/levels/levelOne.js";
+import { LevelOne } from "./js/levels/levelOne.js";
 
 const levels = {
   1: LevelOne,
