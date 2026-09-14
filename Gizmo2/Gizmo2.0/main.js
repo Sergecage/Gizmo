@@ -130,7 +130,8 @@ window.addEventListener("load", function () {
     game.draw(ctx);
     if (!game.gameOver) requestAnimationFrame(animate);
   };
-  function startGame() {
+  function startGame(levelNumber) {
+    const level = levels[levelNumber];
     if (gameStarted) return;
     gameStarted = true;
     lastTime = performance.now();
