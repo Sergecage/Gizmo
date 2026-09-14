@@ -6,7 +6,13 @@ import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
-import { levelOne } from "./js/levels/levelOne.js";
+import { LevelOne, levelOne } from "./js/levels/levelOne.js";
+
+const levels = {
+  1: LevelOne,
+  2: levelTwo,
+  3: levelThree,
+};
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("game-canvas-1");
