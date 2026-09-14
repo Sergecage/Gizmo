@@ -51,6 +51,7 @@ window.addEventListener("load", function () {
       this.player.currentState.enter();
       this.cookieTimer = 0;
       this.cookieInterval = 5000;
+      const selectedLevel = level[this];
     }
     update(deltaTime) {
       this.time += deltaTime;
