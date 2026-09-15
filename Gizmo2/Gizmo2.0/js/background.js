@@ -29,14 +29,12 @@ export class Background {
     this.game = game;
     this.width = 1200;
     this.height = 750;
-    this.layerImage = new Image();
-    this.layerImage.src = background.layer1;
-    this.layerImage2 = new Image();
-    this.layerImage2.src = background.layer2;
-    this.layerImage3 = new Image();
-    this.layerImage3.src = background.layer3;
-    this.layerImage4 = new Image();
-    this.layerImage4.src = background.layer4;
+    if (levelBackground) {
+    }
+    this.layerImage = layer1;
+    this.layerImage2 = layer2;
+    this.layerImage3 = layer3;
+    this.layerImage4 = layer4;
     this.layer = new Layer(
       this.game,
       this.width,
