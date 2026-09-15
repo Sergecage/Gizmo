@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
   canvas.height = 750;
 
   class Game {
-    constructor(width, height, level) {
+    constructor(width, height, level = null) {
       this.width = width;
       this.height = height;
       this.level = level;
