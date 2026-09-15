@@ -1,5 +1,3 @@
-import { Background } from "../background";
-
 export const LevelOne = {
   background: {
     layer1: "../../game/assets/img/Level1a.png",
