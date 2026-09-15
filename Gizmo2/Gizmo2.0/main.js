@@ -10,8 +10,8 @@ import { LevelOne } from "./js/levels/levelOne.js";
 
 const levels = {
   1: LevelOne,
-  2: levelTwo,
-  3: levelThree,
+  //2: levelTwo,
+  //3: levelThree,
 };
 
 window.addEventListener("load", function () {
@@ -51,7 +51,6 @@ window.addEventListener("load", function () {
       this.player.currentState.enter();
       this.cookieTimer = 0;
       this.cookieInterval = 5000;
-      const selectedLevel = level[this];
     }
     update(deltaTime) {
       this.time += deltaTime;
@@ -118,7 +117,7 @@ window.addEventListener("load", function () {
     }
   }
 
-  const game = new Game(canvas.width, canvas.height, selectedLevel);
+  const game = new Game(canvas.width, canvas.height);
   let lastTime = 0;
   let gameStarted = false;
 
