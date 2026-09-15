@@ -38,7 +38,7 @@ window.addEventListener("load", function () {
       this.cookies = [];
       this.collisions = [];
       this.enemyTimer = 0;
-      this.enemyInterval = 3000;
+      this.enemyInterval = level?.enemyInterval ?? 3000;
       this.debug = false;
       this.score = 0;
       this.winScore = 10;
