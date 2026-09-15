@@ -63,7 +63,6 @@ export class Background {
       1,
       this.layerImage4,
     );
-    this.backgroundLayers = [this.layer, this.layer2, this.layer3, this.layer4];
     this.layer.x = 0;
     this.layer2.x = this.width;
     this.layer3.x = this.width + this.width;

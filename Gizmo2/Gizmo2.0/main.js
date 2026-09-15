@@ -130,9 +130,9 @@ window.addEventListener("load", function () {
     if (!game.gameOver) requestAnimationFrame(animate);
   };
   function startGame(levelNumber) {
-    const level = levels[levelNumber];
     if (gameStarted) return;
     gameStarted = true;
+    let selectedLevel = null;
     lastTime = performance.now();
     game.music.music.play().catch(() => {});
     requestAnimationFrame(animate);
