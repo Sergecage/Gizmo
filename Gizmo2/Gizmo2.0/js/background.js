@@ -30,6 +30,10 @@ export class Background {
     this.width = 1200;
     this.height = 750;
     if (levelBackground) {
+      this.layerImage = this.createImage(levelBackground.layer1);
+      this.layerImage2 = this.createImage(levelBackground.layer2);
+      this.layerImage3 = this.createImage(levelBackground.layer3);
+      this.layerImage4 = this.createImage(levelBackground.layer4);
     }
     this.layerImage = layer1;
     this.layerImage2 = layer2;
