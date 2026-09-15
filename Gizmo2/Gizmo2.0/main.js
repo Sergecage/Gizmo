@@ -28,11 +28,11 @@ window.addEventListener("load", function () {
       this.groundMargin = 0;
       this.speed = 1;
       this.maxSpeed = 3;
-      this.background = new Background(this, level.background);
+      this.background = new Background(this, level?.background);
       this.player = new Player(this);
       this.input = new InputHandler(this);
       this.UI = new UI(this);
-      this.music = new Music(this, level.music);
+      this.music = new Music(this, level?.music);
       this.enemies = [];
       this.particles = [];
       this.cookies = [];
