@@ -34,11 +34,12 @@ export class Background {
       this.layerImage2 = this.createImage(levelBackground.layer2);
       this.layerImage3 = this.createImage(levelBackground.layer3);
       this.layerImage4 = this.createImage(levelBackground.layer4);
+    } else {
+      this.layerImage = layer1;
+      this.layerImage2 = layer2;
+      this.layerImage3 = layer3;
+      this.layerImage4 = layer4;
     }
-    this.layerImage = layer1;
-    this.layerImage2 = layer2;
-    this.layerImage3 = layer3;
-    this.layerImage4 = layer4;
     this.layer = new Layer(
       this.game,
       this.width,
