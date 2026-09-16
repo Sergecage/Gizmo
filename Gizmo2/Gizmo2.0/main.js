@@ -142,6 +142,5 @@ window.addEventListener("load", function () {
     game.music.music.play().catch(() => {});
     requestAnimationFrame(animate);
   }
-
   showPop(startGame);
 });
