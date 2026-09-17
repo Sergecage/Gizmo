@@ -117,7 +117,7 @@ window.addEventListener("load", function () {
     }
   }
 
-  let game = null;
+  let game = new Game(canvas.width, canvas.height);
   let lastTime = 0;
   let gameStarted = false;
 
@@ -137,10 +137,10 @@ window.addEventListener("load", function () {
       selectedLevel = levels[levelNumber];
     }
     game = new Game(canvas.width, canvas.height, selectedLevel);
-    game.draw(ctx);
-    lastTime = performance.now();
-    game.music.music.play().catch(() => {});
     requestAnimationFrame(animate);
   }
+  game.draw(ctx);
+  lastTime = performance.now();
+  game.music.music.play().catch(() => {});
   showPop(startGame);
 });

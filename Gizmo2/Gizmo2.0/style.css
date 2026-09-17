@@ -35,11 +35,11 @@
 }
 
 .popup {
-  background-color: rgb(218, 160, 85);
+  background-color: rgb(243, 201, 146);
   border: 3px black;
   border-style: double;
   position: absolute;
-  margin: 20% 27%;
+  margin: 17% 27%;
 }
 
 .welcome-text {
@@ -108,7 +108,7 @@
 .logo {
   width: 55%;
   height: 50%;
-  background-color: rgb(218, 160, 85);
+  background-color: rgb(243, 201, 146);
 }
 
 button {
