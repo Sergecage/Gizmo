@@ -8,6 +8,11 @@ export function showPop(startGame) {
   const logoContainer = document.createElement("div");
   logoContainer.className = "logo-container";
 
+  const logo = document.createElement("img");
+  logo.src = "../game/assets/icons/logo.png";
+
+  logoContainer.append(logo);
+
   const closeBtn = document.createElement("button");
   closeBtn.className = "popup-close";
   closeBtn.setAttribute("aria-label", "Close");
