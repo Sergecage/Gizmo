@@ -5,6 +5,9 @@ export function showPop(startGame) {
   popup.className = "popup";
   gameContainer.append(popup);
 
+  const logoContainer = document.createElement("div");
+  logoContainer.className = "logo-container";
+
   const closeBtn = document.createElement("button");
   closeBtn.className = "popup-close";
   closeBtn.setAttribute("aria-label", "Close");
@@ -20,7 +23,7 @@ export function showPop(startGame) {
 
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "btn-container";
-  popup.append(welcomeText, text, buttonContainer, closeBtn);
+  popup.append(logoContainer, welcomeText, text, buttonContainer, closeBtn);
 
   const playButton = document.createElement("button");
   playButton.className = "play-btn";
