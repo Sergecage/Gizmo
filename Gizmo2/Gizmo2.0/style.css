@@ -99,9 +99,15 @@
   background: gold;
 }
 
+.logo-container {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+}
+
 .logo {
   width: 55%;
-  height: 55%;
+  height: 50%;
   background-color: rgb(218, 160, 85);
 }
 
