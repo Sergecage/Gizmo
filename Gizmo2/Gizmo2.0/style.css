@@ -99,6 +99,12 @@
   background: gold;
 }
 
+.logo {
+  width: 55%;
+  height: 55%;
+  background-color: rgb(218, 160, 85);
+}
+
 button {
   border: solid 3px rgb(45, 76, 175);
   color: rgb(83, 159, 161);

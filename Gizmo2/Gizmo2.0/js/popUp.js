@@ -10,6 +10,7 @@ export function showPop(startGame) {
 
   const logo = document.createElement("img");
   logo.src = "../game/assets/icons/logo.png";
+  logo.className = "logo";
 
   logoContainer.append(logo);
 
