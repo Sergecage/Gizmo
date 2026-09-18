@@ -6,6 +6,13 @@ import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
+import { LevelOne } from "./js/levels/levelOne.js";
+
+const levels = {
+  1: LevelOne,
+  //2: levelTwo,
+  //3: levelThree,
+};
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("game-canvas-1");
@@ -14,23 +21,24 @@ window.addEventListener("load", function () {
   canvas.height = 750;
 
   class Game {
-    constructor(width, height) {
+    constructor(width, height, level = null) {
       this.width = width;
       this.height = height;
+      this.level = level;
       this.groundMargin = 0;
       this.speed = 1;
       this.maxSpeed = 3;
-      this.background = new Background(this);
+      this.background = new Background(this, level?.background);
       this.player = new Player(this);
       this.input = new InputHandler(this);
       this.UI = new UI(this);
-      this.music = new Music(this);
+      this.music = new Music(this, level?.music);
       this.enemies = [];
       this.particles = [];
       this.cookies = [];
       this.collisions = [];
       this.enemyTimer = 0;
-      this.enemyInterval = 3000;
+      this.enemyInterval = level?.enemyInterval ?? 3000;
       this.debug = false;
       this.score = 0;
       this.winScore = 10;
@@ -109,8 +117,9 @@ window.addEventListener("load", function () {
     }
   }
 
-  const game = new Game(canvas.width, canvas.height);
+  let game = new Game(canvas.width, canvas.height);
   let lastTime = 0;
+  let gameStarted = false;
 
   const animate = (timeStamp) => {
     const deltaTime = timeStamp - lastTime;
@@ -120,11 +129,18 @@ window.addEventListener("load", function () {
     game.draw(ctx);
     if (!game.gameOver) requestAnimationFrame(animate);
   };
-  function startGame() {
-    game.music.music.play().catch(() => {});
-    lastTime = performance.now();
+  function startGame(levelNumber) {
+    if (gameStarted) return;
+    gameStarted = true;
+    let selectedLevel = null;
+    if (levelNumber !== "hardcore") {
+      selectedLevel = levels[levelNumber];
+    }
+    game = new Game(canvas.width, canvas.height, selectedLevel);
     requestAnimationFrame(animate);
   }
   game.draw(ctx);
+  lastTime = performance.now();
+  game.music.music.play().catch(() => {});
   showPop(startGame);
 });

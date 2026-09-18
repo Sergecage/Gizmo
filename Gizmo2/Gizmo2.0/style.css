@@ -35,11 +35,11 @@
 }
 
 .popup {
-  background-color: rgb(218, 160, 85);
+  background-color: rgb(243, 201, 146);
   border: 3px black;
   border-style: double;
   position: absolute;
-  margin: 22%;
+  margin: 17% 27%;
 }
 
 .welcome-text {
@@ -78,7 +78,8 @@
 .popup-close::after {
   content: "";
   position: absolute;
-  left: 5px;
+  left: 97%;
+  top: 25%;
   width: 22px;
   height: 3px;
   background: white;
@@ -96,6 +97,18 @@
 .popup-close:hover::before,
 .popup-close:hover::after {
   background: gold;
+}
+
+.logo-container {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 55%;
+  height: 50%;
+  background-color: rgb(243, 201, 146);
 }
 
 button {
@@ -150,4 +163,9 @@ button {
 .btn-3:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 0 #0d47a1;
+}
+@media screen and (max-width: 400px) {
+  .popup {
+    margin: 35% 15%;
+  }
 }

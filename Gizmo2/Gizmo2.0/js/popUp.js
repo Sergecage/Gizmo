@@ -2,8 +2,17 @@ export function showPop(startGame) {
   const gameContainer = document.getElementById("game-container");
 
   const popup = document.createElement("div");
-  popup.classList = "popup";
+  popup.className = "popup";
   gameContainer.append(popup);
+
+  const logoContainer = document.createElement("div");
+  logoContainer.className = "logo-container";
+
+  const logo = document.createElement("img");
+  logo.src = "../game/assets/icons/logo.png";
+  logo.className = "logo";
+
+  logoContainer.append(logo);
 
   const closeBtn = document.createElement("button");
   closeBtn.className = "popup-close";
@@ -20,7 +29,7 @@ export function showPop(startGame) {
 
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "btn-container";
-  popup.append(welcomeText, text, buttonContainer, closeBtn);
+  popup.append(logoContainer, welcomeText, text, buttonContainer, closeBtn);
 
   const playButton = document.createElement("button");
   playButton.className = "play-btn";
@@ -46,17 +55,26 @@ export function showPop(startGame) {
   playButton.addEventListener("click", () => {
     popup.remove();
 
-    startGame();
+    startGame("hardcore");
   });
 
-  popup.addEventListener("click", (e) => {
-    const button = e.target.closest("button");
-
-    if (!button) return;
-    const level = Number(button.dataset.level);
-
+  closeBtn.addEventListener("click", (e) => {
     popup.remove();
+    startGame("hardcore");
+  });
 
-    //startGame(level);
+  levelOne.addEventListener("click", () => {
+    popup.remove();
+    startGame(1);
+  });
+
+  levelTwo.addEventListener("click", () => {
+    popup.remove();
+    startGame(2);
+  });
+
+  levelThree.addEventListener("click", () => {
+    popup.remove();
+    startGame(3);
   });
 }
