@@ -74,7 +74,7 @@ export class Background {
     this.layer4.x = this.width + this.width + this.width;
     this.backgroundLayers = [this.layer, this.layer2, this.layer3, this.layer4];
   }
-  reateImage(src) {
+  createImage(src) {
     const image = new Image();
     image.src = src;
     return image;
