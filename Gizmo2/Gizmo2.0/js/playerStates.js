@@ -83,7 +83,11 @@ export class Jumping extends State {
   }
   handleInput(input) {
     if (this.game.player.onGround()) {
-      this.game.player.setState(states.RUNNING_RIGHT, 0);
+      if (input.includes("ArrowLeft")) {
+        this.game.player.setState(states.RUNNING_LEFT, 0);
+      } else {
+        this.game.player.setState(states.RUNNING_RIGHT, 0);
+      }
     }
   }
 }
