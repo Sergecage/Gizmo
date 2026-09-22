@@ -1,3 +1,5 @@
 export class mobileControls {
-  constructor() {}
+  constructor(input) {
+    this.input = input;
+  }
 }
