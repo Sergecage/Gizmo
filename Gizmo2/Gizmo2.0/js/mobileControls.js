@@ -15,6 +15,14 @@ export class mobileControls {
       e.preventDefault();
       this.removeKey("ArrowLeft");
     });
+    this.rightButtonButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.input.keys.push("ArrowRight");
+    });
+    this.rightButton.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      this.removeKey("ArrowRight");
+    });
   }
   removeKey() {}
 }
