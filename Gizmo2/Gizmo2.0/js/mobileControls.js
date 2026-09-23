@@ -23,6 +23,14 @@ export class mobileControls {
       e.preventDefault();
       this.removeKey("ArrowRight");
     });
+    this.jumpButtonButtonButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.input.keys.push("ArrowUp");
+    });
+    this.jumpButton.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      this.removeKey("ArrowUp");
+    });
   }
   removeKey() {}
 }
