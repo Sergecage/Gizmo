@@ -12,4 +12,5 @@ export class mobileControls {
       this.input.keys.push("ArrowLeft");
     });
   }
+  removeKey() {}
 }
