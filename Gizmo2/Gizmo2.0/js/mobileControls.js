@@ -6,5 +6,10 @@ export class mobileControls {
     this.jumpButton = document.querySelector("#jump-button");
     this.addEvents();
   }
-  addEvents() {}
+  addEvents() {
+    this.leftButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.input.keys.push("ArrowLeft");
+    });
+  }
 }
