@@ -5,4 +5,5 @@ export class mobileControls {
     this.rightButton = document.querySelector("#right-button");
     this.jumpButton = document.querySelector("#jump-button");
   }
+  addEvents() {}
 }
