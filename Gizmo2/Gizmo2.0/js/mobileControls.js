@@ -32,5 +32,7 @@ export class mobileControls {
       this.removeKey("ArrowUp");
     });
   }
-  removeKey() {}
+  removeKey(key) {
+    const index = this.input.keys.indexOf(key);
+  }
 }
