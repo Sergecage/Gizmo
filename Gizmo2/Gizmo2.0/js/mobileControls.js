@@ -34,5 +34,8 @@ export class mobileControls {
   }
   removeKey(key) {
     const index = this.input.keys.indexOf(key);
+    if (index !== -1) {
+      this.input.keys.splice(index, 1);
+    }
   }
 }
