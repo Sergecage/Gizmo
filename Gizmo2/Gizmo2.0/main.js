@@ -32,6 +32,7 @@ window.addEventListener("load", function () {
       this.background = new Background(this, level?.background);
       this.player = new Player(this);
       this.input = new InputHandler(this);
+      this.mobileControls = new MobileControls(this.input);
       this.UI = new UI(this);
       this.music = new Music(this, level?.music);
       this.enemies = [];
