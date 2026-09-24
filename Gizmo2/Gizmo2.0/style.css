@@ -180,6 +180,9 @@ button {
   touch-action: none;
   user-select: none;
 }
+.mobile-controls button img {
+  background-color: inherit;
+}
 
 @media screen and (max-width: 400px) {
   .popup {
