@@ -7,6 +7,7 @@ import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
 import { LevelOne } from "./js/levels/levelOne.js";
+import { MobileControls } from "./js/mobileControls.js";
 
 const levels = {
   1: LevelOne,
@@ -31,6 +32,7 @@ window.addEventListener("load", function () {
       this.background = new Background(this, level?.background);
       this.player = new Player(this);
       this.input = new InputHandler(this);
+      this.mobileControls = new MobileControls(this.input);
       this.UI = new UI(this);
       this.music = new Music(this, level?.music);
       this.enemies = [];

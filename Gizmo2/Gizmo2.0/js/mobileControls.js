@@ -1,0 +1,46 @@
+export class MobileControls {
+  constructor(input) {
+    this.input = input;
+    this.leftButton = document.querySelector("#left-button");
+    this.rightButton = document.querySelector("#right-button");
+    this.jumpButton = document.querySelector("#jump-button");
+    this.addEvents();
+  }
+  addEvents() {
+    this.leftButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.input.keys.push("ArrowLeft");
+    });
+    this.leftButton.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      this.removeKey("ArrowLeft");
+    });
+    this.rightButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.input.keys.push("ArrowRight");
+    });
+    this.rightButton.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      this.removeKey("ArrowRight");
+    });
+    this.jumpButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.input.keys.push("ArrowUp");
+    });
+    this.jumpButton.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      this.removeKey("ArrowUp");
+    });
+  }
+  pressKey(key) {
+    if (!this.input.keys.includes(key)) {
+      this.input.keys.push(key);
+    }
+  }
+  removeKey(key) {
+    const index = this.input.keys.indexOf(key);
+    if (index !== -1) {
+      this.input.keys.splice(index, 1);
+    }
+  }
+}
