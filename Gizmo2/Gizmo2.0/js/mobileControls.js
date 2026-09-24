@@ -1,4 +1,4 @@
-export class mobileControls {
+export class MobileControls {
   constructor(input) {
     this.input = input;
     this.leftButton = document.querySelector("#left-button");

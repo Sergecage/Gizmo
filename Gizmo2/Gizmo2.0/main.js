@@ -7,6 +7,7 @@ import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
 import { LevelOne } from "./js/levels/levelOne.js";
+import { MobileControls } from "./js/mobileControls.js";
 
 const levels = {
   1: LevelOne,
