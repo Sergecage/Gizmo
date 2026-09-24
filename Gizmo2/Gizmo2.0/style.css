@@ -6,8 +6,9 @@
 }
 
 #game-container {
+  position: relative;
   width: 1200px;
-  margin: 0 auto;
+  margin: 4em auto;
 }
 
 #game-canvas-1 {
@@ -36,6 +37,9 @@
 }
 
 .popup {
+  position: absolute;
+  top: 1em;
+  left: 0;
   background-color: rgb(243, 201, 146);
   border: 3px black;
   border-style: double;
@@ -167,7 +171,6 @@ button {
 }
 
 .mobile-controls {
-  position: absolute;
   display: flex;
   justify-content: center;
   gap: 20px;
