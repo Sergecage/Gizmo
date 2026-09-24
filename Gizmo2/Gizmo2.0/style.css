@@ -5,12 +5,13 @@
   background-color: rgb(102, 174, 207);
 }
 
+#game-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 #game-canvas-1 {
   border: 5px solid black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 100%;
   touch-action: none;
   display: block;
@@ -39,7 +40,7 @@
   border: 3px black;
   border-style: double;
   position: absolute;
-  margin: 17% 27%;
+  margin: 1% 7%;
 }
 
 .welcome-text {
