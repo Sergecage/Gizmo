@@ -166,6 +166,7 @@ button {
 }
 
 .mobile-controls {
+  position: absolute;
   display: flex;
   justify-content: center;
   gap: 20px;
