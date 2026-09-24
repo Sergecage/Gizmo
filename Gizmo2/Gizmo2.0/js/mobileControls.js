@@ -32,6 +32,7 @@ export class MobileControls {
       this.removeKey("ArrowUp");
     });
   }
+  pressKey(key) {}
   removeKey(key) {
     const index = this.input.keys.indexOf(key);
     if (index !== -1) {
