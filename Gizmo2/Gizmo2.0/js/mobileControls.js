@@ -15,7 +15,7 @@ export class MobileControls {
       e.preventDefault();
       this.removeKey("ArrowLeft");
     });
-    this.rightButtonButton.addEventListener("touchstart", (e) => {
+    this.rightButton.addEventListener("touchstart", (e) => {
       e.preventDefault();
       this.input.keys.push("ArrowRight");
     });
@@ -23,7 +23,7 @@ export class MobileControls {
       e.preventDefault();
       this.removeKey("ArrowRight");
     });
-    this.jumpButtonButtonButton.addEventListener("touchstart", (e) => {
+    this.jumpButton.addEventListener("touchstart", (e) => {
       e.preventDefault();
       this.input.keys.push("ArrowUp");
     });
