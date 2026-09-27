@@ -8,6 +8,9 @@
 #game-container {
   position: relative;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #game-canvas-1 {
@@ -37,13 +40,12 @@
 
 .popup {
   position: absolute;
-  top: 1em;
-  left: 0;
+  top: 50%;
+  left: 50%;
   background-color: rgb(243, 201, 146);
   border: 3px black;
   border-style: double;
-  position: absolute;
-  margin: 1% 7%;
+  transform: translate(-50%, -50%);
 }
 
 .welcome-text {
