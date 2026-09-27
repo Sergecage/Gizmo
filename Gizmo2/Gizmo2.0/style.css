@@ -7,15 +7,16 @@
 
 #game-container {
   position: relative;
+  width: 1200px;
   max-width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  margin: 4em auto 0;
 }
 
 #game-canvas-1 {
   border: 5px solid black;
+  width: 1200px;
   max-width: 100%;
+  height: auto;
   touch-action: none;
   display: block;
 }
