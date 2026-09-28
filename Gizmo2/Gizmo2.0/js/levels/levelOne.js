@@ -7,8 +7,5 @@ export const LevelOne = {
     //layer5: "game/assets/img/Level1e.png",
   },
   enemyInterval: 5000,
-  enemy: {
-    image: "game/assets/img/EvilGremlIMG_2051 (1).png",
-    maxFrame: 3,
-  },
+  enemy: "evilGreml",
 };
