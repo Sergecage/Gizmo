@@ -143,6 +143,20 @@ export class EvilGreml extends Enemy {
     this.frameX = 0;
     this.frameY = 0;
   }
+  draw() {
+    if (this.game.debug)
+      context.strokeRect(this.x, this.y, this.width, this.height);
+    context.drawImage(
+      this.image,
+      this.frameX * this.spriteWidth,
+      0,
+      this.spriteWidth,
+      this.spriteHeight,
+      this.x,
+      this.y,
+      this.width,
+      this.height,
+    );
+  }
   update() {}
-  draw() {}
 }
