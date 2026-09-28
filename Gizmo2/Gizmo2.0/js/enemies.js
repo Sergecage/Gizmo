@@ -158,5 +158,4 @@ export class EvilGreml extends Enemy {
       this.height,
     );
   }
-  update() {}
 }

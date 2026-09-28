@@ -1,7 +1,12 @@
 import { Player } from "./js/player.js";
 import { InputHandler } from "./js/input.js";
 import { Background } from "./js/background.js";
-import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
+import {
+  FlyingEnemy,
+  GroundEnemy,
+  CrawlingEnemy,
+  EvilGreml,
+} from "./js/enemies.js";
 import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
