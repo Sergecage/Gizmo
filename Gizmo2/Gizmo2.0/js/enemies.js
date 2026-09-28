@@ -131,5 +131,9 @@ export class EvilGreml extends Enemy {
     super(game);
     this.game = game;
     this.image = image;
+    this.spriteWidth = this.image.naturalWidth / 4;
+    this.spriteHeight = this.image.naturalHeight;
+    this.width = this.spriteWidth * 0.15;
+    this.height = this.spriteHeight * 0.15;
   }
 }
