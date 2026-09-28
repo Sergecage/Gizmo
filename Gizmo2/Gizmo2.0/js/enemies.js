@@ -140,6 +140,8 @@ export class EvilGreml extends Enemy {
     this.speedX = 1;
     this.speedY = 0;
     this.maxFrame = 3;
+    this.frameX = 0;
+    this.frameY = 0;
   }
   update() {}
   draw() {}
