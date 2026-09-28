@@ -191,9 +191,3 @@ button {
 .mobile-controls button img {
   background-color: inherit;
 }
-
-@media screen and (max-width: 400px) {
-  .popup {
-    margin: 35% 15%;
-  }
-}
