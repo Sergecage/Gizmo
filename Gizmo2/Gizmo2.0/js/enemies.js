@@ -138,4 +138,6 @@ export class EvilGreml extends Enemy {
     this.x = this.game.width;
     this.y = this.game.height - this.height - this.game.groundMargin;
   }
+  update() {}
+  draw() {}
 }
