@@ -143,7 +143,7 @@ export class EvilGreml extends Enemy {
     this.frameX = 0;
     this.frameY = 0;
   }
-  draw() {
+  draw(context) {
     if (this.game.debug)
       context.strokeRect(this.x, this.y, this.width, this.height);
     context.drawImage(
