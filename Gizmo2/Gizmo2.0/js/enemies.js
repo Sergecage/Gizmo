@@ -129,5 +129,7 @@ export class CrawlingEnemy extends Enemy {
 export class EvilGreml extends Enemy {
   constructor(game, image) {
     super(game);
+    this.game = game;
+    this.image = image;
   }
 }
