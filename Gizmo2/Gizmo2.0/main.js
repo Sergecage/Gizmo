@@ -117,6 +117,9 @@ window.addEventListener("load", function () {
       this.music.draw(context);
     }
     AddEnemy() {
+      if (this.level?.enemy === "evilGreml") {
+        const image = document.getElementById("enemy_greml");
+      }
       if (this.speed > 0 && Math.random() < 0.5)
         this.enemies.push(new GroundEnemy(this));
       else if (this.speed > 0) this.enemies.push(new CrawlingEnemy(this));
