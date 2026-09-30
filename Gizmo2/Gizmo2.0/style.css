@@ -2,18 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   background-color: rgb(102, 174, 207);
 }
 
 #game-container {
   position: relative;
-  width: 1200px;
-  margin: 4em auto;
+  width: min(1200px, 100%);
+  margin: 4em auto 0;
 }
 
 #game-canvas-1 {
   border: 5px solid black;
+  width: 1200px;
   max-width: 100%;
+  height: auto;
   touch-action: none;
   display: block;
 }
@@ -24,6 +29,7 @@
 #enemy_fly,
 #enemy_stand,
 #enemy_crawl,
+#enemy_greml,
 #lives,
 #layer3,
 #layer4 {
@@ -38,13 +44,12 @@
 
 .popup {
   position: absolute;
-  top: 1em;
-  left: 0;
+  top: 50%;
+  left: 50%;
   background-color: rgb(243, 201, 146);
   border: 3px black;
   border-style: double;
-  position: absolute;
-  margin: 1% 7%;
+  transform: translate(-50%, -50%);
 }
 
 .welcome-text {
@@ -186,10 +191,4 @@ button {
 }
 .mobile-controls button img {
   background-color: inherit;
-}
-
-@media screen and (max-width: 400px) {
-  .popup {
-    margin: 35% 15%;
-  }
 }

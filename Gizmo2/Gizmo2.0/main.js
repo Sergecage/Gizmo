@@ -1,7 +1,12 @@
 import { Player } from "./js/player.js";
 import { InputHandler } from "./js/input.js";
 import { Background } from "./js/background.js";
-import { FlyingEnemy, GroundEnemy, CrawlingEnemy } from "./js/enemies.js";
+import {
+  FlyingEnemy,
+  GroundEnemy,
+  CrawlingEnemy,
+  EvilGreml,
+} from "./js/enemies.js";
 import { UI } from "./js/UI.js";
 import { Music } from "./js/music.js";
 import { Cookie } from "./js/cookie.js";
@@ -112,6 +117,11 @@ window.addEventListener("load", function () {
       this.music.draw(context);
     }
     AddEnemy() {
+      if (this.level?.enemy === "evilGreml") {
+        const image = document.getElementById(this.level.enemyImage);
+        this.enemies.push(new EvilGreml(this, image));
+        return;
+      }
       if (this.speed > 0 && Math.random() < 0.5)
         this.enemies.push(new GroundEnemy(this));
       else if (this.speed > 0) this.enemies.push(new CrawlingEnemy(this));
