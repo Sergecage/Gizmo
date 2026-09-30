@@ -9,7 +9,7 @@ export function showPop(startGame) {
   logoContainer.className = "logo-container";
 
   const logo = document.createElement("img");
-  logo.src = "../game/assets/icons/logo.png";
+  logo.src = "game/assets/icons/logo.png";
   logo.className = "logo";
 
   logoContainer.append(logo);
