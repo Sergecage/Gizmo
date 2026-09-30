@@ -118,7 +118,7 @@ window.addEventListener("load", function () {
     }
     AddEnemy() {
       if (this.level?.enemy === "evilGreml") {
-        const image = document.getElementById("enemy_greml");
+        const image = document.getElementById(this.level.enemyImage);
         this.enemies.push(new EvilGreml(this, image));
         return;
       }
