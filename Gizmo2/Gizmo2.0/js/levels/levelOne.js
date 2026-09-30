@@ -8,4 +8,5 @@ export const LevelOne = {
   },
   enemyInterval: 5000,
   enemy: "EvilGreml",
+  enemyImage: "enemy_greml",
 };
