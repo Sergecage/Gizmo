@@ -51,10 +51,10 @@ export class RunningRight extends State {
         this.game.player.y + this.game.player.height,
       ),
     );
-    if (input.includes("ArrowLeft")) {
-      this.game.player.setState(states.RUNNING_LEFT, 1);
-    } else if (input.includes("ArrowUp")) {
+    if (input.includes("ArrowUp")) {
       this.game.player.setState(states.JUMPING, 1);
+    } else if (input.includes("ArrowLeft")) {
+      this.game.player.setState(states.RUNNING_LEFT, 1);
     }
   }
 }
