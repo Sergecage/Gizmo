@@ -31,10 +31,15 @@ export class MobileControls {
       e.preventDefault();
       this.removeKey("ArrowUp");
     });
+    if (this.input.keys === "ArrowUp" && this.input.keys === "ArrowRight") {
+      e.preventDefault();
+    }
   }
   pressKey(key) {
     if (!this.input.keys.includes(key)) {
       this.input.keys.push(key);
+      this.input.keys.push("ArrowUp");
+      this.input.keys.push("ArrowRight");
     }
   }
   removeKey(key) {
