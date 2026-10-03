@@ -9,4 +9,5 @@ export const LevelOne = {
   enemyInterval: 5000,
   enemy: "evilGreml",
   enemyImage: "enemy_greml",
+  cookieGoal: 10,
 };
