@@ -128,6 +128,7 @@ window.addEventListener("load", function () {
       else if (this.speed > 0) this.enemies.push(new CrawlingEnemy(this));
       this.enemies.push(new FlyingEnemy(this));
     }
+    finishGame() {}
   }
 
   let game = new Game(canvas.width, canvas.height);
