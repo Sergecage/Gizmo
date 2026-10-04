@@ -36,6 +36,13 @@ export class UI {
         this.game.width * 0.5,
         this.game.height * 0.5,
       );
+      context.drawImage(
+        this.gif,
+        this.game.width * 0.5 - 50,
+        this.game.height * 0.5 + 30,
+        200,
+        200,
+      );
     } else if (this.game.gameOver) {
       context.textAlign = "center";
       context.font = this.fontSize * 2 + "px " + this.fontFamily;
