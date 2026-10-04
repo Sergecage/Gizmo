@@ -22,7 +22,11 @@ export class UI {
       context.drawImage(this.livesImage, 20 * i + 20, 95, 50, 50);
     }
 
-    if (this.game.gameOver && this.game.collectedCookies === 10) {
+    if (
+      this.game.gameOver &&
+      this.game.cookieGoal !== null &&
+      this.game.collectedCookies >= this.game.cookieGoal
+    ) {
       context.textAlign = "center";
       context.font = this.fontSize * 2 + "px " + this.fontFamily;
       context.fillText(
