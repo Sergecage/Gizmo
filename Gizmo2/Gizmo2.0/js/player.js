@@ -104,6 +104,12 @@ export class Player {
         cookie.markedForDeletion = true;
         this.game.score++;
         this.game.collectedCookies++;
+        if (
+          this.game.cookieGoal !== null &&
+          this.game.collectedCookies >= this.game.cookieGoal
+        ) {
+          this.game.finishGame();
+        }
       }
     });
   }
