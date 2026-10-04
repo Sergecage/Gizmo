@@ -44,6 +44,7 @@ window.addEventListener("load", function () {
       this.particles = [];
       this.cookies = [];
       this.cookieGoal = level?.cookieGoal ?? null;
+      this.collectedCookies = 0;
       this.collisions = [];
       this.enemyTimer = 0;
       this.enemyInterval = level?.enemyInterval ?? 3000;
@@ -101,6 +102,7 @@ window.addEventListener("load", function () {
       );
       this.music.update();
       this.cookies = this.cookies.filter((cookie) => !cookie.markedForDeletion);
+      if (this.cookieGoal  !== null && this.cookieGoal)
     }
     draw(context) {
       this.background.draw(context);
