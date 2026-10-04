@@ -73,7 +73,7 @@ window.addEventListener("load", function () {
       } else {
         this.enemyTimer += deltaTime;
       }
-      if (this.cookieTimer > this.cookieInterval) {
+      if (this.cookieTimer > this.cookieInterval && (this.cookieGoal === null || this.collectedCookies < this.cookieGoal)) {
         this.cookies.push(new Cookie(this));
         this.cookieTimer = 0;
       } else {
