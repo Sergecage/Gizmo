@@ -43,6 +43,8 @@ window.addEventListener("load", function () {
       this.enemies = [];
       this.particles = [];
       this.cookies = [];
+      this.cookieGoal = level?.cookieGoal ?? null;
+      this.collectedCookies = 0;
       this.collisions = [];
       this.enemyTimer = 0;
       this.enemyInterval = level?.enemyInterval ?? 3000;
@@ -71,7 +73,10 @@ window.addEventListener("load", function () {
       } else {
         this.enemyTimer += deltaTime;
       }
-      if (this.cookieTimer > this.cookieInterval) {
+      if (
+        this.cookieTimer > this.cookieInterval &&
+        (this.cookieGoal === null || this.collectedCookies < this.cookieGoal)
+      ) {
         this.cookies.push(new Cookie(this));
         this.cookieTimer = 0;
       } else {
@@ -126,6 +131,9 @@ window.addEventListener("load", function () {
         this.enemies.push(new GroundEnemy(this));
       else if (this.speed > 0) this.enemies.push(new CrawlingEnemy(this));
       this.enemies.push(new FlyingEnemy(this));
+    }
+    finishGame() {
+      this.gameOver = true;
     }
   }
 
