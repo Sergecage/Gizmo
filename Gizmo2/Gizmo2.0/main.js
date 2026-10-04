@@ -43,6 +43,7 @@ window.addEventListener("load", function () {
       this.enemies = [];
       this.particles = [];
       this.cookies = [];
+      this.cookieGoal = level?.cookieGoal ?? null;
       this.collisions = [];
       this.enemyTimer = 0;
       this.enemyInterval = level?.enemyInterval ?? 3000;
