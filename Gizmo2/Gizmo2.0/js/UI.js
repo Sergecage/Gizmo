@@ -22,19 +22,19 @@ export class UI {
       context.drawImage(this.livesImage, 20 * i + 20, 95, 50, 50);
     }
 
-    if (this.game.gameOver) {
-      context.textAlign = "center";
-      context.font = this.fontSize * 2 + "px " + this.fontFamily;
-      context.fillText(
-        "It's midgnight no more cookies!",
-        this.game.width * 0.5,
-        this.game.height * 0.5,
-      );
-    } else if (this.game.gameOver && this.game.collectedCookies === 10) {
+    if (this.game.gameOver && this.game.collectedCookies === 10) {
       context.textAlign = "center";
       context.font = this.fontSize * 2 + "px " + this.fontFamily;
       context.fillText(
         "Congrats, you look fresh!",
+        this.game.width * 0.5,
+        this.game.height * 0.5,
+      );
+    } else if (this.game.gameOver) {
+      context.textAlign = "center";
+      context.font = this.fontSize * 2 + "px " + this.fontFamily;
+      context.fillText(
+        "It's midgnight no more cookies!",
         this.game.width * 0.5,
         this.game.height * 0.5,
       );
