@@ -196,3 +196,6 @@ button {
 .rotate-message {
   display: none;
 }
+
+@media (orientation: portrait) and (max-width: 768px) {
+}
