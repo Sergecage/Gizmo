@@ -192,3 +192,7 @@ button {
 .mobile-controls button img {
   background-color: inherit;
 }
+
+.rotate-message {
+  display: none;
+}
