@@ -233,4 +233,9 @@ button {
     top: 50%;
     transform: translateY(-50%);
   }
+  #right-button {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
