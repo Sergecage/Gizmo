@@ -238,4 +238,9 @@ button {
     top: 50%;
     transform: translateY(-50%);
   }
+  #jump-button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
