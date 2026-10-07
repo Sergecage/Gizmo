@@ -176,7 +176,7 @@ button {
 }
 
 .mobile-controls {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
@@ -214,7 +214,11 @@ button {
     margin: 0;
     width: 100%;
   }
+  #game-container {
+    height: 100%;
+  }
   .mobile-controls {
+    display: flex;
     position: absolute;
     inset: 0;
     z-index: 20;
@@ -240,7 +244,7 @@ button {
   }
   #jump-button {
     left: 50%;
-    top: 50%;
+    top: 10%;
     transform: translate(-50%, -50%);
   }
 }
