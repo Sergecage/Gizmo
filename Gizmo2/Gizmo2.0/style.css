@@ -212,6 +212,7 @@ button {
   }
   #game-container {
     margin: 0;
+    width: 100%;
   }
   .mobile-controls {
     position: absolute;
@@ -226,5 +227,10 @@ button {
     background: transparent;
     opacity: 0.35;
     pointer-events: auto;
+  }
+  #left-button {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
