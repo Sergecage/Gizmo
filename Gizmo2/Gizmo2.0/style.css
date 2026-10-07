@@ -219,4 +219,12 @@ button {
     z-index: 20;
     pointer-events: none;
   }
+  .mobile-controls button {
+    position: absolute;
+    padding: 0;
+    border: none;
+    background: transparent;
+    opacity: 0.35;
+    pointer-events: auto;
+  }
 }
