@@ -213,4 +213,7 @@ button {
   #game-container {
     margin: 0;
   }
+  .mobile-controls {
+    opacity: 0.1;
+  }
 }
