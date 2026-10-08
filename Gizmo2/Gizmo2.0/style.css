@@ -258,3 +258,5 @@ button {
     display: block;
   }
 }
+@media (orientation: landscape) and (max-width: 768px) {
+}
