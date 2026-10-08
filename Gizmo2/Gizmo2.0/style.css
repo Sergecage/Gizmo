@@ -196,7 +196,10 @@ button {
   user-select: none;
 }
 .mobile-controls button img {
-  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
 }
 
 .rotate-message {
