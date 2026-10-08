@@ -176,10 +176,11 @@ button {
 }
 
 .mobile-controls {
-  display: none;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  display: flex;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
 }
 
 .mobile-controls button {
@@ -216,13 +217,6 @@ button {
   }
   #game-container {
     height: 100%;
-  }
-  .mobile-controls {
-    display: flex;
-    position: absolute;
-    inset: 0;
-    z-index: 20;
-    pointer-events: none;
   }
   .mobile-controls button {
     position: absolute;
