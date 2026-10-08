@@ -221,6 +221,10 @@ button {
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
+  #game-container {
+    width: 100vw;
+    height: 100vh;
+  }
   .rotate-message {
     display: flex;
     position: fixed;
