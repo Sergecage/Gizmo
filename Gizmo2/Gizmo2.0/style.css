@@ -186,7 +186,12 @@ button {
 .mobile-controls button {
   width: 70px;
   height: 70px;
-  font-size: 32px;
+  position: absolute;
+  padding: 0;
+  border: none;
+  background: transparent;
+  opacity: 0.35;
+  pointer-events: auto;
   touch-action: none;
   user-select: none;
 }
@@ -217,14 +222,6 @@ button {
   }
   #game-container {
     height: 100%;
-  }
-  .mobile-controls button {
-    position: absolute;
-    padding: 0;
-    border: none;
-    background: transparent;
-    opacity: 0.35;
-    pointer-events: auto;
   }
   #left-button {
     left: 20px;
