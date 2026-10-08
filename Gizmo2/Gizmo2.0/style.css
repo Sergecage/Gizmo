@@ -201,6 +201,21 @@ button {
   object-fit: contain;
   background: transparent;
 }
+#left-button {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#right-button {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#jump-button {
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+}
 
 .rotate-message {
   display: none;
@@ -222,23 +237,6 @@ button {
   #game-container {
     margin-top: 0 !important;
     width: 100%;
-  }
-  #game-container {
     height: 100%;
-  }
-  #left-button {
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  #right-button {
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  #jump-button {
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);
   }
 }
