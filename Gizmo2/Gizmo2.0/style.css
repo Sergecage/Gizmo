@@ -177,18 +177,89 @@ button {
 
 .mobile-controls {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
 }
 
 .mobile-controls button {
   width: 70px;
   height: 70px;
-  font-size: 32px;
+  position: absolute;
+  padding: 0;
+  border: none;
+  background: transparent;
+  opacity: 0.35;
+  pointer-events: auto;
   touch-action: none;
   user-select: none;
 }
 .mobile-controls button img {
-  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+#left-button {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#right-button {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#jump-button {
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+}
+.rotate-message {
+  display: none;
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+  .rotate-message {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    color: #050505;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  #game-container {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+  }
+  #game-canvas-1 {
+    width: 100vw;
+    height: auto;
+    max-width: none;
+    display: block;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  #game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #game-canvas {
+    width: auto;
+    height: 100dvh;
+    max-width: 100vw;
+    max-height: 100dvh;
+  }
 }
