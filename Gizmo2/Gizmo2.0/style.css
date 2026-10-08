@@ -225,6 +225,12 @@ button {
     width: 100vw;
     height: 100vh;
   }
+  #game-canvas {
+    width: auto;
+    height: 100dvh;
+    max-width: 100vw;
+    max-height: 100dvh;
+  }
   .rotate-message {
     display: flex;
     position: fixed;
