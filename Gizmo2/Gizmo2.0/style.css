@@ -241,4 +241,10 @@ button {
     height: 100vh;
     padding: 0;
   }
+  #game-canvas-1 {
+    width: 100vw;
+    height: auto;
+    max-width: none;
+    display: block;
+  }
 }
