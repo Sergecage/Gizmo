@@ -257,7 +257,7 @@ button {
     align-items: center;
   }
   #game-canvas-1 {
-    width: auto;
+    width: 100vw;
     height: 100dvh;
     max-width: 100vw;
     max-height: 100dvh;
