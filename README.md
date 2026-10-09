@@ -1,6 +1,8 @@
 # Gizmo
 Web application game based on Javascript. 
 https://sergecage.github.io/Gizmo/Gizmo2/Gizmo2.0/
+<img width="672" height="384" alt="Pr23" src="https://github.com/user-attachments/assets/a2872e6b-ea3e-4ad4-9f19-64a810f89237" />
+
 ## versions
 There are two available versions (games)
 1. Catch the cookie
