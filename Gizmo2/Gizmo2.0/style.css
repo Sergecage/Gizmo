@@ -251,12 +251,12 @@ button {
 @media (orientation: landscape) and (max-width: 768px) {
   #game-container {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #game-canvas {
+  #game-canvas-1 {
     width: auto;
     height: 100dvh;
     max-width: 100vw;
