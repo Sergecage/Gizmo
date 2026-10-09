@@ -17,3 +17,4 @@ There are two available versions (games)
    And hardcore mode available on play button (the task is to survive for 100 seconds, collect cookies and avoid enemies)
 
 Special thanks to @sharp.blade for logo design
+Music is written By me (Sergei Keidzh)
