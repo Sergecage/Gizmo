@@ -228,7 +228,8 @@ button {
     z-index: 9999;
     align-items: center;
     justify-content: center;
-    color: #050505;
+    color: #f7f3f3;
+    font-weight: 300;
     font-size: 24px;
     text-align: center;
     padding: 20px;
