@@ -6,5 +6,6 @@ export function updateOrientation() {
   const isLandscape = landscapeQuery.matches;
 
   gameContainer.classList.toggle("landscape-mode", isLandscape);
+  gameContainer.classList.toggle("portrait-mode", !isLandscape);
 }
 updateOrientation();
