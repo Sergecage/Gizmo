@@ -4,5 +4,7 @@ const rotateMessage = document.querySelector(".rotate-message");
 
 export function updateOrientation() {
   const isLandscape = landscapeQuery.matches;
+
+  gameContainer.classList.toggle("landscape-mode", isLandscape);
 }
 updateOrientation();
