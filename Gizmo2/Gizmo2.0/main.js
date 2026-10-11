@@ -13,6 +13,7 @@ import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
 import { LevelOne } from "./js/levels/levelOne.js";
 import { MobileControls } from "./js/mobileControls.js";
+import { updateOrientation } from "./js/orientation.js";
 
 const levels = {
   1: LevelOne,
