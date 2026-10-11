@@ -13,3 +13,4 @@ export function updateOrientation() {
   }
 }
 updateOrientation();
+landscapeQuery.addEventListener("change", updateOrientation);
