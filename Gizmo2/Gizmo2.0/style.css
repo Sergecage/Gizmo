@@ -225,6 +225,9 @@ button {
   width: 100vw;
   height: 100vh;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
