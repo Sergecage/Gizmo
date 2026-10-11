@@ -7,5 +7,9 @@ export function updateOrientation() {
 
   gameContainer.classList.toggle("landscape-mode", isLandscape);
   gameContainer.classList.toggle("portrait-mode", !isLandscape);
+
+  if (rotateMessage) {
+    rotateMessage.hidden = isLandscape;
+  }
 }
 updateOrientation();
