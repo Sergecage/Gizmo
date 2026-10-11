@@ -220,6 +220,13 @@ button {
   display: none;
 }
 
+#game-container.landscape-mode {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+}
+
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
     display: flex;
