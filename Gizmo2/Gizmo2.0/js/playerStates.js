@@ -27,7 +27,7 @@ export class RunningLeft extends State {
   handleInput(input) {
     if (input.includes("ArrowUp")) {
       this.game.player.setState(states.JUMPING, 1);
-    } else if (input.includes("ArrowRight")) {
+    } else if (input.includes("ArrowRight") && !input.includes("ArrowRight")) {
       this.game.player.setState(states.RUNNING_RIGHT, 1);
     }
   }
@@ -53,7 +53,7 @@ export class RunningRight extends State {
     );
     if (input.includes("ArrowUp")) {
       this.game.player.setState(states.JUMPING, 1);
-    } else if (input.includes("ArrowLeft")) {
+    } else if (input.includes("ArrowLeft") && !input.includes("ArrowRight")) {
       this.game.player.setState(states.RUNNING_LEFT, 1);
     }
   }
