@@ -12,8 +12,8 @@ export class Player {
     this.vy = 0;
     this.weight = 1;
     this.image = gizmo;
-    this.frameX = 0;
-    this.frameY = 0;
+    this.frameX = 1;
+    this.frameY = 2;
     this.maxFrame;
     this.fps = 20;
     this.frameInterval = 1000 / this.fps;
