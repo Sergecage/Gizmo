@@ -15,7 +15,7 @@ export class Player {
     this.frameX = 1;
     this.frameY = 2;
     this.maxFrame;
-    this.fps = 20;
+    this.fps = 5;
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
     this.speed = 0;
