@@ -5,7 +5,7 @@ export class UI {
     this.fontFamily = "Helvetica";
     this.livesImage = document.getElementById("lives");
     this.gif = new Image();
-    this.gif.src = "game/assets/gifs/Fresh.gif";
+    this.gif.src = "game-beta/assets/gifs/Fresh.gif";
   }
   draw(context) {
     context.save();

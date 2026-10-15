@@ -12,10 +12,10 @@ export class Player {
     this.vy = 0;
     this.weight = 1;
     this.image = gizmo;
-    this.frameX = 0;
-    this.frameY = 0;
+    this.frameX = 1;
+    this.frameY = 2;
     this.maxFrame;
-    this.fps = 20;
+    this.fps = 5;
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
     this.speed = 0;
@@ -31,10 +31,10 @@ export class Player {
     this.checkCollisions();
     this.currentState.handleInput(input);
 
-    this.x += this.speed;
     if (input.includes("ArrowRight")) this.speed = this.maxSpeed;
     else if (input.includes("ArrowLeft")) this.speed = -this.maxSpeed;
     else this.speed = 0;
+    this.x += this.speed;
     if (this.x < 0) this.x = 0;
     if (this.x > this.game.width - this.width)
       this.x = this.game.width - this.width;

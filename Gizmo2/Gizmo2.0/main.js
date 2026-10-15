@@ -13,6 +13,7 @@ import { Cookie } from "./js/cookie.js";
 import { showPop } from "./js/popUp.js";
 import { LevelOne } from "./js/levels/levelOne.js";
 import { MobileControls } from "./js/mobileControls.js";
+import { updateOrientation } from "./js/orientation.js";
 
 const levels = {
   1: LevelOne,
@@ -21,6 +22,7 @@ const levels = {
 };
 
 window.addEventListener("load", function () {
+  updateOrientation();
   const canvas = document.getElementById("game-canvas-1");
   const ctx = canvas.getContext("2d");
   canvas.width = 1200;

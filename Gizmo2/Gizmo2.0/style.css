@@ -220,6 +220,23 @@ button {
   display: none;
 }
 
+#game-container.landscape-mode {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-container.landscape-mode#game-canvas-1 {
+  width: 100vw;
+  height: 100dvh;
+  max-width: 100vw;
+  max-height: 100dvh;
+}
+
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
     display: flex;
@@ -247,20 +264,5 @@ button {
     height: auto;
     max-width: none;
     display: block;
-  }
-}
-@media (orientation: landscape) and (max-width: 768px) {
-  #game-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #game-canvas-1 {
-    width: 100vw;
-    height: 100dvh;
-    max-width: 100vw;
-    max-height: 100dvh;
   }
 }
