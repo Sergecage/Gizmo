@@ -21,8 +21,8 @@ export class Player {
     this.speed = 0;
     this.maxSpeed = 10;
     this.states = [
-      new RunningRight(this.game),
       new RunningLeft(this.game),
+      new RunningRight(this.game),
       new Jumping(this.game),
     ];
     this.currentState = null;
