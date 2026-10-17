@@ -5,4 +5,5 @@ export class Platform {
     this.x = x;
     this.y = y;
   }
+  draw() {}
 }
