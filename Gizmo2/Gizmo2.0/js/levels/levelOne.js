@@ -10,4 +10,5 @@ export const LevelOne = {
   enemy: "evilGreml",
   enemyImage: "enemy_greml",
   cookieGoal: 10,
+  music: "game-beta/assets/music/Gizmo Level One1.mp3",
 };
