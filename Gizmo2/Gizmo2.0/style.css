@@ -6,7 +6,7 @@
 
 body {
   background-color: rgb(102, 174, 207);
-  scroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 #game-container {
