@@ -16,14 +16,14 @@ body {
 #game-container {
   position: relative;
   width: min(1200px, 100%);
-  margin: 4em auto 0;
+  margin: 0 auto;
 }
 
 #game-canvas-1 {
   border: 5px solid black;
-  width: 1200px;
+  width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   touch-action: none;
   display: block;
 }
