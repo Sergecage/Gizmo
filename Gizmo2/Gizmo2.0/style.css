@@ -261,7 +261,7 @@ button {
   }
 }
 @media (max-width: 768px) {
-  #game-container {
+  #game-container:not(.landscape-mode) {
     margin: 0;
     width: 100vw;
     height: 100vh;
