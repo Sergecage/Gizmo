@@ -9,6 +9,10 @@ export class Music{
         this.musicIcon = document.getElementById("music");
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
+        if (!this.music){
+            alert(`Music ${musicId} was not found`)
+            return;
+        }
         this.music.volume = 0.3;
         window.addEventListener("click", () => {
             if (!this.isMuted){
