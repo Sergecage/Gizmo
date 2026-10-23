@@ -1,5 +1,5 @@
 export class Music{
-    constructor(game){
+    constructor(game, musicId = "backMusic"){
         this.game = game;
         this.width = 100;
         this.height = 100;
