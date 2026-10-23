@@ -5,7 +5,7 @@ export class Music{
         this.height = 100;
         this.x = this.game.width - this.width - 20;
         this.y = 20;
-        this.music = document.getElementById("backMusic");
+        this.music = document.getElementById(musicId);
         this.musicIcon = document.getElementById("music");
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
