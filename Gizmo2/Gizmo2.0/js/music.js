@@ -14,6 +14,11 @@ export class Music{
             return;
         }
         this.music.volume = 0.3;
+        document.querySelectorAll("audio").forEach((audio) => {
+            if (audio!== this.music){
+                audio.pause();
+            }
+        })
         window.addEventListener("click", () => {
             if (!this.isMuted){
                 this.music.play();
