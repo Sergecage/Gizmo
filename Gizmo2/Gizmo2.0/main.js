@@ -158,6 +158,8 @@ window.addEventListener("load", function () {
     if (levelNumber !== "hardcore") {
       selectedLevel = levels[levelNumber];
     }
+
+    game.music.destroy();
     game = new Game(canvas.width, canvas.height, selectedLevel);
     requestAnimationFrame(animate);
   }

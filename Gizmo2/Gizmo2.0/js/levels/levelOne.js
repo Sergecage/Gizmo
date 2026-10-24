@@ -10,5 +10,5 @@ export const LevelOne = {
   enemy: "evilGreml",
   enemyImage: "enemy_greml",
   cookieGoal: 10,
-  music: backMusicOne,
+  music: "backMusicOne",
 };
