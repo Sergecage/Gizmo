@@ -29,9 +29,6 @@ export class Music{
             this.handleClick(e);
         })
     }
-    update(){
-
-    }
     draw(context){
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
         if (this.isMuted) {
