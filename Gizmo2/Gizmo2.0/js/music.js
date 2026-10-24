@@ -26,7 +26,9 @@ export class Music{
         }, { once: true });
     }
     destroy(){
-        
+       window.addEventListener("click", (e) => {
+            this.handleClick(e);
+        }) 
     }
     draw(context){
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
