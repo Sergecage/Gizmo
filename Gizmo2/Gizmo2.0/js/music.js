@@ -24,10 +24,9 @@ export class Music{
                 this.music.play();
             }
         }, { once: true });
-
-        window.addEventListener("click", (e) => {
-            this.handleClick(e);
-        })
+    }
+    destroy(){
+        
     }
     draw(context){
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
