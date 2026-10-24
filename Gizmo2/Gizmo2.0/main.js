@@ -165,6 +165,5 @@ window.addEventListener("load", function () {
   }
   game.draw(ctx);
   lastTime = performance.now();
-  game.music.music.play().catch(() => {});
   showPop(startGame);
 });
