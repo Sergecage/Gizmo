@@ -28,6 +28,9 @@ export class Music{
             }
         }, { once: true });
     }
+    play(){
+        
+    }
     destroy(){
        window.addEventListener("click", (e) => {
             this.handleClick(e);
