@@ -38,9 +38,9 @@ export class Music{
         })
     }
     destroy(){
-       window.addEventListener("click", (e) => {
-            this.handleClick(e);
-        }) 
+       if (this.handlWindowClick){
+        window.removeEventListener("click", this.handleWindowClick);
+       }
     }
     draw(context){
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
