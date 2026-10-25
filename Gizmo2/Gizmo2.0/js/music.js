@@ -41,6 +41,7 @@ export class Music{
        if (this.handlWindowClick){
         window.removeEventListener("click", this.handleWindowClick);
        }
+       this.music?.pause();
     }
     draw(context){
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
