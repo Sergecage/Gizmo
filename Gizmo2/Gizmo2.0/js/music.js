@@ -32,6 +32,10 @@ export class Music{
     }
     play(){
         if(!this.music || this.isMuted) return;
+
+        this.music.play().catch((error) => {
+            alert("couldn't play music:", error);
+        })
     }
     destroy(){
        window.addEventListener("click", (e) => {
