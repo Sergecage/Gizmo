@@ -23,6 +23,7 @@ export class Music{
             this.handleClick(event);
         }
         window.addEventListener("click", this.handlWindowClick);
+
         window.addEventListener("click", () => {
             if (!this.isMuted){
                 this.music.play();
@@ -30,7 +31,7 @@ export class Music{
         }, { once: true });
     }
     play(){
-
+        if(!this.music || this.isMuted) return;
     }
     destroy(){
        window.addEventListener("click", (e) => {
