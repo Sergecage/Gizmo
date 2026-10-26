@@ -1,35 +1,58 @@
 export class Music{
-    constructor(game){
+    constructor(game, musicId = "backMusic"){
         this.game = game;
         this.width = 100;
         this.height = 100;
         this.x = this.game.width - this.width - 20;
         this.y = 20;
-        this.music = document.getElementById("backMusic");
+        this.music = document.getElementById(musicId);
         this.musicIcon = document.getElementById("music");
         this.closeIcon = document.getElementById("close");
         this.isMuted = false;
+        if (!this.music){
+            alert(`Music ${musicId} was not found`)
+            return;
+        }
         this.music.volume = 0.3;
-        window.addEventListener("click", () => {
+        document.querySelectorAll("audio").forEach((audio) => {
+            if (audio!== this.music){
+                audio.pause();
+            }
+        })
+        this.handleWindowClick = (event) => {
+            this.handleClick(event);
+        }
+        window.addEventListener("click", this.handleWindowClick);
+
+       /*window.addEventListener("click", () => {
             if (!this.isMuted){
                 this.music.play();
             }
-        }, { once: true });
+        }, { once: true });*/
+    }
+    play(){
+        if(!this.music || this.isMuted) return;
 
-        window.addEventListener("click", (e) => {
-            this.handleClick(e);
+        this.music.play().catch((error) => {
+            alert("couldn't play music:", error);
         })
     }
-    update(){
-
+    destroy(){
+       if (this.handleWindowClick){
+        window.removeEventListener("click", this.handleWindowClick);
+       }
+       this.music?.pause();
     }
+    update(){}
     draw(context){
+        if (!this.musicIcon || !this.closeIcon) return;
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
         if (this.isMuted) {
             context.drawImage(this.closeIcon, this.x, this.y, this.width, this.height);
         }
     }
     handleClick(event){
+        if(!this.music) return;
         this.mouseX = event.offsetX;
         this.mouseY = event.offsetY;
         if (this.mouseX > this.x && this.mouseX < this.x + this.width && this.mouseY > this.y && this.mouseY < this.y + this.height){

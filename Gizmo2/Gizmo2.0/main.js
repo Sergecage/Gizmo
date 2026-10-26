@@ -158,11 +158,13 @@ window.addEventListener("load", function () {
     if (levelNumber !== "hardcore") {
       selectedLevel = levels[levelNumber];
     }
+
+    game.music.destroy();
     game = new Game(canvas.width, canvas.height, selectedLevel);
+    game.music.play();
     requestAnimationFrame(animate);
   }
   game.draw(ctx);
   lastTime = performance.now();
-  game.music.music.play().catch(() => {});
   showPop(startGame);
 });
