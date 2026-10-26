@@ -19,10 +19,10 @@ export class Music{
                 audio.pause();
             }
         })
-        this.handlWindowClick = (event) => {
+        this.handleWindowClick = (event) => {
             this.handleClick(event);
         }
-        window.addEventListener("click", this.handlWindowClick);
+        window.addEventListener("click", this.handleWindowClick);
 
        /*window.addEventListener("click", () => {
             if (!this.isMuted){
@@ -38,7 +38,7 @@ export class Music{
         })
     }
     destroy(){
-       if (this.handlWindowClick){
+       if (this.handleWindowClick){
         window.removeEventListener("click", this.handleWindowClick);
        }
        this.music?.pause();
