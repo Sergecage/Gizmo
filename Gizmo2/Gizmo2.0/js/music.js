@@ -43,6 +43,7 @@ export class Music{
        }
        this.music?.pause();
     }
+    update(){}
     draw(context){
         if (!this.musicIcon || !this.closeIcon) return;
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
