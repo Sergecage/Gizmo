@@ -161,6 +161,7 @@ window.addEventListener("load", function () {
 
     game.music.destroy();
     game = new Game(canvas.width, canvas.height, selectedLevel);
+    game.music.play();
     requestAnimationFrame(animate);
   }
   game.draw(ctx);
