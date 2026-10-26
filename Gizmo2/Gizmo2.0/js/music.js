@@ -24,11 +24,11 @@ export class Music{
         }
         window.addEventListener("click", this.handlWindowClick);
 
-        window.addEventListener("click", () => {
+       /*window.addEventListener("click", () => {
             if (!this.isMuted){
                 this.music.play();
             }
-        }, { once: true });
+        }, { once: true });*/
     }
     play(){
         if(!this.music || this.isMuted) return;
@@ -44,6 +44,7 @@ export class Music{
        this.music?.pause();
     }
     draw(context){
+        if (!this.musicIcon || !this.closeIcon) return;
         context.drawImage(this.musicIcon, this.x, this.y, this.width, this.height);
         if (this.isMuted) {
             context.drawImage(this.closeIcon, this.x, this.y, this.width, this.height);
