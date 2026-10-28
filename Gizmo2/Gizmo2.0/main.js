@@ -162,9 +162,9 @@ window.addEventListener("load", function () {
     game.music.destroy();
     game = new Game(canvas.width, canvas.height, selectedLevel);
     game.music.play();
+    lastTime = performance.now();
     requestAnimationFrame(animate);
   }
   game.draw(ctx);
-  lastTime = performance.now();
   showPop(startGame);
 });
