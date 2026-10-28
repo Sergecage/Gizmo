@@ -144,7 +144,7 @@ window.addEventListener("load", function () {
   let gameStarted = false;
 
   const animate = (timeStamp) => {
-    const deltaTime = timeStamp - lastTime;
+    const deltaTime = Math.min(timeStamp - lastTime, 100);
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
@@ -162,9 +162,9 @@ window.addEventListener("load", function () {
     game.music.destroy();
     game = new Game(canvas.width, canvas.height, selectedLevel);
     game.music.play();
+    lastTime = performance.now();
     requestAnimationFrame(animate);
   }
   game.draw(ctx);
-  lastTime = performance.now();
   showPop(startGame);
 });
