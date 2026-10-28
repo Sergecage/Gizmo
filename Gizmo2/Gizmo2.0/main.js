@@ -144,7 +144,7 @@ window.addEventListener("load", function () {
   let gameStarted = false;
 
   const animate = (timeStamp) => {
-    const deltaTime = timeStamp - lastTime;
+    const deltaTime = Math.min(timeStamp - lastTime, 100);
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
