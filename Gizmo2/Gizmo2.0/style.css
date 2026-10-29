@@ -52,8 +52,6 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(90%, 700px);
-  max-height: 90%;
   overflow: auto;
   background-color: rgb(243, 201, 146);
   border: 3px black;
