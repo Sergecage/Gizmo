@@ -236,6 +236,7 @@ button {
   align-items: center;
   position: fixed;
   inset: 0;
+  overflow: hidden;
 }
 
 #game-container.landscape-mode#game-canvas-1 {
