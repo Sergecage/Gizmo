@@ -265,10 +265,10 @@ button {
 }
 @media (max-width: 768px) {
   #game-container:not(.landscape-mode) {
+    position: relative;
     margin: 0;
     width: 100vw;
     height: 100vh;
-    padding: 0;
   }
   #game-canvas-1 {
     width: 100vw;
