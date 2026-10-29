@@ -270,10 +270,8 @@ button {
     width: 100vw;
     height: 100vh;
   }
-  #game-canvas-1 {
-    width: 100vw;
+  #game-container:not(.landscape-mode) #game-canvas-1 {
+    width: 100%;
     height: auto;
-    max-width: none;
-    display: block;
   }
 }
