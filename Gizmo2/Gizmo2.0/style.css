@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body{
+html,
+body {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -22,8 +23,7 @@ body {
 #game-canvas-1 {
   border: 5px solid black;
   width: 100%;
-  max-width: 100%;
-  height: 100%;
+  height: auto;
   touch-action: none;
   display: block;
 }
@@ -51,6 +51,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow: auto;
   background-color: rgb(243, 201, 146);
   border: 3px black;
   border-style: double;
@@ -63,11 +64,13 @@ body {
   background-color: transparent;
   font-weight: 78px;
   text-align: center;
+  font-size: clamp(20px, 3vw, 42px);
 }
 
 .text {
   background-color: transparent;
   font-weight: 40rem;
+  font-size: clamp(16px, 2.5vw, 28px);
 }
 
 .btn-container {
@@ -228,21 +231,25 @@ button {
 #game-container.landscape-mode {
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   inset: 0;
+  overflow: hidden;
 }
 
-#game-container.landscape-mode#game-canvas-1 {
+#game-container.landscape-mode #game-canvas-1 {
   width: 100vw;
   height: 100dvh;
   max-width: 100vw;
   max-height: 100dvh;
-  object-fit: contain;
+  aspect-ratio: auto;
+  object-fit: fill;
+  border: none;
+  display: block;
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
@@ -262,15 +269,13 @@ button {
 }
 @media (max-width: 768px) {
   #game-container:not(.landscape-mode) {
+    position: relative;
     margin: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    padding: 0;
   }
-  #game-canvas-1 {
-    width: 100vw;
+  #game-container:not(.landscape-mode) #game-canvas-1 {
+    width: 100%;
     height: auto;
-    max-width: none;
-    display: block;
   }
 }
