@@ -70,6 +70,7 @@ body {
 .text {
   background-color: transparent;
   font-weight: 40rem;
+  font-size: clamp(16px, 2.5vw, 28px);
 }
 
 .btn-container {
