@@ -5,5 +5,7 @@ export class Platform {
     this.x = x;
     this.y = y;
   }
-  draw(context) {}
+  draw(context) {
+    context.strokeRect(this.x, this.y, this.width, this.height);
+  }
 }
