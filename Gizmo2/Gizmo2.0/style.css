@@ -71,6 +71,7 @@ body {
   background-color: transparent;
   font-weight: 40rem;
   font-size: clamp(16px, 2.5vw, 28px);
+  text-align: center;
 }
 
 .btn-container {
