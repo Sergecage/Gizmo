@@ -76,7 +76,7 @@ body {
 .btn-container {
   background-color: transparent;
   display: flex;
-  gap: 2.2em;
+  gap: 1.2em;
   display: flex;
   flex-direction: column;
 }
@@ -256,6 +256,10 @@ button {
   left: auto;
 }
 
+#game-container.landscape-mode #game-canvas-1 .popup .btn-container {
+  gap: 1em;
+}
+
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
     display: flex;
@@ -270,6 +274,13 @@ button {
     text-align: center;
     padding: 20px;
   }
+  .popup {
+    top: auto;
+    left: auto;
+  }
+  .btn-container {
+    gap: 1em;
+  }
 }
 @media (max-width: 768px) {
   #game-container:not(.landscape-mode) {
@@ -281,5 +292,12 @@ button {
   #game-container:not(.landscape-mode) #game-canvas-1 {
     width: 100%;
     height: auto;
+  }
+  .popup {
+    top: auto;
+    left: auto;
+  }
+  .btn-container {
+    gap: 1em;
   }
 }
