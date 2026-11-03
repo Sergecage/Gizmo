@@ -254,8 +254,9 @@ button {
 #game-container.landscape-mode .popup {
 }
 
-#game-container.landscape-mode #game-canvas-1 .popup .btn-container {
-  gap: 1em;
+#game-container.landscape-mode .play-btn {
+  width: 6em;
+  height: 1.2em;
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
@@ -272,9 +273,6 @@ button {
     text-align: center;
     padding: 20px;
   }
-  .btn-container {
-    gap: 1em;
-  }
 }
 @media (max-width: 768px) {
   #game-container:not(.landscape-mode) {
@@ -286,15 +284,5 @@ button {
   #game-container:not(.landscape-mode) #game-canvas-1 {
     width: 100%;
     height: auto;
-  }
-  .btn-container {
-    gap: 1em;
-  }
-  .welcome-text {
-    font-size: 1rem;
-  }
-  .play-btn {
-    width: 4em;
-    height: 1.2em;
   }
 }
