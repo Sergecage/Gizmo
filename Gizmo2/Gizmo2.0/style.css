@@ -251,6 +251,10 @@ button {
   border: none;
   display: block;
 }
+#game-container.landscape-mode #game-canvas-1 .popup {
+  top: auto;
+  left: auto;
+}
 
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
