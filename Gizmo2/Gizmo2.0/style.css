@@ -258,6 +258,10 @@ button {
 }
 
 #game-container.landscape-mode .welcome-text {
+  font-size: clamp(16px, 3.5dvh, 25px);
+}
+
+#game-container.landscape-mode .text {
   font-size: clamp(12px, 2.5dvh, 18px);
 }
 
