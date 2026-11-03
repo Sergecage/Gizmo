@@ -253,17 +253,12 @@ button {
   display: block;
 }
 
-#game-container.landscape-mode .play-btn {
-  width: 6em;
-  height: 1.2em;
-}
-
 #game-container.landscape-mode .welcome-text {
   font-size: clamp(16px, 3.5dvh, 25px);
 }
 
 #game-container.landscape-mode .text {
-  font-size: clamp(12px, 2.5dvh, 18px);
+  font-size: clamp(12px, 2.8dvh, 18px);
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
