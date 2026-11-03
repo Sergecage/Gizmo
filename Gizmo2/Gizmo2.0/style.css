@@ -62,21 +62,22 @@ body {
   color: rgb(53, 45, 8);
   text-transform: uppercase;
   background-color: transparent;
-  font-weight: 78px;
+  font-weight: bold;
   text-align: center;
   font-size: clamp(20px, 3vw, 42px);
 }
 
 .text {
   background-color: transparent;
-  font-weight: 40rem;
+  font-weight: normal;
   font-size: clamp(16px, 2.5vw, 28px);
+  text-align: center;
 }
 
 .btn-container {
   background-color: transparent;
   display: flex;
-  gap: 2.2em;
+  gap: 1.2em;
   display: flex;
   flex-direction: column;
 }
@@ -250,6 +251,19 @@ button {
   object-fit: fill;
   border: none;
   display: block;
+}
+
+#game-container.landscape-mode .welcome-text {
+  font-size: clamp(16px, 3.5dvh, 25px);
+}
+
+#game-container.landscape-mode .text {
+  font-size: clamp(12px, 2.8dvh, 18px);
+}
+
+#game-container.landscape-mode .logo {
+  width: 35%;
+  height: 30%;
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
