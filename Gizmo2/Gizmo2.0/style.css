@@ -261,6 +261,11 @@ button {
   font-size: clamp(12px, 2.8dvh, 18px);
 }
 
+#game-container.landscape-mode .logo {
+  width: 35%;
+  height: 30%;
+}
+
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
     display: flex;
