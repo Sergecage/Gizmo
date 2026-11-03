@@ -62,14 +62,14 @@ body {
   color: rgb(53, 45, 8);
   text-transform: uppercase;
   background-color: transparent;
-  font-weight: 78px;
+  font-weight: bold;
   text-align: center;
   font-size: clamp(20px, 3vw, 42px);
 }
 
 .text {
   background-color: transparent;
-  font-weight: 40rem;
+  font-weight: normal;
   font-size: clamp(16px, 2.5vw, 28px);
   text-align: center;
 }
