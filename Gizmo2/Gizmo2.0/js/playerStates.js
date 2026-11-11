@@ -21,7 +21,7 @@ export class RunningLeft extends State {
   enter() {
     this.game.player.frameX = 1;
     this.game.player.frameY = 1;
-    this.game.player.maxFrame = 3;
+    this.game.player.maxFrame = 2;
     this.animate = false;
   }
   handleInput(input) {
