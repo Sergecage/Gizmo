@@ -266,6 +266,10 @@ button {
   height: 30%;
 }
 
+#game-container.landscape-mode .play-btn {
+  height: 1.2em;
+}
+
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
     display: flex;

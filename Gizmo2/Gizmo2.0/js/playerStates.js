@@ -19,10 +19,10 @@ export class RunningLeft extends State {
     super("RUNNING_LEFT", game);
   }
   enter() {
-    this.game.player.frameX = 1;
+    this.game.player.frameX = 0;
     this.game.player.frameY = 1;
     this.game.player.maxFrame = 3;
-    this.animate = false;
+    this.animate = true;
   }
   handleInput(input) {
     if (input.includes("ArrowUp")) {

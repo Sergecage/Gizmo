@@ -4,6 +4,8 @@ export class Platform {
     this.height = 20;
     this.x = x;
     this.y = y;
+    this.spawnInterval = 6000;
+    this.color = "#666";
   }
   update() {}
   draw(context) {
