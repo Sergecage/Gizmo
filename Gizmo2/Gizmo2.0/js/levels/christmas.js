@@ -3,4 +3,5 @@ export const Christmas = {
   enemyInterval: 3000,
   enemy: "",
   enemyImage: "",
+  cookieGoal: 10,
 };
