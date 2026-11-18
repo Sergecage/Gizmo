@@ -5,4 +5,5 @@ export const Christmas = {
   enemyImage: "",
   cookieGoal: 10,
   music: "",
+  treeImg: "",
 };
