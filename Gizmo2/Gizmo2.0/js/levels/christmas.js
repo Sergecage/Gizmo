@@ -1,1 +1,3 @@
-export const Christmas = {};
+export const Christmas = {
+  background: {},
+};
