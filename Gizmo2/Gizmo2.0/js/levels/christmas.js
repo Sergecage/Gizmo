@@ -4,4 +4,5 @@ export const Christmas = {
   enemy: "",
   enemyImage: "",
   cookieGoal: 10,
+  music: "",
 };
