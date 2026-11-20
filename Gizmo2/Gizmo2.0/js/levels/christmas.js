@@ -7,4 +7,6 @@ export const Christmas = {
   music: "",
   treeImg: "",
 };
-export function showChristmas() {}
+export function showChristmas() {
+  const christmas = document.getElementById("christmas");
+}
