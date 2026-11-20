@@ -275,6 +275,9 @@ button {
   width: 2em;
   height: 1.4em;
 }
+.christmas-icon:hover {
+  opacity: 0.2;
+}
 
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
