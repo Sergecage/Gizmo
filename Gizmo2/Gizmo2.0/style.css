@@ -37,7 +37,8 @@ body {
 #enemy_greml,
 #lives,
 #layer3,
-#layer4 {
+#layer4,
+#christmas {
   display: none;
 }
 
