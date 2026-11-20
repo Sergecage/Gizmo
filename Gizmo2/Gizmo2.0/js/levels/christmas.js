@@ -11,4 +11,5 @@ export function showChristmas() {
   const christmas = document.getElementById("christmas");
 
   const christmasIcon = document.createElement("div");
+  christmasIcon.className = "christmas-icon";
 }
