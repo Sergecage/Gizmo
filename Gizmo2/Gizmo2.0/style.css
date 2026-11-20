@@ -271,6 +271,11 @@ button {
   height: 1.2em;
 }
 
+.christmas {
+  width: 2em;
+  height: 1.4em;
+}
+
 @media (orientation: portrait) and (max-width: 768px) {
   .rotate-message {
     display: flex;
