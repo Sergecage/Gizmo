@@ -12,4 +12,6 @@ export function showChristmas() {
 
   const christmasIcon = document.createElement("div");
   christmasIcon.className = "christmas-icon";
+
+  christmas.append(christmasIcon);
 }
