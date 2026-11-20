@@ -7,3 +7,4 @@ export const Christmas = {
   music: "",
   treeImg: "",
 };
+export function showChristmas() {}
