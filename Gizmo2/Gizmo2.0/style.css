@@ -277,6 +277,7 @@ button {
 }
 .christmas-icon:hover {
   opacity: 0.2;
+  cursor: pointer;
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
