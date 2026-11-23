@@ -14,6 +14,7 @@ export function showChristmas() {
   christmasIcon.className = "christmas-icon";
 
   const words = document.createElement("h6");
+  words.innerText = "Christmas level";
 
   christmas.append(christmasIcon);
 }
