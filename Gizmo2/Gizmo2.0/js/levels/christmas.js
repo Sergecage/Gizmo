@@ -13,5 +13,7 @@ export function showChristmas() {
   const christmasIcon = document.createElement("div");
   christmasIcon.className = "christmas-icon";
 
+  const words = document.createElement("h6");
+
   christmas.append(christmasIcon);
 }
