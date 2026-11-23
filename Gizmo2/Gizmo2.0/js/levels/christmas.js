@@ -17,4 +17,5 @@ export function showChristmas() {
   words.innerText = "Christmas level";
 
   christmas.append(christmasIcon);
+  words.append(christmasIcon);
 }
