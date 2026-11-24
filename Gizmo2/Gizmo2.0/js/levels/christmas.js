@@ -1,5 +1,10 @@
 export const Christmas = {
-  background: {},
+  background: {
+    layer1: "",
+    layer2: "",
+    layer3: "",
+    layer4: "",
+  },
   enemyInterval: 3000,
   enemy: "",
   enemyImage: "",
