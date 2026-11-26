@@ -37,7 +37,8 @@ body {
 #enemy_greml,
 #lives,
 #layer3,
-#layer4 {
+#layer4,
+#christmas {
   display: none;
 }
 
@@ -268,6 +269,15 @@ button {
 
 #game-container.landscape-mode .play-btn {
   height: 1.2em;
+}
+
+.christmas-icon {
+  width: 2em;
+  height: 1.4em;
+}
+.christmas-icon:hover {
+  opacity: 0.2;
+  cursor: pointer;
 }
 
 @media (orientation: portrait) and (max-width: 768px) {
