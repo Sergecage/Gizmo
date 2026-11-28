@@ -9,7 +9,7 @@ export const Christmas = {
   enemy: "none",
   enemyImage: "",
   cookieGoal: 10,
-  music: "",
+  music: "christmas",
   treeImg: "",
 };
 export function showChristmas() {
