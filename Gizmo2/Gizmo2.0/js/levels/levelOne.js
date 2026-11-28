@@ -1,0 +1,14 @@
+export const LevelOne = {
+  background: {
+    layer1: "game-beta/assets/img/Level1a.png",
+    layer2: "game-beta/assets/img/Level1b.png",
+    layer3: "game-beta/assets/img/Level1c.png",
+    layer4: "game-beta/assets/img/Level1d.png",
+    //layer5: "game/assets/img/Level1e.png",
+  },
+  enemyInterval: 5000,
+  enemy: "evilGreml",
+  enemyImage: "enemy_greml",
+  cookieGoal: 10,
+  music: "backMusicOne",
+};
