@@ -26,5 +26,6 @@ export function showChristmas() {
 
   christmas.addEventListener("click", ()=> {
     christmas.remove();
+    startGame("Christmas");
   })
 }
