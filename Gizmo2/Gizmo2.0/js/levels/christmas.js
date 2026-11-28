@@ -23,4 +23,6 @@ export function showChristmas() {
 
   christmas.append(christmasIcon);
   words.append(christmasIcon);
+
+  christmas.addEventListener("click", )
 }
