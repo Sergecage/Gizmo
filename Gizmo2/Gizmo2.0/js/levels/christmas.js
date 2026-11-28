@@ -6,7 +6,7 @@ export const Christmas = {
     layer4: "",
   },
   enemyInterval: 3000,
-  enemy: "",
+  enemy: "none",
   enemyImage: "",
   cookieGoal: 10,
   music: "",
