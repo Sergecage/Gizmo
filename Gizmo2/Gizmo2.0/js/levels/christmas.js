@@ -7,7 +7,6 @@ export const Christmas = {
   },
   enemyInterval: 3000,
   enemy: "none",
-  enemyImage: "",
   cookieGoal: 10,
   music: "christmas",
   treeImg: "",
