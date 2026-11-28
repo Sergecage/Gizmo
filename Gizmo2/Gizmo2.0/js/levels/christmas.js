@@ -5,7 +5,7 @@ export const Christmas = {
     layer3: "",
     layer4: "",
   },
-  enemyInterval: 3000,
+  lightsInterval: 3000,
   enemy: "none",
   cookieGoal: 10,
   music: "christmas",
